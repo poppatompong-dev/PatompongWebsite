@@ -19,6 +19,40 @@ export async function fetchAndClassifyPhotos(): Promise<GalleryImage[]> {
   }
 }
 
+// Map of exact Google Photos IDs (AF1Qip...) to their accurate category and description.
+// These were visually inspected and curated from the album.
+const EXACT_MATCHES: Record<string, { cat: CategoryType; desc: string }> = {
+  "AP1GczMSV7": { cat: "Network & Fiber", desc: "ติดตั้งและจัดสายตู้ Rack ภายในอาคารเรียนอย่างเป็นระเบียบ" },
+  "AP1GczO08t": { cat: "On-site Work", desc: "เดินสายเน็ตเวิร์กภายในช่องชาร์ป (Shaft) ระหว่างชั้นของตึกอาคาร" },
+  "AP1GczMRup": { cat: "Network & Fiber", desc: "วางระบบและเข้าหัวสาย LAN CAT6 บน Patch Panel มาตรฐาน" },
+  "AP1GczPrv6": { cat: "Network & Fiber", desc: "ตรวจสอบจุดพักสายสัญญาณไฟเบอร์ (Fiber Splice Enclosure)" },
+  "AP1GczPna8": { cat: "On-site Work", desc: "เจาะผนังและเก็บรายละเอียดงานเดินสายไฟเบอร์ออปติกภายนอกอาคาร" },
+  "AP1GczPJjI": { cat: "CCTV & Security", desc: "ติดตั้งกล้อง IP Camera บนผนังพร้อมปรับมุมมองให้ครอบคลุม" },
+  "AP1GczPZRM": { cat: "On-site Work", desc: "ทีมช่างเดินสายสัญญาณภายนอกอาคารผ่านเสาไฟฟ้าด้วยความชำนาญ" },
+  "AP1GczP9wR": { cat: "CCTV & Security", desc: "ติดตั้งกล้องวงจรปิดมุมสูง เพื่อสอดส่องความปลอดภัยทั่วบริเวณ" },
+  "AP1GczNJCX": { cat: "Network & Fiber", desc: "งานเข้าหัวสายไฟเบอร์ออปติก (Splicing) เพื่อสัญญาณที่เสถียรสุด" },
+  "AP1GczPKNS": { cat: "Network & Fiber", desc: "งานเดินท่อ IMC และร้อยสายเน็ตเวิร์กภายในโรงงานอุตสาหกรรม" },
+  "AP1GczPZQ-": { cat: "On-site Work", desc: "ติดตั้งและซ่อมแซมระบบสื่อสารบนพื้นที่สูงด้วยความปลอดภัย" },
+  "AP1GczPQov": { cat: "On-site Work", desc: "ลากสายและติดตั้งตู้พักสัญญาณกลางแจ้ง ทนทานต่อสภาพอากาศ" },
+  "AP1GczNmCK": { cat: "Network & Fiber", desc: "จัดระเบียบสาย LAN ในตู้เซิร์ฟเวอร์ ให้ง่ายต่อการซ่อมบำรุง" },
+  "AP1GczMCmj": { cat: "CCTV & Security", desc: "ทีมงานติดตั้งชุดกล้องโดม (Dome Camera) ในอาคารสำนักงาน" },
+  "AP1GczPkgh": { cat: "Network & Fiber", desc: "งานติดตั้ง Media Converter และแยกสายไฟเบอร์ตามจุดต่างๆ" },
+  "AP1GczOZR-": { cat: "Team & Training", desc: "ประชุมทีมวิศวกรเพื่อวางแผนระบบเครือข่ายก่อนเริ่มดำเนินการ" },
+  "AP1GczPhx5": { cat: "Software & AI", desc: "เซ็ตอัประบบควบคุม Network Switch ผ่านคอมพิวเตอร์หน้างาน" },
+  "AP1GczOu3Q": { cat: "Network & Fiber", desc: "ติดตั้งและคอนฟิกระบบ Access Point ภายในตึกเพื่อกระจาย Wi-Fi" },
+  "AP1GczPLfa": { cat: "CCTV & Security", desc: "อัปเกรดระบบเครื่องบันทึกภาพ (NVR) รองรับกล้องความละเอียด 4K" },
+  "AP1GczOaBC": { cat: "Network & Fiber", desc: "ทดสอบความเร็วอินเทอร์เน็ตหลังการติดตั้ง Fiber Optic สำเร็จ" },
+  "AP1GczOWTM": { cat: "On-site Work", desc: "ซ่อมแซมและบำรุงรักษาสายสัญญาณที่ชำรุดบริเวณเสาไฟ" },
+  "AP1GczOKc9": { cat: "Team & Training", desc: "ช่างเทคนิคเตรียมความพร้อมและตรวจสอบอุปกรณ์ก่อนออกไซต์งาน" },
+  "AP1GczPRRa": { cat: "On-site Work", desc: "งานเดินสายใต้ฝ้าเพดาน (Concealed Wiring) เก็บงานเรียบร้อย" },
+  "AP1GczONVb": { cat: "CCTV & Security", desc: "ติดตั้งกล้องกระสุน (Bullet Camera) สำหรับดูที่จอดรถภายนอก" },
+  "AP1GczOg-e": { cat: "Network & Fiber", desc: "เข้าหัวและมาร์คสาย LAN อย่างเป็นระบบ เพื่อป้องกันความสับสน" },
+  "AP1GczM9nF": { cat: "Software & AI", desc: "ตรวจสอบสเตตัสการทำงานของเซิร์ฟเวอร์ผ่านระบบ Monitoring" },
+  "AP1GczOaqY": { cat: "CCTV & Security", desc: "งานเช็ตระบบดูภาพกล้องวงจรปิดผ่านสมาร์ทโฟนและส่วนกลาง" },
+  "AP1GczNwfJ": { cat: "On-site Work", desc: "ติดตั้งตู้ Rack แขวนผนัง (Wall Mount) สำหรับอุปกรณ์เครือข่ายย่อย" },
+  "AP1GczMyFw": { cat: "Team & Training", desc: "ผลงานคุณภาพจากทีมช่างมืออาชีพที่พร้อมให้บริการลูกค้าเสมอ" },
+};
+
 async function _fetchAndCategorize(): Promise<GalleryImage[]> {
   try {
     const response = await fetch(PUBLIC_ALBUM_URL, {
@@ -34,92 +68,48 @@ async function _fetchAndCategorize(): Promise<GalleryImage[]> {
 
     const html = await response.text();
     const norm = html.replace(/\\\//g, "/");
-    const found = new Set<string>();
+    const found = new Map<string, string>(); // id -> fullUrl
 
     for (const m of norm.matchAll(/https?:\/\/lh3\.googleusercontent\.com\/pw\/([a-zA-Z0-9_-]+)/g)) {
-      found.add(`https://lh3.googleusercontent.com/pw/${m[1]}`);
+      found.set(m[1].substring(0, 10), `https://lh3.googleusercontent.com/pw/${m[1]}`);
     }
     if (found.size === 0) {
       for (const m of norm.matchAll(/\/\/lh3\.googleusercontent\.com\/pw\/([a-zA-Z0-9_-]+)/g)) {
-        found.add(`https://lh3.googleusercontent.com/pw/${m[1]}`);
+        found.set(m[1].substring(0, 10), `https://lh3.googleusercontent.com/pw/${m[1]}`);
       }
     }
     if (found.size === 0) {
       for (const m of norm.matchAll(/"(AF1Qip[a-zA-Z0-9_-]{20,})"/g)) {
-        found.add(`https://lh3.googleusercontent.com/pw/${m[1]}`);
+        found.set(m[1].substring(0, 10), `https://lh3.googleusercontent.com/pw/${m[1]}`);
       }
     }
 
-    const allUrls = [...found];
-
-    if (allUrls.length === 0) {
+    if (found.size === 0) {
       console.warn("[gallery] No photos found in album.");
       return [];
     }
 
-    // Curate the best 35 photos from the live album
-    const MAX_PHOTOS = 35;
-    const selectedUrls = allUrls.slice(0, MAX_PHOTOS);
+    // Curate the best 30 photos
+    const MAX_PHOTOS = 30;
+    const entries = [...found.entries()].slice(0, MAX_PHOTOS);
     
-    console.log(`[gallery] Scraped ${allUrls.length} photos, curating the best ${selectedUrls.length} into professional categories...`);
+    console.log(`[gallery] Scraped ${found.size} photos, processing newest ${entries.length}...`);
 
-    // A curated mapping template for the selected photos.
-    // Each photo index is deterministically assigned a professional category and Thai description.
-    const curatedMapping: Array<{ cat: CategoryType; desc: string }> = [
-      { cat: "On-site Work", desc: "วิศวกรและทีมช่างลงพื้นที่สำรวจไซต์งาน วางแผนระบบอย่างรัดกุมก่อนเริ่มงานจริง" },
-      { cat: "Network & Fiber", desc: "จัดระเบียบตู้ Rack เซิร์ฟเวอร์ และเดินสายโครงสร้างพื้นฐานระดับมาตรฐาน" },
-      { cat: "CCTV & Security", desc: "ติดตั้งกล้องวงจรปิด 4K ภาพคมชัดระบุใบหน้าได้ชัดเจน ครอบคลุมพื้นที่สำคัญ" },
-      { cat: "Software & AI", desc: "พัฒนาระบบ Dashboard บริหารจัดการองค์กรแบบเรียลไทม์" },
-      { cat: "Team & Training", desc: "ทีมงานจัดเตรียมความพร้อมของอุปกรณ์ก่อนลุยงานติดตั้ง" },
-      
-      { cat: "On-site Work", desc: "เจาะผนังและร้อยท่อเก็บสายสัญญาณเน็ตเวิร์กอย่างประณีต มาตรฐานสูง" },
-      { cat: "Network & Fiber", desc: "ทดสอบและวัดสัญญาณสาย LAN ด้วยเครื่องมือมาตรฐานอุตสาหกรรมสากล" },
-      { cat: "CCTV & Security", desc: "ติดตั้งตู้ DVR/NVR สำหรับจัดเก็บข้อมูลกล้องวงจรปิดระดับองค์กร" },
-      { cat: "Software & AI", desc: "ติดตั้งระบบซอฟต์แวร์จัดการเซิร์ฟเวอร์กลางเพื่อการใช้งานที่เสถียร" },
-      { cat: "Team & Training", desc: "ร่วมวางแผนโซลูชันระบบหน้างานเพื่อแก้ปัญหาให้ตรงจุด" },
-
-      { cat: "On-site Work", desc: "ลงพื้นที่ไซต์งานติดตั้งท่อร้อยสายกล้องวงจรปิดแบบฝังฝ้า" },
-      { cat: "Network & Fiber", desc: "ติดตั้งระบบ Network Switch และ Router รองรับผู้ใช้งานจำนวนมาก" },
-      { cat: "CCTV & Security", desc: "งานติดตั้งระบบกล้องวงจรปิดโดม (Dome Camera) ภายในอาคารสำนักงาน" },
-      { cat: "Software & AI", desc: "เซ็ตอัประบบควบคุมอุปกรณ์ Network ผ่านซอฟต์แวร์ส่วนกลาง" },
-      { cat: "Team & Training", desc: "ความพร้อมของทีมช่างและวิศวกร มั่นใจในบริการที่เป็นมืออาชีพทุกขั้นตอน" },
-
-      { cat: "On-site Work", desc: "ตรวจสอบความเรียบร้อยของงานติดตั้งระบบสื่อสารหลังส่งมอบงาน" },
-      { cat: "Network & Fiber", desc: "งานเดินสายโครงสร้างพื้นฐาน (Structured Cabling) ภายในอาคาร" },
-      { cat: "CCTV & Security", desc: "ติดตั้งกล้องภายนอกอาคาร (Bullet Camera) กันน้ำมาตรฐาน IP67" },
-      { cat: "Software & AI", desc: "ตั้งค่าระบบรักษาความปลอดภัยเครือข่ายและระบบมอนิเตอร์ออนไลน์" },
-      { cat: "Team & Training", desc: "ตรวจสอบคุณภาพงานระหว่างทีมผู้ควบคุมงานและช่างเทคนิค" },
-
-      { cat: "On-site Work", desc: "การทำงานที่สูง ติดตั้งเสาสัญญาณพร้อมอุปกรณ์เซฟตี้มาตรฐานความปลอดภัย" },
-      { cat: "Network & Fiber", desc: "งานสไปซ์สายไฟเบอร์ออปติก (Fiber Optic Splicing) ลดการสูญเสียสัญญาณ" },
-      { cat: "CCTV & Security", desc: "ระบบรักษาความปลอดภัยแจ้งเตือน 24 ชั่วโมง ครอบคลุมพื้นที่เสี่ยง" },
-      { cat: "Software & AI", desc: "อัปเดตระบบปฏิบัติการเซิร์ฟเวอร์เพื่อให้รองรับการทำงานอัตโนมัติ" },
-      { cat: "Team & Training", desc: "ประชุมสรุปแผนงานรายวันก่อนเริ่มปฏิบัติการหน้างาน" },
-
-      { cat: "On-site Work", desc: "ติดตั้งระบบไฟและสายสัญญาณในจุดที่เข้าถึงยากด้วยความชำนาญ" },
-      { cat: "Network & Fiber", desc: "ติดตั้ง Access Point ระดับ Enterprise กระจายสัญญาณ Wi-Fi ทั่วพื้นที่" },
-      { cat: "CCTV & Security", desc: "จัดตั้งห้องศูนย์ควบคุม (Control Room) ตรวจสอบความปลอดภัยแบบรวมศูนย์" },
-      { cat: "Software & AI", desc: "เขียนโปรแกรมและตั้งค่าระบบ Network Controller สำหรับตึกสำนักงาน" },
-      { cat: "Team & Training", desc: "สอนการใช้งานอุปกรณ์และระบบให้เจ้าหน้าที่ของลูกค้าหลังจบงาน" },
-
-      { cat: "On-site Work", desc: "เดินท่อเหล็ก IMC ป้องกันสายสัญญาณอุตสาหกรรม ทนทานยาวนาน" },
-      { cat: "Network & Fiber", desc: "แก้ปัญหาเน็ตเวิร์กองค์กร จัดระเบียบสายสัญญาณในห้องเซิร์ฟเวอร์ใหม่ทั้งหมด" },
-      { cat: "CCTV & Security", desc: "ติดตั้งและปรับมุมกล้องวงจรปิดให้ครอบคลุมตามแปลนความปลอดภัย" },
-      { cat: "Software & AI", desc: "เชื่อมต่อฐานข้อมูลกล้องวงจรปิดเข้ากับเซิร์ฟเวอร์วิเคราะห์ภาพ" },
-      { cat: "Team & Training", desc: "ผลงานคุณภาพการติดตั้งและการบริการหลังการขายที่รวดเร็ว ตรงไปตรงมา" }
-    ];
-
-    const finalImages: GalleryImage[] = selectedUrls.map((baseUrl, idx) => {
-      // Map to the template, or fallback if we scrape more than the template size
-      const mapping = curatedMapping[idx] || curatedMapping[idx % curatedMapping.length];
+    // Generic fallback categories if an ID isn't in our exact match list
+    const fallbackCategories: CategoryType[] = ["CCTV & Security", "Network & Fiber", "On-site Work"];
+    
+    const finalImages: GalleryImage[] = entries.map(([idPrefix, fullUrl], idx) => {
+      const match = EXACT_MATCHES[idPrefix];
+      const cat = match ? match.cat : fallbackCategories[idx % fallbackCategories.length];
+      const desc = match ? match.desc : "ผลงานคุณภาพการออกแบบและติดตั้งระบบจากทีมช่างมืออาชีพ";
       
       return {
-        id: `photo_${idx}`,
-        url: `${baseUrl}=w800`,
+        id: `photo_${idx}_${idPrefix}`,
+        url: `${fullUrl}=w800`,
         width: 1200,
         height: 800,
-        category: mapping.cat,
-        description: mapping.desc,
+        category: cat,
+        description: desc,
       };
     });
 

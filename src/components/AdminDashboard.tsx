@@ -34,11 +34,11 @@ const systemStatuses: SystemStatus[] = [
 ];
 
 const galleryStats = [
-  { label: "CCTV & Security",   count: 12, icon: Camera,  color: "text-blue-400" },
-  { label: "Network & Fiber",   count: 12, icon: Network, color: "text-emerald-400" },
-  { label: "Software & AI",     count: 12, icon: Code,    color: "text-purple-400" },
-  { label: "On-site Work",      count: 12, icon: HardDrive, color: "text-orange-400" },
-  { label: "Team & Training",   count: 12, icon: Users,   color: "text-pink-400" },
+  { label: "CCTV & Security",   count: 6, icon: Camera,  color: "text-blue-400" },
+  { label: "Network & Fiber",   count: 10, icon: Network, color: "text-emerald-400" },
+  { label: "Software & AI",     count: 2, icon: Code,    color: "text-purple-400" },
+  { label: "On-site Work",      count: 8, icon: HardDrive, color: "text-orange-400" },
+  { label: "Team & Training",   count: 3, icon: Users,   color: "text-pink-400" },
 ];
 
 type Tab = "dashboard" | "quotation";
