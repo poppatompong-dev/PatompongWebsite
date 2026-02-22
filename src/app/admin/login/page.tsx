@@ -17,21 +17,15 @@ export default function AdminLogin() {
     setLoading(true);
 
     try {
-      const res = await fetch("/api/admin/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        setError(data.error || "Login failed");
-        return;
+      // For static export, we do a simple client-side check
+      // In a real production app without a backend, you'd use a service like Supabase/Firebase
+      if (username === "admin" && password === "patompong2026") {
+        document.cookie = "admin_session=true; path=/; max-age=86400";
+        router.push("/admin");
+        router.refresh();
+      } else {
+        setError("Invalid credentials");
       }
-
-      router.push("/admin");
-      router.refresh();
     } catch {
       setError("Connection error");
     } finally {

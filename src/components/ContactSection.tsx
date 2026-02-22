@@ -23,30 +23,20 @@ export default function ContactSection() {
     setIsSubmitting(true);
     setSubmitStatus({ type: null, message: "" });
 
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) throw new Error(data.error || "เกิดข้อผิดพลาด");
-
-      setSubmitStatus({ type: "success", message: data.message });
-      setFormData({
-        name: "",
-        phone: "",
-        lineId: "",
-        service: "ติดตั้งกล้องวงจรปิด (CCTV)",
-        message: "",
-      });
-    } catch (error: any) {
-      setSubmitStatus({ type: "error", message: error.message });
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Form is handled via mailto link for static export
+    const subject = encodeURIComponent(`ขอใบเสนอราคา: ${formData.service}`);
+    const body = encodeURIComponent(
+      `ชื่อ-นามสกุล: ${formData.name}\n` +
+      `เบอร์โทรศัพท์: ${formData.phone}\n` +
+      `LINE ID: ${formData.lineId || "-"}\n` +
+      `บริการที่สนใจ: ${formData.service}\n\n` +
+      `รายละเอียดเพิ่มเติม:\n${formData.message || "-"}`
+    );
+    
+    window.location.href = `mailto:lazialepoppy@gmail.com?subject=${subject}&body=${body}`;
+    
+    setIsSubmitting(false);
+    setSubmitStatus({ type: "success", message: "เปิดแอปพลิเคชันอีเมลของคุณแล้ว กรุณากดส่งอีเมล" });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
