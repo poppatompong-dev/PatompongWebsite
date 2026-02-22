@@ -44,17 +44,44 @@ async function _fetchAndClassify(): Promise<GalleryImage[]> {
     }
 
     const html = await response.text();
-    
-    // Extract base URLs using regex (Google Photos uses lh3.googleusercontent.com/pw/...)
-    const urlMatches = [...html.matchAll(/(https:\/\/lh3\.googleusercontent\.com\/pw\/[a-zA-Z0-9_-]+)/g)].map(m => m[1]);
-    const uniqueBaseUrls = [...new Set(urlMatches)];
+
+    // Google Photos embeds URLs inside JSON script tags with escaped slashes (\/),
+    // protocol-relative URLs (//lh3...), and sometimes only AF1Qip photo IDs.
+    // Strategy: normalize, then try three patterns in order of specificity.
+
+    // 1. Normalize JSON-escaped forward slashes so regex can match
+    const norm = html.replace(/\\\//g, "/");
+
+    const found = new Set<string>();
+
+    // Pattern A: full https URL with /pw/ prefix
+    for (const m of norm.matchAll(/https?:\/\/lh3\.googleusercontent\.com\/pw\/([a-zA-Z0-9_-]+)/g)) {
+      found.add(`https://lh3.googleusercontent.com/pw/${m[1]}`);
+    }
+
+    // Pattern B: protocol-relative URL //lh3...
+    if (found.size === 0) {
+      for (const m of norm.matchAll(/\/\/lh3\.googleusercontent\.com\/pw\/([a-zA-Z0-9_-]+)/g)) {
+        found.add(`https://lh3.googleusercontent.com/pw/${m[1]}`);
+      }
+    }
+
+    // Pattern C: bare AF1Qip photo IDs embedded in JSON arrays
+    if (found.size === 0) {
+      for (const m of norm.matchAll(/"(AF1Qip[a-zA-Z0-9_-]{20,})"/g)) {
+        found.add(`https://lh3.googleusercontent.com/pw/${m[1]}`);
+      }
+    }
+
+    const uniqueBaseUrls = [...found];
 
     if (uniqueBaseUrls.length === 0) {
-      console.log("No photos found in the public album.");
+      // Dump the first 800 chars of raw HTML to help diagnose future issues
+      console.warn("[gallery] No photos found. Raw HTML preview:", html.slice(0, 800));
       return getMockData();
     }
 
-    console.log(`Found ${uniqueBaseUrls.length} photos in public album. Processing...`);
+    console.log(`[gallery] Found ${uniqueBaseUrls.length} unique photo base URLs. Starting Gemini classification...`);
 
     // 2. Process images sequentially with delay to respect Gemini free-tier rate limits
     const classifiedImages: GalleryImage[] = [];
