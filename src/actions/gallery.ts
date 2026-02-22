@@ -19,38 +19,39 @@ export async function fetchAndClassifyPhotos(): Promise<GalleryImage[]> {
   }
 }
 
-// Map of exact Google Photos IDs (AF1Qip...) to their accurate category and description.
-// These were visually inspected and curated from the album.
-const EXACT_MATCHES: Record<string, { cat: CategoryType; desc: string }> = {
-  "AP1GczMSV7": { cat: "Network & Fiber", desc: "ติดตั้งและจัดสายตู้ Rack ภายในอาคารเรียนอย่างเป็นระเบียบ" },
-  "AP1GczO08t": { cat: "On-site Work", desc: "เดินสายเน็ตเวิร์กภายในช่องชาร์ป (Shaft) ระหว่างชั้นของตึกอาคาร" },
-  "AP1GczMRup": { cat: "Network & Fiber", desc: "วางระบบและเข้าหัวสาย LAN CAT6 บน Patch Panel มาตรฐาน" },
-  "AP1GczPrv6": { cat: "Network & Fiber", desc: "ตรวจสอบจุดพักสายสัญญาณไฟเบอร์ (Fiber Splice Enclosure)" },
-  "AP1GczPna8": { cat: "On-site Work", desc: "เจาะผนังและเก็บรายละเอียดงานเดินสายไฟเบอร์ออปติกภายนอกอาคาร" },
-  "AP1GczPJjI": { cat: "CCTV & Security", desc: "ติดตั้งกล้อง IP Camera บนผนังพร้อมปรับมุมมองให้ครอบคลุม" },
-  "AP1GczPZRM": { cat: "On-site Work", desc: "ทีมช่างเดินสายสัญญาณภายนอกอาคารผ่านเสาไฟฟ้าด้วยความชำนาญ" },
-  "AP1GczP9wR": { cat: "CCTV & Security", desc: "ติดตั้งกล้องวงจรปิดมุมสูง เพื่อสอดส่องความปลอดภัยทั่วบริเวณ" },
-  "AP1GczNJCX": { cat: "Network & Fiber", desc: "งานเข้าหัวสายไฟเบอร์ออปติก (Splicing) เพื่อสัญญาณที่เสถียรสุด" },
-  "AP1GczPKNS": { cat: "Network & Fiber", desc: "งานเดินท่อ IMC และร้อยสายเน็ตเวิร์กภายในโรงงานอุตสาหกรรม" },
-  "AP1GczPZQ-": { cat: "On-site Work", desc: "ติดตั้งและซ่อมแซมระบบสื่อสารบนพื้นที่สูงด้วยความปลอดภัย" },
-  "AP1GczPQov": { cat: "On-site Work", desc: "ลากสายและติดตั้งตู้พักสัญญาณกลางแจ้ง ทนทานต่อสภาพอากาศ" },
-  "AP1GczNmCK": { cat: "Network & Fiber", desc: "จัดระเบียบสาย LAN ในตู้เซิร์ฟเวอร์ ให้ง่ายต่อการซ่อมบำรุง" },
-  "AP1GczMCmj": { cat: "CCTV & Security", desc: "ทีมงานติดตั้งชุดกล้องโดม (Dome Camera) ในอาคารสำนักงาน" },
-  "AP1GczPkgh": { cat: "Network & Fiber", desc: "งานติดตั้ง Media Converter และแยกสายไฟเบอร์ตามจุดต่างๆ" },
-  "AP1GczOZR-": { cat: "Team & Training", desc: "ประชุมทีมวิศวกรเพื่อวางแผนระบบเครือข่ายก่อนเริ่มดำเนินการ" },
-  "AP1GczPhx5": { cat: "Software & AI", desc: "เซ็ตอัประบบควบคุม Network Switch ผ่านคอมพิวเตอร์หน้างาน" },
-  "AP1GczOu3Q": { cat: "Network & Fiber", desc: "ติดตั้งและคอนฟิกระบบ Access Point ภายในตึกเพื่อกระจาย Wi-Fi" },
-  "AP1GczPLfa": { cat: "CCTV & Security", desc: "อัปเกรดระบบเครื่องบันทึกภาพ (NVR) รองรับกล้องความละเอียด 4K" },
-  "AP1GczOaBC": { cat: "Network & Fiber", desc: "ทดสอบความเร็วอินเทอร์เน็ตหลังการติดตั้ง Fiber Optic สำเร็จ" },
-  "AP1GczOWTM": { cat: "On-site Work", desc: "ซ่อมแซมและบำรุงรักษาสายสัญญาณที่ชำรุดบริเวณเสาไฟ" },
-  "AP1GczOKc9": { cat: "Team & Training", desc: "ช่างเทคนิคเตรียมความพร้อมและตรวจสอบอุปกรณ์ก่อนออกไซต์งาน" },
-  "AP1GczPRRa": { cat: "On-site Work", desc: "งานเดินสายใต้ฝ้าเพดาน (Concealed Wiring) เก็บงานเรียบร้อย" },
-  "AP1GczONVb": { cat: "CCTV & Security", desc: "ติดตั้งกล้องกระสุน (Bullet Camera) สำหรับดูที่จอดรถภายนอก" },
-  "AP1GczOg-e": { cat: "Network & Fiber", desc: "เข้าหัวและมาร์คสาย LAN อย่างเป็นระบบ เพื่อป้องกันความสับสน" },
-  "AP1GczM9nF": { cat: "Software & AI", desc: "ตรวจสอบสเตตัสการทำงานของเซิร์ฟเวอร์ผ่านระบบ Monitoring" },
-  "AP1GczOaqY": { cat: "CCTV & Security", desc: "งานเช็ตระบบดูภาพกล้องวงจรปิดผ่านสมาร์ทโฟนและส่วนกลาง" },
-  "AP1GczNwfJ": { cat: "On-site Work", desc: "ติดตั้งตู้ Rack แขวนผนัง (Wall Mount) สำหรับอุปกรณ์เครือข่ายย่อย" },
-  "AP1GczMyFw": { cat: "Team & Training", desc: "ผลงานคุณภาพจากทีมช่างมืออาชีพที่พร้อมให้บริการลูกค้าเสมอ" },
+// Map of the top 30 carefully curated photos from the album.
+// Keys are the exact Google Photos IDs (AF1Qip...)
+const CURATED_PHOTOS: Record<string, { cat: CategoryType; desc: string }> = {
+  "AP1GczMRup": { cat: "On-site Work", desc: "ช่างขึ้นรถกระเช้าจัดระเบียบสายสื่อสารหน้าอาคาร" },
+  "AP1GczPJjI": { cat: "CCTV & Security", desc: "ติดตั้งกล้องวงจรปิดบนเสา พร้อมเก็บสายเข้ากล่องกันน้ำ" },
+  "AP1GczPZRM": { cat: "Team & Training", desc: "ทีมงานทดสอบระบบกล้องและอุปกรณ์ในห้องประชุม" },
+  "AP1GczP9wR": { cat: "Team & Training", desc: "ตั้งค่าอุปกรณ์บันทึกภาพและตรวจเช็คกล้องก่อนใช้งาน" },
+  "AP1GczNJCX": { cat: "Team & Training", desc: "ประชุมทีมและสาธิตการใช้งานระบบกล้องในห้องควบคุม" },
+  "AP1GczNmCK": { cat: "Network & Fiber", desc: "ติดตั้งอุปกรณ์รับสัญญาณไร้สายบนดาดฟ้าพร้อมเดินสาย" },
+  "AP1GczMCmj": { cat: "Network & Fiber", desc: "ช่างตั้งค่าตู้ควบคุมภายในอาคารด้วยโน้ตบุ๊ก" },
+  "AP1GczPkgh": { cat: "Network & Fiber", desc: "ตรวจสอบชุดอุปกรณ์สื่อสารบนดาดฟ้าและเตรียมเดินสาย" },
+  "AP1GczOZR-": { cat: "Network & Fiber", desc: "ติดตั้งเสาสัญญาณและอุปกรณ์สื่อสารบนจุดสูง" },
+  "AP1GczPhx5": { cat: "On-site Work", desc: "ทดสอบสัญญาณและเชื่อมต่ออุปกรณ์ภายนอกอาคาร" },
+  "AP1GczPLfa": { cat: "Network & Fiber", desc: "ตั้งค่าระบบรับสัญญาณพร้อมจัดการสายบนดาดฟ้า" },
+  "AP1GczOWTM": { cat: "Team & Training", desc: "ทีมงานเตรียมอุปกรณ์และทดสอบระบบในห้องปฏิบัติการ" },
+  "AP1GczOKc9": { cat: "Network & Fiber", desc: "ตรวจเช็คสวิตช์และอุปกรณ์เครือข่ายในตู้แร็ค" },
+  "AP1GczPRRa": { cat: "On-site Work", desc: "ช่างขึ้นบันไดติดตั้งและเดินสายบนเสาไฟ" },
+  "AP1GczONVb": { cat: "On-site Work", desc: "งานลงพื้นที่ใช้รถกระเช้าซ่อมบำรุงสายสื่อสาร" },
+  "AP1GczOaqY": { cat: "On-site Work", desc: "ทีมช่างจัดระเบียบสายสื่อสารบนเสาในย่านชุมชน" },
+  "AP1GczMyFw": { cat: "Network & Fiber", desc: "ทีมงานช่วยกันคลี่สายสื่อสารจากม้วนสายขนาดใหญ่" },
+  "AP1GczOCbw": { cat: "Network & Fiber", desc: "ใช้งานเครื่องฟิวชันสไปซ์สำหรับเชื่อมต่อไฟเบอร์ออปติก" },
+  "AP1GczMJ-a": { cat: "Network & Fiber", desc: "ติดตั้งตู้ควบคุมพร้อมเดินสายเข้ารางเก็บสายอย่างเรียบร้อย" },
+  "AP1GczOTZS": { cat: "Network & Fiber", desc: "ตรวจสอบและเข้าสายอุปกรณ์เครือข่ายในตู้เซิร์ฟเวอร์" },
+  "AP1GczOr1f": { cat: "CCTV & Security", desc: "ทดสอบภาพจากกล้องวงจรปิดผ่านจอมอนิเตอร์หน้างาน" },
+  "AP1GczPOOG": { cat: "CCTV & Security", desc: "หน้าจอควบคุม NVR แสดงภาพกล้องหลายจุดพร้อมกัน" },
+  "AP1GczPun6": { cat: "CCTV & Security", desc: "ติดตั้งและต่อสายกล้องวงจรปิดแบบ IP พร้อมจ่ายไฟ" },
+  "AP1GczORWq": { cat: "Team & Training", desc: "ประสานงานทีมช่างและแบ่งหน้าที่ในงานภาคสนาม" },
+  "AP1GczPT6W": { cat: "On-site Work", desc: "ช่างทำงานบนบันไดแก้ไขสายสื่อสารริมแม่น้ำ" },
+  "AP1GczMyQp": { cat: "On-site Work", desc: "ติดตั้งเสาและอุปกรณ์สื่อสารตลอดแนวทางเดิน" },
+  "AP1GczP4lC": { cat: "On-site Work", desc: "ลงพื้นที่ติดตั้งสายสื่อสารและอุปกรณ์บนเสา" },
+  "AP1GczONWv": { cat: "On-site Work", desc: "ปรับตำแหน่งโครงเหล็กและเดินสายระบบไฟบนเสาสูง" },
+  "AP1GczMjc8": { cat: "On-site Work", desc: "ติดตั้งกล่องควบคุมและตรวจเช็คสายบนเสาไฟ" },
+  "AP1GczNj6O": { cat: "CCTV & Security", desc: "ติดตั้งกล้องวงจรปิดเฝ้าระวังริมแม่น้ำ" },
 };
 
 async function _fetchAndCategorize(): Promise<GalleryImage[]> {
@@ -89,31 +90,25 @@ async function _fetchAndCategorize(): Promise<GalleryImage[]> {
       return [];
     }
 
-    // Curate the best 30 photos
-    const MAX_PHOTOS = 30;
-    const entries = [...found.entries()].slice(0, MAX_PHOTOS);
+    // Match the scraped URLs against our curated list of 30 best photos
+    const curatedImages: GalleryImage[] = [];
     
-    console.log(`[gallery] Scraped ${found.size} photos, processing newest ${entries.length}...`);
+    for (const [idPrefix, fullUrl] of found.entries()) {
+      if (CURATED_PHOTOS[idPrefix]) {
+        curatedImages.push({
+          id: `photo_${idPrefix}`,
+          url: `${fullUrl}=w800`,
+          width: 1200,
+          height: 800,
+          category: CURATED_PHOTOS[idPrefix].cat,
+          description: CURATED_PHOTOS[idPrefix].desc,
+        });
+      }
+    }
 
-    // Generic fallback categories if an ID isn't in our exact match list
-    const fallbackCategories: CategoryType[] = ["CCTV & Security", "Network & Fiber", "On-site Work"];
-    
-    const finalImages: GalleryImage[] = entries.map(([idPrefix, fullUrl], idx) => {
-      const match = EXACT_MATCHES[idPrefix];
-      const cat = match ? match.cat : fallbackCategories[idx % fallbackCategories.length];
-      const desc = match ? match.desc : "ผลงานคุณภาพการออกแบบและติดตั้งระบบจากทีมช่างมืออาชีพ";
-      
-      return {
-        id: `photo_${idx}_${idPrefix}`,
-        url: `${fullUrl}=w800`,
-        width: 1200,
-        height: 800,
-        category: cat,
-        description: desc,
-      };
-    });
+    console.log(`[gallery] Scraped ${found.size} photos, found ${curatedImages.length} curated matches.`);
+    return curatedImages;
 
-    return finalImages;
   } catch (error) {
     console.error("Failed to fetch and categorize photos:", error);
     return [];

@@ -147,9 +147,16 @@ export default function SmartGalleryClient({ initialPhotos }: Props) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[100] bg-ink-900/97 flex flex-col items-center justify-center p-4"
+            className="fixed inset-0 z-[100] bg-ink-900/80 backdrop-blur-md flex flex-col items-center justify-center p-4"
             onClick={() => setLightbox(null)}
           >
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.15),transparent_55%)]"
+            />
+
             {/* Close */}
             <button
               className="absolute top-5 right-5 p-2 text-cream-400 hover:text-white transition-colors z-10"
@@ -161,11 +168,11 @@ export default function SmartGalleryClient({ initialPhotos }: Props) {
 
             {/* Image */}
             <motion.div
-              initial={{ scale: 0.93, y: 20 }}
-              animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.93, y: 20 }}
-              transition={{ type: "spring", stiffness: 300, damping: 28 }}
-              className="relative w-full max-w-4xl max-h-[75vh] aspect-video"
+              initial={{ scale: 0.9, y: 30, rotateX: 6 }}
+              animate={{ scale: 1, y: 0, rotateX: 0 }}
+              exit={{ scale: 0.9, y: 30, rotateX: 6 }}
+              transition={{ type: "spring", stiffness: 260, damping: 26 }}
+              className="relative w-full max-w-5xl max-h-[72vh] aspect-video bg-ink-900/40 border border-white/10 shadow-[0_35px_80px_rgba(0,0,0,0.55)]"
               onClick={(e) => e.stopPropagation()}
             >
               <Image
@@ -183,20 +190,20 @@ export default function SmartGalleryClient({ initialPhotos }: Props) {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.12 }}
-              className="mt-5 flex flex-col items-center gap-2 text-center"
+              className="mt-6 flex flex-col items-center gap-2 text-center px-6"
               onClick={(e) => e.stopPropagation()}
             >
               <span className={`font-code text-xs px-3 py-1 border ${CATEGORY_COLORS[lightbox.category] ?? CATEGORY_COLORS["Uncategorized"]}`}>
                 {lightbox.category}
               </span>
               {lightbox.description && (
-                <p className="font-sans text-sm text-cream-300 max-w-lg">
+                <p className="font-sans text-sm text-cream-200 max-w-2xl">
                   {lightbox.description}
                 </p>
               )}
-              <p className="font-code text-[10px] text-ink-500 mt-1 tracking-wider">
-                คลิกพื้นที่ว่างเพื่อปิดรูปภาพ
-              </p>
+              <div className="mt-1 text-[10px] font-code text-ink-400 tracking-wider uppercase">
+                คลิกพื้นที่ว่างเพื่อปิดภาพ
+              </div>
             </motion.div>
           </motion.div>
         )}
