@@ -10,11 +10,13 @@ import EducationSection from "@/components/EducationSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import FloatingAction from "@/components/FloatingAction";
+import SideDotNav from "@/components/SideDotNav";
 
 export default function Home() {
   return (
     <>
       <Navbar />
+      <SideDotNav />
       <main>
         <HeroSection />
         <StatsBar />

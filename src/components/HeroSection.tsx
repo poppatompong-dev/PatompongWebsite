@@ -25,34 +25,55 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-40 w-full">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Text Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="lg:col-span-7"
-          >
+          <div className="lg:col-span-7">
+            {/* Trust badge */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 mb-6 px-4 py-2 border border-gold-500/30 bg-gold-500/10 rounded-full"
+              className="inline-flex items-center gap-2.5 mb-7 px-4 py-2 border border-gold-500/30 bg-gold-500/10"
             >
               <div className="w-2 h-2 rounded-full bg-gold-400 animate-pulse shadow-[0_0_8px_rgba(217,119,6,0.8)]" />
-              <span className="font-sans text-sm text-gold-400 font-medium tracking-wide">ทีมผู้เชี่ยวชาญและช่างไอทีมืออาชีพ (IT Solution Team)</span>
+              <span className="font-code text-xs text-gold-400 font-medium tracking-[0.12em] uppercase">ทีมผู้เชี่ยวชาญระบบไอที &nbsp;·&nbsp; IT Solution Team</span>
             </motion.div>
 
-            <h1 className="font-heading font-bold leading-[1.1] mb-8 text-cream-50">
-              <span className="block text-4xl sm:text-5xl lg:text-6xl mb-2">ยกระดับองค์กร</span>
-              <span className="block text-5xl sm:text-6xl lg:text-7xl text-gold-400 italic mb-2">ด้วยเทคโนโลยี</span>
-              <span className="block text-3xl sm:text-4xl lg:text-5xl text-cream-200/80">และทีมงานคุณภาพ</span>
+            {/* Main heading — word-by-word stagger */}
+            <h1 className="font-heading font-bold leading-[1.05] mb-8 text-cream-50">
+              <motion.span
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.35, duration: 0.6, ease: "easeOut" }}
+                className="block text-3xl sm:text-4xl lg:text-5xl text-cream-300/70 mb-1"
+              >
+                ทีมผู้เชี่ยวชาญรับออกแบบและติดตั้ง
+              </motion.span>
+              <motion.span
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" }}
+                className="block text-5xl sm:text-6xl lg:text-7xl text-gold-400 italic mb-1"
+              >
+                ระบบไอทีครบวงจร
+              </motion.span>
+              <motion.span
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.65, duration: 0.6, ease: "easeOut" }}
+                className="block text-2xl sm:text-3xl lg:text-4xl text-cream-200/80 font-medium"
+              >
+                CCTV &nbsp;&middot;&nbsp; Network &nbsp;&middot;&nbsp; Software
+              </motion.span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-ink-300 mb-10 max-w-xl leading-relaxed border-l-4 border-gold-500 pl-5 font-light">
-              <strong className="text-cream-100 font-medium">ทีมผู้เชี่ยวชาญรับออกแบบและติดตั้งระบบไอทีครบวงจร</strong>
-              <br />CCTV · Network · Software
-              <br className="hidden sm:block" />
-              ดูแลควบคุมงานโดยผู้เชี่ยวชาญที่มีประสบการณ์กว่า 13+ ปี
-            </p>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+              className="text-base sm:text-lg text-ink-300 mb-10 max-w-xl leading-relaxed border-l-4 border-gold-500 pl-5"
+            >
+              ดูแลควบคุมงานโดยผู้เชี่ยวชาญที่มีประสบการณ์กว่า <strong className="text-cream-100">13 ปี</strong>{" "}
+              จากองค์กรภาครัฐและเอกชน — ตรงไปตรงมา ไม่ทิ้งงาน
+            </motion.p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <motion.a
@@ -84,7 +105,7 @@ export default function HeroSection() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
           {/* Right side — Service cards on dark panel */}
           <motion.div
@@ -94,9 +115,9 @@ export default function HeroSection() {
             className="lg:col-span-5 space-y-4"
           >
             {[
-              { icon: Shield, label: "Smart CCTV & Network", desc: "ระบบกล้องวงจรปิดอัจฉริยะ พร้อม AI Detection มาตรฐานองค์กร", tag: "Most Popular" },
-              { icon: Network, label: "Enterprise Network", desc: "โครงสร้างเครือข่ายระดับองค์กร ลื่นไหล ปลอดภัยจากแฮกเกอร์", tag: "" },
-              { icon: Code, label: "Custom Software", desc: "พัฒนาระบบตามความต้องการ Python & Web Apps ครบวงจร", tag: "" },
+              { icon: Shield, label: "ระบบกล้องวงจรปิดอัจฉริยะ", sub: "Smart CCTV & Network", desc: "กล้อง 4K + AI แยกแยะคน-สัตว์-รถ มาตรฐานองค์กร", tag: "เป็นที่นิยมมาก" },
+              { icon: Network, label: "เครือข่ายระดับองค์กร", sub: "Enterprise Network", desc: "เน็ตลื่นไหล ใช้งานได้ทุกคนพร้อมกัน ปลอดภัยจากแฮกเกอร์", tag: "" },
+              { icon: Code, label: "ซอฟต์แวร์สั่งทำตามความต้องการ", sub: "Custom Software", desc: "Python · Google Apps Script · Web Apps ออกแบบให้ตรงจุดประสงค์", tag: "" },
             ].map((item, i) => (
               <motion.div
                 key={item.label}
@@ -114,7 +135,8 @@ export default function HeroSection() {
                   <item.icon className="w-5 h-5 text-gold-400" />
                 </div>
                 <div>
-                  <h3 className="font-heading font-semibold text-cream-100 mb-1 text-base">{item.label}</h3>
+                  <h3 className="font-heading font-semibold text-cream-100 mb-0.5 text-base">{item.label}</h3>
+                  {'sub' in item && <p className="font-code text-[10px] text-gold-500/70 tracking-wider uppercase mb-1">{(item as {sub: string}).sub}</p>}
                   <p className="text-sm text-ink-400 leading-relaxed">{item.desc}</p>
                 </div>
               </motion.div>

@@ -38,7 +38,7 @@ const itemVariants = {
 
 export default function WorkProcessSection() {
   return (
-    <section className="relative py-24 lg:py-32 bg-cream-100">
+    <section id="process" className="relative py-24 lg:py-32 bg-cream-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

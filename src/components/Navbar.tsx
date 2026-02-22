@@ -72,7 +72,7 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-0.5">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -93,6 +93,18 @@ export default function Navbar() {
                 )}
               </a>
             ))}
+
+            {/* CTA Button */}
+            <a
+              href="#contact"
+              className={`ml-3 px-4 py-2 text-sm font-semibold transition-all border ${
+                scrolled
+                  ? "bg-gold-500 text-white border-gold-500 hover:bg-gold-400 hover:border-gold-400"
+                  : "bg-gold-500/90 text-white border-gold-400 hover:bg-gold-400"
+              } shadow-[0_2px_8px_rgba(180,83,9,0.3)]`}
+            >
+              ขอใบเสนอราคา
+            </a>
           </div>
 
           {/* Mobile Toggle */}

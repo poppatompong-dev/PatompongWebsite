@@ -40,7 +40,7 @@ const reasons = [
 
 export default function CCTVDetailSection() {
   return (
-    <section className="relative py-24 lg:py-32 bg-ink-900 overflow-hidden">
+    <section id="why-us" className="relative py-24 lg:py-32 bg-ink-900 overflow-hidden">
       {/* Decorative side line */}
       <div className="absolute top-0 left-8 lg:left-16 w-px h-full bg-ink-700/60" />
 

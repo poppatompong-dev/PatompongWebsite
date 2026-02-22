@@ -22,16 +22,17 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="flex flex-wrap justify-center md:justify-center gap-6 text-sm text-ink-300">
-            <a href="#home" className="hover:text-gold-400 transition-colors">Home</a>
-            <a href="#services" className="hover:text-gold-400 transition-colors">Services</a>
-            <a href="#portfolio" className="hover:text-gold-400 transition-colors">Portfolio</a>
-            <a href="#contact" className="hover:text-gold-400 transition-colors">Contact</a>
+            <a href="#home" className="hover:text-gold-400 transition-colors">หน้าแรก</a>
+            <a href="#services" className="hover:text-gold-400 transition-colors">บริการ</a>
+            <a href="#portfolio" className="hover:text-gold-400 transition-colors">ผลงาน</a>
+            <a href="#experience" className="hover:text-gold-400 transition-colors">ประสบการณ์</a>
+            <a href="#contact" className="hover:text-gold-400 transition-colors">ติดต่อ</a>
           </div>
 
           {/* Copyright */}
           <div className="text-left md:text-right text-sm text-ink-400">
-            <p>&copy; {currentYear} Patompong</p>
-            <p className="font-code text-xs mt-1 text-ink-500">All rights reserved.</p>
+            <p>&copy; {currentYear} Patompong Tech Consultant</p>
+            <p className="font-code text-xs mt-1 text-ink-500">นครสวรรค์ &middot; All rights reserved.</p>
           </div>
         </div>
       </div>
