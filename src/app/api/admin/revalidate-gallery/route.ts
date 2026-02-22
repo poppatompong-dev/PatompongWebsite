@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    revalidateTag("gallery");
+    revalidateTag("gallery", "max");
 
     return NextResponse.json({ success: true, message: "Gallery cache cleared. Next page load will re-classify all photos with Gemini AI." });
   } catch (error) {
