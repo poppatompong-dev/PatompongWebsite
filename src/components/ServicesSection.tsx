@@ -20,8 +20,8 @@ const mainServices = [
     title: "ซอฟต์แวร์ระดับองค์กร",
     tagline: "Enterprise Software & Automation",
     description:
-      "พัฒนาโปรแกรมจัดการองค์กรด้วย Python & Google Apps Script ออกแบบระบบให้ตรงกับความต้องการจริง",
-    features: ["ระบบจัดการข้อมูล", "Google Workspace", "Web Application", "ระบบอัตโนมัติ"],
+      "พัฒนาโปรแกรมด้วย Python & Google Apps Script ผสาน Next.js และ AI Automation ลดงานซ้ำซ้อน เพิ่มประสิทธิภาพให้องค์กรทำงานฉลาดขึ้น",
+    features: ["Python & Google Apps Script", "AI Automation", "Web Application", "ระบบจัดการข้อมูลองค์กร"],
     highlight: false,
   },
 ];

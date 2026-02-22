@@ -117,7 +117,7 @@ export default function HeroSection() {
             {[
               { icon: Shield, label: "ระบบกล้องวงจรปิดอัจฉริยะ", sub: "Smart CCTV & Network", desc: "กล้อง 4K + AI แยกแยะคน-สัตว์-รถ มาตรฐานองค์กร", tag: "เป็นที่นิยมมาก" },
               { icon: Network, label: "เครือข่ายระดับองค์กร", sub: "Enterprise Network", desc: "เน็ตลื่นไหล ใช้งานได้ทุกคนพร้อมกัน ปลอดภัยจากแฮกเกอร์", tag: "" },
-              { icon: Code, label: "ซอฟต์แวร์สั่งทำตามความต้องการ", sub: "Custom Software", desc: "Python · Google Apps Script · Web Apps ออกแบบให้ตรงจุดประสงค์", tag: "" },
+              { icon: Code, label: "ซอฟต์แวร์สั่งทำตามความต้องการ", sub: "Custom Software & AI", desc: "Python · Google Apps Script · Next.js · AI Automation ลดงานซ้ำซ้อน ยกระดับองค์กร", tag: "" },
             ].map((item, i) => (
               <motion.div
                 key={item.label}
