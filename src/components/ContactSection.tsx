@@ -33,7 +33,7 @@ export default function ContactSection() {
       `รายละเอียดเพิ่มเติม:\n${formData.message || "-"}`
     );
     
-    window.location.href = `mailto:lazialepoppy@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:poppatompong@gmail.com?subject=${subject}&body=${body}`;
     
     setIsSubmitting(false);
     setSubmitStatus({ type: "success", message: "เปิดแอปพลิเคชันอีเมลของคุณแล้ว กรุณากดส่งอีเมล" });
