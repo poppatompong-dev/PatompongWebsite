@@ -10,14 +10,19 @@ export default async function SmartGallery() {
         {/* Section Header */}
         <div className="text-center mb-12">
           <span className="font-code text-xs text-gold-500 tracking-[0.15em] uppercase">
-            ผลงานของเรา (Smart Portfolio)
+            ผลงานจริง · จัดหมวดหมู่ด้วย AI (Smart Portfolio)
           </span>
           <h2 className="mt-3 font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-ink-800">
-            ผลงานทีมช่าง
+            ผลงานของทีมงาน
           </h2>
+          <h3 className="font-heading text-xl sm:text-2xl text-gold-500 italic mt-1">
+            CCTV · Network · Software · On-site
+          </h3>
           <div className="divider-gold mx-auto mt-4" />
-          <p className="mt-6 text-ink-400 text-lg max-w-2xl mx-auto">
-            ประมวลผลและจัดหมวดหมู่ภาพอัตโนมัติด้วย Gemini AI
+          <p className="mt-6 text-ink-400 text-base max-w-2xl mx-auto leading-relaxed">
+            ภาพผลงานจริงจากการลงพื้นที่ วิเคราะห์และจัดหมวดหมู่อัตโนมัติด้วย <strong className="text-ink-600">Gemini AI</strong>
+            <br className="hidden sm:block" />
+            พร้อมคำอธิบายภาษาไทยที่สื่อถึงความเชี่ยวชาญของทีม
           </p>
         </div>
 

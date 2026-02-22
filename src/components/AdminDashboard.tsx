@@ -34,9 +34,11 @@ const systemStatuses: SystemStatus[] = [
 ];
 
 const galleryStats = [
-  { label: "CCTV / Security", count: 0, icon: Camera, color: "text-red-400" },
-  { label: "Network / Infra", count: 0, icon: Network, color: "text-blue-400" },
-  { label: "Software / Dev", count: 0, icon: Code, color: "text-green-400" },
+  { label: "CCTV & Security",   count: 0, icon: Camera,  color: "text-blue-400" },
+  { label: "Network & Fiber",   count: 0, icon: Network, color: "text-emerald-400" },
+  { label: "Software & AI",     count: 0, icon: Code,    color: "text-purple-400" },
+  { label: "On-site Work",      count: 0, icon: HardDrive, color: "text-orange-400" },
+  { label: "Team & Training",   count: 0, icon: Users,   color: "text-pink-400" },
 ];
 
 type Tab = "dashboard" | "quotation";
@@ -82,7 +84,14 @@ export default function AdminDashboard() {
 
   async function handleRefreshGallery() {
     setRefreshing(true);
-    setTimeout(() => setRefreshing(false), 2000);
+    try {
+      const res = await fetch("/api/admin/revalidate-gallery", { method: "POST" });
+      if (!res.ok) throw new Error("Failed");
+    } catch {
+      // silent fail — cache will expire naturally
+    } finally {
+      setRefreshing(false);
+    }
   }
 
   const statusColor = {

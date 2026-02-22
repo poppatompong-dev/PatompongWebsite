@@ -3,7 +3,7 @@ export interface GalleryImage {
   url: string;
   width: number;
   height: number;
-  category: "Network/Infrastructure" | "CCTV/Security" | "Software/Development" | "Action" | "Uncategorized";
+  category: "CCTV & Security" | "Network & Fiber" | "Software & AI" | "On-site Work" | "Team & Training" | "Uncategorized";
   description?: string;
 }
 
