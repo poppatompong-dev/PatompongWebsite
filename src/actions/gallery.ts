@@ -94,7 +94,7 @@ async function _fetchAndClassify(): Promise<GalleryImage[]> {
       const baseUrl = uniqueBaseUrls[i];
       const id = `photo_${i}`;
       try {
-        const downloadUrl = `${baseUrl}=w1024-h1024`;
+        const downloadUrl = `${baseUrl}=w512-h512`;
         const displayUrl = `${baseUrl}=w800`;
         
         const { category, description } = await classifyImageWithGemini(downloadUrl);
@@ -152,7 +152,7 @@ async function classifyImageWithGemini(
       },
     };
 
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-8b" });
 
     const prompt = `You are an AI assistant for a Thai IT company portfolio website.
 Analyze this image carefully and respond with a JSON object (no markdown, no extra text) with two fields:
