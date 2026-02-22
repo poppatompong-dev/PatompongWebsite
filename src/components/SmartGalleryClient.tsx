@@ -59,7 +59,7 @@ export default function SmartGalleryClient({ initialPhotos }: Props) {
         <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-gold-500/30 bg-gold-500/8">
           <div className="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse" />
           <span className="font-code text-[11px] text-gold-400 tracking-widest uppercase">
-            Classified by Gemini AI · {initialPhotos.length} ภาพ
+            Curated Portfolio · {initialPhotos.length} ภาพ
           </span>
         </div>
       </div>
@@ -195,7 +195,7 @@ export default function SmartGalleryClient({ initialPhotos }: Props) {
                 </p>
               )}
               <p className="font-code text-[10px] text-ink-500 mt-1 tracking-wider">
-                วิเคราะห์โดย Gemini AI · คลิกพื้นที่ว่างเพื่อปิด
+                คลิกพื้นที่ว่างเพื่อปิดรูปภาพ
               </p>
             </motion.div>
           </motion.div>

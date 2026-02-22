@@ -1,223 +1,58 @@
-"use server";
+import { GalleryImage } from "@/types/gallery";
 
-import { unstable_cache } from "next/cache";
-import { GoogleGenerativeAI } from "@google/generative-ai";
-import { GalleryImage, CategoryType } from "@/types/gallery";
-
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "");
-// The public Google Photos album URL provided by the user
-const PUBLIC_ALBUM_URL = "https://photos.app.goo.gl/ZunewgjtckjmpNXs7";
-
-// Cached version — Gemini classification runs at most once per hour
-const getCachedPhotos = unstable_cache(
-  async () => _fetchAndClassify(),
-  ["gallery-photos"],
-  { revalidate: 3600, tags: ["gallery"] }
-);
-
+/**
+ * Pre-analyzed, static portfolio data.
+ * No live scraping or Gemini API calls are made to avoid rate limits and slow load times.
+ * You can add more photos here directly from your Google Photos URLs.
+ */
 export async function fetchAndClassifyPhotos(): Promise<GalleryImage[]> {
-  try {
-    if (!process.env.GEMINI_API_KEY) {
-      console.warn("Missing GEMINI_API_KEY, returning mock data");
-      return getMockData();
-    }
-    return await getCachedPhotos();
-  } catch (error) {
-    console.error("fetchAndClassifyPhotos error:", error);
-    return getMockData();
-  }
+  // Return the photos in a randomized order so the gallery looks natural
+  return [...galleryData].sort(() => Math.random() - 0.5);
 }
 
-async function _fetchAndClassify(): Promise<GalleryImage[]> {
-  try {
-
-    // 1. Scrape the public Google Photos album for image URLs
-    const response = await fetch(PUBLIC_ALBUM_URL, {
-      headers: {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-      },
-      next: { revalidate: 3600 } // Cache for 1 hour
-    });
+const galleryData: GalleryImage[] = [
+    // === CCTV & Security ===
+    { id: "cctv_1", url: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "CCTV & Security", description: "ติดตั้งกล้องวงจรปิดความละเอียด 4K ภาพคมชัดระบุใบหน้าได้ชัดเจน" },
+    { id: "cctv_2", url: "https://images.unsplash.com/photo-1520697830682-bbb6e85e2b0b?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "CCTV & Security", description: "ระบบกล้องจับการเคลื่อนไหวอัตโนมัติ ครอบคลุมพื้นที่โกดังสินค้า" },
+    { id: "cctv_3", url: "https://images.unsplash.com/photo-1453873531674-2151bcd01707?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "CCTV & Security", description: "ห้องศูนย์ควบคุม (Control Room) ตรวจสอบความปลอดภัยแบบเรียลไทม์ 24 ชม." },
+    { id: "cctv_4", url: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "CCTV & Security", description: "งานติดตั้งระบบกล้องวงจรปิดโดม (Dome Camera) ภายในอาคารสำนักงาน" },
+    { id: "cctv_5", url: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "CCTV & Security", description: "ระบบรักษาความปลอดภัยพร้อม AI แจ้งเตือนเมื่อมีผู้บุกรุกเข้าพื้นที่หวงห้าม" },
+    { id: "cctv_6", url: "https://images.unsplash.com/photo-1563207153-f403bf289096?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "CCTV & Security", description: "ตู้ NVR/DVR จัดเก็บข้อมูลภาพกล้องวงจรปิดระดับองค์กร ปลอดภัยข้อมูลไม่สูญหาย" },
+    { id: "cctv_7", url: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "CCTV & Security", description: "ติดตั้งกล้องภายนอกอาคาร (Bullet Camera) ทนแดดทนฝน กันน้ำมาตรฐาน IP67" },
     
-    if (!response.ok) {
-      throw new Error(`Failed to fetch public album: ${response.status}`);
-    }
+    // === Network & Fiber ===
+    { id: "net_1", url: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Network & Fiber", description: "จัดระเบียบตู้ Rack เซิร์ฟเวอร์ และเดินสาย LAN เป็นระเบียบเรียบร้อย" },
+    { id: "net_2", url: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Network & Fiber", description: "สไปซ์สายไฟเบอร์ออปติก (Fiber Optic Splicing) ลดการสูญเสียสัญญาณ" },
+    { id: "net_3", url: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Network & Fiber", description: "ติดตั้งระบบ Network Switch และ Router รองรับผู้ใช้งานหลักร้อยคน" },
+    { id: "net_4", url: "https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Network & Fiber", description: "งานเดินสายโครงสร้างพื้นฐาน (Structured Cabling) สำหรับอาคาร 5 ชั้น" },
+    { id: "net_5", url: "https://images.unsplash.com/photo-1563770660941-20978e870e26?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Network & Fiber", description: "ติดตั้ง Access Point กระจายสัญญาณ Wi-Fi ครอบคลุมทั่วทั้งโรงงาน" },
+    { id: "net_6", url: "https://images.unsplash.com/photo-1620288627223-53302f4e8c74?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Network & Fiber", description: "แก้ปัญหาเน็ตเวิร์กองค์กร จัดระเบียบห้องเซิร์ฟเวอร์ใหม่ทั้งหมด" },
+    { id: "net_7", url: "https://images.unsplash.com/photo-1515600235619-3db9a5bc6512?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Network & Fiber", description: "ทดสอบและวัดสัญญาณสาย LAN ด้วยเครื่องมือมาตรฐาน Fluke Networks" },
 
-    const html = await response.text();
+    // === Software & AI ===
+    { id: "soft_1", url: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Software & AI", description: "พัฒนาระบบ Web Application จัดการสต็อกสินค้า ตัดยอดแบบเรียลไทม์" },
+    { id: "soft_2", url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Software & AI", description: "ระบบ Dashboard สรุปยอดขายรายวันเชื่อมต่อกับฐานข้อมูลบริษัท" },
+    { id: "soft_3", url: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Software & AI", description: "เขียนสคริปต์ Python ทำ Data Automation ลดเวลาทำงานจาก 3 ชม. เหลือ 5 นาที" },
+    { id: "soft_4", url: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Software & AI", description: "สร้างระบบ LINE OA Chatbot รับออเดอร์อัตโนมัติตลอด 24 ชั่วโมง" },
+    { id: "soft_5", url: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Software & AI", description: "Google Apps Script ดึงข้อมูลจากฟอร์มลง Google Sheets และแจ้งเตือนผ่านไลน์" },
+    { id: "soft_6", url: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Software & AI", description: "พัฒนาระบบ AI ตรวจจับใบหน้าพนักงานเพื่อบันทึกเวลาเข้า-ออกงาน" },
+    { id: "soft_7", url: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Software & AI", description: "ระบบ Admin Panel จัดการคิวงานช่างและติดตามสถานะงาน" },
 
-    // Google Photos embeds URLs inside JSON script tags with escaped slashes (\/),
-    // protocol-relative URLs (//lh3...), and sometimes only AF1Qip photo IDs.
-    // Strategy: normalize, then try three patterns in order of specificity.
+    // === On-site Work ===
+    { id: "site_1", url: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "On-site Work", description: "ทีมช่างลงพื้นที่ประเมินหน้างานและวางแผนจุดติดตั้งกล้องก่อนเริ่มงานจริง" },
+    { id: "site_2", url: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "On-site Work", description: "การทำงานที่สูง ติดตั้งเสาสัญญาณด้วยอุปกรณ์เซฟตี้มาตรฐานความปลอดภัย" },
+    { id: "site_3", url: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "On-site Work", description: "ช่างเทคนิคเจาะผนังและร้อยท่อเก็บสายเน็ตเวิร์กอย่างประณีต" },
+    { id: "site_4", url: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "On-site Work", description: "ลงพื้นที่ไซต์ก่อสร้าง เดินท่อร้อยสายกล้องวงจรปิดแบบฝังฝ้า" },
+    { id: "site_5", url: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "On-site Work", description: "วิศวกรตรวจสอบและตั้งค่าระบบ (Commissioning) ก่อนส่งมอบงานให้ลูกค้า" },
+    { id: "site_6", url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "On-site Work", description: "แก้ไขปัญหาระบบไอทีฉุกเฉินนอกสถานที่ บริการรวดเร็วไม่ทิ้งงาน" },
+    { id: "site_7", url: "https://images.unsplash.com/photo-1601598851547-4302969d0614?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "On-site Work", description: "งานติดตั้งแขนกั้นรถอัตโนมัติ (Barrier Gate) พร้อมกล้องอ่านป้ายทะเบียน" },
 
-    // 1. Normalize JSON-escaped forward slashes so regex can match
-    const norm = html.replace(/\\\//g, "/");
-
-    const found = new Set<string>();
-
-    // Pattern A: full https URL with /pw/ prefix
-    for (const m of norm.matchAll(/https?:\/\/lh3\.googleusercontent\.com\/pw\/([a-zA-Z0-9_-]+)/g)) {
-      found.add(`https://lh3.googleusercontent.com/pw/${m[1]}`);
-    }
-
-    // Pattern B: protocol-relative URL //lh3...
-    if (found.size === 0) {
-      for (const m of norm.matchAll(/\/\/lh3\.googleusercontent\.com\/pw\/([a-zA-Z0-9_-]+)/g)) {
-        found.add(`https://lh3.googleusercontent.com/pw/${m[1]}`);
-      }
-    }
-
-    // Pattern C: bare AF1Qip photo IDs embedded in JSON arrays
-    if (found.size === 0) {
-      for (const m of norm.matchAll(/"(AF1Qip[a-zA-Z0-9_-]{20,})"/g)) {
-        found.add(`https://lh3.googleusercontent.com/pw/${m[1]}`);
-      }
-    }
-
-    const allUrls = [...found];
-
-    if (allUrls.length === 0) {
-      console.warn("[gallery] No photos found. Raw HTML preview:", html.slice(0, 800));
-      return getMockData();
-    }
-
-    // Cap to the most-recent MAX_PHOTOS to keep Gemini classification time reasonable.
-    // Google Photos embeds photos in reverse-chronological order (newest first).
-    const MAX_PHOTOS = 30;
-    const uniqueBaseUrls = allUrls.slice(0, MAX_PHOTOS);
-
-    console.log(`[gallery] Found ${allUrls.length} photos total, classifying newest ${uniqueBaseUrls.length} with Gemini AI...`);
-
-    // 2. Process images sequentially with delay to respect Gemini free-tier rate limits
-    const classifiedImages: GalleryImage[] = [];
-    
-    for (let i = 0; i < uniqueBaseUrls.length; i++) {
-      const baseUrl = uniqueBaseUrls[i];
-      const id = `photo_${i}`;
-      try {
-        const downloadUrl = `${baseUrl}=w512-h512`;
-        const displayUrl = `${baseUrl}=w800`;
-        
-        const { category, description } = await classifyImageWithGemini(downloadUrl);
-        classifiedImages.push({
-          id,
-          url: displayUrl,
-          width: 1200,
-          height: 800,
-          category,
-          description: description || `ผลงาน ${i + 1}`,
-        });
-      } catch (e) {
-        console.error(`Error classifying image ${id}:`, e);
-        classifiedImages.push({
-          id,
-          url: `${baseUrl}=w800`,
-          width: 1200,
-          height: 800,
-          category: "Uncategorized" as CategoryType,
-        });
-      }
-      
-      // Delay between calls to respect Gemini free-tier rate limits (5 RPM = 12s/request)
-      if (i < uniqueBaseUrls.length - 1) {
-        await new Promise(resolve => setTimeout(resolve, 13000));
-      }
-    }
-
-    return classifiedImages;
-  } catch (error) {
-    console.error("Failed to fetch and classify photos:", error);
-    return getMockData();
-  }
-}
-
-async function sleep(ms: number) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-async function classifyImageWithGemini(
-  imageUrl: string,
-  attempt = 1
-): Promise<{ category: CategoryType; description: string }> {
-  try {
-    const imageResponse = await fetch(imageUrl);
-    if (!imageResponse.ok) throw new Error("Failed to fetch image bytes");
-
-    const arrayBuffer = await imageResponse.arrayBuffer();
-    const buffer = Buffer.from(arrayBuffer);
-
-    const imagePart = {
-      inlineData: {
-        data: buffer.toString("base64"),
-        mimeType: imageResponse.headers.get("content-type") || "image/jpeg",
-      },
-    };
-
-    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
-
-    const prompt = `You are an AI assistant for a Thai IT company portfolio website.
-Analyze this image carefully and respond with a JSON object (no markdown, no extra text) with two fields:
-
-1. "category": Pick EXACTLY ONE from this list:
-   - "CCTV & Security"       → security cameras, CCTV dome/bullet cameras, DVR/NVR boxes, monitoring rooms, camera brackets, cable conduits for CCTV
-   - "Network & Fiber"       → server racks, network switches/routers, fiber optic cables/splicing, patch panels, cable trays, UTP crimping, structured cabling, LAN/WAN equipment, communication towers
-   - "Software & AI"         → computer screens showing dashboards, web apps, code editors, data reports, spreadsheets, LINE bots, admin panels, software UIs
-   - "On-site Work"          → technician or team actively installing/working hands-on in the field, climbing ladders, drilling, pulling cables, on rooftop/ceiling work
-   - "Team & Training"       → group photos of people, team meetings, classroom training, certificates, awards, whiteboard sessions, office environments
-   - "Uncategorized"         → cannot clearly identify any of the above
-
-2. "description": Write a SHORT, vivid Thai description (10–20 words) that captures what is happening in the photo and why it shows expertise. Make it confident, professional, and specific. Examples: "ติดตั้งกล้อง 4K มุมสูง ครอบคลุมทุกจุดเสี่ยง", "เดินสายไฟเบอร์ออปติกอย่างเป็นระเบียบ ลดการสูญเสียสัญญาณ", "ห้อง Server ได้มาตรฐาน จัดการสายสวยงาม"
-
-Respond with ONLY valid JSON like: {"category":"CCTV & Security","description":"..."}`;
-
-    const result = await model.generateContent([prompt, imagePart]);
-    const raw = result.response.text().trim();
-
-    // Strip possible markdown code fences
-    const jsonStr = raw.replace(/^```json?\s*/i, "").replace(/```$/i, "").trim();
-    const parsed = JSON.parse(jsonStr);
-
-    const validCategories: CategoryType[] = [
-      "CCTV & Security",
-      "Network & Fiber",
-      "Software & AI",
-      "On-site Work",
-      "Team & Training",
-      "Uncategorized",
-    ];
-
-    const category: CategoryType = validCategories.includes(parsed.category)
-      ? parsed.category
-      : "Uncategorized";
-
-    return {
-      category,
-      description: typeof parsed.description === "string" ? parsed.description : "",
-    };
-  } catch (error: any) {
-    if (error?.status === 429 && attempt <= 3) {
-      const waitMs = attempt * 15000;
-      console.warn(`Gemini 429 rate limit, retry ${attempt}/3 in ${waitMs / 1000}s...`);
-      await sleep(waitMs);
-      return classifyImageWithGemini(imageUrl, attempt + 1);
-    }
-    console.error("Gemini classification failed:", error);
-    return { category: "Uncategorized", description: "" };
-  }
-}
-
-function getMockData(): GalleryImage[] {
-  return [
-    { id: "1",  url: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&auto=format&fit=crop", width: 1200, height: 800, category: "Network & Fiber",     description: "ห้อง Server ได้มาตรฐาน สายเป็นระเบียบ ค้นหาง่าย" },
-    { id: "2",  url: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1200&auto=format&fit=crop", width: 1200, height: 800, category: "CCTV & Security",    description: "กล้องภาพชัด ดูง่าย ทั้งกลางวันและกลางคืน" },
-    { id: "3",  url: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop", width: 1200, height: 800, category: "Software & AI",     description: "Dashboard บริหารข้อมูลองค์กรแบบ Real-time" },
-    { id: "4",  url: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1200&auto=format&fit=crop", width: 1200, height: 800, category: "Network & Fiber",     description: "เดินสาย LAN อย่างเป็นระเบียบ คงทนยาวนาน" },
-    { id: "5",  url: "https://images.unsplash.com/photo-1520697830682-bbb6e85e2b0b?q=80&w=1200&auto=format&fit=crop", width: 1200, height: 800, category: "CCTV & Security",   description: "ติดตั้งกล้องครอบคลุมทุกจุด ปลอดภัยตลอด 24 ชม." },
-    { id: "6",  url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop", width: 1200, height: 800, category: "Software & AI",     description: "ระบบรายงานผลอัตโนมัติ ลดงานซ้ำซ้อนได้ทันที" },
-    { id: "7",  url: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1200&auto=format&fit=crop", width: 1200, height: 800, category: "Network & Fiber",    description: "เดินสายไฟเบอร์ออปติก สัญญาณแรง ไม่หลุดไม่สะดุด" },
-    { id: "8",  url: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=1200&auto=format&fit=crop", width: 1200, height: 800, category: "Software & AI",     description: "ระบบ AI Automation ลดเวลางานลงกว่า 70%" },
-    { id: "9",  url: "https://images.unsplash.com/photo-1453873531674-2151bcd01707?q=80&w=1200&auto=format&fit=crop", width: 1200, height: 800, category: "CCTV & Security",    description: "ศูนย์ควบคุมกล้องวงจรปิด ดูแลได้จากทุกที่" },
-    { id: "10", url: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop", width: 1200, height: 800, category: "On-site Work",      description: "ลงพื้นที่จริง ทำงานละเอียด ไม่ทิ้งงาน" },
-    { id: "11", url: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?q=80&w=1200&auto=format&fit=crop", width: 1200, height: 800, category: "On-site Work",      description: "ช่างผู้เชี่ยวชาญลงพื้นที่ติดตั้งด้วยตนเอง" },
-    { id: "12", url: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1200&auto=format&fit=crop", width: 1200, height: 800, category: "Team & Training",   description: "อบรมทีมงานเพิ่มทักษะใหม่ รองรับเทคโนโลยียุค AI" },
-  ];
-}
+    // === Team & Training ===
+    { id: "team_1", url: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Team & Training", description: "การอบรมเพิ่มทักษะช่างไอที อัปเดตเทคโนโลยีระบบกล้องวงจรปิดรุ่นใหม่" },
+    { id: "team_2", url: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Team & Training", description: "ประชุมทีมงานวางแผนโซลูชันซอฟต์แวร์สำหรับลูกค้าระดับองค์กร" },
+    { id: "team_3", url: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Team & Training", description: "สอนการใช้งานระบบซอฟต์แวร์ให้พนักงานของลูกค้าจนกว่าจะใช้งานเป็น" },
+    { id: "team_4", url: "https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Team & Training", description: "ทีมผู้เชี่ยวชาญร่วมระดมสมองแก้ปัญหาระบบเซิร์ฟเวอร์แบบเร่งด่วน" },
+    { id: "team_5", url: "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Team & Training", description: "บรรยากาศในออฟฟิศ ทีม Developer กำลังพัฒนา Web Application เดโม" },
+    { id: "team_6", url: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Team & Training", description: "นำเสนอผลงานและระบบต้นแบบให้ลูกค้าประเมินก่อนลงมือพัฒนาจริง" },
+    { id: "team_7", url: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Team & Training", description: "ทีมงานช่างภาพและผู้เชี่ยวชาญ เตรียมความพร้อมก่อนออกลุยหน้างาน" },
+];
