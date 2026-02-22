@@ -18,6 +18,7 @@ const nextConfig: NextConfig = {
       allowedOrigins: ["localhost:3000", "127.0.0.1:50198", "localhost:3001", "127.0.0.1:63426", "localhost:63426"],
     },
   },
+  allowedDevOrigins: ["127.0.0.1", "localhost"],
   reactCompiler: true,
   async headers() {
     const isDev = process.env.NODE_ENV === "development";
