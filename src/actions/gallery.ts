@@ -152,7 +152,7 @@ async function classifyImageWithGemini(
       },
     };
 
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     const prompt = `You are an AI assistant for a Thai IT company portfolio website.
 Analyze this image carefully and respond with a JSON object (no markdown, no extra text) with two fields:
