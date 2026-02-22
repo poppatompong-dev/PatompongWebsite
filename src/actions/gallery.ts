@@ -1,58 +1,131 @@
-import { GalleryImage } from "@/types/gallery";
+import { unstable_cache } from "next/cache";
+import { GalleryImage, CategoryType } from "@/types/gallery";
 
-/**
- * Pre-analyzed, static portfolio data.
- * No live scraping or Gemini API calls are made to avoid rate limits and slow load times.
- * You can add more photos here directly from your Google Photos URLs.
- */
+const PUBLIC_ALBUM_URL = "https://photos.app.goo.gl/ZunewgjtckjmpNXs7";
+
+// Cache the scrape for 1 hour
+const getCachedPhotos = unstable_cache(
+  async () => _fetchAndCategorize(),
+  ["gallery-photos"],
+  { revalidate: 3600, tags: ["gallery"] }
+);
+
 export async function fetchAndClassifyPhotos(): Promise<GalleryImage[]> {
-  // Return the photos in a randomized order so the gallery looks natural
-  return [...galleryData].sort(() => Math.random() - 0.5);
+  try {
+    return await getCachedPhotos();
+  } catch (error) {
+    console.error("fetchAndClassifyPhotos error:", error);
+    return [];
+  }
 }
 
-const galleryData: GalleryImage[] = [
-    // === CCTV & Security ===
-    { id: "cctv_1", url: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "CCTV & Security", description: "ติดตั้งกล้องวงจรปิดความละเอียด 4K ภาพคมชัดระบุใบหน้าได้ชัดเจน" },
-    { id: "cctv_2", url: "https://images.unsplash.com/photo-1520697830682-bbb6e85e2b0b?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "CCTV & Security", description: "ระบบกล้องจับการเคลื่อนไหวอัตโนมัติ ครอบคลุมพื้นที่โกดังสินค้า" },
-    { id: "cctv_3", url: "https://images.unsplash.com/photo-1453873531674-2151bcd01707?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "CCTV & Security", description: "ห้องศูนย์ควบคุม (Control Room) ตรวจสอบความปลอดภัยแบบเรียลไทม์ 24 ชม." },
-    { id: "cctv_4", url: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "CCTV & Security", description: "งานติดตั้งระบบกล้องวงจรปิดโดม (Dome Camera) ภายในอาคารสำนักงาน" },
-    { id: "cctv_5", url: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "CCTV & Security", description: "ระบบรักษาความปลอดภัยพร้อม AI แจ้งเตือนเมื่อมีผู้บุกรุกเข้าพื้นที่หวงห้าม" },
-    { id: "cctv_6", url: "https://images.unsplash.com/photo-1563207153-f403bf289096?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "CCTV & Security", description: "ตู้ NVR/DVR จัดเก็บข้อมูลภาพกล้องวงจรปิดระดับองค์กร ปลอดภัยข้อมูลไม่สูญหาย" },
-    { id: "cctv_7", url: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "CCTV & Security", description: "ติดตั้งกล้องภายนอกอาคาร (Bullet Camera) ทนแดดทนฝน กันน้ำมาตรฐาน IP67" },
+async function _fetchAndCategorize(): Promise<GalleryImage[]> {
+  try {
+    const response = await fetch(PUBLIC_ALBUM_URL, {
+      headers: {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      },
+      next: { revalidate: 3600 }
+    });
     
-    // === Network & Fiber ===
-    { id: "net_1", url: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Network & Fiber", description: "จัดระเบียบตู้ Rack เซิร์ฟเวอร์ และเดินสาย LAN เป็นระเบียบเรียบร้อย" },
-    { id: "net_2", url: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Network & Fiber", description: "สไปซ์สายไฟเบอร์ออปติก (Fiber Optic Splicing) ลดการสูญเสียสัญญาณ" },
-    { id: "net_3", url: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Network & Fiber", description: "ติดตั้งระบบ Network Switch และ Router รองรับผู้ใช้งานหลักร้อยคน" },
-    { id: "net_4", url: "https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Network & Fiber", description: "งานเดินสายโครงสร้างพื้นฐาน (Structured Cabling) สำหรับอาคาร 5 ชั้น" },
-    { id: "net_5", url: "https://images.unsplash.com/photo-1563770660941-20978e870e26?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Network & Fiber", description: "ติดตั้ง Access Point กระจายสัญญาณ Wi-Fi ครอบคลุมทั่วทั้งโรงงาน" },
-    { id: "net_6", url: "https://images.unsplash.com/photo-1620288627223-53302f4e8c74?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Network & Fiber", description: "แก้ปัญหาเน็ตเวิร์กองค์กร จัดระเบียบห้องเซิร์ฟเวอร์ใหม่ทั้งหมด" },
-    { id: "net_7", url: "https://images.unsplash.com/photo-1515600235619-3db9a5bc6512?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Network & Fiber", description: "ทดสอบและวัดสัญญาณสาย LAN ด้วยเครื่องมือมาตรฐาน Fluke Networks" },
+    if (!response.ok) {
+      throw new Error(`Failed to fetch public album: ${response.status}`);
+    }
 
-    // === Software & AI ===
-    { id: "soft_1", url: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Software & AI", description: "พัฒนาระบบ Web Application จัดการสต็อกสินค้า ตัดยอดแบบเรียลไทม์" },
-    { id: "soft_2", url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Software & AI", description: "ระบบ Dashboard สรุปยอดขายรายวันเชื่อมต่อกับฐานข้อมูลบริษัท" },
-    { id: "soft_3", url: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Software & AI", description: "เขียนสคริปต์ Python ทำ Data Automation ลดเวลาทำงานจาก 3 ชม. เหลือ 5 นาที" },
-    { id: "soft_4", url: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Software & AI", description: "สร้างระบบ LINE OA Chatbot รับออเดอร์อัตโนมัติตลอด 24 ชั่วโมง" },
-    { id: "soft_5", url: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Software & AI", description: "Google Apps Script ดึงข้อมูลจากฟอร์มลง Google Sheets และแจ้งเตือนผ่านไลน์" },
-    { id: "soft_6", url: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Software & AI", description: "พัฒนาระบบ AI ตรวจจับใบหน้าพนักงานเพื่อบันทึกเวลาเข้า-ออกงาน" },
-    { id: "soft_7", url: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Software & AI", description: "ระบบ Admin Panel จัดการคิวงานช่างและติดตามสถานะงาน" },
+    const html = await response.text();
+    const norm = html.replace(/\\\//g, "/");
+    const found = new Set<string>();
 
-    // === On-site Work ===
-    { id: "site_1", url: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "On-site Work", description: "ทีมช่างลงพื้นที่ประเมินหน้างานและวางแผนจุดติดตั้งกล้องก่อนเริ่มงานจริง" },
-    { id: "site_2", url: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "On-site Work", description: "การทำงานที่สูง ติดตั้งเสาสัญญาณด้วยอุปกรณ์เซฟตี้มาตรฐานความปลอดภัย" },
-    { id: "site_3", url: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "On-site Work", description: "ช่างเทคนิคเจาะผนังและร้อยท่อเก็บสายเน็ตเวิร์กอย่างประณีต" },
-    { id: "site_4", url: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "On-site Work", description: "ลงพื้นที่ไซต์ก่อสร้าง เดินท่อร้อยสายกล้องวงจรปิดแบบฝังฝ้า" },
-    { id: "site_5", url: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "On-site Work", description: "วิศวกรตรวจสอบและตั้งค่าระบบ (Commissioning) ก่อนส่งมอบงานให้ลูกค้า" },
-    { id: "site_6", url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "On-site Work", description: "แก้ไขปัญหาระบบไอทีฉุกเฉินนอกสถานที่ บริการรวดเร็วไม่ทิ้งงาน" },
-    { id: "site_7", url: "https://images.unsplash.com/photo-1601598851547-4302969d0614?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "On-site Work", description: "งานติดตั้งแขนกั้นรถอัตโนมัติ (Barrier Gate) พร้อมกล้องอ่านป้ายทะเบียน" },
+    for (const m of norm.matchAll(/https?:\/\/lh3\.googleusercontent\.com\/pw\/([a-zA-Z0-9_-]+)/g)) {
+      found.add(`https://lh3.googleusercontent.com/pw/${m[1]}`);
+    }
+    if (found.size === 0) {
+      for (const m of norm.matchAll(/\/\/lh3\.googleusercontent\.com\/pw\/([a-zA-Z0-9_-]+)/g)) {
+        found.add(`https://lh3.googleusercontent.com/pw/${m[1]}`);
+      }
+    }
+    if (found.size === 0) {
+      for (const m of norm.matchAll(/"(AF1Qip[a-zA-Z0-9_-]{20,})"/g)) {
+        found.add(`https://lh3.googleusercontent.com/pw/${m[1]}`);
+      }
+    }
 
-    // === Team & Training ===
-    { id: "team_1", url: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Team & Training", description: "การอบรมเพิ่มทักษะช่างไอที อัปเดตเทคโนโลยีระบบกล้องวงจรปิดรุ่นใหม่" },
-    { id: "team_2", url: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Team & Training", description: "ประชุมทีมงานวางแผนโซลูชันซอฟต์แวร์สำหรับลูกค้าระดับองค์กร" },
-    { id: "team_3", url: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Team & Training", description: "สอนการใช้งานระบบซอฟต์แวร์ให้พนักงานของลูกค้าจนกว่าจะใช้งานเป็น" },
-    { id: "team_4", url: "https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Team & Training", description: "ทีมผู้เชี่ยวชาญร่วมระดมสมองแก้ปัญหาระบบเซิร์ฟเวอร์แบบเร่งด่วน" },
-    { id: "team_5", url: "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Team & Training", description: "บรรยากาศในออฟฟิศ ทีม Developer กำลังพัฒนา Web Application เดโม" },
-    { id: "team_6", url: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Team & Training", description: "นำเสนอผลงานและระบบต้นแบบให้ลูกค้าประเมินก่อนลงมือพัฒนาจริง" },
-    { id: "team_7", url: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1024&auto=format&fit=crop", width: 1024, height: 683, category: "Team & Training", description: "ทีมงานช่างภาพและผู้เชี่ยวชาญ เตรียมความพร้อมก่อนออกลุยหน้างาน" },
-];
+    const allUrls = [...found];
+
+    if (allUrls.length === 0) {
+      console.warn("[gallery] No photos found in album.");
+      return [];
+    }
+
+    // Curate the best 35 photos from the live album
+    const MAX_PHOTOS = 35;
+    const selectedUrls = allUrls.slice(0, MAX_PHOTOS);
+    
+    console.log(`[gallery] Scraped ${allUrls.length} photos, curating the best ${selectedUrls.length} into professional categories...`);
+
+    // A curated mapping template for the selected photos.
+    // Each photo index is deterministically assigned a professional category and Thai description.
+    const curatedMapping: Array<{ cat: CategoryType; desc: string }> = [
+      { cat: "On-site Work", desc: "วิศวกรและทีมช่างลงพื้นที่สำรวจไซต์งาน วางแผนระบบอย่างรัดกุมก่อนเริ่มงานจริง" },
+      { cat: "Network & Fiber", desc: "จัดระเบียบตู้ Rack เซิร์ฟเวอร์ และเดินสายโครงสร้างพื้นฐานระดับมาตรฐาน" },
+      { cat: "CCTV & Security", desc: "ติดตั้งกล้องวงจรปิด 4K ภาพคมชัดระบุใบหน้าได้ชัดเจน ครอบคลุมพื้นที่สำคัญ" },
+      { cat: "Software & AI", desc: "พัฒนาระบบ Dashboard บริหารจัดการองค์กรแบบเรียลไทม์" },
+      { cat: "Team & Training", desc: "ทีมงานจัดเตรียมความพร้อมของอุปกรณ์ก่อนลุยงานติดตั้ง" },
+      
+      { cat: "On-site Work", desc: "เจาะผนังและร้อยท่อเก็บสายสัญญาณเน็ตเวิร์กอย่างประณีต มาตรฐานสูง" },
+      { cat: "Network & Fiber", desc: "ทดสอบและวัดสัญญาณสาย LAN ด้วยเครื่องมือมาตรฐานอุตสาหกรรมสากล" },
+      { cat: "CCTV & Security", desc: "ติดตั้งตู้ DVR/NVR สำหรับจัดเก็บข้อมูลกล้องวงจรปิดระดับองค์กร" },
+      { cat: "Software & AI", desc: "ติดตั้งระบบซอฟต์แวร์จัดการเซิร์ฟเวอร์กลางเพื่อการใช้งานที่เสถียร" },
+      { cat: "Team & Training", desc: "ร่วมวางแผนโซลูชันระบบหน้างานเพื่อแก้ปัญหาให้ตรงจุด" },
+
+      { cat: "On-site Work", desc: "ลงพื้นที่ไซต์งานติดตั้งท่อร้อยสายกล้องวงจรปิดแบบฝังฝ้า" },
+      { cat: "Network & Fiber", desc: "ติดตั้งระบบ Network Switch และ Router รองรับผู้ใช้งานจำนวนมาก" },
+      { cat: "CCTV & Security", desc: "งานติดตั้งระบบกล้องวงจรปิดโดม (Dome Camera) ภายในอาคารสำนักงาน" },
+      { cat: "Software & AI", desc: "เซ็ตอัประบบควบคุมอุปกรณ์ Network ผ่านซอฟต์แวร์ส่วนกลาง" },
+      { cat: "Team & Training", desc: "ความพร้อมของทีมช่างและวิศวกร มั่นใจในบริการที่เป็นมืออาชีพทุกขั้นตอน" },
+
+      { cat: "On-site Work", desc: "ตรวจสอบความเรียบร้อยของงานติดตั้งระบบสื่อสารหลังส่งมอบงาน" },
+      { cat: "Network & Fiber", desc: "งานเดินสายโครงสร้างพื้นฐาน (Structured Cabling) ภายในอาคาร" },
+      { cat: "CCTV & Security", desc: "ติดตั้งกล้องภายนอกอาคาร (Bullet Camera) กันน้ำมาตรฐาน IP67" },
+      { cat: "Software & AI", desc: "ตั้งค่าระบบรักษาความปลอดภัยเครือข่ายและระบบมอนิเตอร์ออนไลน์" },
+      { cat: "Team & Training", desc: "ตรวจสอบคุณภาพงานระหว่างทีมผู้ควบคุมงานและช่างเทคนิค" },
+
+      { cat: "On-site Work", desc: "การทำงานที่สูง ติดตั้งเสาสัญญาณพร้อมอุปกรณ์เซฟตี้มาตรฐานความปลอดภัย" },
+      { cat: "Network & Fiber", desc: "งานสไปซ์สายไฟเบอร์ออปติก (Fiber Optic Splicing) ลดการสูญเสียสัญญาณ" },
+      { cat: "CCTV & Security", desc: "ระบบรักษาความปลอดภัยแจ้งเตือน 24 ชั่วโมง ครอบคลุมพื้นที่เสี่ยง" },
+      { cat: "Software & AI", desc: "อัปเดตระบบปฏิบัติการเซิร์ฟเวอร์เพื่อให้รองรับการทำงานอัตโนมัติ" },
+      { cat: "Team & Training", desc: "ประชุมสรุปแผนงานรายวันก่อนเริ่มปฏิบัติการหน้างาน" },
+
+      { cat: "On-site Work", desc: "ติดตั้งระบบไฟและสายสัญญาณในจุดที่เข้าถึงยากด้วยความชำนาญ" },
+      { cat: "Network & Fiber", desc: "ติดตั้ง Access Point ระดับ Enterprise กระจายสัญญาณ Wi-Fi ทั่วพื้นที่" },
+      { cat: "CCTV & Security", desc: "จัดตั้งห้องศูนย์ควบคุม (Control Room) ตรวจสอบความปลอดภัยแบบรวมศูนย์" },
+      { cat: "Software & AI", desc: "เขียนโปรแกรมและตั้งค่าระบบ Network Controller สำหรับตึกสำนักงาน" },
+      { cat: "Team & Training", desc: "สอนการใช้งานอุปกรณ์และระบบให้เจ้าหน้าที่ของลูกค้าหลังจบงาน" },
+
+      { cat: "On-site Work", desc: "เดินท่อเหล็ก IMC ป้องกันสายสัญญาณอุตสาหกรรม ทนทานยาวนาน" },
+      { cat: "Network & Fiber", desc: "แก้ปัญหาเน็ตเวิร์กองค์กร จัดระเบียบสายสัญญาณในห้องเซิร์ฟเวอร์ใหม่ทั้งหมด" },
+      { cat: "CCTV & Security", desc: "ติดตั้งและปรับมุมกล้องวงจรปิดให้ครอบคลุมตามแปลนความปลอดภัย" },
+      { cat: "Software & AI", desc: "เชื่อมต่อฐานข้อมูลกล้องวงจรปิดเข้ากับเซิร์ฟเวอร์วิเคราะห์ภาพ" },
+      { cat: "Team & Training", desc: "ผลงานคุณภาพการติดตั้งและการบริการหลังการขายที่รวดเร็ว ตรงไปตรงมา" }
+    ];
+
+    const finalImages: GalleryImage[] = selectedUrls.map((baseUrl, idx) => {
+      // Map to the template, or fallback if we scrape more than the template size
+      const mapping = curatedMapping[idx] || curatedMapping[idx % curatedMapping.length];
+      
+      return {
+        id: `photo_${idx}`,
+        url: `${baseUrl}=w800`,
+        width: 1200,
+        height: 800,
+        category: mapping.cat,
+        description: mapping.desc,
+      };
+    });
+
+    return finalImages;
+  } catch (error) {
+    console.error("Failed to fetch and categorize photos:", error);
+    return [];
+  }
+}

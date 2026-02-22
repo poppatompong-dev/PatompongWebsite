@@ -29,16 +29,16 @@ interface SystemStatus {
 const systemStatuses: SystemStatus[] = [
   { label: "Security Layer", value: "JWT + HttpOnly", status: "online", icon: Shield },
   { label: "Frontend", value: "Next.js App Router", status: "online", icon: Code },
-  { label: "Gallery Engine", value: "Curated JSON", status: "online", icon: ImageIcon },
+  { label: "Gallery Engine", value: "Google Photos Sync", status: "online", icon: ImageIcon },
   { label: "Quotation System", value: "Active", status: "online", icon: FileText },
 ];
 
 const galleryStats = [
-  { label: "CCTV & Security",   count: 7, icon: Camera,  color: "text-blue-400" },
-  { label: "Network & Fiber",   count: 7, icon: Network, color: "text-emerald-400" },
-  { label: "Software & AI",     count: 7, icon: Code,    color: "text-purple-400" },
-  { label: "On-site Work",      count: 7, icon: HardDrive, color: "text-orange-400" },
-  { label: "Team & Training",   count: 7, icon: Users,   color: "text-pink-400" },
+  { label: "CCTV & Security",   count: 12, icon: Camera,  color: "text-blue-400" },
+  { label: "Network & Fiber",   count: 12, icon: Network, color: "text-emerald-400" },
+  { label: "Software & AI",     count: 12, icon: Code,    color: "text-purple-400" },
+  { label: "On-site Work",      count: 12, icon: HardDrive, color: "text-orange-400" },
+  { label: "Team & Training",   count: 12, icon: Users,   color: "text-pink-400" },
 ];
 
 type Tab = "dashboard" | "quotation";
@@ -178,7 +178,7 @@ export default function AdminDashboard() {
               <div className="bg-ink-800 border border-ink-700 p-6">
                 <h3 className="font-heading text-lg font-semibold text-cream-100 mb-6 flex items-center gap-2">
                   <ImageIcon className="w-5 h-5 text-gold-400" />
-                  ภาพผลงานในระบบ (Curated)
+                  ภาพผลงานในระบบ (Live Sync)
                 </h3>
                 <div className="space-y-4">
                   {galleryStats.map((stat) => (

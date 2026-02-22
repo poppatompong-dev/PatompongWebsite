@@ -20,7 +20,7 @@ export default async function SmartGallery() {
           </h3>
           <div className="divider-gold mx-auto mt-4" />
           <p className="mt-6 text-ink-400 text-base max-w-2xl mx-auto leading-relaxed">
-            รวมภาพผลงานจริงจากการลงพื้นที่ทำงานของทีมช่างและผู้เชี่ยวชาญ
+            รวมภาพผลงานอัปเดตล่าสุดจากการลงพื้นที่ทำงานของทีมช่างและผู้เชี่ยวชาญ
             <br className="hidden sm:block" />
             ผ่านประสบการณ์ตรงกว่า 13 ปี ในการออกแบบและติดตั้งระบบองค์กร
           </p>

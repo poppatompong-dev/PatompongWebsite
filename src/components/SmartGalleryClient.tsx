@@ -59,7 +59,7 @@ export default function SmartGalleryClient({ initialPhotos }: Props) {
         <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-gold-500/30 bg-gold-500/8">
           <div className="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse" />
           <span className="font-code text-[11px] text-gold-400 tracking-widest uppercase">
-            Curated Portfolio · {initialPhotos.length} ภาพ
+            Live Album Sync · {initialPhotos.length} ภาพ
           </span>
         </div>
       </div>
