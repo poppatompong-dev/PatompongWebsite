@@ -1,18 +1,25 @@
-import { NextResponse } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
 import { verifySession } from "@/lib/auth";
 import { cookies } from "next/headers";
 
 /**
  * Debug endpoint — fetches the Google Photos album HTML and returns
  * a diagnostic report: which URL patterns matched and a raw HTML excerpt.
- * Only accessible when logged in as admin.
+ * Accessible via admin cookie session OR ?key= query param (debug key from env).
  */
-export async function GET() {
+export async function GET(request: NextRequest) {
   try {
-    const cookieStore = await cookies();
-    const token = cookieStore.get("admin-session")?.value;
-    if (!token || !(await verifySession(token))) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    // Allow access via session cookie OR ?key= query param (for quick testing)
+    const debugKey = request.nextUrl.searchParams.get("key");
+    const envKey = process.env.DEBUG_KEY;
+    const validKey = envKey && debugKey === envKey;
+
+    if (!validKey) {
+      const cookieStore = await cookies();
+      const token = cookieStore.get("admin-session")?.value;
+      if (!token || !(await verifySession(token))) {
+        return NextResponse.json({ error: "Unauthorized. Add ?key=YOUR_DEBUG_KEY or log in as admin." }, { status: 401 });
+      }
     }
 
     const ALBUM_URL = "https://photos.app.goo.gl/ZunewgjtckjmpNXs7";
