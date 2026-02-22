@@ -73,15 +73,19 @@ async function _fetchAndClassify(): Promise<GalleryImage[]> {
       }
     }
 
-    const uniqueBaseUrls = [...found];
+    const allUrls = [...found];
 
-    if (uniqueBaseUrls.length === 0) {
-      // Dump the first 800 chars of raw HTML to help diagnose future issues
+    if (allUrls.length === 0) {
       console.warn("[gallery] No photos found. Raw HTML preview:", html.slice(0, 800));
       return getMockData();
     }
 
-    console.log(`[gallery] Found ${uniqueBaseUrls.length} unique photo base URLs. Starting Gemini classification...`);
+    // Cap to the most-recent MAX_PHOTOS to keep Gemini classification time reasonable.
+    // Google Photos embeds photos in reverse-chronological order (newest first).
+    const MAX_PHOTOS = 30;
+    const uniqueBaseUrls = allUrls.slice(0, MAX_PHOTOS);
+
+    console.log(`[gallery] Found ${allUrls.length} photos total, classifying newest ${uniqueBaseUrls.length} with Gemini AI...`);
 
     // 2. Process images sequentially with delay to respect Gemini free-tier rate limits
     const classifiedImages: GalleryImage[] = [];
