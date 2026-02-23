@@ -99,43 +99,57 @@ export default function SmartGalleryClient({ initialPhotos }: Props) {
       </p>
 
       {/* Grid */}
-      <motion.div layout className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+      <motion.div layout className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
         <AnimatePresence mode="popLayout">
-          {filtered.map((photo, idx) => (
-            <motion.div
-              key={photo.id}
-              layout
-              initial={{ opacity: 0, scale: 0.92 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.88 }}
-              transition={{ duration: 0.22, delay: idx < 12 ? idx * 0.03 : 0 }}
-              className="relative aspect-square overflow-hidden cursor-pointer group border border-cream-300 hover:border-gold-400 transition-colors"
-              onClick={() => setLightbox(photo)}
-            >
-              <Image
-                src={photo.url}
-                alt={photo.description || photo.category}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              />
+          {filtered.map((photo, idx) => {
+            // สุ่มความสูงของแต่ละรูปภาพเพื่อสร้างเอฟเฟกต์แบบ Masonry
+            // ในการใช้งานจริงอาจจะใช้ aspect ratio ของรูปภาพจริง
+            const heights = ["h-48", "h-64", "h-80", "h-96"];
+            const randomHeight = heights[idx % heights.length];
+            // ทำให้รูปที่ 1, 5, 9 ใหญ่กว่ารูปอื่น (Featured)
+            const isFeatured = idx % 5 === 0;
 
-              {/* Hover overlay with description */}
-              <div className="absolute inset-0 bg-gradient-to-t from-ink-900/85 via-ink-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 gap-1.5">
-                {photo.description && (
-                  <p className="font-sans text-xs text-cream-100 leading-snug line-clamp-2">
-                    {photo.description}
-                  </p>
-                )}
-                <div className="flex items-center justify-between">
-                  <span className={`font-code text-[9px] px-2 py-0.5 border ${CATEGORY_COLORS[photo.category] ?? CATEGORY_COLORS["Uncategorized"]}`}>
-                    {photo.category}
-                  </span>
-                  <Maximize2 className="w-3 h-3 text-cream-300/70" />
+            return (
+              <motion.div
+                key={photo.id}
+                layout
+                initial={{ opacity: 0, scale: 0.92, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.88, y: -20 }}
+                transition={{ duration: 0.4, delay: idx < 12 ? idx * 0.05 : 0, ease: [0.23, 1, 0.32, 1] }}
+                className={`relative overflow-hidden cursor-pointer group border border-cream-300 hover:border-gold-400 transition-all shadow-sm hover:shadow-xl rounded-lg break-inside-avoid ${isFeatured ? "aspect-square" : "aspect-[3/4]"}`}
+                onClick={() => setLightbox(photo)}
+              >
+                <Image
+                  src={photo.url}
+                  alt={photo.description || photo.category}
+                  fill
+                  className="object-cover group-hover:scale-110 group-hover:rotate-1 transition-all duration-700 ease-out"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                />
+
+                {/* Overlay Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-ink-900/90 via-ink-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                {/* Content Overlay */}
+                <div className="absolute inset-0 p-4 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className={`font-code text-[10px] px-2.5 py-1 rounded-full border backdrop-blur-md ${CATEGORY_COLORS[photo.category] ?? CATEGORY_COLORS["Uncategorized"]}`}>
+                      {photo.category}
+                    </span>
+                    <div className="bg-white/20 backdrop-blur-md p-1.5 rounded-full">
+                      <Maximize2 className="w-3.5 h-3.5 text-white" />
+                    </div>
+                  </div>
+                  {photo.description && (
+                    <p className="font-sans text-sm text-white leading-relaxed line-clamp-3 drop-shadow-md">
+                      {photo.description}
+                    </p>
+                  )}
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </AnimatePresence>
       </motion.div>
 

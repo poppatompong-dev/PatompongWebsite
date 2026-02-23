@@ -20,12 +20,10 @@ export default function Home() {
       <main>
         <HeroSection />
         <StatsBar />
+        <SmartGallery />
         <ServicesSection />
         <WorkProcessSection />
         <CCTVDetailSection />
-        <SmartGallery />
-        <TimelineSection />
-        <EducationSection />
         <ContactSection />
       </main>
       <Footer />

@@ -18,6 +18,7 @@ import {
   FileText,
 } from "lucide-react";
 import QuotationManager from "@/components/admin/QuotationManager";
+import GalleryManager from "@/components/admin/GalleryManager";
 
 interface SystemStatus {
   label: string;
@@ -29,19 +30,19 @@ interface SystemStatus {
 const systemStatuses: SystemStatus[] = [
   { label: "Security Layer", value: "JWT + HttpOnly", status: "online", icon: Shield },
   { label: "Frontend", value: "Next.js App Router", status: "online", icon: Code },
-  { label: "Gallery Engine", value: "Google Photos Sync", status: "online", icon: ImageIcon },
+  { label: "Gallery Engine", value: "Cloudinary/Google", status: "online", icon: ImageIcon },
   { label: "Quotation System", value: "Active", status: "online", icon: FileText },
 ];
 
 const galleryStats = [
-  { label: "CCTV & Security",   count: 6, icon: Camera,  color: "text-blue-400" },
-  { label: "Network & Fiber",   count: 10, icon: Network, color: "text-emerald-400" },
-  { label: "Software & AI",     count: 2, icon: Code,    color: "text-purple-400" },
-  { label: "On-site Work",      count: 8, icon: HardDrive, color: "text-orange-400" },
-  { label: "Team & Training",   count: 3, icon: Users,   color: "text-pink-400" },
+  { label: "CCTV & Security",   count: 120, icon: Camera,  color: "text-blue-400" },
+  { label: "Network & Fiber",   count: 85, icon: Network, color: "text-emerald-400" },
+  { label: "Software & AI",     count: 12, icon: Code,    color: "text-purple-400" },
+  { label: "On-site Work",      count: 45, icon: HardDrive, color: "text-orange-400" },
+  { label: "Team & Training",   count: 28, icon: Users,   color: "text-pink-400" },
 ];
 
-type Tab = "dashboard" | "quotation";
+type Tab = "dashboard" | "quotation" | "gallery";
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<Tab>("dashboard");
@@ -128,6 +129,17 @@ export default function AdminDashboard() {
               <FileText className="w-3.5 h-3.5" />
               ใบเสนอราคา
             </button>
+            <button
+              onClick={() => setActiveTab("gallery")}
+              className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-code transition-colors border-b-2 ${
+                activeTab === "gallery"
+                  ? "border-gold-400 text-gold-400"
+                  : "border-transparent text-ink-400 hover:text-ink-200"
+              }`}
+            >
+              <ImageIcon className="w-3.5 h-3.5" />
+              จัดการรูปภาพ
+            </button>
           </nav>
         </div>
 
@@ -145,7 +157,8 @@ export default function AdminDashboard() {
 
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
         {activeTab === "quotation" && <QuotationManager />}
-        {activeTab !== "quotation" && (
+        {activeTab === "gallery" && <GalleryManager />}
+        {activeTab === "dashboard" && (
           <>
             {/* System Status Panel */}
             <section>

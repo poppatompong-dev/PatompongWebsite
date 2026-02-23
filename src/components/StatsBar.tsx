@@ -5,8 +5,8 @@ import { motion, useInView } from "framer-motion";
 
 const stats = [
   { end: 13, suffix: "+", label: "ปีประสบการณ์", sub: "Years of Experience" },
-  { end: 200, suffix: "+", label: "โปรเจกต์สำเร็จ", sub: "Projects Completed" },
-  { end: 50, suffix: "+", label: "ลูกค้าองค์กร", sub: "Enterprise Clients" },
+  { end: 50, suffix: "+", label: "โปรเจกต์สำเร็จ", sub: "Projects Completed" },
+  { end: 15, suffix: "+", label: "ลูกค้าองค์กร", sub: "Enterprise Clients" },
   { end: 100, suffix: "%", label: "ลูกค้าพึงพอใจ", sub: "Client Satisfaction" },
 ];
 

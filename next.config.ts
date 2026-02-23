@@ -4,7 +4,6 @@ const isProd = process.env.NODE_ENV === "production";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const nextConfig: NextConfig = {
-  output: "export",
   basePath: basePath,
   assetPrefix: basePath ? `${basePath}/` : "",
   images: {
@@ -17,6 +16,10 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "lh3.googleusercontent.com",
+      },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
       }
     ],
   },
@@ -34,8 +37,8 @@ const nextConfig: NextConfig = {
       "script-src 'self' 'unsafe-inline' 'unsafe-eval'", // unsafe-eval needed for Next.js dev HMR
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
-      "img-src 'self' data: blob: https://lh3.googleusercontent.com https://images.unsplash.com",
-      "connect-src 'self' https://notify-api.line.me https://api.resend.com",
+      "img-src 'self' data: blob: https://lh3.googleusercontent.com https://images.unsplash.com https://res.cloudinary.com",
+      "connect-src 'self' https://notify-api.line.me https://api.resend.com https://photos.app.goo.gl",
       "frame-src 'none'",
       "object-src 'none'",
       "base-uri 'self'",
