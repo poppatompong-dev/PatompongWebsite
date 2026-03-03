@@ -19,6 +19,8 @@ import {
 } from "lucide-react";
 import QuotationManager from "@/components/admin/QuotationManager";
 import GalleryManager from "@/components/admin/GalleryManager";
+import PortfolioManager from "@/components/admin/PortfolioManager";
+import TimelineManager from "@/components/admin/TimelineManager";
 
 interface SystemStatus {
   label: string;
@@ -35,14 +37,14 @@ const systemStatuses: SystemStatus[] = [
 ];
 
 const galleryStats = [
-  { label: "CCTV & Security",   count: 120, icon: Camera,  color: "text-blue-400" },
-  { label: "Network & Fiber",   count: 85, icon: Network, color: "text-emerald-400" },
-  { label: "Software & AI",     count: 12, icon: Code,    color: "text-purple-400" },
-  { label: "On-site Work",      count: 45, icon: HardDrive, color: "text-orange-400" },
-  { label: "Team & Training",   count: 28, icon: Users,   color: "text-pink-400" },
+  { label: "CCTV & Security", count: 120, icon: Camera, color: "text-blue-400" },
+  { label: "Network & Fiber", count: 85, icon: Network, color: "text-emerald-400" },
+  { label: "Software & AI", count: 12, icon: Code, color: "text-purple-400" },
+  { label: "On-site Work", count: 45, icon: HardDrive, color: "text-orange-400" },
+  { label: "Team & Training", count: 28, icon: Users, color: "text-pink-400" },
 ];
 
-type Tab = "dashboard" | "quotation" | "gallery";
+type Tab = "dashboard" | "quotation" | "gallery" | "portfolio" | "timeline";
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<Tab>("dashboard");
@@ -109,36 +111,53 @@ export default function AdminDashboard() {
           <nav className="hidden sm:flex items-center gap-1 ml-4">
             <button
               onClick={() => setActiveTab("dashboard")}
-              className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-code transition-colors border-b-2 ${
-                activeTab === "dashboard"
-                  ? "border-gold-400 text-gold-400"
-                  : "border-transparent text-ink-400 hover:text-ink-200"
-              }`}
+              className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-code transition-colors border-b-2 ${activeTab === "dashboard"
+                ? "border-gold-400 text-gold-400"
+                : "border-transparent text-ink-400 hover:text-ink-200"
+                }`}
             >
               <Activity className="w-3.5 h-3.5" />
               Dashboard
             </button>
             <button
               onClick={() => setActiveTab("quotation")}
-              className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-code transition-colors border-b-2 ${
-                activeTab === "quotation"
-                  ? "border-gold-400 text-gold-400"
-                  : "border-transparent text-ink-400 hover:text-ink-200"
-              }`}
+              className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-code transition-colors border-b-2 ${activeTab === "quotation"
+                ? "border-gold-400 text-gold-400"
+                : "border-transparent text-ink-400 hover:text-ink-200"
+                }`}
             >
               <FileText className="w-3.5 h-3.5" />
               ใบเสนอราคา
             </button>
             <button
               onClick={() => setActiveTab("gallery")}
-              className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-code transition-colors border-b-2 ${
-                activeTab === "gallery"
-                  ? "border-gold-400 text-gold-400"
-                  : "border-transparent text-ink-400 hover:text-ink-200"
-              }`}
+              className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-code transition-colors border-b-2 ${activeTab === "gallery"
+                ? "border-gold-400 text-gold-400"
+                : "border-transparent text-ink-400 hover:text-ink-200"
+                }`}
             >
               <ImageIcon className="w-3.5 h-3.5" />
               จัดการรูปภาพ
+            </button>
+            <button
+              onClick={() => setActiveTab("portfolio")}
+              className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-code transition-colors border-b-2 ${activeTab === "portfolio"
+                ? "border-gold-400 text-gold-400"
+                : "border-transparent text-ink-400 hover:text-ink-200"
+                }`}
+            >
+              <Code className="w-3.5 h-3.5" />
+              ผลงาน/ระบบ
+            </button>
+            <button
+              onClick={() => setActiveTab("timeline")}
+              className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-code transition-colors border-b-2 ${activeTab === "timeline"
+                ? "border-gold-400 text-gold-400"
+                : "border-transparent text-ink-400 hover:text-ink-200"
+                }`}
+            >
+              <Activity className="w-3.5 h-3.5" />
+              ไทม์ไลน์
             </button>
           </nav>
         </div>
@@ -158,6 +177,8 @@ export default function AdminDashboard() {
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
         {activeTab === "quotation" && <QuotationManager />}
         {activeTab === "gallery" && <GalleryManager />}
+        {activeTab === "portfolio" && <PortfolioManager />}
+        {activeTab === "timeline" && <TimelineManager />}
         {activeTab === "dashboard" && (
           <>
             {/* System Status Panel */}

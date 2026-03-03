@@ -6,7 +6,7 @@ import WorkProcessSection from "@/components/WorkProcessSection";
 import CCTVDetailSection from "@/components/CCTVDetailSection";
 import SmartGallery from "@/components/SmartGallery";
 import TimelineSection from "@/components/TimelineSection";
-import EducationSection from "@/components/EducationSection";
+import PortfolioSection from "@/components/PortfolioSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import FloatingAction from "@/components/FloatingAction";
@@ -21,8 +21,10 @@ export default function Home() {
         <HeroSection />
         <StatsBar />
         <SmartGallery />
+        <PortfolioSection />
         <ServicesSection />
         <WorkProcessSection />
+        <TimelineSection />
         <CCTVDetailSection />
         <ContactSection />
       </main>

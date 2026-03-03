@@ -11,10 +11,35 @@ datasource db {
 }
 
 model GalleryPhoto {
-  id          String   @id // Google Photos ID
+  id          String   @id @default(cuid())
+  url         String   // Direct image URL (e.g., Cloudinary, Unsplash, or local)
   category    String   @default("Uncategorized")
   description String?
-  isHidden    Boolean  @default(true)
+  isHidden    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model PortfolioProject {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  url         String?  // Link to the project
+  imageUrl    String?  // Thumbnail link
+  tags        String?  // Comma separated tags (e.g., Next.js, API)
+  isFeatured  Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model TimelineEvent {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  date        DateTime // Date of the event/training
+  category    String   // e.g., "Training", "Development", "Event"
+  imageUrl    String?  // Optional photo from event
+  location    String?  // Where it happened
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
