@@ -31,7 +31,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className="text-left md:text-right text-sm text-ink-400">
-            <p>&copy; {currentYear} Patompong Tech Consultant</p>
+            <p><a href="/admin/login" className="cursor-default" title="Admin Login">&copy;</a> {currentYear} Patompong Tech Consultant</p>
             <p className="font-code text-xs mt-1 text-ink-500">นครสวรรค์ &middot; All rights reserved.</p>
           </div>
         </div>

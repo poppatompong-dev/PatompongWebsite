@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Lock, User, AlertCircle, Terminal } from "lucide-react";
 
+import { loginAction } from "./actions";
+
 export default function AdminLogin() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -17,14 +19,17 @@ export default function AdminLogin() {
     setLoading(true);
 
     try {
-      // For static export, we do a simple client-side check
-      // In a real production app without a backend, you'd use a service like Supabase/Firebase
-      if (username === "admin" && password === "patompong2026") {
-        document.cookie = "admin_session=true; path=/; max-age=86400";
+      const formData = new FormData();
+      formData.append("username", username);
+      formData.append("password", password);
+
+      const result = await loginAction(formData);
+
+      if (result.error) {
+        setError(result.error);
+      } else if (result.success) {
         router.push("/admin");
         router.refresh();
-      } else {
-        setError("Invalid credentials");
       }
     } catch {
       setError("Connection error");
