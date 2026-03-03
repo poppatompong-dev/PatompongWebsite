@@ -34,7 +34,9 @@ const nextConfig: NextConfig = {
     const isDev = process.env.NODE_ENV === "development";
     const csp = [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval'", // unsafe-eval needed for Next.js dev HMR
+      isDev
+        ? "script-src 'self' 'unsafe-inline' 'unsafe-eval'" // HMR requires eval in dev
+        : "script-src 'self' 'unsafe-inline'", // Production: no eval
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
       "img-src 'self' data: blob: https://lh3.googleusercontent.com https://images.unsplash.com https://res.cloudinary.com",
@@ -43,7 +45,7 @@ const nextConfig: NextConfig = {
       "object-src 'none'",
       "base-uri 'self'",
       "form-action 'self'",
-      "upgrade-insecure-requests",
+      ...(!isDev ? ["upgrade-insecure-requests"] : []),
     ].join("; ");
 
     return [

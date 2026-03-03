@@ -27,6 +27,7 @@ import QuotationManager from "@/components/admin/QuotationManager";
 import GalleryManager from "@/components/admin/GalleryManager";
 import PortfolioManager from "@/components/admin/PortfolioManager";
 import TimelineManager from "@/components/admin/TimelineManager";
+import ReportGenerator from "@/components/admin/ReportGenerator";
 import {
   getPortfolioProjects,
   getTimelineEvents,
@@ -48,7 +49,7 @@ const systemStatuses: SystemStatus[] = [
   { label: "3D Effects", value: "Three.js Particles", status: "online", icon: Globe },
 ];
 
-type Tab = "dashboard" | "quotation" | "gallery" | "portfolio" | "timeline";
+type Tab = "dashboard" | "quotation" | "gallery" | "portfolio" | "timeline" | "report";
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<Tab>("dashboard");
@@ -151,6 +152,7 @@ export default function AdminDashboard() {
               { id: "gallery" as Tab, label: "รูปภาพ (Claude)", icon: ImageIcon },
               { id: "portfolio" as Tab, label: "ผลงาน/ระบบ", icon: Code },
               { id: "timeline" as Tab, label: "ไทม์ไลน์", icon: Calendar },
+              { id: "report" as Tab, label: "รายงาน", icon: TrendingUp },
             ]).map(tab => (
               <button
                 key={tab.id}
@@ -184,6 +186,7 @@ export default function AdminDashboard() {
         {activeTab === "gallery" && <GalleryManager />}
         {activeTab === "portfolio" && <PortfolioManager />}
         {activeTab === "timeline" && <TimelineManager />}
+        {activeTab === "report" && <ReportGenerator />}
         {activeTab === "dashboard" && (
           <>
             {/* Live Stats Cards */}
