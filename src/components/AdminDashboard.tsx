@@ -32,7 +32,7 @@ interface SystemStatus {
 const systemStatuses: SystemStatus[] = [
   { label: "Security Layer", value: "JWT + HttpOnly", status: "online", icon: Shield },
   { label: "Frontend", value: "Next.js App Router", status: "online", icon: Code },
-  { label: "Gallery Engine", value: "Cloudinary/Google", status: "online", icon: ImageIcon },
+  { label: "Gallery Engine", value: "Claude Processing", status: "warning", icon: ImageIcon },
   { label: "Quotation System", value: "Active", status: "online", icon: FileText },
 ];
 
@@ -137,7 +137,7 @@ export default function AdminDashboard() {
                 }`}
             >
               <ImageIcon className="w-3.5 h-3.5" />
-              จัดการรูปภาพ
+              จัดการรูปภาพ (Claude)
             </button>
             <button
               onClick={() => setActiveTab("portfolio")}

@@ -21,25 +21,42 @@ model GalleryPhoto {
 }
 
 model PortfolioProject {
-  id          String   @id @default(cuid())
+  id          String       @id @default(cuid())
   title       String
   description String?
-  url         String?  // Link to the project
-  imageUrl    String?  // Thumbnail link
-  tags        String?  // Comma separated tags (e.g., Next.js, API)
-  isFeatured  Boolean  @default(false)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  url         String?      // Link to the project
+  imageUrl    String?      // Thumbnail link
+  tags        String?      // Comma separated tags (e.g., Next.js, API)
+  isFeatured  Boolean      @default(false)
+  shareSlug   String?      @unique // Public sharing URL slug
+  attachments Attachment[]
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
 }
 
 model TimelineEvent {
-  id          String   @id @default(cuid())
+  id          String       @id @default(cuid())
   title       String
   description String?
-  date        DateTime // Date of the event/training
-  category    String   // e.g., "Training", "Development", "Event"
-  imageUrl    String?  // Optional photo from event
-  location    String?  // Where it happened
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  date        DateTime     // Date of the event/training
+  category    String       // e.g., "Training", "Development", "Event"
+  imageUrl    String?      // Optional photo from event
+  location    String?      // Where it happened
+  shareSlug   String?      @unique // Public sharing URL slug
+  attachments Attachment[]
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+}
+
+model Attachment {
+  id          String            @id @default(cuid())
+  filename    String
+  url         String            // URL of the file (Cloudinary / external)
+  fileType    String            // image, document, video
+  fileSize    Int?              // File size in bytes
+  portfolioId String?
+  timelineId  String?
+  portfolio   PortfolioProject? @relation(fields: [portfolioId], references: [id], onDelete: Cascade)
+  timeline    TimelineEvent?    @relation(fields: [timelineId], references: [id], onDelete: Cascade)
+  createdAt   DateTime          @default(now())
 }
