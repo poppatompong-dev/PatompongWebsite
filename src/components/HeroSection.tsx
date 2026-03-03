@@ -14,16 +14,16 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-0 opacity-20 lg:opacity-30 mix-blend-luminosity pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-r from-ink-900 via-ink-900/90 to-transparent z-10" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink-900 via-transparent to-ink-900/50 z-10" />
-        <motion.div 
+        <motion.div
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 2, ease: "easeOut" }}
           className="w-full h-full relative"
         >
-          <Image 
-            src="https://lh3.googleusercontent.com/pw/AP1GczMRup=w1200" 
-            alt="Background" 
-            fill 
+          <Image
+            src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&auto=format&fit=crop"
+            alt="Background"
+            fill
             className="object-cover object-center"
             priority
           />
@@ -139,10 +139,10 @@ export default function HeroSection() {
           >
             {/* Visual Image Showcase Floating behind cards */}
             <div className="absolute -right-10 -top-20 w-64 h-64 rounded-lg overflow-hidden border-4 border-ink-800 shadow-2xl opacity-40 lg:opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500 hover:z-20 hover:scale-105 z-0 hidden md:block">
-               <Image src="https://lh3.googleusercontent.com/pw/AP1GczPJjI=w600" alt="CCTV Installation" fill className="object-cover" />
+              <Image src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=600&auto=format&fit=crop" alt="CCTV Installation" fill className="object-cover" />
             </div>
             <div className="absolute -left-10 -bottom-10 w-48 h-48 rounded-lg overflow-hidden border-4 border-ink-800 shadow-2xl opacity-40 lg:opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500 hover:z-20 hover:scale-105 z-0 hidden md:block">
-               <Image src="https://lh3.googleusercontent.com/pw/AP1GczMCmj=w600" alt="Network Setup" fill className="object-cover" />
+              <Image src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=600&auto=format&fit=crop" alt="Network Setup" fill className="object-cover" />
             </div>
 
             <div className="relative z-10 space-y-4">
@@ -168,7 +168,7 @@ export default function HeroSection() {
                   </div>
                   <div>
                     <h3 className="font-heading font-semibold text-cream-50 mb-0.5 text-base group-hover:text-gold-300 transition-colors">{item.label}</h3>
-                    {'sub' in item && <p className="font-code text-[10px] text-gold-500/80 tracking-wider uppercase mb-1">{(item as {sub: string}).sub}</p>}
+                    {'sub' in item && <p className="font-code text-[10px] text-gold-500/80 tracking-wider uppercase mb-1">{(item as { sub: string }).sub}</p>}
                     <p className="text-sm text-cream-200/70 leading-relaxed">{item.desc}</p>
                   </div>
                 </motion.div>

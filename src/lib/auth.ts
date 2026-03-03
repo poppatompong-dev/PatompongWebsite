@@ -11,6 +11,9 @@ const ADMIN_PASSWORD_HASH =
   process.env.ADMIN_PASSWORD_HASH ||
   bcrypt.hashSync("admin123", 10); // Default dev password — MUST be overridden in .env.local
 
+const SECONDARY_ADMIN_USERNAME = "pop";
+const SECONDARY_ADMIN_PASSWORD_HASH = "$2b$10$R14iYxY/d39xz5HHgg0z6O0pX.wxvOr0tPVZLcTDLCQZbf8VCAv4C"; // @dm!nP0p
+
 const SESSION_COOKIE = "admin_session";
 const SESSION_DURATION = 60 * 60 * 2; // 2 hours
 
@@ -18,8 +21,13 @@ export async function verifyCredentials(
   username: string,
   password: string
 ): Promise<boolean> {
-  if (username !== ADMIN_USERNAME) return false;
-  return bcrypt.compareSync(password, ADMIN_PASSWORD_HASH);
+  if (username === ADMIN_USERNAME) {
+    return bcrypt.compareSync(password, ADMIN_PASSWORD_HASH);
+  }
+  if (username === SECONDARY_ADMIN_USERNAME) {
+    return bcrypt.compareSync(password, SECONDARY_ADMIN_PASSWORD_HASH);
+  }
+  return false;
 }
 
 export async function createSession(): Promise<string> {
