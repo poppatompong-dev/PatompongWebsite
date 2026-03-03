@@ -3,8 +3,9 @@
 import { motion } from "framer-motion";
 import { Phone, MessageCircle, ChevronDown, Shield, Network, Code, CheckCircle } from "lucide-react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 
-import Network3D from "./Network3D";
+const Network3D = dynamic(() => import("./Network3D"), { ssr: false });
 
 export default function HeroSection() {
   return (
