@@ -52,7 +52,7 @@ export default async function PortfolioSection() {
 
                                 {project.tags && (
                                     <div className="flex flex-wrap gap-2 mb-6 mt-auto">
-                                        {project.tags.split(",").map(tag => (
+                                        {project.tags.split(",").map((tag: string) => (
                                             <span key={tag} className="text-[10px] font-code px-2 py-0.5 border border-ink-600 text-gold-400 rounded-sm uppercase tracking-wider bg-ink-900/50">
                                                 {tag.trim()}
                                             </span>
