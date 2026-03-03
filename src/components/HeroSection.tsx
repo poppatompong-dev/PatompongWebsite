@@ -20,13 +20,7 @@ export default function HeroSection() {
           transition={{ duration: 2, ease: "easeOut" }}
           className="w-full h-full relative"
         >
-          <Image
-            src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&auto=format&fit=crop"
-            alt="Background"
-            fill
-            className="object-cover object-center"
-            priority
-          />
+          {/* Background image removed per user request */}
         </motion.div>
       </div>
 
@@ -137,13 +131,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.35, ease: "easeOut" }}
             className="lg:col-span-5 space-y-4 relative"
           >
-            {/* Visual Image Showcase Floating behind cards */}
-            <div className="absolute -right-10 -top-20 w-64 h-64 rounded-lg overflow-hidden border-4 border-ink-800 shadow-2xl opacity-40 lg:opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500 hover:z-20 hover:scale-105 z-0 hidden md:block">
-              <Image src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=600&auto=format&fit=crop" alt="CCTV Installation" fill className="object-cover" />
-            </div>
-            <div className="absolute -left-10 -bottom-10 w-48 h-48 rounded-lg overflow-hidden border-4 border-ink-800 shadow-2xl opacity-40 lg:opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500 hover:z-20 hover:scale-105 z-0 hidden md:block">
-              <Image src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=600&auto=format&fit=crop" alt="Network Setup" fill className="object-cover" />
-            </div>
+            {/* Visual Image Showcase Floating behind cards - REMOVED */}
 
             <div className="relative z-10 space-y-4">
               {[
