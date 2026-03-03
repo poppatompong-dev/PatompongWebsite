@@ -13,6 +13,7 @@ export async function getSavedPhotos() {
 
 export async function savePhotoMetadata(data: {
   id: string;
+  url: string;
   category: string;
   description?: string;
   isHidden: boolean;
@@ -21,18 +22,20 @@ export async function savePhotoMetadata(data: {
     const photo = await prisma.galleryPhoto.upsert({
       where: { id: data.id },
       update: {
+        url: data.url,
         category: data.category,
         description: data.description,
         isHidden: data.isHidden,
       },
       create: {
         id: data.id,
+        url: data.url,
         category: data.category,
         description: data.description,
         isHidden: data.isHidden,
       },
     });
-    
+
     return { success: true, photo };
   } catch (error) {
     console.error("Error saving photo metadata:", error);

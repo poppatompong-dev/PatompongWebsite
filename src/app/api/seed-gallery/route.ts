@@ -48,12 +48,14 @@ export async function POST() {
       await prisma.galleryPhoto.upsert({
         where: { id },
         update: {
+          url: "", // Placeholder URL for curated metadata
           category: data.cat,
           description: data.desc,
           isHidden: false,
         },
         create: {
           id,
+          url: "", // Placeholder URL for curated metadata
           category: data.cat,
           description: data.desc,
           isHidden: false,

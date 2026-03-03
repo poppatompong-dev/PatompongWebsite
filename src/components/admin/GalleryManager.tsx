@@ -39,7 +39,7 @@ export default function GalleryManager() {
     try {
       // 1. Fetch raw photos from Google
       const rawPhotos = await getAllRawPhotos();
-      
+
       // 2. Fetch saved metadata from SQLite DB
       const savedMetadata = await getSavedPhotos();
       const metadataMap = new Map(savedMetadata.map(p => [p.id, p]));
@@ -64,7 +64,7 @@ export default function GalleryManager() {
           isSaved: false
         };
       });
-      
+
       setPhotos(mergedPhotos);
     } catch (err) {
       console.error("Failed to load photos", err);
@@ -78,7 +78,7 @@ export default function GalleryManager() {
     try {
       // Optistic update
       setPhotos(prev => prev.map(p => p.id === id ? { ...p, isHidden: !currentIsHidden } : p));
-      
+
       const result = await togglePhotoVisibility(id, !currentIsHidden);
       if (!result.success) {
         // Revert on failure
@@ -92,11 +92,12 @@ export default function GalleryManager() {
 
   const handleSaveEdit = async () => {
     if (!editingPhoto) return;
-    
+
     setSavingId(editingPhoto.id);
     try {
       const result = await savePhotoMetadata({
         id: editingPhoto.id,
+        url: editingPhoto.url,
         category: editForm.category,
         description: editForm.description,
         isHidden: editForm.isHidden
@@ -139,7 +140,7 @@ export default function GalleryManager() {
           </p>
         </div>
         <div className="flex gap-2">
-          <button 
+          <button
             onClick={() => window.location.reload()}
             className="flex items-center gap-2 px-4 py-2 border border-ink-600 text-ink-300 font-code text-sm hover:text-gold-400 transition-colors"
           >
@@ -171,11 +172,10 @@ export default function GalleryManager() {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-3 py-1.5 text-xs font-code whitespace-nowrap transition-colors border ${
-                activeCategory === cat
+              className={`px-3 py-1.5 text-xs font-code whitespace-nowrap transition-colors border ${activeCategory === cat
                   ? "bg-gold-500/20 text-gold-400 border-gold-500/50"
                   : "bg-ink-900 text-ink-400 border-ink-700 hover:border-ink-500"
-              }`}
+                }`}
             >
               {cat === "all" ? "ทั้งหมด" : cat}
             </button>
@@ -191,7 +191,7 @@ export default function GalleryManager() {
             Google Photos Live Sync {photos.length > 0 && `(ดึงมาได้ทั้งหมด ${photos.length} รูป)`}
           </h4>
           <p className="font-sans text-xs text-blue-200/70 mt-1 max-w-4xl">
-            ระบบดึงรูปทั้งหมดจากอัลบั้มมาแสดงแล้ว เพื่อให้เว็บโหลดเร็วที่สุด โปรดเลือกเฉพาะภาพที่ดีที่สุด (Curated) และตั้งค่าหมวดหมู่ 
+            ระบบดึงรูปทั้งหมดจากอัลบั้มมาแสดงแล้ว เพื่อให้เว็บโหลดเร็วที่สุด โปรดเลือกเฉพาะภาพที่ดีที่สุด (Curated) และตั้งค่าหมวดหมู่
             ส่วนภาพที่ไม่ได้เลือกจะถูกซ่อนไว้โดยอัตโนมัติ
           </p>
         </div>
@@ -215,10 +215,10 @@ export default function GalleryManager() {
                   className={`object-cover transition-transform duration-500 group-hover:scale-105 ${photo.isHidden ? 'opacity-40 grayscale' : ''}`}
                   sizes="(max-width: 768px) 50vw, 25vw"
                 />
-                
+
                 {/* Overlay Actions */}
                 <div className="absolute inset-0 bg-ink-900/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
-                  <button 
+                  <button
                     onClick={() => {
                       setEditingPhoto(photo);
                       setEditForm({
@@ -231,21 +231,19 @@ export default function GalleryManager() {
                   >
                     ตั้งค่าหมวดหมู่
                   </button>
-                  <button 
+                  <button
                     onClick={() => handleToggleVisibility(photo.id, photo.isHidden || false)}
                     disabled={savingId === photo.id}
-                    className={`px-3 py-1.5 text-xs font-bold font-code border backdrop-blur-sm transition-colors ${
-                      savingId === photo.id ? "opacity-50 cursor-not-allowed" : ""
-                    } ${
-                      photo.isHidden 
-                      ? "bg-green-500/20 text-green-400 border-green-500/50 hover:bg-green-500 hover:text-white" 
-                      : "bg-red-500/20 text-red-400 border-red-500/50 hover:bg-red-500 hover:text-white"
-                    }`}
+                    className={`px-3 py-1.5 text-xs font-bold font-code border backdrop-blur-sm transition-colors ${savingId === photo.id ? "opacity-50 cursor-not-allowed" : ""
+                      } ${photo.isHidden
+                        ? "bg-green-500/20 text-green-400 border-green-500/50 hover:bg-green-500 hover:text-white"
+                        : "bg-red-500/20 text-red-400 border-red-500/50 hover:bg-red-500 hover:text-white"
+                      }`}
                   >
                     {savingId === photo.id ? "กำลังบันทึก..." : (photo.isHidden ? "นำกลับมาแสดง" : "ซ่อน")}
                   </button>
                 </div>
-                
+
                 {/* Status Badge */}
                 <div className="absolute top-2 right-2 z-10 pointer-events-none">
                   {photo.isHidden ? (
@@ -259,7 +257,7 @@ export default function GalleryManager() {
                   )}
                 </div>
               </div>
-              
+
               <div className="p-3 flex-1 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-2 mb-2">
@@ -280,7 +278,7 @@ export default function GalleryManager() {
           ))}
         </div>
       )}
-      
+
       {/* Pagination Placeholder */}
       {!loading && filteredPhotos.length > 48 && (
         <div className="flex flex-col items-center gap-4 pt-6 pb-12">
@@ -304,7 +302,7 @@ export default function GalleryManager() {
                 className="object-contain p-4"
               />
             </div>
-            
+
             {/* Form */}
             <div className="w-full md:w-1/2 p-6 flex flex-col gap-6">
               <div className="flex justify-between items-start">
@@ -312,7 +310,7 @@ export default function GalleryManager() {
                   <h3 className="font-heading text-lg font-bold text-cream-100">ตั้งค่ารูปภาพ</h3>
                   <p className="font-code text-[10px] text-ink-500 mt-1">ID: {editingPhoto.id}</p>
                 </div>
-                <button 
+                <button
                   onClick={() => setEditingPhoto(null)}
                   className="text-ink-400 hover:text-cream-100 transition-colors"
                 >
@@ -323,7 +321,7 @@ export default function GalleryManager() {
               <div className="space-y-4 flex-1">
                 <div>
                   <label className="block font-code text-xs text-ink-300 mb-2 uppercase tracking-wider">หมวดหมู่ผลงาน</label>
-                  <select 
+                  <select
                     value={editForm.category}
                     onChange={(e) => setEditForm(prev => ({ ...prev, category: e.target.value }))}
                     className="w-full bg-ink-900 border border-ink-600 px-3 py-2 text-sm text-cream-100 font-sans focus:outline-none focus:border-gold-500"
@@ -336,7 +334,7 @@ export default function GalleryManager() {
 
                 <div>
                   <label className="block font-code text-xs text-ink-300 mb-2 uppercase tracking-wider">คำบรรยายภาพ (เพื่อให้ลูกค้าเข้าใจงาน)</label>
-                  <textarea 
+                  <textarea
                     value={editForm.description}
                     onChange={(e) => setEditForm(prev => ({ ...prev, description: e.target.value }))}
                     rows={4}
@@ -346,8 +344,8 @@ export default function GalleryManager() {
                 </div>
 
                 <label className="flex items-center gap-3 p-3 bg-ink-900/50 border border-ink-700 cursor-pointer hover:border-ink-600 transition-colors">
-                  <input 
-                    type="checkbox" 
+                  <input
+                    type="checkbox"
                     checked={!editForm.isHidden}
                     onChange={(e) => setEditForm(prev => ({ ...prev, isHidden: !e.target.checked }))}
                     className="w-4 h-4 rounded border-ink-600 text-gold-500 focus:ring-gold-500 focus:ring-offset-ink-900"
@@ -360,13 +358,13 @@ export default function GalleryManager() {
               </div>
 
               <div className="flex gap-3 pt-4 border-t border-ink-700">
-                <button 
+                <button
                   onClick={() => setEditingPhoto(null)}
                   className="flex-1 px-4 py-2 border border-ink-600 text-ink-300 font-code text-sm hover:text-cream-100 transition-colors"
                 >
                   ยกเลิก
                 </button>
-                <button 
+                <button
                   onClick={handleSaveEdit}
                   disabled={savingId === editingPhoto.id}
                   className="flex-1 flex justify-center items-center gap-2 px-4 py-2 bg-gold-500 text-ink-900 font-code text-sm font-bold hover:bg-gold-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"

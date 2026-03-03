@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { Phone, MessageCircle, ChevronDown, Shield, Network, Code, CheckCircle } from "lucide-react";
 import Image from "next/image";
 
+import Network3D from "./Network3D";
+
 export default function HeroSection() {
   return (
     <section
@@ -20,7 +22,7 @@ export default function HeroSection() {
           transition={{ duration: 2, ease: "easeOut" }}
           className="w-full h-full relative"
         >
-          {/* Background image removed per user request */}
+          <Network3D />
         </motion.div>
       </div>
 
