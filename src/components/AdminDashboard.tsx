@@ -7,20 +7,30 @@ import {
   Camera,
   Network,
   Code,
-  RefreshCw,
   Activity,
-  HardDrive,
   Shield,
   Clock,
   Image as ImageIcon,
   Users,
   Terminal,
   FileText,
+  Paperclip,
+  Share2,
+  Calendar,
+  FolderOpen,
+  Database,
+  Zap,
+  Globe,
+  TrendingUp,
 } from "lucide-react";
 import QuotationManager from "@/components/admin/QuotationManager";
 import GalleryManager from "@/components/admin/GalleryManager";
 import PortfolioManager from "@/components/admin/PortfolioManager";
 import TimelineManager from "@/components/admin/TimelineManager";
+import {
+  getPortfolioProjects,
+  getTimelineEvents,
+} from "@/app/admin/(protected)/actions";
 
 interface SystemStatus {
   label: string;
@@ -31,17 +41,11 @@ interface SystemStatus {
 
 const systemStatuses: SystemStatus[] = [
   { label: "Security Layer", value: "JWT + HttpOnly", status: "online", icon: Shield },
-  { label: "Frontend", value: "Next.js App Router", status: "online", icon: Code },
+  { label: "Frontend", value: "Next.js 16 + Turbopack", status: "online", icon: Code },
   { label: "Gallery Engine", value: "Claude Processing", status: "warning", icon: ImageIcon },
-  { label: "Quotation System", value: "Active", status: "online", icon: FileText },
-];
-
-const galleryStats = [
-  { label: "CCTV & Security", count: 120, icon: Camera, color: "text-blue-400" },
-  { label: "Network & Fiber", count: 85, icon: Network, color: "text-emerald-400" },
-  { label: "Software & AI", count: 12, icon: Code, color: "text-purple-400" },
-  { label: "On-site Work", count: 45, icon: HardDrive, color: "text-orange-400" },
-  { label: "Team & Training", count: 28, icon: Users, color: "text-pink-400" },
+  { label: "Database", value: "SQLite + Prisma ORM", status: "online", icon: Database },
+  { label: "Sharing System", value: "Museum Pages", status: "online", icon: Share2 },
+  { label: "3D Effects", value: "Three.js Particles", status: "online", icon: Globe },
 ];
 
 type Tab = "dashboard" | "quotation" | "gallery" | "portfolio" | "timeline";
@@ -50,11 +54,16 @@ export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<Tab>("dashboard");
   const [currentTime, setCurrentTime] = useState("");
   const [uptime, setUptime] = useState("00:00:00");
+  const [stats, setStats] = useState({
+    portfolioCount: 0,
+    timelineCount: 0,
+    totalAttachments: 0,
+    sharedLinks: 0,
+  });
   const router = useRouter();
 
   useEffect(() => {
     const startTime = Date.now();
-
     const interval = setInterval(() => {
       const now = new Date();
       setCurrentTime(
@@ -67,16 +76,36 @@ export default function AdminDashboard() {
           second: "2-digit",
         })
       );
-
       const elapsed = Math.floor((Date.now() - startTime) / 1000);
       const h = String(Math.floor(elapsed / 3600)).padStart(2, "0");
       const m = String(Math.floor((elapsed % 3600) / 60)).padStart(2, "0");
       const s = String(elapsed % 60).padStart(2, "0");
       setUptime(`${h}:${m}:${s}`);
     }, 1000);
-
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    async function loadStats() {
+      try {
+        const [projects, events] = await Promise.all([
+          getPortfolioProjects(),
+          getTimelineEvents(),
+        ]);
+        const totalAtt = (projects as any[]).reduce((sum: number, p: any) => sum + (p.attachments?.length || 0), 0)
+          + (events as any[]).reduce((sum: number, e: any) => sum + (e.attachments?.length || 0), 0);
+        const sharedLinks = (projects as any[]).filter((p: any) => p.shareSlug).length
+          + (events as any[]).filter((e: any) => e.shareSlug).length;
+        setStats({
+          portfolioCount: projects.length,
+          timelineCount: events.length,
+          totalAttachments: totalAtt,
+          sharedLinks,
+        });
+      } catch { /* DB not available */ }
+    }
+    loadStats();
+  }, [activeTab]);
 
   async function handleLogout() {
     router.push("/admin/login");
@@ -88,6 +117,13 @@ export default function AdminDashboard() {
     warning: "bg-yellow-500",
     offline: "bg-red-500",
   };
+
+  const dashboardCards = [
+    { label: "ผลงาน / ระบบ", value: stats.portfolioCount, icon: FolderOpen, color: "text-gold-400", bg: "from-gold-500/10 to-gold-600/5", tab: "portfolio" as Tab },
+    { label: "ไทม์ไลน์ / กิจกรรม", value: stats.timelineCount, icon: Calendar, color: "text-blue-400", bg: "from-blue-500/10 to-blue-600/5", tab: "timeline" as Tab },
+    { label: "ไฟล์แนบรวม", value: stats.totalAttachments, icon: Paperclip, color: "text-purple-400", bg: "from-purple-500/10 to-purple-600/5", tab: "portfolio" as Tab },
+    { label: "ลิงก์แชร์สาธารณะ", value: stats.sharedLinks, icon: Share2, color: "text-green-400", bg: "from-green-500/10 to-green-600/5", tab: "portfolio" as Tab },
+  ];
 
   return (
     <div className="min-h-screen bg-ink-900 text-cream-100">
@@ -109,56 +145,25 @@ export default function AdminDashboard() {
           </div>
           {/* Tabs */}
           <nav className="hidden sm:flex items-center gap-1 ml-4">
-            <button
-              onClick={() => setActiveTab("dashboard")}
-              className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-code transition-colors border-b-2 ${activeTab === "dashboard"
-                ? "border-gold-400 text-gold-400"
-                : "border-transparent text-ink-400 hover:text-ink-200"
-                }`}
-            >
-              <Activity className="w-3.5 h-3.5" />
-              Dashboard
-            </button>
-            <button
-              onClick={() => setActiveTab("quotation")}
-              className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-code transition-colors border-b-2 ${activeTab === "quotation"
-                ? "border-gold-400 text-gold-400"
-                : "border-transparent text-ink-400 hover:text-ink-200"
-                }`}
-            >
-              <FileText className="w-3.5 h-3.5" />
-              ใบเสนอราคา
-            </button>
-            <button
-              onClick={() => setActiveTab("gallery")}
-              className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-code transition-colors border-b-2 ${activeTab === "gallery"
-                ? "border-gold-400 text-gold-400"
-                : "border-transparent text-ink-400 hover:text-ink-200"
-                }`}
-            >
-              <ImageIcon className="w-3.5 h-3.5" />
-              จัดการรูปภาพ (Claude)
-            </button>
-            <button
-              onClick={() => setActiveTab("portfolio")}
-              className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-code transition-colors border-b-2 ${activeTab === "portfolio"
-                ? "border-gold-400 text-gold-400"
-                : "border-transparent text-ink-400 hover:text-ink-200"
-                }`}
-            >
-              <Code className="w-3.5 h-3.5" />
-              ผลงาน/ระบบ
-            </button>
-            <button
-              onClick={() => setActiveTab("timeline")}
-              className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-code transition-colors border-b-2 ${activeTab === "timeline"
-                ? "border-gold-400 text-gold-400"
-                : "border-transparent text-ink-400 hover:text-ink-200"
-                }`}
-            >
-              <Activity className="w-3.5 h-3.5" />
-              ไทม์ไลน์
-            </button>
+            {([
+              { id: "dashboard" as Tab, label: "Dashboard", icon: Activity },
+              { id: "quotation" as Tab, label: "ใบเสนอราคา", icon: FileText },
+              { id: "gallery" as Tab, label: "รูปภาพ (Claude)", icon: ImageIcon },
+              { id: "portfolio" as Tab, label: "ผลงาน/ระบบ", icon: Code },
+              { id: "timeline" as Tab, label: "ไทม์ไลน์", icon: Calendar },
+            ]).map(tab => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-code transition-colors border-b-2 ${activeTab === tab.id
+                  ? "border-gold-400 text-gold-400"
+                  : "border-transparent text-ink-400 hover:text-ink-200"
+                  }`}
+              >
+                <tab.icon className="w-3.5 h-3.5" />
+                {tab.label}
+              </button>
+            ))}
           </nav>
         </div>
 
@@ -181,53 +186,60 @@ export default function AdminDashboard() {
         {activeTab === "timeline" && <TimelineManager />}
         {activeTab === "dashboard" && (
           <>
-            {/* System Status Panel */}
+            {/* Live Stats Cards */}
             <section>
               <div className="flex items-center gap-2 mb-4">
-                <Activity className="w-4 h-4 text-gold-400" />
-                <h2 className="font-code text-sm text-gold-400 uppercase tracking-wider">System Status</h2>
+                <TrendingUp className="w-4 h-4 text-gold-400" />
+                <h2 className="font-code text-sm text-gold-400 uppercase tracking-wider">ภาพรวมข้อมูล (Live)</h2>
+                <div className="flex-1 h-px bg-ink-700 ml-2" />
+                <span className="font-code text-[10px] text-ink-500">Session: {uptime}</span>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {dashboardCards.map(card => (
+                  <button
+                    key={card.label}
+                    onClick={() => setActiveTab(card.tab)}
+                    className={`bg-gradient-to-br ${card.bg} bg-ink-800 border border-ink-700 hover:border-gold-500/30 p-5 text-left transition-all duration-300 group`}
+                  >
+                    <div className="flex items-center justify-between mb-3">
+                      <card.icon className={`w-5 h-5 ${card.color}`} />
+                      <span className="text-[10px] font-code text-ink-500 group-hover:text-ink-400 transition-colors">คลิกเพื่อจัดการ →</span>
+                    </div>
+                    <p className="text-3xl font-heading font-bold text-cream-100">{card.value}</p>
+                    <p className="text-xs text-ink-400 mt-1 font-code">{card.label}</p>
+                  </button>
+                ))}
+              </div>
+            </section>
+
+            {/* System Status */}
+            <section>
+              <div className="flex items-center gap-2 mb-4">
+                <Zap className="w-4 h-4 text-gold-400" />
+                <h2 className="font-code text-sm text-gold-400 uppercase tracking-wider">System Status</h2>
+                <div className="flex-1 h-px bg-ink-700 ml-2" />
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
                 {systemStatuses.map((s) => (
                   <div key={s.label} className="bg-ink-800 border border-ink-700 p-4">
                     <div className="flex items-center justify-between mb-3">
-                      <s.icon className="w-5 h-5 text-ink-400" />
+                      <s.icon className="w-4 h-4 text-ink-400" />
                       <div className="flex items-center gap-1.5">
                         <div className={`w-2 h-2 rounded-full ${statusColor[s.status]} animate-pulse`} />
-                        <span className="font-code text-[10px] text-ink-400 uppercase">{s.status}</span>
+                        <span className="font-code text-[9px] text-ink-400 uppercase">{s.status}</span>
                       </div>
                     </div>
-                    <p className="font-code text-xs text-ink-400">{s.label}</p>
-                    <p className="font-code text-sm text-cream-200 mt-0.5">{s.value}</p>
+                    <p className="font-code text-[10px] text-ink-500 leading-tight">{s.label}</p>
+                    <p className="font-code text-xs text-cream-200 mt-0.5 leading-tight">{s.value}</p>
                   </div>
                 ))}
               </div>
             </section>
 
-            {/* Dashboard Grid */}
-            <section className="grid md:grid-cols-2 gap-8">
-              {/* Gallery Stats */}
-              <div className="bg-ink-800 border border-ink-700 p-6">
-                <h3 className="font-heading text-lg font-semibold text-cream-100 mb-6 flex items-center gap-2">
-                  <ImageIcon className="w-5 h-5 text-gold-400" />
-                  ภาพผลงานในระบบ (Live Sync)
-                </h3>
-                <div className="space-y-4">
-                  {galleryStats.map((stat) => (
-                    <div key={stat.label} className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded bg-ink-900 border border-ink-700 flex items-center justify-center">
-                          <stat.icon className={`w-4 h-4 ${stat.color}`} />
-                        </div>
-                        <span className="font-code text-sm text-ink-300">{stat.label}</span>
-                      </div>
-                      <span className="font-code font-semibold text-cream-200">{stat.count}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
+            {/* Quick Actions + Activity Log */}
+            <section className="grid md:grid-cols-2 gap-6">
               {/* Quick Actions */}
               <div className="bg-ink-800 border border-ink-700 p-6">
                 <div className="flex items-center gap-2 mb-4">
@@ -235,16 +247,41 @@ export default function AdminDashboard() {
                   <h3 className="font-code text-sm text-gold-400 uppercase tracking-wider">Quick Actions</h3>
                 </div>
 
-                <div className="space-y-3">
+                <div className="space-y-2">
+                  {([
+                    { label: "จัดการผลงาน / ระบบ", desc: "เพิ่ม แก้ไข ลบ แนบไฟล์ แชร์", icon: FolderOpen, tab: "portfolio" as Tab, color: "gold" },
+                    { label: "จัดการไทม์ไลน์", desc: "บันทึกกิจกรรม อบรม และเหตุการณ์", icon: Calendar, tab: "timeline" as Tab, color: "blue" },
+                    { label: "จัดการรูปภาพ", desc: "กำลัง migrate ไป Claude", icon: ImageIcon, tab: "gallery" as Tab, color: "purple" },
+                    { label: "ใบเสนอราคา", desc: "สร้างและจัดการเอกสาร", icon: FileText, tab: "quotation" as Tab, color: "green" },
+                  ]).map(action => (
+                    <button
+                      key={action.label}
+                      onClick={() => setActiveTab(action.tab)}
+                      className="w-full flex items-center justify-between px-4 py-3 bg-ink-900 border border-ink-700 hover:border-gold-500/50 transition-colors group"
+                    >
+                      <div className="flex items-center gap-3 text-ink-300 group-hover:text-gold-400 transition-colors">
+                        <action.icon className="w-4 h-4" />
+                        <div className="text-left">
+                          <p className="font-code text-sm">{action.label}</p>
+                          <p className="font-code text-[10px] text-ink-500">{action.desc}</p>
+                        </div>
+                      </div>
+                      <span className="text-gold-500 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                    </button>
+                  ))}
+
                   <button
-                    onClick={() => router.push("/#portfolio")}
-                    className="w-full flex items-center justify-between px-4 py-3 bg-ink-900 border border-ink-700 hover:border-gold-500/50 transition-colors group"
+                    onClick={() => window.open("/", "_blank")}
+                    className="w-full flex items-center justify-between px-4 py-3 bg-ink-900 border border-ink-700 hover:border-green-500/50 transition-colors group"
                   >
-                    <div className="flex items-center gap-3 text-ink-300 group-hover:text-gold-400 transition-colors">
-                      <ImageIcon className="w-4 h-4" />
-                      <span className="font-code text-sm">View Live Gallery</span>
+                    <div className="flex items-center gap-3 text-ink-300 group-hover:text-green-400 transition-colors">
+                      <Globe className="w-4 h-4" />
+                      <div className="text-left">
+                        <p className="font-code text-sm">ดูเว็บไซต์สาธารณะ</p>
+                        <p className="font-code text-[10px] text-ink-500">เปิดหน้าแรกในแท็บใหม่</p>
+                      </div>
                     </div>
-                    <span className="text-gold-500 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                    <span className="text-green-500 opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
                   </button>
 
                   <button
@@ -261,20 +298,39 @@ export default function AdminDashboard() {
                   </button>
                 </div>
               </div>
-            </section>
 
-            {/* Activity Log */}
-            <section>
-              <div className="flex items-center gap-2 mb-4">
-                <Terminal className="w-4 h-4 text-gold-400" />
-                <h2 className="font-code text-sm text-gold-400 uppercase tracking-wider">Activity Log</h2>
-              </div>
+              {/* Activity Log */}
+              <div className="bg-ink-800 border border-ink-700 p-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <Terminal className="w-4 h-4 text-gold-400" />
+                  <h3 className="font-code text-sm text-gold-400 uppercase tracking-wider">System Log</h3>
+                </div>
+                <div className="bg-ink-900 border border-ink-700 p-4 font-code text-xs space-y-1.5 max-h-72 overflow-auto">
+                  <p className="text-green-400">[OK] Session authenticated via HttpOnly cookie</p>
+                  <p className="text-green-400">[OK] Prisma ORM connected — SQLite (local dev.db)</p>
+                  <p className="text-blue-400">[DB] Portfolio records: {stats.portfolioCount}</p>
+                  <p className="text-blue-400">[DB] Timeline records: {stats.timelineCount}</p>
+                  <p className="text-blue-400">[DB] Attachments: {stats.totalAttachments}</p>
+                  <p className="text-blue-400">[DB] Shared links: {stats.sharedLinks}</p>
+                  <p className="text-yellow-400">[WARN] Gallery engine migrating to Claude-based processing</p>
+                  <p className="text-ink-400">[INFO] 3D particle network active on homepage (Three.js)</p>
+                  <p className="text-ink-400">[INFO] Museum-themed share pages enabled at /share/[slug]</p>
+                  <p className="text-ink-400">[INFO] Security headers: X-Frame-Options, X-Content-Type-Options</p>
+                  <p className="text-ink-500">[SYS] Uptime: {uptime}</p>
+                  <p className="text-ink-500">[SYS] Awaiting commands...</p>
+                </div>
 
-              <div className="bg-ink-800 border border-ink-700 p-4 font-code text-xs space-y-1.5 max-h-48 overflow-auto">
-                <p className="text-green-400">[SYSTEM] Session authenticated successfully</p>
-                <p className="text-ink-400">[INFO] Dashboard loaded in static JSON mode</p>
-                <p className="text-ink-400">[INFO] Security headers active: X-Frame-Options, X-Content-Type-Options, Referrer-Policy</p>
-                <p className="text-ink-500">[SYS] Awaiting commands...</p>
+                {/* Tech Stack */}
+                <div className="mt-4 pt-4 border-t border-ink-700">
+                  <p className="font-code text-[10px] text-ink-500 uppercase tracking-wider mb-2">Tech Stack</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {["Next.js 16", "React 19", "TypeScript", "Prisma", "SQLite", "Three.js", "Framer Motion", "Lucide Icons"].map(tech => (
+                      <span key={tech} className="text-[9px] font-code px-2 py-0.5 border border-ink-600 text-ink-400 bg-ink-900/50">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </section>
           </>

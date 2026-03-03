@@ -10,6 +10,7 @@ import {
     generatePortfolioShareLink,
 } from "@/app/admin/(protected)/actions";
 import { Plus, Trash2, Link as LinkIcon, ExternalLink, Paperclip, Share2, Copy, Check, FileText, Image as ImageIcon, Film } from "lucide-react";
+import FileUploader from "./FileUploader";
 
 interface Attachment {
     id: string;
@@ -39,10 +40,8 @@ export default function PortfolioManager() {
     const [loading, setLoading] = useState(true);
     const [submitting, setSubmitting] = useState(false);
     const [copiedSlug, setCopiedSlug] = useState<string | null>(null);
-
-    // Attachment form state
     const [attachingTo, setAttachingTo] = useState<string | null>(null);
-    const [attachForm, setAttachForm] = useState({ filename: "", url: "", fileType: "image" });
+    const [thumbnailUrl, setThumbnailUrl] = useState("");
 
     useEffect(() => { fetchData(); }, []);
 
@@ -57,8 +56,13 @@ export default function PortfolioManager() {
         e.preventDefault();
         setSubmitting(true);
         const formData = new FormData(e.currentTarget);
+        // Use uploaded thumbnail URL if available
+        if (thumbnailUrl) {
+            formData.set("imageUrl", thumbnailUrl);
+        }
         await createPortfolioProject(formData);
         e.currentTarget.reset();
+        setThumbnailUrl("");
         await fetchData();
         setSubmitting(false);
     }
@@ -69,17 +73,15 @@ export default function PortfolioManager() {
         await fetchData();
     }
 
-    async function handleAddAttachment(projectId: string) {
-        if (!attachForm.filename || !attachForm.url) return;
+    async function handleUploadedAttachment(projectId: string, result: { url: string; filename: string; fileType: string; fileSize: number }) {
         await addAttachment({
             parentType: "portfolio",
             parentId: projectId,
-            filename: attachForm.filename,
-            url: attachForm.url,
-            fileType: attachForm.fileType,
+            filename: result.filename,
+            url: result.url,
+            fileType: result.fileType,
+            fileSize: result.fileSize,
         });
-        setAttachForm({ filename: "", url: "", fileType: "image" });
-        setAttachingTo(null);
         await fetchData();
     }
 
@@ -133,8 +135,16 @@ export default function PortfolioManager() {
                         <input name="tags" className="w-full bg-ink-900 border border-ink-600 text-cream-100 px-3 py-2 text-sm focus:border-gold-400" placeholder="Next.js, Tailwind, API" />
                     </div>
                     <div className="space-y-1">
-                        <label className="text-xs text-ink-400 font-code uppercase">ลิงก์ภาพปก (Thumbnail)</label>
-                        <input name="imageUrl" type="url" className="w-full bg-ink-900 border border-ink-600 text-cream-100 px-3 py-2 text-sm focus:border-gold-400" placeholder="https://..." />
+                        <label className="text-xs text-ink-400 font-code uppercase">ภาพปก (Thumbnail)</label>
+                        <FileUploader
+                            accept="image/*"
+                            label="อัปโหลดภาพปก"
+                            onUpload={(result) => setThumbnailUrl(result.url)}
+                        />
+                        {thumbnailUrl && (
+                            <p className="text-[10px] text-green-400 font-code mt-1">✓ {thumbnailUrl}</p>
+                        )}
+                        <input name="imageUrl" type="hidden" value={thumbnailUrl} />
                     </div>
                     <div className="md:col-span-2 mt-4 flex justify-end">
                         <button type="submit" disabled={submitting} className="flex items-center gap-2 bg-gold-600 text-ink-900 px-6 py-2 font-bold uppercase text-xs tracking-wider hover:bg-gold-500 disabled:opacity-50">
@@ -203,22 +213,15 @@ export default function PortfolioManager() {
                                     </div>
                                 )}
 
-                                {/* Attachment Form */}
+                                {/* File Upload Zone */}
                                 {attachingTo === project.id && (
                                     <div className="bg-ink-900 border border-ink-600 p-4 space-y-3">
-                                        <h5 className="text-xs text-gold-400 font-code uppercase">แนบไฟล์ประกอบ</h5>
-                                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                                            <input value={attachForm.filename} onChange={e => setAttachForm(p => ({ ...p, filename: e.target.value }))} className="bg-ink-800 border border-ink-600 text-cream-100 px-3 py-2 text-xs" placeholder="ชื่อไฟล์" />
-                                            <input value={attachForm.url} onChange={e => setAttachForm(p => ({ ...p, url: e.target.value }))} className="bg-ink-800 border border-ink-600 text-cream-100 px-3 py-2 text-xs" placeholder="URL ไฟล์ (https://...)" />
-                                            <select value={attachForm.fileType} onChange={e => setAttachForm(p => ({ ...p, fileType: e.target.value }))} className="bg-ink-800 border border-ink-600 text-cream-100 px-3 py-2 text-xs">
-                                                <option value="image">รูปภาพ</option>
-                                                <option value="document">เอกสาร</option>
-                                                <option value="video">วิดีโอ</option>
-                                            </select>
-                                        </div>
-                                        <button onClick={() => handleAddAttachment(project.id)} className="bg-gold-600 text-ink-900 px-4 py-1.5 text-xs font-bold hover:bg-gold-500">
-                                            <Plus className="w-3 h-3 inline mr-1" />เพิ่มไฟล์แนบ
-                                        </button>
+                                        <h5 className="text-xs text-gold-400 font-code uppercase">แนบไฟล์ประกอบ (อัปโหลดจากเครื่อง)</h5>
+                                        <FileUploader
+                                            accept="image/*,video/*,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx"
+                                            label="เลือกไฟล์ หรือ ลากมาวาง"
+                                            onUpload={(result) => handleUploadedAttachment(project.id, result)}
+                                        />
                                     </div>
                                 )}
 

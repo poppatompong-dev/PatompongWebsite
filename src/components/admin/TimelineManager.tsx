@@ -10,6 +10,7 @@ import {
     generateTimelineShareLink,
 } from "@/app/admin/(protected)/actions";
 import { Plus, Trash2, Calendar, Paperclip, Share2, Copy, Check, FileText, Image as ImageIcon, Film, MapPin } from "lucide-react";
+import FileUploader from "./FileUploader";
 
 interface Attachment {
     id: string;
@@ -41,10 +42,8 @@ export default function TimelineManager() {
     const [loading, setLoading] = useState(true);
     const [submitting, setSubmitting] = useState(false);
     const [copiedSlug, setCopiedSlug] = useState<string | null>(null);
-
-    // Attachment form state
     const [attachingTo, setAttachingTo] = useState<string | null>(null);
-    const [attachForm, setAttachForm] = useState({ filename: "", url: "", fileType: "image" });
+    const [thumbnailUrl, setThumbnailUrl] = useState("");
 
     useEffect(() => { fetchData(); }, []);
 
@@ -59,8 +58,12 @@ export default function TimelineManager() {
         e.preventDefault();
         setSubmitting(true);
         const formData = new FormData(e.currentTarget);
+        if (thumbnailUrl) {
+            formData.set("imageUrl", thumbnailUrl);
+        }
         await createTimelineEvent(formData);
         e.currentTarget.reset();
+        setThumbnailUrl("");
         await fetchData();
         setSubmitting(false);
     }
@@ -71,17 +74,15 @@ export default function TimelineManager() {
         await fetchData();
     }
 
-    async function handleAddAttachment(eventId: string) {
-        if (!attachForm.filename || !attachForm.url) return;
+    async function handleUploadedAttachment(eventId: string, result: { url: string; filename: string; fileType: string; fileSize: number }) {
         await addAttachment({
             parentType: "timeline",
             parentId: eventId,
-            filename: attachForm.filename,
-            url: attachForm.url,
-            fileType: attachForm.fileType,
+            filename: result.filename,
+            url: result.url,
+            fileType: result.fileType,
+            fileSize: result.fileSize,
         });
-        setAttachForm({ filename: "", url: "", fileType: "image" });
-        setAttachingTo(null);
         await fetchData();
     }
 
@@ -150,8 +151,16 @@ export default function TimelineManager() {
                         <textarea name="description" className="w-full bg-ink-900 border border-ink-600 text-cream-100 px-3 py-2 text-sm focus:border-gold-400 h-20" placeholder="รายละเอียดกิจกรรม..." />
                     </div>
                     <div className="space-y-1">
-                        <label className="text-xs text-ink-400 font-code uppercase">ลิงก์ภาพประกอบ</label>
-                        <input name="imageUrl" type="url" className="w-full bg-ink-900 border border-ink-600 text-cream-100 px-3 py-2 text-sm focus:border-gold-400" placeholder="https://..." />
+                        <label className="text-xs text-ink-400 font-code uppercase">ภาพประกอบกิจกรรม</label>
+                        <FileUploader
+                            accept="image/*"
+                            label="อัปโหลดภาพประกอบ"
+                            onUpload={(result) => setThumbnailUrl(result.url)}
+                        />
+                        {thumbnailUrl && (
+                            <p className="text-[10px] text-green-400 font-code mt-1">✓ {thumbnailUrl}</p>
+                        )}
+                        <input name="imageUrl" type="hidden" value={thumbnailUrl} />
                     </div>
                     <div className="flex items-end justify-end">
                         <button type="submit" disabled={submitting} className="flex items-center gap-2 bg-gold-600 text-ink-900 px-6 py-2 font-bold uppercase text-xs tracking-wider hover:bg-gold-500 disabled:opacity-50">
@@ -219,22 +228,15 @@ export default function TimelineManager() {
                                     </div>
                                 )}
 
-                                {/* Attachment Form */}
+                                {/* File Upload Zone */}
                                 {attachingTo === event.id && (
                                     <div className="bg-ink-900 border border-ink-600 p-4 space-y-3">
-                                        <h5 className="text-xs text-gold-400 font-code uppercase">แนบไฟล์ประกอบ</h5>
-                                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                                            <input value={attachForm.filename} onChange={e => setAttachForm(p => ({ ...p, filename: e.target.value }))} className="bg-ink-800 border border-ink-600 text-cream-100 px-3 py-2 text-xs" placeholder="ชื่อไฟล์" />
-                                            <input value={attachForm.url} onChange={e => setAttachForm(p => ({ ...p, url: e.target.value }))} className="bg-ink-800 border border-ink-600 text-cream-100 px-3 py-2 text-xs" placeholder="URL ไฟล์ (https://...)" />
-                                            <select value={attachForm.fileType} onChange={e => setAttachForm(p => ({ ...p, fileType: e.target.value }))} className="bg-ink-800 border border-ink-600 text-cream-100 px-3 py-2 text-xs">
-                                                <option value="image">รูปภาพ</option>
-                                                <option value="document">เอกสาร</option>
-                                                <option value="video">วิดีโอ</option>
-                                            </select>
-                                        </div>
-                                        <button onClick={() => handleAddAttachment(event.id)} className="bg-gold-600 text-ink-900 px-4 py-1.5 text-xs font-bold hover:bg-gold-500">
-                                            <Plus className="w-3 h-3 inline mr-1" />เพิ่มไฟล์แนบ
-                                        </button>
+                                        <h5 className="text-xs text-gold-400 font-code uppercase">แนบไฟล์ประกอบ (อัปโหลดจากเครื่อง)</h5>
+                                        <FileUploader
+                                            accept="image/*,video/*,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx"
+                                            label="เลือกไฟล์ หรือ ลากมาวาง"
+                                            onUpload={(result) => handleUploadedAttachment(event.id, result)}
+                                        />
                                     </div>
                                 )}
 
