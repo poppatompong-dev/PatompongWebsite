@@ -3,10 +3,13 @@ import { Link as LinkIcon, ExternalLink } from "lucide-react";
 import Image from "next/image";
 
 export default async function PortfolioSection() {
-    const prisma = new PrismaClient();
-    const projects = await prisma.portfolioProject.findMany({
-        orderBy: { createdAt: "desc" },
-    });
+    let projects: any[] = [];
+    try {
+        const prisma = new PrismaClient();
+        projects = await prisma.portfolioProject.findMany({
+            orderBy: { createdAt: "desc" },
+        });
+    } catch { /* DB unavailable during CI build */ }
 
     if (projects.length === 0) return null;
 

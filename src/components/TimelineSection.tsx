@@ -2,10 +2,13 @@ import { PrismaClient } from "@prisma/client";
 import TimelineClient from "./TimelineClient";
 
 export default async function TimelineSection() {
-  const prisma = new PrismaClient();
-  const events = await prisma.timelineEvent.findMany({
-    orderBy: { date: "desc" },
-  });
+  let events: any[] = [];
+  try {
+    const prisma = new PrismaClient();
+    events = await prisma.timelineEvent.findMany({
+      orderBy: { date: "desc" },
+    });
+  } catch { /* DB unavailable during CI build */ }
 
   return (
     <section id="experience" className="relative py-24 lg:py-32 bg-cream-100 bg-noise">
