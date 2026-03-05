@@ -34,7 +34,7 @@ yarn-error.log*
 .env*
 
 # local databases
-dev.db
+# (dev.db removed so the pre-seeded database goes to Netlify)
 
 # vercel
 .vercel
