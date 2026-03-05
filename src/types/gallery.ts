@@ -3,8 +3,16 @@ export interface GalleryImage {
   url: string;
   width: number;
   height: number;
-  category: "CCTV & Security" | "Network & Fiber" | "Software & AI" | "On-site Work" | "Team & Training" | "Uncategorized";
+  category: CategoryType;
   description?: string;
 }
 
-export type CategoryType = GalleryImage["category"];
+export type CategoryType =
+  | "CCTV & Security"
+  | "Network & Server"
+  | "Wireless & Antenna"
+  | "Fiber Optic"
+  | "Broadcasting & AV"
+  | "Field Operations"
+  | "Drone Survey"
+  | "Uncategorized";

@@ -27,12 +27,12 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Patompong Tech Consultant | ทีมช่างและที่ปรึกษาระบบไอทีครบวงจร นครสวรรค์",
+  title: "Patompong Tech Consultant | บริการระบบไอทีและกล้องวงจรปิด",
   description: "บริการติดตั้งกล้องวงจรปิด ระบบเครือข่าย Network และพัฒนาซอฟต์แวร์ระดับองค์กรในนครสวรรค์และพิษณุโลก โดยทีมงานผู้เชี่ยวชาญ ประสบการณ์กว่า 13 ปี ดูแลงานอย่างรับผิดชอบ ไม่ทิ้งงาน",
   keywords: ["ติดตั้งกล้องวงจรปิด นครสวรรค์", "ระบบ Network", "CCTV", "เดินสายแลน", "พัฒนาโปรแกรม", "ทีมช่างคอมพิวเตอร์", "ที่ปรึกษาไอที นครสวรรค์", "พิษณุโลก"],
   authors: [{ name: "Patompong Team" }],
   openGraph: {
-    title: "Patompong Tech Consultant | ทีมผู้เชี่ยวชาญระบบไอทีและกล้องวงจรปิด นครสวรรค์",
+    title: "Patompong Tech Consultant",
     description: "บริการติดตั้งกล้องวงจรปิด ระบบเครือข่าย Network และพัฒนาซอฟต์แวร์ระดับองค์กร บริการโดยทีมงานคุณภาพ ไม่ทิ้งงาน พื้นที่นครสวรรค์-พิษณุโลก",
     url: "https://patompong.dev",
     siteName: "Patompong Tech Consultant",

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { href: "#home", label: "หน้าแรก", id: "home" },
@@ -42,11 +43,10 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-cream-50/90 backdrop-blur-xl shadow-sm border-b border-cream-300/50"
-          : "bg-ink-900/20 backdrop-blur-sm"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? "bg-cream-50/90 backdrop-blur-xl shadow-sm border-b border-cream-300/50"
+        : "bg-ink-900/20 backdrop-blur-sm"
+        }`}
     >
       {/* Scroll Progress Bar */}
       <motion.div
@@ -57,9 +57,9 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-3 group">
-            <div className="w-8 h-8 bg-gold-500 flex items-center justify-center shrink-0 group-hover:bg-gold-400 transition-colors">
-              <span className="font-heading font-bold text-white text-sm">PT</span>
+          <a href="#home" className="flex items-center gap-3 sm:gap-4 group">
+            <div className="relative w-14 h-14 sm:w-16 sm:h-16 shrink-0">
+              <Image src="/logo-main.png" alt="Patompong Tech Consultant Logo" fill className="object-contain group-hover:scale-105 transition-transform" sizes="(max-width: 640px) 56px, 64px" priority />
             </div>
             <div className="flex flex-col">
               <span className={`text-base font-heading font-bold tracking-tight leading-tight transition-colors ${scrolled ? "text-ink-800" : "text-cream-50"}`}>
@@ -77,11 +77,10 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className={`relative px-3 py-2 text-sm transition-colors tracking-wide ${
-                  scrolled
-                    ? activeSection === link.id ? "text-gold-600 font-semibold" : "text-ink-500 hover:text-gold-500"
-                    : activeSection === link.id ? "text-gold-400 font-semibold" : "text-cream-200 hover:text-gold-300"
-                }`}
+                className={`relative px-3 py-2 text-sm transition-colors tracking-wide ${scrolled
+                  ? activeSection === link.id ? "text-gold-600 font-semibold" : "text-ink-500 hover:text-gold-500"
+                  : activeSection === link.id ? "text-gold-400 font-semibold" : "text-cream-200 hover:text-gold-300"
+                  }`}
               >
                 {link.label}
                 {activeSection === link.id && (
@@ -97,11 +96,10 @@ export default function Navbar() {
             {/* CTA Button */}
             <a
               href="#contact"
-              className={`ml-3 px-4 py-2 text-sm font-semibold transition-all border ${
-                scrolled
-                  ? "bg-gold-500 text-white border-gold-500 hover:bg-gold-400 hover:border-gold-400"
-                  : "bg-gold-500/90 text-white border-gold-400 hover:bg-gold-400"
-              } shadow-[0_2px_8px_rgba(180,83,9,0.3)]`}
+              className={`ml-3 px-4 py-2 text-sm font-semibold transition-all border ${scrolled
+                ? "bg-gold-500 text-white border-gold-500 hover:bg-gold-400 hover:border-gold-400"
+                : "bg-gold-500/90 text-white border-gold-400 hover:bg-gold-400"
+                } shadow-[0_2px_8px_rgba(180,83,9,0.3)]`}
             >
               ขอใบเสนอราคา
             </a>
@@ -134,11 +132,10 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`flex items-center px-4 py-3 text-sm transition-colors border-l-4 ${
-                    activeSection === link.id
-                      ? "border-gold-500 text-gold-600 bg-gold-50/50 font-semibold"
-                      : "border-transparent text-ink-500 hover:text-gold-500 hover:bg-cream-200/50"
-                  }`}
+                  className={`flex items-center px-4 py-3 text-sm transition-colors border-l-4 ${activeSection === link.id
+                    ? "border-gold-500 text-gold-600 bg-gold-50/50 font-semibold"
+                    : "border-transparent text-ink-500 hover:text-gold-500 hover:bg-cream-200/50"
+                    }`}
                 >
                   {link.label}
                 </a>

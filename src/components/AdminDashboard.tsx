@@ -32,6 +32,7 @@ import {
   getPortfolioProjects,
   getTimelineEvents,
 } from "@/app/admin/(protected)/actions";
+import { logoutAction } from "@/app/admin/login/actions";
 
 interface SystemStatus {
   label: string;
@@ -109,7 +110,8 @@ export default function AdminDashboard() {
   }, [activeTab]);
 
   async function handleLogout() {
-    router.push("/admin/login");
+    await logoutAction();
+    router.push("/");
     router.refresh();
   }
 

@@ -3,29 +3,28 @@
 import { motion } from "framer-motion";
 import { Phone, MessageCircle, ChevronDown, Shield, Network, Code, CheckCircle } from "lucide-react";
 import Image from "next/image";
-import dynamic from "next/dynamic";
+import HeroCarousel from "./HeroCarousel";
+import type { GalleryImage } from "@/types/gallery";
 
-const Network3D = dynamic(() => import("./Network3D"), { ssr: false });
+interface Props {
+  featuredPhotos?: GalleryImage[];
+}
 
-export default function HeroSection() {
+export default function HeroSection({ featuredPhotos }: Props) {
   return (
     <section
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden bg-ink-900"
     >
-      {/* Background Images Overlay with Parallax/Fade effect */}
-      <div className="absolute inset-0 z-0 opacity-20 lg:opacity-30 mix-blend-luminosity pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-r from-ink-900 via-ink-900/90 to-transparent z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink-900 via-transparent to-ink-900/50 z-10" />
-        <motion.div
-          initial={{ scale: 1.1, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 2, ease: "easeOut" }}
-          className="w-full h-full relative"
-        >
-          <Network3D />
-        </motion.div>
-      </div>
+      {/* Dynamic Background: Carousel or Solid Grid */}
+      {featuredPhotos && featuredPhotos.length > 0 ? (
+        <HeroCarousel photos={featuredPhotos} />
+      ) : (
+        <div className="absolute inset-0 bg-ink-900 z-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-ink-900 via-ink-900/90 to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink-900 via-transparent to-ink-900/50 z-10" />
+        </div>
+      )}
 
       {/* Dot grid pattern */}
       <div

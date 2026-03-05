@@ -16,14 +16,14 @@ export default function Network3D() {
         const camera = new THREE.PerspectiveCamera(75, mount.clientWidth / mount.clientHeight, 0.1, 1000);
         camera.position.z = 3;
 
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true });
         renderer.setSize(mount.clientWidth, mount.clientHeight);
-        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
         renderer.setClearColor(0x000000, 0);
         mount.appendChild(renderer.domElement);
 
-        // Particle sphere
-        const particleCount = 1500;
+        // Particle sphere — reduced count for performance
+        const particleCount = 400;
         const positions = new Float32Array(particleCount * 3);
         for (let i = 0; i < particleCount; i++) {
             const theta = Math.random() * Math.PI * 2;

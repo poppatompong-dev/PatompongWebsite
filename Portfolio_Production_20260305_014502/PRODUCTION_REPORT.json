@@ -1,0 +1,1295 @@
+{
+  "timestamp": "20260305_014502",
+  "output_folder": "/sessions/focused-amazing-wright/mnt/Portfolio_Production_v2/Portfolio_Production_20260305_014502",
+  "total_processed": 156,
+  "total_failed": 0,
+  "input_size_MB": 171.3,
+  "output_size_MB": 85.3,
+  "compression_ratio": "49.8%",
+  "categories": {
+    "01_CCTV_Surveillance": {
+      "count": 27,
+      "images": [
+        {
+          "cat": "01_CCTV_Surveillance",
+          "file": "01_CCTV_Surveillance_001.jpg",
+          "src": "01_CCTV_Surveillance_001.jpg",
+          "src_type": "final",
+          "in_kb": 570,
+          "out_kb": 712
+        },
+        {
+          "cat": "01_CCTV_Surveillance",
+          "file": "01_CCTV_Surveillance_002.jpg",
+          "src": "01_CCTV_Surveillance_002.jpg",
+          "src_type": "final",
+          "in_kb": 532,
+          "out_kb": 660
+        },
+        {
+          "cat": "01_CCTV_Surveillance",
+          "file": "01_CCTV_Surveillance_003.jpg",
+          "src": "01_CCTV_Surveillance_003.jpg",
+          "src_type": "final",
+          "in_kb": 230,
+          "out_kb": 283
+        },
+        {
+          "cat": "01_CCTV_Surveillance",
+          "file": "01_CCTV_Surveillance_004.jpg",
+          "src": "01_CCTV_Surveillance_004.jpg",
+          "src_type": "final",
+          "in_kb": 713,
+          "out_kb": 864
+        },
+        {
+          "cat": "01_CCTV_Surveillance",
+          "file": "01_CCTV_Surveillance_005.jpg",
+          "src": "01_CCTV_Surveillance_005.jpg",
+          "src_type": "final",
+          "in_kb": 642,
+          "out_kb": 778
+        },
+        {
+          "cat": "01_CCTV_Surveillance",
+          "file": "01_CCTV_Surveillance_006.jpg",
+          "src": "01_CCTV_Surveillance_006.jpg",
+          "src_type": "final",
+          "in_kb": 380,
+          "out_kb": 462
+        },
+        {
+          "cat": "01_CCTV_Surveillance",
+          "file": "01_CCTV_Surveillance_007.jpg",
+          "src": "01_CCTV_Surveillance_007.jpg",
+          "src_type": "final",
+          "in_kb": 679,
+          "out_kb": 817
+        },
+        {
+          "cat": "01_CCTV_Surveillance",
+          "file": "01_CCTV_Surveillance_008.jpg",
+          "src": "01_CCTV_Surveillance_008.jpg",
+          "src_type": "final",
+          "in_kb": 527,
+          "out_kb": 636
+        },
+        {
+          "cat": "01_CCTV_Surveillance",
+          "file": "01_CCTV_Surveillance_009.jpg",
+          "src": "01_CCTV_Surveillance_009.jpg",
+          "src_type": "final",
+          "in_kb": 660,
+          "out_kb": 814
+        },
+        {
+          "cat": "01_CCTV_Surveillance",
+          "file": "01_CCTV_Surveillance_010.jpg",
+          "src": "01_CCTV_Surveillance_010.jpg",
+          "src_type": "final",
+          "in_kb": 319,
+          "out_kb": 383
+        },
+        {
+          "cat": "01_CCTV_Surveillance",
+          "file": "01_CCTV_Surveillance_011.jpg",
+          "src": "01_CCTV_Surveillance_011.jpg",
+          "src_type": "final",
+          "in_kb": 437,
+          "out_kb": 530
+        },
+        {
+          "cat": "01_CCTV_Surveillance",
+          "file": "01_CCTV_Surveillance_012.jpg",
+          "src": "01_CCTV_Surveillance_012.jpg",
+          "src_type": "final",
+          "in_kb": 488,
+          "out_kb": 593
+        },
+        {
+          "cat": "01_CCTV_Surveillance",
+          "file": "01_CCTV_Surveillance_013.jpg",
+          "src": "01_CCTV_Surveillance_013.jpg",
+          "src_type": "final",
+          "in_kb": 453,
+          "out_kb": 554
+        },
+        {
+          "cat": "01_CCTV_Surveillance",
+          "file": "01_CCTV_Surveillance_014.jpg",
+          "src": "01_CCTV_Surveillance_014.jpg",
+          "src_type": "final",
+          "in_kb": 573,
+          "out_kb": 707
+        },
+        {
+          "cat": "01_CCTV_Surveillance",
+          "file": "01_CCTV_Surveillance_015.jpg",
+          "src": "01_CCTV_Surveillance_015.jpg",
+          "src_type": "final",
+          "in_kb": 310,
+          "out_kb": 390
+        },
+        {
+          "cat": "01_CCTV_Surveillance",
+          "file": "01_CCTV_Surveillance_016.jpg",
+          "src": "01_CCTV_Surveillance_016.jpg",
+          "src_type": "final",
+          "in_kb": 563,
+          "out_kb": 686
+        },
+        {
+          "cat": "01_CCTV_Surveillance",
+          "file": "01_CCTV_Surveillance_017.jpg",
+          "src": "01_CCTV_Surveillance_017.jpg",
+          "src_type": "final",
+          "in_kb": 395,
+          "out_kb": 468
+        },
+        {
+          "cat": "01_CCTV_Surveillance",
+          "file": "01_CCTV_Surveillance_018.jpg",
+          "src": "01_CCTV_Surveillance_018.jpg",
+          "src_type": "final",
+          "in_kb": 274,
+          "out_kb": 343
+        },
+        {
+          "cat": "01_CCTV_Surveillance",
+          "file": "01_CCTV_Surveillance_019.jpg",
+          "src": "01_CCTV_Surveillance_019.jpg",
+          "src_type": "final",
+          "in_kb": 503,
+          "out_kb": 607
+        },
+        {
+          "cat": "01_CCTV_Surveillance",
+          "file": "01_CCTV_Surveillance_020.jpg",
+          "src": "01_CCTV_Surveillance_020.jpg",
+          "src_type": "final",
+          "in_kb": 224,
+          "out_kb": 280
+        },
+        {
+          "cat": "01_CCTV_Surveillance",
+          "file": "01_CCTV_Surveillance_021.jpg",
+          "src": "01_CCTV_Surveillance_021.jpg",
+          "src_type": "final",
+          "in_kb": 510,
+          "out_kb": 635
+        },
+        {
+          "cat": "01_CCTV_Surveillance",
+          "file": "01_CCTV_Surveillance_022.jpg",
+          "src": "01_CCTV_Surveillance_022.jpg",
+          "src_type": "final",
+          "in_kb": 350,
+          "out_kb": 442
+        },
+        {
+          "cat": "01_CCTV_Surveillance",
+          "file": "01_CCTV_Surveillance_023.jpg",
+          "src": "01_CCTV_Surveillance_023.jpg",
+          "src_type": "final",
+          "in_kb": 265,
+          "out_kb": 322
+        },
+        {
+          "cat": "01_CCTV_Surveillance",
+          "file": "01_CCTV_Surveillance_024.jpg",
+          "src": "01_CCTV_Surveillance_024.jpg",
+          "src_type": "final",
+          "in_kb": 287,
+          "out_kb": 361
+        },
+        {
+          "cat": "01_CCTV_Surveillance",
+          "file": "01_CCTV_Surveillance_025.jpg",
+          "src": "Uncategorized_Review_003_1662349314768.jpg",
+          "src_type": "selected",
+          "in_kb": 509,
+          "out_kb": 558
+        },
+        {
+          "cat": "01_CCTV_Surveillance",
+          "file": "01_CCTV_Surveillance_026.jpg",
+          "src": "20240718_104712.jpg",
+          "src_type": "excess",
+          "in_kb": 3685,
+          "out_kb": 704
+        },
+        {
+          "cat": "01_CCTV_Surveillance",
+          "file": "01_CCTV_Surveillance_027.jpg",
+          "src": "20230428_162544.jpg",
+          "src_type": "excess",
+          "in_kb": 5567,
+          "out_kb": 990
+        }
+      ]
+    },
+    "02_Network_Server": {
+      "count": 19,
+      "images": [
+        {
+          "cat": "02_Network_Server",
+          "file": "02_Network_Server_001.jpg",
+          "src": "02_Network_Server_001.jpg",
+          "src_type": "final",
+          "in_kb": 265,
+          "out_kb": 327
+        },
+        {
+          "cat": "02_Network_Server",
+          "file": "02_Network_Server_002.jpg",
+          "src": "02_Network_Server_002.jpg",
+          "src_type": "final",
+          "in_kb": 299,
+          "out_kb": 355
+        },
+        {
+          "cat": "02_Network_Server",
+          "file": "02_Network_Server_003.jpg",
+          "src": "02_Network_Server_003.jpg",
+          "src_type": "final",
+          "in_kb": 474,
+          "out_kb": 601
+        },
+        {
+          "cat": "02_Network_Server",
+          "file": "02_Network_Server_004.jpg",
+          "src": "02_Network_Server_004.jpg",
+          "src_type": "final",
+          "in_kb": 368,
+          "out_kb": 446
+        },
+        {
+          "cat": "02_Network_Server",
+          "file": "02_Network_Server_005.jpg",
+          "src": "02_Network_Server_005.jpg",
+          "src_type": "final",
+          "in_kb": 321,
+          "out_kb": 394
+        },
+        {
+          "cat": "02_Network_Server",
+          "file": "02_Network_Server_006.jpg",
+          "src": "02_Network_Server_006.jpg",
+          "src_type": "final",
+          "in_kb": 411,
+          "out_kb": 492
+        },
+        {
+          "cat": "02_Network_Server",
+          "file": "02_Network_Server_007.jpg",
+          "src": "02_Network_Server_007.jpg",
+          "src_type": "final",
+          "in_kb": 391,
+          "out_kb": 464
+        },
+        {
+          "cat": "02_Network_Server",
+          "file": "02_Network_Server_008.jpg",
+          "src": "02_Network_Server_008.jpg",
+          "src_type": "final",
+          "in_kb": 259,
+          "out_kb": 317
+        },
+        {
+          "cat": "02_Network_Server",
+          "file": "02_Network_Server_009.jpg",
+          "src": "02_Network_Server_009.jpg",
+          "src_type": "final",
+          "in_kb": 538,
+          "out_kb": 650
+        },
+        {
+          "cat": "02_Network_Server",
+          "file": "02_Network_Server_010.jpg",
+          "src": "02_Network_Server_010.jpg",
+          "src_type": "final",
+          "in_kb": 189,
+          "out_kb": 231
+        },
+        {
+          "cat": "02_Network_Server",
+          "file": "02_Network_Server_011.jpg",
+          "src": "02_Network_Server_011.jpg",
+          "src_type": "final",
+          "in_kb": 449,
+          "out_kb": 536
+        },
+        {
+          "cat": "02_Network_Server",
+          "file": "02_Network_Server_012.jpg",
+          "src": "02_Network_Server_012.jpg",
+          "src_type": "final",
+          "in_kb": 511,
+          "out_kb": 623
+        },
+        {
+          "cat": "02_Network_Server",
+          "file": "02_Network_Server_013.jpg",
+          "src": "02_Network_Server_013.jpg",
+          "src_type": "final",
+          "in_kb": 579,
+          "out_kb": 700
+        },
+        {
+          "cat": "02_Network_Server",
+          "file": "02_Network_Server_014.jpg",
+          "src": "02_Network_Server_014.jpg",
+          "src_type": "final",
+          "in_kb": 329,
+          "out_kb": 413
+        },
+        {
+          "cat": "02_Network_Server",
+          "file": "02_Network_Server_015.jpg",
+          "src": "02_Network_Server_015.jpg",
+          "src_type": "final",
+          "in_kb": 261,
+          "out_kb": 328
+        },
+        {
+          "cat": "02_Network_Server",
+          "file": "02_Network_Server_016.jpg",
+          "src": "02_Network_Server_016.jpg",
+          "src_type": "final",
+          "in_kb": 452,
+          "out_kb": 554
+        },
+        {
+          "cat": "02_Network_Server",
+          "file": "02_Network_Server_017.jpg",
+          "src": "02_Network_Server_017.jpg",
+          "src_type": "final",
+          "in_kb": 252,
+          "out_kb": 300
+        },
+        {
+          "cat": "02_Network_Server",
+          "file": "02_Network_Server_018.jpg",
+          "src": "Uncategorized_Review_010_20140318_112730.jpg",
+          "src_type": "selected",
+          "in_kb": 339,
+          "out_kb": 364
+        },
+        {
+          "cat": "02_Network_Server",
+          "file": "02_Network_Server_019.jpg",
+          "src": "20240127_104221.jpg",
+          "src_type": "excess",
+          "in_kb": 5669,
+          "out_kb": 1127
+        }
+      ]
+    },
+    "03_Wireless_Antenna": {
+      "count": 35,
+      "images": [
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_001.jpg",
+          "src": "03_Wireless_Antenna_001.jpg",
+          "src_type": "final",
+          "in_kb": 274,
+          "out_kb": 341
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_002.jpg",
+          "src": "03_Wireless_Antenna_002.jpg",
+          "src_type": "final",
+          "in_kb": 267,
+          "out_kb": 333
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_003.jpg",
+          "src": "03_Wireless_Antenna_003.jpg",
+          "src_type": "final",
+          "in_kb": 233,
+          "out_kb": 288
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_004.jpg",
+          "src": "03_Wireless_Antenna_004.jpg",
+          "src_type": "final",
+          "in_kb": 605,
+          "out_kb": 765
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_005.jpg",
+          "src": "03_Wireless_Antenna_005.jpg",
+          "src_type": "final",
+          "in_kb": 272,
+          "out_kb": 326
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_006.jpg",
+          "src": "03_Wireless_Antenna_006.jpg",
+          "src_type": "final",
+          "in_kb": 238,
+          "out_kb": 291
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_007.jpg",
+          "src": "03_Wireless_Antenna_007.jpg",
+          "src_type": "final",
+          "in_kb": 282,
+          "out_kb": 348
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_008.jpg",
+          "src": "03_Wireless_Antenna_008.jpg",
+          "src_type": "final",
+          "in_kb": 261,
+          "out_kb": 319
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_009.jpg",
+          "src": "03_Wireless_Antenna_009.jpg",
+          "src_type": "final",
+          "in_kb": 554,
+          "out_kb": 673
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_010.jpg",
+          "src": "03_Wireless_Antenna_010.jpg",
+          "src_type": "final",
+          "in_kb": 368,
+          "out_kb": 445
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_011.jpg",
+          "src": "03_Wireless_Antenna_011.jpg",
+          "src_type": "final",
+          "in_kb": 282,
+          "out_kb": 335
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_012.jpg",
+          "src": "03_Wireless_Antenna_012.jpg",
+          "src_type": "final",
+          "in_kb": 438,
+          "out_kb": 530
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_013.jpg",
+          "src": "03_Wireless_Antenna_013.jpg",
+          "src_type": "final",
+          "in_kb": 314,
+          "out_kb": 376
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_014.jpg",
+          "src": "03_Wireless_Antenna_014.jpg",
+          "src_type": "final",
+          "in_kb": 525,
+          "out_kb": 623
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_015.jpg",
+          "src": "03_Wireless_Antenna_015.jpg",
+          "src_type": "final",
+          "in_kb": 298,
+          "out_kb": 380
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_016.jpg",
+          "src": "03_Wireless_Antenna_016.jpg",
+          "src_type": "final",
+          "in_kb": 285,
+          "out_kb": 341
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_017.jpg",
+          "src": "03_Wireless_Antenna_017.jpg",
+          "src_type": "final",
+          "in_kb": 414,
+          "out_kb": 502
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_018.jpg",
+          "src": "03_Wireless_Antenna_018.jpg",
+          "src_type": "final",
+          "in_kb": 286,
+          "out_kb": 354
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_019.jpg",
+          "src": "03_Wireless_Antenna_019.jpg",
+          "src_type": "final",
+          "in_kb": 382,
+          "out_kb": 476
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_020.jpg",
+          "src": "03_Wireless_Antenna_020.jpg",
+          "src_type": "final",
+          "in_kb": 314,
+          "out_kb": 380
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_021.jpg",
+          "src": "03_Wireless_Antenna_021.jpg",
+          "src_type": "final",
+          "in_kb": 479,
+          "out_kb": 576
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_022.jpg",
+          "src": "03_Wireless_Antenna_022.jpg",
+          "src_type": "final",
+          "in_kb": 314,
+          "out_kb": 383
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_023.jpg",
+          "src": "03_Wireless_Antenna_023.jpg",
+          "src_type": "final",
+          "in_kb": 370,
+          "out_kb": 458
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_024.jpg",
+          "src": "03_Wireless_Antenna_024.jpg",
+          "src_type": "final",
+          "in_kb": 433,
+          "out_kb": 526
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_025.jpg",
+          "src": "03_Wireless_Antenna_025.jpg",
+          "src_type": "final",
+          "in_kb": 573,
+          "out_kb": 705
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_026.jpg",
+          "src": "Uncategorized_Review_001_0_AP1GczMSV7.jpg",
+          "src_type": "selected",
+          "in_kb": 108,
+          "out_kb": 121
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_027.jpg",
+          "src": "Uncategorized_Review_007_2014-08-07-11-30-57_deco.jpg",
+          "src_type": "selected",
+          "in_kb": 288,
+          "out_kb": 308
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_028.jpg",
+          "src": "Uncategorized_Review_009_20140320_134854.jpg",
+          "src_type": "selected",
+          "in_kb": 291,
+          "out_kb": 321
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_029.jpg",
+          "src": "Uncategorized_Review_012_20140320_134927.jpg",
+          "src_type": "selected",
+          "in_kb": 441,
+          "out_kb": 496
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_030.jpg",
+          "src": "Uncategorized_Review_014_20140320_140530.jpg",
+          "src_type": "selected",
+          "in_kb": 327,
+          "out_kb": 358
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_031.jpg",
+          "src": "Uncategorized_Review_018_20140321_122544.jpg",
+          "src_type": "selected",
+          "in_kb": 299,
+          "out_kb": 326
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_032.jpg",
+          "src": "Uncategorized_Review_025_20140410_110223.jpg",
+          "src_type": "selected",
+          "in_kb": 276,
+          "out_kb": 300
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_033.jpg",
+          "src": "20230728_142133.jpg",
+          "src_type": "excess",
+          "in_kb": 5786,
+          "out_kb": 1237
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_034.jpg",
+          "src": "20250823_094447.jpg",
+          "src_type": "excess",
+          "in_kb": 5549,
+          "out_kb": 1166
+        },
+        {
+          "cat": "03_Wireless_Antenna",
+          "file": "03_Wireless_Antenna_035.jpg",
+          "src": "20240910_164251.jpg",
+          "src_type": "excess",
+          "in_kb": 5941,
+          "out_kb": 1217
+        }
+      ]
+    },
+    "04_Fiber_Optic_Cabling": {
+      "count": 24,
+      "images": [
+        {
+          "cat": "04_Fiber_Optic_Cabling",
+          "file": "04_Fiber_Optic_Cabling_001.jpg",
+          "src": "04_Fiber_Optic_Cabling_001.jpg",
+          "src_type": "final",
+          "in_kb": 260,
+          "out_kb": 324
+        },
+        {
+          "cat": "04_Fiber_Optic_Cabling",
+          "file": "04_Fiber_Optic_Cabling_002.jpg",
+          "src": "04_Fiber_Optic_Cabling_002.jpg",
+          "src_type": "final",
+          "in_kb": 424,
+          "out_kb": 524
+        },
+        {
+          "cat": "04_Fiber_Optic_Cabling",
+          "file": "04_Fiber_Optic_Cabling_003.jpg",
+          "src": "04_Fiber_Optic_Cabling_003.jpg",
+          "src_type": "final",
+          "in_kb": 468,
+          "out_kb": 567
+        },
+        {
+          "cat": "04_Fiber_Optic_Cabling",
+          "file": "04_Fiber_Optic_Cabling_004.jpg",
+          "src": "04_Fiber_Optic_Cabling_004.jpg",
+          "src_type": "final",
+          "in_kb": 339,
+          "out_kb": 395
+        },
+        {
+          "cat": "04_Fiber_Optic_Cabling",
+          "file": "04_Fiber_Optic_Cabling_005.jpg",
+          "src": "04_Fiber_Optic_Cabling_005.jpg",
+          "src_type": "final",
+          "in_kb": 377,
+          "out_kb": 450
+        },
+        {
+          "cat": "04_Fiber_Optic_Cabling",
+          "file": "04_Fiber_Optic_Cabling_006.jpg",
+          "src": "04_Fiber_Optic_Cabling_006.jpg",
+          "src_type": "final",
+          "in_kb": 295,
+          "out_kb": 363
+        },
+        {
+          "cat": "04_Fiber_Optic_Cabling",
+          "file": "04_Fiber_Optic_Cabling_007.jpg",
+          "src": "04_Fiber_Optic_Cabling_007.jpg",
+          "src_type": "final",
+          "in_kb": 501,
+          "out_kb": 619
+        },
+        {
+          "cat": "04_Fiber_Optic_Cabling",
+          "file": "04_Fiber_Optic_Cabling_008.jpg",
+          "src": "04_Fiber_Optic_Cabling_008.jpg",
+          "src_type": "final",
+          "in_kb": 331,
+          "out_kb": 412
+        },
+        {
+          "cat": "04_Fiber_Optic_Cabling",
+          "file": "04_Fiber_Optic_Cabling_009.jpg",
+          "src": "04_Fiber_Optic_Cabling_009.jpg",
+          "src_type": "final",
+          "in_kb": 229,
+          "out_kb": 280
+        },
+        {
+          "cat": "04_Fiber_Optic_Cabling",
+          "file": "04_Fiber_Optic_Cabling_010.jpg",
+          "src": "04_Fiber_Optic_Cabling_010.jpg",
+          "src_type": "final",
+          "in_kb": 290,
+          "out_kb": 361
+        },
+        {
+          "cat": "04_Fiber_Optic_Cabling",
+          "file": "04_Fiber_Optic_Cabling_011.jpg",
+          "src": "04_Fiber_Optic_Cabling_011.jpg",
+          "src_type": "final",
+          "in_kb": 287,
+          "out_kb": 354
+        },
+        {
+          "cat": "04_Fiber_Optic_Cabling",
+          "file": "04_Fiber_Optic_Cabling_012.jpg",
+          "src": "04_Fiber_Optic_Cabling_012.jpg",
+          "src_type": "final",
+          "in_kb": 414,
+          "out_kb": 501
+        },
+        {
+          "cat": "04_Fiber_Optic_Cabling",
+          "file": "04_Fiber_Optic_Cabling_013.jpg",
+          "src": "04_Fiber_Optic_Cabling_013.jpg",
+          "src_type": "final",
+          "in_kb": 276,
+          "out_kb": 340
+        },
+        {
+          "cat": "04_Fiber_Optic_Cabling",
+          "file": "04_Fiber_Optic_Cabling_014.jpg",
+          "src": "04_Fiber_Optic_Cabling_014.jpg",
+          "src_type": "final",
+          "in_kb": 404,
+          "out_kb": 492
+        },
+        {
+          "cat": "04_Fiber_Optic_Cabling",
+          "file": "04_Fiber_Optic_Cabling_015.jpg",
+          "src": "04_Fiber_Optic_Cabling_015.jpg",
+          "src_type": "final",
+          "in_kb": 239,
+          "out_kb": 304
+        },
+        {
+          "cat": "04_Fiber_Optic_Cabling",
+          "file": "04_Fiber_Optic_Cabling_016.jpg",
+          "src": "04_Fiber_Optic_Cabling_016.jpg",
+          "src_type": "final",
+          "in_kb": 328,
+          "out_kb": 404
+        },
+        {
+          "cat": "04_Fiber_Optic_Cabling",
+          "file": "04_Fiber_Optic_Cabling_017.jpg",
+          "src": "04_Fiber_Optic_Cabling_017.jpg",
+          "src_type": "final",
+          "in_kb": 404,
+          "out_kb": 499
+        },
+        {
+          "cat": "04_Fiber_Optic_Cabling",
+          "file": "04_Fiber_Optic_Cabling_018.jpg",
+          "src": "04_Fiber_Optic_Cabling_018.jpg",
+          "src_type": "final",
+          "in_kb": 366,
+          "out_kb": 452
+        },
+        {
+          "cat": "04_Fiber_Optic_Cabling",
+          "file": "04_Fiber_Optic_Cabling_019.jpg",
+          "src": "04_Fiber_Optic_Cabling_019.jpg",
+          "src_type": "final",
+          "in_kb": 363,
+          "out_kb": 448
+        },
+        {
+          "cat": "04_Fiber_Optic_Cabling",
+          "file": "04_Fiber_Optic_Cabling_020.jpg",
+          "src": "Uncategorized_Review_022_20140329_163010.jpg",
+          "src_type": "selected",
+          "in_kb": 361,
+          "out_kb": 406
+        },
+        {
+          "cat": "04_Fiber_Optic_Cabling",
+          "file": "04_Fiber_Optic_Cabling_021.jpg",
+          "src": "20240325_171727.jpg",
+          "src_type": "excess",
+          "in_kb": 5791,
+          "out_kb": 1079
+        },
+        {
+          "cat": "04_Fiber_Optic_Cabling",
+          "file": "04_Fiber_Optic_Cabling_022.jpg",
+          "src": "20250816_130157.jpg",
+          "src_type": "excess",
+          "in_kb": 5876,
+          "out_kb": 1371
+        },
+        {
+          "cat": "04_Fiber_Optic_Cabling",
+          "file": "04_Fiber_Optic_Cabling_023.jpg",
+          "src": "20241122_122354.jpg",
+          "src_type": "excess",
+          "in_kb": 5887,
+          "out_kb": 1357
+        },
+        {
+          "cat": "04_Fiber_Optic_Cabling",
+          "file": "04_Fiber_Optic_Cabling_024.jpg",
+          "src": "20240811_110200.jpg",
+          "src_type": "excess",
+          "in_kb": 5678,
+          "out_kb": 1274
+        }
+      ]
+    },
+    "05_Broadcasting_AV": {
+      "count": 18,
+      "images": [
+        {
+          "cat": "05_Broadcasting_AV",
+          "file": "05_Broadcasting_AV_001.jpg",
+          "src": "05_Broadcasting_AV_001.jpg",
+          "src_type": "final",
+          "in_kb": 266,
+          "out_kb": 319
+        },
+        {
+          "cat": "05_Broadcasting_AV",
+          "file": "05_Broadcasting_AV_002.jpg",
+          "src": "05_Broadcasting_AV_002.jpg",
+          "src_type": "final",
+          "in_kb": 542,
+          "out_kb": 660
+        },
+        {
+          "cat": "05_Broadcasting_AV",
+          "file": "05_Broadcasting_AV_003.jpg",
+          "src": "05_Broadcasting_AV_003.jpg",
+          "src_type": "final",
+          "in_kb": 598,
+          "out_kb": 732
+        },
+        {
+          "cat": "05_Broadcasting_AV",
+          "file": "05_Broadcasting_AV_004.jpg",
+          "src": "05_Broadcasting_AV_004.jpg",
+          "src_type": "final",
+          "in_kb": 534,
+          "out_kb": 646
+        },
+        {
+          "cat": "05_Broadcasting_AV",
+          "file": "05_Broadcasting_AV_005.jpg",
+          "src": "05_Broadcasting_AV_005.jpg",
+          "src_type": "final",
+          "in_kb": 318,
+          "out_kb": 390
+        },
+        {
+          "cat": "05_Broadcasting_AV",
+          "file": "05_Broadcasting_AV_006.jpg",
+          "src": "05_Broadcasting_AV_006.jpg",
+          "src_type": "final",
+          "in_kb": 308,
+          "out_kb": 363
+        },
+        {
+          "cat": "05_Broadcasting_AV",
+          "file": "05_Broadcasting_AV_007.jpg",
+          "src": "05_Broadcasting_AV_007.jpg",
+          "src_type": "final",
+          "in_kb": 698,
+          "out_kb": 840
+        },
+        {
+          "cat": "05_Broadcasting_AV",
+          "file": "05_Broadcasting_AV_008.jpg",
+          "src": "05_Broadcasting_AV_008.jpg",
+          "src_type": "final",
+          "in_kb": 480,
+          "out_kb": 600
+        },
+        {
+          "cat": "05_Broadcasting_AV",
+          "file": "05_Broadcasting_AV_009.jpg",
+          "src": "05_Broadcasting_AV_009.jpg",
+          "src_type": "final",
+          "in_kb": 427,
+          "out_kb": 520
+        },
+        {
+          "cat": "05_Broadcasting_AV",
+          "file": "05_Broadcasting_AV_010.jpg",
+          "src": "05_Broadcasting_AV_010.jpg",
+          "src_type": "final",
+          "in_kb": 586,
+          "out_kb": 712
+        },
+        {
+          "cat": "05_Broadcasting_AV",
+          "file": "05_Broadcasting_AV_011.jpg",
+          "src": "05_Broadcasting_AV_011.jpg",
+          "src_type": "final",
+          "in_kb": 297,
+          "out_kb": 370
+        },
+        {
+          "cat": "05_Broadcasting_AV",
+          "file": "05_Broadcasting_AV_012.jpg",
+          "src": "Uncategorized_Review_020_20140322_110848.jpg",
+          "src_type": "selected",
+          "in_kb": 306,
+          "out_kb": 330
+        },
+        {
+          "cat": "05_Broadcasting_AV",
+          "file": "05_Broadcasting_AV_013.jpg",
+          "src": "20240227_082502.jpg",
+          "src_type": "excess",
+          "in_kb": 7280,
+          "out_kb": 1372
+        },
+        {
+          "cat": "05_Broadcasting_AV",
+          "file": "05_Broadcasting_AV_014.jpg",
+          "src": "20240216_170641.jpg",
+          "src_type": "excess",
+          "in_kb": 5706,
+          "out_kb": 1121
+        },
+        {
+          "cat": "05_Broadcasting_AV",
+          "file": "05_Broadcasting_AV_015.jpg",
+          "src": "20230613_114121.jpg",
+          "src_type": "excess",
+          "in_kb": 5664,
+          "out_kb": 1086
+        },
+        {
+          "cat": "05_Broadcasting_AV",
+          "file": "05_Broadcasting_AV_016.jpg",
+          "src": "TimePhoto_20240717_102546.jpg",
+          "src_type": "excess",
+          "in_kb": 481,
+          "out_kb": 498
+        },
+        {
+          "cat": "05_Broadcasting_AV",
+          "file": "05_Broadcasting_AV_017.jpg",
+          "src": "20230121_121528.jpg",
+          "src_type": "excess",
+          "in_kb": 5779,
+          "out_kb": 1162
+        },
+        {
+          "cat": "05_Broadcasting_AV",
+          "file": "05_Broadcasting_AV_018.jpg",
+          "src": "20240330_095804.jpg",
+          "src_type": "excess",
+          "in_kb": 6754,
+          "out_kb": 1406
+        }
+      ]
+    },
+    "06_Field_Operations": {
+      "count": 29,
+      "images": [
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_001.jpg",
+          "src": "06_Field_Operations_001.jpg",
+          "src_type": "final",
+          "in_kb": 264,
+          "out_kb": 329
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_002.jpg",
+          "src": "06_Field_Operations_002.jpg",
+          "src_type": "final",
+          "in_kb": 347,
+          "out_kb": 429
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_003.jpg",
+          "src": "06_Field_Operations_003.jpg",
+          "src_type": "final",
+          "in_kb": 413,
+          "out_kb": 494
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_004.jpg",
+          "src": "06_Field_Operations_004.jpg",
+          "src_type": "final",
+          "in_kb": 454,
+          "out_kb": 542
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_005.jpg",
+          "src": "06_Field_Operations_005.jpg",
+          "src_type": "final",
+          "in_kb": 289,
+          "out_kb": 349
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_006.jpg",
+          "src": "06_Field_Operations_006.jpg",
+          "src_type": "final",
+          "in_kb": 327,
+          "out_kb": 404
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_007.jpg",
+          "src": "06_Field_Operations_007.jpg",
+          "src_type": "final",
+          "in_kb": 369,
+          "out_kb": 457
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_008.jpg",
+          "src": "06_Field_Operations_008.jpg",
+          "src_type": "final",
+          "in_kb": 278,
+          "out_kb": 344
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_009.jpg",
+          "src": "06_Field_Operations_009.jpg",
+          "src_type": "final",
+          "in_kb": 430,
+          "out_kb": 518
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_010.jpg",
+          "src": "06_Field_Operations_010.jpg",
+          "src_type": "final",
+          "in_kb": 244,
+          "out_kb": 295
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_011.jpg",
+          "src": "06_Field_Operations_011.jpg",
+          "src_type": "final",
+          "in_kb": 476,
+          "out_kb": 577
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_012.jpg",
+          "src": "06_Field_Operations_012.jpg",
+          "src_type": "final",
+          "in_kb": 338,
+          "out_kb": 412
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_013.jpg",
+          "src": "06_Field_Operations_013.jpg",
+          "src_type": "final",
+          "in_kb": 435,
+          "out_kb": 522
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_014.jpg",
+          "src": "06_Field_Operations_014.jpg",
+          "src_type": "final",
+          "in_kb": 290,
+          "out_kb": 353
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_015.jpg",
+          "src": "06_Field_Operations_015.jpg",
+          "src_type": "final",
+          "in_kb": 545,
+          "out_kb": 666
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_016.jpg",
+          "src": "06_Field_Operations_016.jpg",
+          "src_type": "final",
+          "in_kb": 414,
+          "out_kb": 514
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_017.jpg",
+          "src": "06_Field_Operations_017.jpg",
+          "src_type": "final",
+          "in_kb": 285,
+          "out_kb": 358
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_018.jpg",
+          "src": "06_Field_Operations_019.jpg",
+          "src_type": "final",
+          "in_kb": 307,
+          "out_kb": 380
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_019.jpg",
+          "src": "06_Field_Operations_020.jpg",
+          "src_type": "final",
+          "in_kb": 257,
+          "out_kb": 318
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_020.jpg",
+          "src": "06_Field_Operations_021.jpg",
+          "src_type": "final",
+          "in_kb": 295,
+          "out_kb": 374
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_021.jpg",
+          "src": "06_Field_Operations_022.jpg",
+          "src_type": "final",
+          "in_kb": 277,
+          "out_kb": 349
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_022.jpg",
+          "src": "06_Field_Operations_023.jpg",
+          "src_type": "final",
+          "in_kb": 433,
+          "out_kb": 522
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_023.jpg",
+          "src": "06_Field_Operations_024.jpg",
+          "src_type": "final",
+          "in_kb": 489,
+          "out_kb": 589
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_024.jpg",
+          "src": "06_Field_Operations_025.jpg",
+          "src_type": "final",
+          "in_kb": 318,
+          "out_kb": 390
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_025.jpg",
+          "src": "Uncategorized_Review_006_2013-10-13_10_28_17.jpg",
+          "src_type": "selected",
+          "in_kb": 315,
+          "out_kb": 345
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_026.jpg",
+          "src": "Uncategorized_Review_008_2013-10-16_16_03_58.jpg",
+          "src_type": "selected",
+          "in_kb": 245,
+          "out_kb": 262
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_027.jpg",
+          "src": "20240820_094652.jpg",
+          "src_type": "excess",
+          "in_kb": 6599,
+          "out_kb": 1362
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_028.jpg",
+          "src": "20251025_095321.jpg",
+          "src_type": "excess",
+          "in_kb": 4215,
+          "out_kb": 838
+        },
+        {
+          "cat": "06_Field_Operations",
+          "file": "06_Field_Operations_029.jpg",
+          "src": "20240411_083340.jpg",
+          "src_type": "excess",
+          "in_kb": 4534,
+          "out_kb": 957
+        }
+      ]
+    },
+    "07_Drone_Survey": {
+      "count": 4,
+      "images": [
+        {
+          "cat": "07_Drone_Survey",
+          "file": "07_Drone_Survey_001.jpg",
+          "src": "20240715_104558.jpg",
+          "src_type": "excess",
+          "in_kb": 7679,
+          "out_kb": 1617
+        },
+        {
+          "cat": "07_Drone_Survey",
+          "file": "07_Drone_Survey_002.jpg",
+          "src": "20230111_094311.jpg",
+          "src_type": "excess",
+          "in_kb": 6451,
+          "out_kb": 1285
+        },
+        {
+          "cat": "07_Drone_Survey",
+          "file": "07_Drone_Survey_003.jpg",
+          "src": "20240719_084029.jpg",
+          "src_type": "excess",
+          "in_kb": 4402,
+          "out_kb": 837
+        },
+        {
+          "cat": "07_Drone_Survey",
+          "file": "07_Drone_Survey_004.jpg",
+          "src": "20240719_084058.jpg",
+          "src_type": "excess",
+          "in_kb": 3760,
+          "out_kb": 868
+        }
+      ]
+    }
+  },
+  "failed": []
+}

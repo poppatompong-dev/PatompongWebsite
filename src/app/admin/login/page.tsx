@@ -126,6 +126,15 @@ export default function AdminLogin() {
           <p className="font-code text-[10px] text-ink-500 mt-6 text-center">
             Protected by JWT &middot; HttpOnly Cookies &middot; Security Headers
           </p>
+
+          <div className="mt-6 border-t border-ink-700 pt-5 text-center">
+            <button
+              onClick={() => router.push("/")}
+              className="text-xs font-code text-gold-500 hover:text-gold-400 hover:underline transition-colors"
+            >
+              ← กลับสู่หน้าหลัก (Back to Home)
+            </button>
+          </div>
         </div>
       </div>
     </div>

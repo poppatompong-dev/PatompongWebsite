@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Production Report — 05 มีนาคม 2569 (รอบ 2)</title>
+<style>
+  :root {
+    --accent: #1a73e8;
+    --accent2: #0d5bba;
+    --bg: #f4f7fb;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --green: #10b981;
+    --amber: #f59e0b;
+    --pink: #ec4899;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #0d1b2a 0%, #1a3a5c 55%, #1a73e8 100%);
+    color: #fff; padding: 52px 40px 42px; text-align: center;
+  }
+  .hero h1 { font-size: 2.2rem; font-weight: 700; letter-spacing: .5px; }
+  .hero .sub { font-size: 1rem; opacity: .82; margin-top: 8px; }
+  .badge { display: inline-block; margin: 12px 4px 0; padding: 5px 18px;
+           border-radius: 20px; font-size: .82rem; font-weight: 600;
+           border: 1px solid rgba(255,255,255,.4); }
+  .badge-r2 { background: rgba(236,72,153,.25); border-color: #ec4899; }
+
+  /* STAT CARDS */
+  .stats { display: flex; flex-wrap: wrap; gap: 16px; padding: 30px 36px; }
+  .stat  { flex: 1 1 130px; background: var(--card); border-radius: 12px;
+           padding: 20px 18px; box-shadow: 0 1px 6px rgba(0,0,0,.08); text-align: center; }
+  .stat .num  { font-size: 2.2rem; font-weight: 700; color: var(--accent); }
+  .stat .lbl  { font-size: .78rem; color: var(--muted); margin-top: 4px; }
+
+  /* SECTION */
+  .section { padding: 10px 36px 28px; }
+  .section h2 { font-size: 1.25rem; font-weight: 700; color: var(--accent2);
+                border-left: 4px solid var(--accent); padding-left: 12px; margin-bottom: 16px; }
+
+  /* CATEGORY CARDS */
+  .cats { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; }
+  .cat-card { background: var(--card); border-radius: 14px; padding: 20px 20px 16px;
+              box-shadow: 0 1px 6px rgba(0,0,0,.08); border-top: 4px solid var(--accent); }
+  .cat-card h3 { font-size: .95rem; font-weight: 700; margin-bottom: 6px; }
+  .cat-card .count { font-size: 2rem; font-weight: 800; color: var(--accent); }
+  .cat-card .sub   { font-size: .8rem; color: var(--muted); }
+  .cat-card .pills { margin-top: 10px; font-size: .78rem; display: flex; gap: 6px; flex-wrap: wrap; }
+  .pill { padding: 2px 10px; border-radius: 10px; font-size: .74rem; font-weight: 600; }
+  .pill-u  { background: #dbeafe; color: #1d4ed8; }  /* user kept */
+  .pill-a  { background: #d1fae5; color: #065f46; }  /* added by AI */
+  .pill-n  { background: #fce7f3; color: #9d174d; }  /* new category */
+  .pill-r  { background: #fee2e2; color: #991b1b; }  /* renamed */
+
+  /* CHANGE TABLE */
+  table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+  th { background: #1a3a5c; color: #fff; padding: 10px 14px; text-align: left; font-weight: 600; }
+  td { padding: 9px 14px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+  tr:hover td { background: #f0f5ff; }
+  .b-rm  { background: #fee2e2; color: #991b1b; border-radius: 6px; padding: 2px 8px; font-size: .74rem; display:inline-block; }
+  .b-add { background: #d1fae5; color: #065f46; border-radius: 6px; padding: 2px 8px; font-size: .74rem; display:inline-block; }
+  .b-new { background: #fce7f3; color: #9d174d; border-radius: 6px; padding: 2px 8px; font-size: .74rem; display:inline-block; }
+  .b-fix { background: #e0f2fe; color: #0369a1; border-radius: 6px; padding: 2px 8px; font-size: .74rem; display:inline-block; }
+
+  /* TECH */
+  .tech-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+  .tech-item { background: var(--card); border-radius: 10px; padding: 14px 16px;
+               box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+  .tech-item .t-label { font-size: .72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+  .tech-item .t-val   { font-size: .92rem; font-weight: 600; margin-top: 3px; color: var(--accent2); }
+
+  /* FOOTER */
+  .footer { text-align: center; padding: 24px; font-size: .8rem; color: var(--muted); border-top: 1px solid #e5e7eb; }
+
+  /* ROUND 2 NOTICE */
+  .notice { background: linear-gradient(135deg,#fdf4ff,#ede9fe); border: 1px solid #c4b5fd;
+            border-radius: 12px; padding: 16px 20px; margin: 0 36px 20px;
+            font-size: .88rem; color: #5b21b6; }
+  .notice strong { font-size: .95rem; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>📁 Portfolio Production Report</h1>
+  <div class="sub">ตรวจสอบ · เพิ่มเติม · เรียงชื่อไฟล์ใหม่ — หลังจากผู้ใช้ปรับแต่งด้วยตนเอง</div>
+  <span class="badge">📅 05 มีนาคม 2569 • 03:15 น.</span>
+  <span class="badge">🗂 7 หมวดงาน</span>
+  <span class="badge">🖼 156 ภาพ Production-Ready</span>
+  <span class="badge badge-r2">🔄 รอบที่ 2 — Post-Curation</span>
+</div>
+
+<!-- ROUND 2 NOTICE -->
+<div class="notice">
+  <strong>🔄 รอบที่ 2 (Post-Curation)</strong> — ผู้ใช้ได้ทำการปรับแต่งภาพด้วยตนเอง (เพิ่ม / ลบ / ย้าย) เพื่อให้ถูกต้องตามประเภทงาน
+  จากนั้น AI ได้ตรวจสอบ วิเคราะห์เนื้อหา และเติมภาพเพิ่มเติมจาก Excess Pool — โดยเฉพาะ 03_Wireless_Antenna และ 07_Drone_Survey ที่ขาดภาพ
+  สุดท้ายเรียงชื่อไฟล์ใหม่ทุกโฟลเดอร์ให้ตรง Prefix อย่างสมบูรณ์
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="num">156</div><div class="lbl">ภาพผลลัพธ์ทั้งหมด</div></div>
+  <div class="stat"><div class="num">7</div><div class="lbl">หมวดประเภทงาน</div></div>
+  <div class="stat"><div class="num">11</div><div class="lbl">ภาพใหม่เพิ่มในรอบนี้</div></div>
+  <div class="stat"><div class="num">156</div><div class="lbl">ไฟล์ถูก Rename ใหม่</div></div>
+  <div class="stat"><div class="num">88%</div><div class="lbl">JPEG Quality</div></div>
+  <div class="stat"><div class="num">1920px</div><div class="lbl">Max Width/Height</div></div>
+</div>
+
+<!-- CATEGORIES -->
+<div class="section">
+  <h2>หมวดประเภทงาน — สถานะหลังรอบที่ 2</h2>
+  <div class="cats">
+
+    <div class="cat-card">
+      <h3>📷 01 · CCTV &amp; Surveillance</h3>
+      <div class="count">36</div>
+      <div class="sub">กล้องวงจรปิด / ระบบควบคุม / ห้อง Monitor</div>
+      <div class="pills">
+        <span class="pill pill-u">36 ภาพ — ผู้ใช้คัดเลือก</span>
+        <span class="pill pill-r">Renamed ✓</span>
+      </div>
+    </div>
+
+    <div class="cat-card">
+      <h3>🖥 02 · Network &amp; Server Room</h3>
+      <div class="count">15</div>
+      <div class="sub">Server Room / Network Equipment / IP Camera</div>
+      <div class="pills">
+        <span class="pill pill-u">13 ภาพ — ผู้ใช้คัดเลือก</span>
+        <span class="pill pill-a">+2 Server Room จาก Excess</span>
+        <span class="pill pill-r">Renamed ✓</span>
+      </div>
+    </div>
+
+    <div class="cat-card">
+      <h3>📡 03 · Wireless &amp; Antenna</h3>
+      <div class="count">12</div>
+      <div class="sub">ติดตั้งเสาอากาศ / Point-to-Point / Canopy / Tower</div>
+      <div class="pills">
+        <span class="pill pill-u">6 ภาพ — ผู้ใช้คัดเลือก</span>
+        <span class="pill pill-a">+6 จาก Excess (2016-2018)</span>
+        <span class="pill pill-r">Renamed ✓</span>
+      </div>
+    </div>
+
+    <div class="cat-card">
+      <h3>🔆 04 · Fiber Optic Cabling</h3>
+      <div class="count">24</div>
+      <div class="sub">การ Splice / วางสาย Fiber / ทดสอบ OTDR</div>
+      <div class="pills">
+        <span class="pill pill-u">24 ภาพ — ผู้ใช้คัดเลือก</span>
+        <span class="pill pill-r">Renamed ✓</span>
+      </div>
+    </div>
+
+    <div class="cat-card">
+      <h3>🎙 05 · Broadcasting &amp; AV</h3>
+      <div class="count">24</div>
+      <div class="sub">งาน Event / ระบบเสียง / Livestream / Mixer</div>
+      <div class="pills">
+        <span class="pill pill-u">24 ภาพ — ผู้ใช้คัดเลือก</span>
+        <span class="pill pill-r">Renamed ✓</span>
+      </div>
+    </div>
+
+    <div class="cat-card">
+      <h3>🔧 06 · Field Operations</h3>
+      <div class="count">39</div>
+      <div class="sub">งานภาคสนาม / ติดตั้งอุปกรณ์ / High-Reach Work</div>
+      <div class="pills">
+        <span class="pill pill-u">39 ภาพ — ผู้ใช้คัดเลือก</span>
+        <span class="pill pill-r">Renamed ✓</span>
+      </div>
+    </div>
+
+    <div class="cat-card" style="border-top-color:#ec4899;">
+      <h3>🚁 07 · Drone Survey <span class="pill pill-n">ใหม่!</span></h3>
+      <div class="count" style="color:#be185d;">6</div>
+      <div class="sub">DJI Drone / เตรียมบิน / Survey / Hexacopter</div>
+      <div class="pills">
+        <span class="pill pill-u">3 ภาพ — ผู้ใช้คัดเลือก</span>
+        <span class="pill pill-a">+3 จาก Excess (2016-2017)</span>
+        <span class="pill pill-r">Renamed ✓</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CHANGE TABLE -->
+<div class="section">
+  <h2>สรุปการเปลี่ยนแปลง — รอบที่ 2 (Post-Curation)</h2>
+  <table>
+    <tr><th>รายการ</th><th>ก่อน (หลังผู้ใช้ปรับ)</th><th>หลัง</th><th>หมายเหตุ</th></tr>
+    <tr>
+      <td>การตรวจสอบชื่อไฟล์ข้าม Folder</td>
+      <td>ชื่อไม่ตรง Prefix เช่น 03_Wireless_XXX อยู่ใน 01_CCTV</td>
+      <td><span class="b-fix">Rename ครบทุก 156 ไฟล์</span></td>
+      <td>ผู้ใช้ย้ายโดย Drag &amp; Drop ทำให้ชื่อไม่ตรง Folder — แก้แล้ว</td>
+    </tr>
+    <tr>
+      <td>03_Wireless_Antenna</td>
+      <td>6 ภาพ (ผู้ใช้ลบออกจาก 35 เหลือ 6)</td>
+      <td><span class="b-add">12 ภาพ (+6)</span></td>
+      <td>เพิ่ม Canopy ODU, Microwave Dish, Tower Work จาก Excess</td>
+    </tr>
+    <tr>
+      <td>07_Drone_Survey</td>
+      <td>3 ภาพ</td>
+      <td><span class="b-add">6 ภาพ (+3)</span></td>
+      <td>เพิ่ม Hexacopter (2016), Field Drone, Pre-flight Prep</td>
+    </tr>
+    <tr>
+      <td>02_Network_Server</td>
+      <td>13 ภาพ</td>
+      <td><span class="b-add">15 ภาพ (+2)</span></td>
+      <td>เพิ่ม Large Server Room + NAS Storage Server</td>
+    </tr>
+    <tr>
+      <td>01_CCTV_Surveillance</td>
+      <td>36 ภาพ</td>
+      <td>36 ภาพ</td>
+      <td>ผู้ใช้เพิ่มจาก Wireless+Field → เนื้อหาถูกต้อง (CCTV บนเสา/ห้องควบคุม)</td>
+    </tr>
+    <tr>
+      <td>06_Field_Operations</td>
+      <td>39 ภาพ</td>
+      <td>39 ภาพ</td>
+      <td>ผู้ใช้ขยายจาก 29→39 — เนื้อหางานภาคสนามถูกต้อง</td>
+    </tr>
+    <tr>
+      <td>ชื่อไฟล์ทั้งหมด</td>
+      <td>ชื่อผสม (เช่น 03_Wireless_Antenna_007 ใน 01_CCTV)</td>
+      <td><span class="b-fix">XX_FolderName_NNN.jpg ทุกไฟล์</span></td>
+      <td>Sequential renaming ครบทุก Folder ✓</td>
+    </tr>
+  </table>
+</div>
+
+<!-- WIRELESS IMAGES ADDED -->
+<div class="section">
+  <h2>📡 ภาพ Wireless Antenna ที่เพิ่มจาก Excess</h2>
+  <table>
+    <tr><th>ไฟล์ต้นฉบับ</th><th>เนื้อหา</th><th>ปี</th></tr>
+    <tr><td>20160301_151436.jpg</td><td>Motorola Canopy Ethernet Surge Suppressor (CMM/AP/SM) — Wireless outdoor equipment wiring</td><td>2016</td></tr>
+    <tr><td>20161005_121950.jpg</td><td>Microwave / Point-to-Point dish antenna บนดาดฟ้า — IP address เขียนบน dish</td><td>2016</td></tr>
+    <tr><td>20160909_145750.jpg</td><td>ทีมงานบน Orange Lattice Tower พร้อม Microwave dish — Panorama เมือง</td><td>2016</td></tr>
+    <tr><td>20170321_102334.jpg</td><td>ช่างบน Rooftop Antenna Mast — Panorama เมืองด้านหลัง</td><td>2017</td></tr>
+    <tr><td>20170613_184954.jpg</td><td>งานที่ยอดหอสัญญาณ — ร้อยสาย Antenna cable ที่ความสูง</td><td>2017</td></tr>
+    <tr><td>20180320_135737.jpg</td><td>White Canopy/PMP Outdoor Unit บนเสา — วิวภูเขาและป่า</td><td>2018</td></tr>
+  </table>
+</div>
+
+<!-- DRONE IMAGES ADDED -->
+<div class="section">
+  <h2>🚁 ภาพ Drone Survey ที่เพิ่มจาก Excess</h2>
+  <table>
+    <tr><th>ไฟล์ต้นฉบับ</th><th>เนื้อหา</th><th>ปี</th></tr>
+    <tr><td>20161106_155126.jpg</td><td>Hexacopter บนพื้นกลางแจ้ง — ทีมงานเตรียมบิน (งาน Event)</td><td>2016</td></tr>
+    <tr><td>20161202_080144.jpg</td><td>Hexacopter ในสนามหญ้าเปิด — ภาพ Survey พื้นที่</td><td>2016</td></tr>
+    <tr><td>20170707_080656.jpg</td><td>ทีมงาน 2 คน เปิด Drone Case + Laptop เตรียม Pre-flight</td><td>2017</td></tr>
+  </table>
+</div>
+
+<!-- TECH SPEC -->
+<div class="section">
+  <h2>⚙️ Technical Specifications</h2>
+  <div class="tech-grid">
+    <div class="tech-item"><div class="t-label">Max Resolution</div><div class="t-val">1920 × 1920 px</div></div>
+    <div class="tech-item"><div class="t-label">Format</div><div class="t-val">Progressive JPEG</div></div>
+    <div class="tech-item"><div class="t-label">Quality</div><div class="t-val">88% (Optimized)</div></div>
+    <div class="tech-item"><div class="t-label">Color Mode</div><div class="t-val">RGB sRGB</div></div>
+    <div class="tech-item"><div class="t-label">EXIF Rotation</div><div class="t-val">✅ Auto-corrected</div></div>
+    <div class="tech-item"><div class="t-label">Auto-Contrast</div><div class="t-val">✅ 0.5% cutoff</div></div>
+    <div class="tech-item"><div class="t-label">Brightness</div><div class="t-val">+5%</div></div>
+    <div class="tech-item"><div class="t-label">Contrast</div><div class="t-val">+8%</div></div>
+    <div class="tech-item"><div class="t-label">Saturation</div><div class="t-val">+10%</div></div>
+    <div class="tech-item"><div class="t-label">Sharpening</div><div class="t-val">Unsharp Mask r1.5 p120</div></div>
+    <div class="tech-item"><div class="t-label">Vignette</div><div class="t-val">25% subtle edge</div></div>
+    <div class="tech-item"><div class="t-label">Frame Border</div><div class="t-val">2px Light Grey</div></div>
+  </div>
+</div>
+
+<!-- FOLDER STRUCTURE -->
+<div class="section">
+  <h2>📂 โครงสร้าง Folder ผลลัพธ์ (หลัง Rename)</h2>
+  <pre style="background:#1e293b;color:#e2e8f0;padding:20px 24px;border-radius:12px;font-size:.82rem;line-height:1.9;overflow-x:auto;">Portfolio_Production_<strong>20260305_014502</strong>/
+├── 01_CCTV_Surveillance/           ← 36 ภาพ  ✓ Renamed
+│     01_CCTV_Surveillance_001.jpg … 036.jpg
+├── 02_Network_Server/              ← 15 ภาพ  ✓ Renamed  +2 ใหม่
+│     02_Network_Server_001.jpg … 015.jpg
+├── 03_Wireless_Antenna/            ← 12 ภาพ  ✓ Renamed  +6 ใหม่
+│     03_Wireless_Antenna_001.jpg … 012.jpg
+├── 04_Fiber_Optic_Cabling/         ← 24 ภาพ  ✓ Renamed
+│     04_Fiber_Optic_Cabling_001.jpg … 024.jpg
+├── 05_Broadcasting_AV/             ← 24 ภาพ  ✓ Renamed
+│     05_Broadcasting_AV_001.jpg … 024.jpg
+├── 06_Field_Operations/            ← 39 ภาพ  ✓ Renamed
+│     06_Field_Operations_001.jpg … 039.jpg
+├── 07_Drone_Survey/                ← 6 ภาพ   ✓ Renamed  +3 ใหม่  🆕
+│     07_Drone_Survey_001.jpg … 006.jpg
+├── PORTFOLIO_SUMMARY.html          ← รายงานนี้ (รอบที่ 2)
+└── PRODUCTION_REPORT.json          ← ข้อมูลดิบรอบแรก</pre>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  สร้างโดย Claude Cowork Mode &nbsp;·&nbsp; Portfolio_Production_20260305_014502 &nbsp;·&nbsp;
+  รอบที่ 2 — Post-Curation &nbsp;·&nbsp; 05/03/2569 03:15
+</div>
+
+</body>
+</html>
