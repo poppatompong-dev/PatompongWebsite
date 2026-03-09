@@ -4,10 +4,9 @@ import HeroSection from "@/components/HeroSection";
 import StatsBar from "@/components/StatsBar";
 import FloatingAction from "@/components/FloatingAction";
 import SideDotNav from "@/components/SideDotNav";
+import CinematicGalleryWrapper from "@/components/CinematicGalleryWrapper";
 
 // Lazy-load below-fold heavy sections → reduces initial JS bundle & TBT
-const SmartGallery = dynamic(() => import("@/components/SmartGallery"), { ssr: true });
-const PortfolioSection = dynamic(() => import("@/components/PortfolioSection"), { ssr: true });
 const ServicesSection = dynamic(() => import("@/components/ServicesSection"), { ssr: true });
 const WorkProcessSection = dynamic(() => import("@/components/WorkProcessSection"), { ssr: true });
 const TimelineSection = dynamic(() => import("@/components/TimelineSection"), { ssr: true });
@@ -43,10 +42,11 @@ export default async function Home() {
         <StatsBar />
 
         {/* Below the fold – deferred JS chunks */}
+        <div id="portfolio">
+          <CinematicGalleryWrapper />
+        </div>
         <ServicesSection />
         <WorkProcessSection />
-        <SmartGallery />
-        <PortfolioSection />
         <TimelineSection />
         <CCTVDetailSection />
         <ContactSection />
