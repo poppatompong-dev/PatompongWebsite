@@ -6,9 +6,9 @@ import { motion, AnimatePresence } from "framer-motion";
 const sections = [
   { id: "home",       label: "หน้าแรก" },
   { id: "services",   label: "บริการ" },
+  { id: "portfolio",  label: "ผลงาน" },
   { id: "process",    label: "ขั้นตอน" },
   { id: "why-us",     label: "ทำไมต้องเรา" },
-  { id: "portfolio",  label: "ผลงาน" },
   { id: "education",  label: "คุณวุฒิ" },
   { id: "contact",    label: "ติดต่อ" },
 ];
