@@ -8,9 +8,14 @@ import CinematicGalleryWrapper from "@/components/CinematicGalleryWrapper";
 
 // Lazy-load below-fold heavy sections → reduces initial JS bundle & TBT
 const ServicesSection = dynamic(() => import("@/components/ServicesSection"), { ssr: true });
+const QuoteSection = dynamic(() => import("@/components/QuoteSection"), { ssr: true });
 const WorkProcessSection = dynamic(() => import("@/components/WorkProcessSection"), { ssr: true });
+const PortfolioSection = dynamic(() => import("@/components/PortfolioSection"), { ssr: true });
 const TimelineSection = dynamic(() => import("@/components/TimelineSection"), { ssr: true });
 const CCTVDetailSection = dynamic(() => import("@/components/CCTVDetailSection"), { ssr: true });
+const EducationSection = dynamic(() => import("@/components/EducationSection"), { ssr: true });
+const TestimonialSection = dynamic(() => import("@/components/TestimonialSection"), { ssr: true });
+const FAQSection = dynamic(() => import("@/components/FAQSection"), { ssr: true });
 const ContactSection = dynamic(() => import("@/components/ContactSection"), { ssr: true });
 const Footer = dynamic(() => import("@/components/Footer"), { ssr: true });
 
@@ -46,9 +51,14 @@ export default async function Home() {
           <CinematicGalleryWrapper />
         </div>
         <ServicesSection />
+        <QuoteSection />
         <WorkProcessSection />
+        <PortfolioSection />
         <TimelineSection />
         <CCTVDetailSection />
+        <EducationSection />
+        <TestimonialSection />
+        <FAQSection />
         <ContactSection />
       </main>
       <Footer />

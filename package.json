@@ -16,6 +16,7 @@
     "@react-three/fiber": "^8.18.0",
     "bcryptjs": "^3.0.3",
     "cross-env": "^10.1.0",
+    "diskusage-ng": "^1.0.4",
     "framer-motion": "^12.34.3",
     "framer-motion-3d": "^12.4.13",
     "googleapis": "^171.4.0",

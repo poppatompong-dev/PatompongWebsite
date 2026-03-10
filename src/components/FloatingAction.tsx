@@ -23,7 +23,7 @@ export default function FloatingAction() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 40 }}
-          className="fixed bottom-6 right-5 lg:bottom-10 lg:right-8 z-50 flex flex-col gap-3"
+          className="fixed bottom-6 right-5 lg:bottom-10 lg:right-8 z-50 flex flex-col gap-4 items-end"
         >
           {/* LINE Quick Contact */}
           <a

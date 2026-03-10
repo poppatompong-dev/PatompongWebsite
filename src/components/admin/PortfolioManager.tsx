@@ -5,11 +5,12 @@ import {
     getPortfolioProjects,
     createPortfolioProject,
     deletePortfolioProject,
+    togglePortfolioFeatured,
     addAttachment,
     deleteAttachment,
     generatePortfolioShareLink,
 } from "@/app/admin/(protected)/actions";
-import { Plus, Trash2, Link as LinkIcon, ExternalLink, Paperclip, Share2, Copy, Check, FileText, Image as ImageIcon, Film } from "lucide-react";
+import { Plus, Trash2, Link as LinkIcon, ExternalLink, Paperclip, Share2, Copy, Check, FileText, Image as ImageIcon, Film, Eye, EyeOff } from "lucide-react";
 import FileUploader from "./FileUploader";
 
 interface Attachment {
@@ -172,8 +173,11 @@ export default function PortfolioManager() {
                                 {/* Header */}
                                 <div className="flex flex-col sm:flex-row justify-between gap-3">
                                     <div className="flex-1">
-                                        <div className="flex items-center gap-2">
+                                        <div className="flex items-center gap-2 flex-wrap">
                                             <h4 className="text-lg font-bold text-cream-100">{project.title}</h4>
+                                            {project.isFeatured && (
+                                                <span className="text-[9px] font-code px-2 py-0.5 bg-green-500/20 text-green-400 border border-green-500/30 uppercase">แสดงบนเว็บ</span>
+                                            )}
                                             {project.url && (
                                                 <a href={project.url} target="_blank" rel="noreferrer" className="text-gold-400 hover:text-gold-300">
                                                     <ExternalLink className="w-4 h-4" />
@@ -190,6 +194,9 @@ export default function PortfolioManager() {
                                         )}
                                     </div>
                                     <div className="flex items-start gap-2 shrink-0">
+                                        <button onClick={async () => { await togglePortfolioFeatured(project.id); await fetchData(); }} className={`p-2 transition-colors border ${project.isFeatured ? 'text-green-400 border-green-500/50 bg-green-500/10' : 'text-ink-400 border-ink-600 hover:border-green-500/50 hover:text-green-400'}`} title={project.isFeatured ? 'แสดงอยู่บนเว็บไซต์หลัก (คลิกเพื่อซ่อน)' : 'คลิกเพื่อแสดงบนเว็บไซต์หลัก'}>
+                                            {project.isFeatured ? <Eye className="w-4 h-4" /> : <EyeOff className="w-4 h-4" />}
+                                        </button>
                                         <button onClick={() => setAttachingTo(attachingTo === project.id ? null : project.id)} className="text-ink-400 hover:text-gold-400 p-2 transition-colors border border-ink-600 hover:border-gold-500/50" title="แนบไฟล์">
                                             <Paperclip className="w-4 h-4" />
                                         </button>

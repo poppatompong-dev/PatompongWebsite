@@ -6,9 +6,12 @@ export default async function TimelineSection() {
   try {
     const prisma = new PrismaClient();
     events = await prisma.timelineEvent.findMany({
+      where: { isPublic: true },
       orderBy: { date: "desc" },
     });
   } catch { /* DB unavailable during CI build */ }
+
+  if (events.length === 0) return null;
 
   return (
     <section id="experience" className="relative py-24 lg:py-32 bg-cream-100 bg-noise">

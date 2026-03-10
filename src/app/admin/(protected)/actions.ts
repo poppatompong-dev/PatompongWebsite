@@ -2,6 +2,61 @@
 
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
+import os from "os";
+import fs from "fs/promises";
+import path from "path";
+
+// ==================== System Actions ====================
+
+async function getDirectorySize(dirPath: string): Promise<number> {
+    try {
+        const stats = await fs.stat(dirPath);
+        if (stats.isFile()) return stats.size;
+        if (stats.isDirectory()) {
+            const files = await fs.readdir(dirPath);
+            const sizes = await Promise.all(
+                files.map((file) => getDirectorySize(path.join(dirPath, file)))
+            );
+            return sizes.reduce((acc, curr) => acc + curr, 0);
+        }
+        return 0;
+    } catch (e) {
+        return 0;
+    }
+}
+
+export async function getSystemStats() {
+    const totalMem = os.totalmem();
+    const freeMem = os.freemem();
+    const usedMem = totalMem - freeMem;
+    const uptime = os.uptime();
+
+    // Calculate storage usage specifically for photos
+    const projectRoot = process.cwd();
+    const tempPhotosSize = await getDirectorySize(path.join(projectRoot, "temp_photos"));
+    const publicSize = await getDirectorySize(path.join(projectRoot, "public"));
+    const totalStorageUsed = tempPhotosSize + publicSize;
+
+    // GitHub recommended soft limit is 1GB (1024 * 1024 * 1024 bytes)
+    const MAX_STORAGE = 1073741824; 
+
+    return {
+        memory: {
+            used: usedMem,
+            total: totalMem,
+            percentage: Math.round((usedMem / totalMem) * 100)
+        },
+        storage: {
+            used: totalStorageUsed,
+            total: MAX_STORAGE,
+            percentage: Math.min(100, Math.round((totalStorageUsed / MAX_STORAGE) * 100)),
+            tempPhotosSize
+        },
+        os: `${os.type()} ${os.release()} (${os.arch()})`,
+        node: process.version,
+        uptime,
+    };
+}
 
 // ==================== Portfolio Actions ====================
 
@@ -33,6 +88,18 @@ export async function deletePortfolioProject(id: string) {
     revalidatePath("/admin");
     revalidatePath("/");
     return { success: true };
+}
+
+export async function togglePortfolioFeatured(id: string) {
+    const project = await prisma.portfolioProject.findUnique({ where: { id } });
+    if (!project) return { success: false };
+    await prisma.portfolioProject.update({
+        where: { id },
+        data: { isFeatured: !project.isFeatured },
+    });
+    revalidatePath("/admin");
+    revalidatePath("/");
+    return { success: true, isFeatured: !project.isFeatured };
 }
 
 export async function generatePortfolioShareLink(id: string) {
@@ -83,6 +150,18 @@ export async function deleteTimelineEvent(id: string) {
     revalidatePath("/admin");
     revalidatePath("/");
     return { success: true };
+}
+
+export async function toggleTimelinePublic(id: string) {
+    const event = await prisma.timelineEvent.findUnique({ where: { id } });
+    if (!event) return { success: false };
+    await prisma.timelineEvent.update({
+        where: { id },
+        data: { isPublic: !event.isPublic },
+    });
+    revalidatePath("/admin");
+    revalidatePath("/");
+    return { success: true, isPublic: !event.isPublic };
 }
 
 export async function generateTimelineShareLink(id: string) {

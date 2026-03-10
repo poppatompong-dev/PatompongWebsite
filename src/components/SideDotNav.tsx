@@ -9,7 +9,6 @@ const sections = [
   { id: "process",    label: "ขั้นตอน" },
   { id: "why-us",     label: "ทำไมต้องเรา" },
   { id: "portfolio",  label: "ผลงาน" },
-  { id: "experience", label: "ประสบการณ์" },
   { id: "education",  label: "คุณวุฒิ" },
   { id: "contact",    label: "ติดต่อ" },
 ];

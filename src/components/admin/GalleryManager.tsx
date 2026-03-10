@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { Camera, Search, Filter, Tag, Check, X, Image as ImageIcon, Trash2, RefreshCw, Save, Eye, EyeOff, ChevronDown, UploadCloud, ChevronUp } from "lucide-react";
 import Image from "next/image";
-import { getSavedPhotos, savePhotoMetadata, togglePhotoVisibility, deletePortfolioPhoto } from "@/actions/galleryDb";
+import { getSavedPhotos, savePhotoMetadata, togglePhotoVisibility, deletePortfolioPhoto, syncGalleryFromDisk } from "@/actions/galleryDb";
 import PortfolioUploader from "./PortfolioUploader";
 
 type Photo = {
@@ -48,6 +48,8 @@ export default function GalleryManager() {
   const [showHidden, setShowHidden] = useState(true);
   const [uploadCategory, setUploadCategory] = useState("CCTV & Security");
   const [uploadPanelOpen, setUploadPanelOpen] = useState(false);
+  const [syncing, setSyncing] = useState(false);
+  const [syncResult, setSyncResult] = useState<string | null>(null);
 
   const loadPhotos = useCallback(async () => {
     setLoading(true);
@@ -123,14 +125,38 @@ export default function GalleryManager() {
             {photos.length} ภาพทั้งหมด · <span className="text-green-400">{visibleCount} แสดงผล</span> · <span className="text-ink-500">{hiddenCount} ซ่อนไว้</span>
           </p>
         </div>
-        <button
-          onClick={loadPhotos}
-          className="flex items-center gap-2 px-4 py-2 border border-ink-600 text-ink-300 font-code text-sm hover:text-gold-400 transition-colors"
-        >
-          <RefreshCw className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} />
-          รีเฟรช
-        </button>
+        <div className="flex gap-2">
+          <button
+            onClick={async () => {
+              setSyncing(true); setSyncResult(null);
+              const res = await syncGalleryFromDisk();
+              setSyncResult(res.success ? `ซิงค์สำเร็จ: เพิ่ม ${res.synced} ภาพ (ข้าม ${res.skipped})` : `ผิดพลาด: ${res.error}`);
+              await loadPhotos();
+              setSyncing(false);
+              setTimeout(() => setSyncResult(null), 5000);
+            }}
+            disabled={syncing}
+            className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white font-code text-sm hover:bg-green-500 transition-colors disabled:opacity-50"
+          >
+            <RefreshCw className={`w-4 h-4 ${syncing ? "animate-spin" : ""}`} />
+            {syncing ? "กำลังซิงค์..." : "ซิงค์จาก Disk"}
+          </button>
+          <button
+            onClick={loadPhotos}
+            className="flex items-center gap-2 px-4 py-2 border border-ink-600 text-ink-300 font-code text-sm hover:text-gold-400 transition-colors"
+          >
+            <RefreshCw className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} />
+            รีเฟรช
+          </button>
+        </div>
       </div>
+
+      {/* Sync Result */}
+      {syncResult && (
+        <div className={`px-4 py-3 border font-code text-sm ${syncResult.startsWith('ซิงค์สำเร็จ') ? 'bg-green-500/10 border-green-500/30 text-green-400' : 'bg-red-500/10 border-red-500/30 text-red-400'}`}>
+          {syncResult}
+        </div>
+      )}
 
       {/* Upload Panel */}
       <div className="border border-ink-700 overflow-hidden">

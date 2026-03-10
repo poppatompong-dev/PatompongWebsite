@@ -35,7 +35,7 @@ export default function HeroSection({ featuredPhotos }: Props) {
         }}
       />
       {/* Diagonal gold accent block */}
-      <div className="absolute top-0 right-0 w-[45%] h-full bg-ink-800/80 backdrop-blur-sm hidden lg:block z-0" style={{ clipPath: "polygon(12% 0, 100% 0, 100% 100%, 0% 100%)" }} />
+      <div className="absolute top-0 right-0 w-[45%] h-full bg-ink-900/85 backdrop-blur-md hidden lg:block z-0" style={{ clipPath: "polygon(12% 0, 100% 0, 100% 100%, 0% 100%)" }} />
       {/* Gold top bar */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold-600 via-gold-400 to-gold-600 z-10" />
 
@@ -88,8 +88,8 @@ export default function HeroSection({ featuredPhotos }: Props) {
               transition={{ delay: 0.8, duration: 0.6 }}
               className="text-base sm:text-lg text-cream-200/80 mb-10 max-w-xl leading-relaxed border-l-4 border-gold-500 pl-5 bg-ink-900/30 backdrop-blur-sm py-2 rounded-r-md"
             >
-              ดูแลควบคุมงานโดยผู้เชี่ยวชาญที่มีประสบการณ์กว่า <strong className="text-white">13 ปี</strong>{" "}
-              จากองค์กรภาครัฐและเอกชน — ตรงไปตรงมา ไม่ทิ้งงาน พร้อมบริการหลังการขายที่รวดเร็ว
+              ดูแลโดย<strong className="text-white">นักวิชาการคอมพิวเตอร์</strong>ประจำหน่วยงานภาคท้องถิ่น ผู้มีประสบการณ์กว่า <strong className="text-white">13 ปี</strong>{" "}
+              ในสายงานเทคโนโลยีสารสนเทศภาครัฐและเอกชน — ตรงไปตรงมา ไม่ทิ้งงาน พร้อมบริการหลังการขายที่รวดเร็ว
             </motion.p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -139,7 +139,7 @@ export default function HeroSection({ featuredPhotos }: Props) {
               {[
                 { icon: Shield, label: "ระบบกล้องวงจรปิดอัจฉริยะ", sub: "Smart CCTV & Network", desc: "กล้อง 4K + AI แยกแยะคน-สัตว์-รถ มาตรฐานองค์กร", tag: "เป็นที่นิยมมาก" },
                 { icon: Network, label: "เครือข่ายระดับองค์กร", sub: "Enterprise Network", desc: "เน็ตลื่นไหล ใช้งานได้ทุกคนพร้อมกัน ปลอดภัยจากแฮกเกอร์", tag: "" },
-                { icon: Code, label: "ซอฟต์แวร์สั่งทำตามความต้องการ", sub: "Custom Software & AI", desc: "Python · Google Apps Script · Next.js · AI Automation ลดงานซ้ำซ้อน ยกระดับองค์กร", tag: "" },
+                { icon: Code, label: "ซอฟต์แวร์และระบบอัตโนมัติ", sub: "Software & AI Automation", desc: "พัฒนาซอฟต์แวร์ด้วยเทคโนโลยีสมัยใหม่ ผสาน AI ลดงานซ้ำซ้อน ยกระดับองค์กร", tag: "" },
               ].map((item, i) => (
                 <motion.div
                   key={item.label}

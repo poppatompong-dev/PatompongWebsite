@@ -297,18 +297,16 @@ export default function QuotationManager() {
             {/* Header */}
             <div className="px-8 pt-6 pb-5">
               <div className="flex items-start justify-between">
-                <div className="flex items-start gap-3">
-                  <div className="w-14 h-14 bg-gradient-to-br from-amber-600 to-amber-800 rounded-lg flex items-center justify-center shadow-md">
-                    <span className="font-bold text-white text-xl">PT</span>
-                  </div>
+                <div className="flex items-start gap-4">
+                  <img src="/logo-main.png" alt="Patompong Tech" className="w-16 h-16 object-contain rounded-lg shadow-md border border-slate-200 bg-white p-1" />
                   <div>
                     <h1 className="text-lg font-bold text-slate-800 leading-tight">Patompong Tech Consultant</h1>
-                    <p className="text-[11px] text-slate-400 mt-0.5">ทีมผู้เชี่ยวชาญระบบไอที · CCTV · Network · Software</p>
+                    <p className="text-[11px] text-slate-500 mt-0.5">นักวิชาการคอมพิวเตอร์ · ระบบ CCTV · Network · Software</p>
                     <div className="flex gap-4 mt-2 text-[11px] text-slate-500">
-                      <span>📞 083-687-0393</span>
-                      <span>✉ poppatompong@gmail.com</span>
+                      <span>โทร. 083-687-0393</span>
+                      <span>อีเมล poppatompong@gmail.com</span>
                     </div>
-                    <p className="text-[11px] text-slate-500">📍 นครสวรรค์ และพื้นที่ใกล้เคียง</p>
+                    <p className="text-[11px] text-slate-500">สำนักงาน: นครสวรรค์ และพื้นที่ใกล้เคียง</p>
                   </div>
                 </div>
                 <div className="text-right">

@@ -5,11 +5,12 @@ import {
     getTimelineEvents,
     createTimelineEvent,
     deleteTimelineEvent,
+    toggleTimelinePublic,
     addAttachment,
     deleteAttachment,
     generateTimelineShareLink,
 } from "@/app/admin/(protected)/actions";
-import { Plus, Trash2, Calendar, Paperclip, Share2, Copy, Check, FileText, Image as ImageIcon, Film, MapPin } from "lucide-react";
+import { Plus, Trash2, Calendar, Paperclip, Share2, Copy, Check, FileText, Image as ImageIcon, Film, MapPin, Eye, EyeOff } from "lucide-react";
 import FileUploader from "./FileUploader";
 
 interface Attachment {
@@ -193,6 +194,9 @@ export default function TimelineManager() {
                                             <span className={`text-[10px] font-code px-2 py-0.5 border ${categoryColor[event.category] || categoryColor.Other}`}>
                                                 {event.category}
                                             </span>
+                                            {(event as any).isPublic && (
+                                                <span className="text-[9px] font-code px-2 py-0.5 bg-green-500/20 text-green-400 border border-green-500/30 uppercase">แสดงบนเว็บ</span>
+                                            )}
                                         </div>
                                         <div className="flex items-center gap-4 mt-1 text-xs text-ink-400">
                                             <span className="font-code">{new Date(event.date).toLocaleDateString("th-TH", { year: "numeric", month: "long", day: "numeric" })}</span>
@@ -205,6 +209,9 @@ export default function TimelineManager() {
                                         <p className="text-sm text-ink-300 mt-2 line-clamp-2">{event.description}</p>
                                     </div>
                                     <div className="flex items-start gap-2 shrink-0">
+                                        <button onClick={async () => { await toggleTimelinePublic(event.id); await fetchData(); }} className={`p-2 transition-colors border ${(event as any).isPublic ? 'text-green-400 border-green-500/50 bg-green-500/10' : 'text-ink-400 border-ink-600 hover:border-green-500/50 hover:text-green-400'}`} title={(event as any).isPublic ? 'แสดงอยู่บนเว็บไซต์หลัก (คลิกเพื่อซ่อน)' : 'คลิกเพื่อแสดงบนเว็บไซต์หลัก'}>
+                                            {(event as any).isPublic ? <Eye className="w-4 h-4" /> : <EyeOff className="w-4 h-4" />}
+                                        </button>
                                         <button onClick={() => setAttachingTo(attachingTo === event.id ? null : event.id)} className="text-ink-400 hover:text-gold-400 p-2 transition-colors border border-ink-600 hover:border-gold-500/50" title="แนบไฟล์">
                                             <Paperclip className="w-4 h-4" />
                                         </button>

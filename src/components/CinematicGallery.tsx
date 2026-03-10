@@ -89,7 +89,7 @@ function DualHeroSlideshow({
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 z-10">
-          <span className="inline-block px-3 py-1 bg-primary text-white rounded-md text-[11px] font-semibold mb-2 shadow">
+          <span className="inline-block px-3 py-1 bg-gold-500 text-cream-50 rounded-md text-[11px] font-semibold mb-2 shadow">
             {pPhoto.category}
           </span>
           <h3 className="text-white text-lg md:text-xl font-light drop-shadow-lg leading-snug">
@@ -97,7 +97,7 @@ function DualHeroSlideshow({
           </h3>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/10 z-20">
-          <div className="h-full bg-primary" style={{ animation: pFading ? "none" : "progress 5s linear forwards", width: pFading ? "0%" : undefined }} />
+          <div className="h-full bg-gold-500" style={{ animation: pFading ? "none" : "progress 5s linear forwards", width: pFading ? "0%" : undefined }} />
         </div>
       </div>
 
@@ -120,7 +120,7 @@ function DualHeroSlideshow({
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-5 md:p-8 flex items-end justify-between z-10">
           <div>
-            <span className="inline-block px-3 py-1 bg-primary text-white rounded-md text-[11px] font-semibold mb-2 shadow">
+            <span className="inline-block px-3 py-1 bg-gold-500 text-cream-50 rounded-md text-[11px] font-semibold mb-2 shadow">
               {lPhoto.category}
             </span>
             <h3 className="text-white text-lg md:text-2xl font-light drop-shadow-lg leading-snug">
@@ -132,7 +132,7 @@ function DualHeroSlideshow({
           </span>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/10 z-20">
-          <div className="h-full bg-primary" style={{ animation: lFading ? "none" : "progress 5s linear forwards", width: lFading ? "0%" : undefined }} />
+          <div className="h-full bg-gold-500" style={{ animation: lFading ? "none" : "progress 5s linear forwards", width: lFading ? "0%" : undefined }} />
         </div>
       </div>
     </div>
@@ -227,7 +227,7 @@ export default function CinematicGallery() {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-[50vh] bg-neutral-950 text-white">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold-500"></div>
       </div>
     );
   }
@@ -252,17 +252,17 @@ export default function CinematicGallery() {
         {/* Header with Logo */}
         <div className="text-center mb-12">
           <div className="flex justify-center mb-5">
-            <div className="relative w-20 h-20">
+            <div className="relative w-28 h-28 sm:w-32 sm:h-32 mix-blend-screen drop-shadow-[0_0_20px_rgba(217,119,6,0.3)]">
                <Image
                  src="/logo-main.png"
                  alt="Patompong Logo"
                  fill
-                 className="object-contain"
+                 className="object-contain invert brightness-200"
                  priority
                />
             </div>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Our Portfolio</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">ผลงานของเรา</h2>
           <p className="text-neutral-400 max-w-2xl mx-auto text-lg">
             ผลงานติดตั้งและให้บริการที่ผ่านมาของเรา
           </p>
@@ -316,10 +316,10 @@ export default function CinematicGallery() {
             {/* Data Panel */}
             <div className="w-full lg:w-1/3 flex flex-col justify-center text-left bg-neutral-900/80 p-6 md:p-8 rounded-2xl border border-white/5 backdrop-blur-md">
               <div className="inline-flex items-center gap-3 mb-5">
-                <div className="relative w-8 h-8">
-                  <Image src="/logo-main.png" alt="Logo" fill className="object-contain" />
+                <div className="relative w-12 h-12 mix-blend-screen drop-shadow-[0_0_12px_rgba(217,119,6,0.3)]">
+                  <Image src="/logo-main.png" alt="Logo" fill className="object-contain invert brightness-200" />
                 </div>
-                <span className="text-primary text-xs font-bold tracking-[0.2em] uppercase">รายละเอียดผลงาน</span>
+                <span className="text-gold-500 text-xs font-bold tracking-[0.2em] uppercase">รายละเอียดผลงาน</span>
               </div>
               <h3 className="text-2xl md:text-3xl font-light text-white mb-2 leading-tight">{selectedPhoto.category}</h3>
               <div className="h-px w-full bg-white/10 my-6" />
@@ -337,7 +337,7 @@ export default function CinematicGallery() {
               </div>
               <div className="mt-8 pt-6 border-t border-white/10 flex gap-4">
                 <button
-                  className="flex-1 py-3.5 px-4 bg-primary text-primary-foreground text-sm font-semibold rounded-lg hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 hover:shadow-primary/40 active:scale-95"
+                  className="flex-1 py-3.5 px-4 bg-gold-500 text-cream-50 text-sm font-semibold rounded-lg hover:bg-gold-600 transition-all shadow-lg shadow-gold-500/20 hover:shadow-gold-500/40 active:scale-95"
                   onClick={() => window.open(selectedPhoto.url, "_blank")}
                 >
                   เปิดรูปภาพเต็มจอ

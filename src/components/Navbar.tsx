@@ -9,7 +9,6 @@ const navLinks = [
   { href: "#home", label: "หน้าแรก", id: "home" },
   { href: "#services", label: "บริการ", id: "services" },
   { href: "#portfolio", label: "ผลงาน", id: "portfolio" },
-  { href: "#experience", label: "ประสบการณ์", id: "experience" },
   { href: "#education", label: "คุณวุฒิ", id: "education" },
   { href: "#contact", label: "ติดต่อ", id: "contact" },
 ];
@@ -58,11 +57,11 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-3 sm:gap-4 group">
-            <div className="relative w-14 h-14 sm:w-16 sm:h-16 shrink-0">
-              <Image src="/logo-main.png" alt="Patompong Tech Consultant Logo" fill className="object-contain group-hover:scale-105 transition-transform" sizes="(max-width: 640px) 56px, 64px" priority />
+            <div className="relative w-16 h-16 sm:w-20 sm:h-20 shrink-0">
+              <Image src="/logo-main.png" alt="Patompong Tech Consultant Logo" fill className={`object-contain group-hover:scale-110 transition-all duration-300 drop-shadow-lg ${scrolled ? '' : 'invert brightness-200 drop-shadow-[0_0_12px_rgba(217,119,6,0.4)]'}`} sizes="(max-width: 640px) 64px, 80px" priority />
             </div>
             <div className="flex flex-col">
-              <span className={`text-base font-heading font-bold tracking-tight leading-tight transition-colors ${scrolled ? "text-ink-800" : "text-cream-50"}`}>
+              <span className={`text-base sm:text-lg font-heading font-bold tracking-tight leading-tight transition-colors ${scrolled ? "text-ink-800" : "text-cream-50"}`}>
                 Patompong
               </span>
               <span className="text-[9px] font-code text-gold-400 leading-tight tracking-[0.2em] uppercase">

@@ -7,6 +7,7 @@ export default async function PortfolioSection() {
     try {
         const prisma = new PrismaClient();
         projects = await prisma.portfolioProject.findMany({
+            where: { isFeatured: true },
             orderBy: { createdAt: "desc" },
         });
     } catch { /* DB unavailable during CI build */ }

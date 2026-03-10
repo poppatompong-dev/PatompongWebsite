@@ -20,8 +20,8 @@ const mainServices = [
     title: "ซอฟต์แวร์ระดับองค์กร",
     tagline: "Enterprise Software & Automation",
     description:
-      "พัฒนาโปรแกรมด้วย Python & Google Apps Script ผสาน Next.js และ AI Automation ลดงานซ้ำซ้อน เพิ่มประสิทธิภาพให้องค์กรทำงานฉลาดขึ้น",
-    features: ["Python & Google Apps Script", "AI Automation", "Web Application", "ระบบจัดการข้อมูลองค์กร"],
+      "ออกแบบและพัฒนาซอฟต์แวร์ด้วยเทคโนโลยีสมัยใหม่ ผสาน AI และระบบอัตโนมัติ ช่วยลดงานซ้ำซ้อน เพิ่มความแม่นยำ และยกระดับประสิทธิภาพการทำงานขององค์กรอย่างเป็นระบบ",
+    features: ["Web & Mobile Application", "AI Automation & Vibe Coding", "ระบบจัดการข้อมูลและรายงาน", "เชื่อมต่อระบบเดิมขององค์กร"],
     highlight: false,
   },
 ];
@@ -137,7 +137,7 @@ export default function ServicesSection() {
               <span className="font-heading font-semibold text-ink-500 text-sm">โซลูชันแห่งอนาคต &middot; Smart Home & Energy</span>
               <span className="font-code text-[10px] px-2 py-0.5 bg-cream-200 text-ink-400 border border-cream-300 uppercase">Coming Soon</span>
             </div>
-            <p className="text-xs text-ink-400">บริการนี้อยู่ระหว่างการศึกษาเพิ่มเติม คาดว่าจะเปิดให้บริการในอนาคตอันใกล้</p>
+            <p className="text-xs text-ink-400">อยู่ระหว่างการเตรียมพร้อม คาดว่าจะเปิดให้บริการภายในปี 2569 — สนใจลงทะเบียนรอได้เลย</p>
           </div>
         </motion.div>
       </div>

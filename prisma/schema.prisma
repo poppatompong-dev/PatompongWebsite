@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -12,7 +9,7 @@ datasource db {
 
 model GalleryPhoto {
   id          String   @id @default(cuid())
-  url         String   // Direct image URL (e.g., Cloudinary, Unsplash, or local)
+  url         String
   category    String   @default("Uncategorized")
   description String?
   isHidden    Boolean  @default(false)
@@ -24,39 +21,40 @@ model PortfolioProject {
   id          String       @id @default(cuid())
   title       String
   description String?
-  url         String?      // Link to the project
-  imageUrl    String?      // Thumbnail link
-  tags        String?      // Comma separated tags (e.g., Next.js, API)
+  url         String?
+  imageUrl    String?
+  tags        String?
   isFeatured  Boolean      @default(false)
-  shareSlug   String?      @unique // Public sharing URL slug
-  attachments Attachment[]
+  shareSlug   String?      @unique
   createdAt   DateTime     @default(now())
   updatedAt   DateTime     @updatedAt
+  attachments Attachment[]
 }
 
 model TimelineEvent {
   id          String       @id @default(cuid())
   title       String
   description String?
-  date        DateTime     // Date of the event/training
-  category    String       // e.g., "Training", "Development", "Event"
-  imageUrl    String?      // Optional photo from event
-  location    String?      // Where it happened
-  shareSlug   String?      @unique // Public sharing URL slug
-  attachments Attachment[]
+  date        DateTime
+  category    String
+  imageUrl    String?
+  location    String?
+  isPublic    Boolean      @default(false)
+  shareSlug   String?      @unique
   createdAt   DateTime     @default(now())
   updatedAt   DateTime     @updatedAt
+  attachments Attachment[]
 }
 
 model Attachment {
   id          String            @id @default(cuid())
   filename    String
-  url         String            // URL of the file (Cloudinary / external)
-  fileType    String            // image, document, video
-  fileSize    Int?              // File size in bytes
+  url         String
+  fileType    String
+  fileSize    Int?
   portfolioId String?
   timelineId  String?
-  portfolio   PortfolioProject? @relation(fields: [portfolioId], references: [id], onDelete: Cascade)
-  timeline    TimelineEvent?    @relation(fields: [timelineId], references: [id], onDelete: Cascade)
   createdAt   DateTime          @default(now())
+  timeline    TimelineEvent?    @relation(fields: [timelineId], references: [id], onDelete: Cascade)
+  portfolio   PortfolioProject? @relation(fields: [portfolioId], references: [id], onDelete: Cascade)
 }

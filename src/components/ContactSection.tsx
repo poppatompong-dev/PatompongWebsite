@@ -263,7 +263,7 @@ export default function ContactSection() {
                   <MapPin className="w-4 h-4 text-gold-500 mt-0.5 shrink-0" />
                   <div>
                     <p className="text-cream-200 text-sm font-medium">พื้นที่ให้บริการ</p>
-                    <p className="text-ink-400 text-xs mt-1">นครสวรรค์, พิษณุโลก และจังหวัดใกล้เคียง</p>
+                    <p className="text-ink-400 text-xs mt-1">นครสวรรค์, อุทัย และจังหวัดใกล้เคียง</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -274,6 +274,21 @@ export default function ContactSection() {
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* Google Map */}
+            <div className="bg-ink-800 border border-ink-700 rounded-sm overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123845.35454613517!2d100.0330075!3d15.6930072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3114b9e0a64bd3e7%3A0x4025c4d5a6e8290!2z4LiI4Lix4LiH4Lir4Lin4Lix4LiU4LiZ4LiE4Lij4Liq4Lin4Lij4Lij4LiE4LmM!5e0!3m2!1sth!2sth!4v1710000000000!5m2!1sth!2sth"
+                width="100%"
+                height="180"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="พื้นที่ให้บริการ นครสวรรค์"
+                className="opacity-80 hover:opacity-100 transition-opacity"
+              />
             </div>
           </motion.div>
         </div>

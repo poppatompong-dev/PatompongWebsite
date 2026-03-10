@@ -94,3 +94,18 @@ body {
 @keyframes shimmer {
   100% { transform: translateX(100%); }
 }
+
+@keyframes tickerUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(calc(-100% / 3)); } /* Divides by 3 because we triple the items array */
+}
+
+@keyframes tickerDown {
+  0% { transform: translateY(calc(-100% / 3)); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes progress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}

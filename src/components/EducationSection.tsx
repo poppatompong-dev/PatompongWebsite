@@ -1,34 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, Award, BookOpen, CheckCircle } from "lucide-react";
+import { GraduationCap, BookOpen, CheckCircle } from "lucide-react";
 
 const education = [
   {
     levelEn: "Bachelor's Degree",
     level: "ปริญญาตรี",
-    field: "คอมพิวเตอร์ธุรกิจ / เทคโนโลยีสารสนเทศ",
-    institution: "มหาวิทยาลัย",
-    year: "2554",
+    field: "วิทยาการคอมพิวเตอร์",
+    institution: "",
+    year: "2547",
     icon: GraduationCap,
     highlight: false,
-  },
-];
-
-const certifications = [
-  {
-    title: "ความมั่นคงปลอดภัยไซเบอร์",
-    org: "สกมช. (NCSA)",
-    detail: "ผ่านการอบรมเชิงปฏิบัติการด้านความปลอดภัยไซเบอร์สำหรับหน่วยงานภาครัฐ",
-    highlight: true,
-    icon: Award,
-  },
-  {
-    title: "การตรวจสอบและวิเคราะห์ภัยคุกคามไซเบอร์",
-    org: "สกมช. / หน่วยงานภาครัฐ",
-    detail: "Threat Intelligence, Log Analysis, Incident Response เบื้องต้น",
-    highlight: false,
-    icon: Award,
   },
 ];
 
@@ -87,12 +70,12 @@ export default function EducationSection() {
           </h2>
           <div className="divider-gold mx-auto mt-4" />
           <p className="mt-6 text-ink-400 text-lg max-w-2xl mx-auto">
-            ควบคุมดูแลงานและให้คำปรึกษาโดยผู้เชี่ยวชาญ ที่มีพื้นฐานวิชาการและการอบรมจากหน่วยงานที่เชื่อถือได้
+            ควบคุมดูแลงานและให้คำปรึกษาโดยนักวิชาการคอมพิวเตอร์ประจำหน่วยงานภาคท้องถิ่น ผู้ผ่านการอบรมและรับรองจากหน่วยงานที่เชื่อถือได้
           </p>
         </motion.div>
 
-        {/* Education + Certs */}
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
+        {/* Education Only */}
+        <div className="flex justify-center mb-12">
           {/* Degree */}
           {education.map((edu) => (
             <motion.div
@@ -101,7 +84,7 @@ export default function EducationSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-white border border-cream-300 p-6 flex gap-4 hover:border-gold-400/50 transition-colors"
+              className="bg-white border border-cream-300 p-6 flex gap-4 hover:border-gold-400/50 transition-colors w-full md:w-1/2"
             >
               <div className="w-12 h-12 border border-cream-300 flex items-center justify-center shrink-0">
                 <edu.icon className="w-6 h-6 text-gold-500" />
@@ -110,28 +93,7 @@ export default function EducationSection() {
                 <span className="font-code text-[10px] text-gold-500 uppercase tracking-wider">{edu.levelEn}</span>
                 <h3 className="font-heading font-bold text-ink-700 mt-1">{edu.level}</h3>
                 <p className="text-sm text-ink-500 mt-1">{edu.field}</p>
-                <p className="text-xs text-ink-400 mt-1 font-code">{edu.institution} · {edu.year}</p>
-              </div>
-            </motion.div>
-          ))}
-
-          {/* Main Cert — Highlighted */}
-          {certifications.filter((c) => c.highlight).map((cert) => (
-            <motion.div
-              key={cert.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-gold-500/10 border border-gold-500/40 p-6 flex gap-4"
-            >
-              <div className="w-12 h-12 border border-gold-400 flex items-center justify-center shrink-0">
-                <cert.icon className="w-6 h-6 text-gold-500" />
-              </div>
-              <div>
-                <span className="font-code text-[10px] text-gold-600 uppercase tracking-wider">Certificate · {cert.org}</span>
-                <h3 className="font-heading font-bold text-ink-700 mt-1">{cert.title}</h3>
-                <p className="text-sm text-ink-500 mt-1">{cert.detail}</p>
+                <p className="text-xs text-ink-400 mt-1 font-code">{edu.year}</p>
               </div>
             </motion.div>
           ))}
