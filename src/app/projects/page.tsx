@@ -67,15 +67,16 @@ function anonymizeText(text: string): string {
     .replace(/บ้านคลอง/g, "พื้นที่ ก.");
 }
 
+// Gallery photos: use portfolio showcase covers as reliable static images
 const GALLERY_PHOTOS: GalleryPhoto[] = [
-  { src: "/api/local-photos/01_CCTV_Surveillance/01_CCTV_Surveillance_001.jpg", caption: "ระบบกล้องวงจรปิด — ติดตั้งและดูแลจุดสำคัญในพื้นที่", category: "CCTV" },
-  { src: "/api/local-photos/02_Network_Server/02_Network_Server_001.jpg", caption: "ห้องเซิร์ฟเวอร์ — ศูนย์กลางเครือข่ายและประมวลผลข้อมูล", category: "Network" },
-  { src: "/api/local-photos/03_Wireless_Antenna/03_Wireless_Antenna_001.jpg", caption: "เสาอากาศไร้สาย — ขยายสัญญาณครอบคลุมพื้นที่บริการ", category: "Wireless" },
-  { src: "/api/local-photos/04_Fiber_Optic_Cabling/04_Fiber_Optic_Cabling_003.jpg", caption: "ระบบไฟเบอร์ออปติก — เชื่อมต่อเครือข่ายความเร็วสูง", category: "Fiber Optic" },
-  { src: "/api/local-photos/05_Broadcasting_AV/05_Broadcasting_AV_001.jpg", caption: "ระบบเสียงตามสาย — กระจายข่าวสารสู่ชุมชน", category: "Broadcasting" },
-  { src: "/api/local-photos/06_Field_Operations/06_Field_Operations_001.jpg", caption: "ปฏิบัติการภาคสนาม — สำรวจและติดตั้งอุปกรณ์จริง", category: "Field Ops" },
-  { src: "/api/local-photos/07_Drone_Survey/07_Drone_Survey_001.jpg", caption: "สำรวจทางอากาศ — ถ่ายภาพมุมสูงด้วยโดรน", category: "Drone" },
-  { src: "/api/local-photos/06_Field_Operations/06_Field_Operations_002.jpg", caption: "ทีมงานภาคสนาม — ตรวจสอบระบบโครงสร้างพื้นฐาน", category: "Field Ops" },
+  { src: "/portfolio-showcase/covers/proj_gis-cover.png", caption: "ระบบแผนที่ GIS — ติดตามจุดสำคัญในพื้นที่", category: "GIS" },
+  { src: "/portfolio-showcase/covers/proj_007-cover.png", caption: "ระบบจัดการข้อมูล — ศูนย์กลางประมวลผลข้อมูล", category: "Data" },
+  { src: "/portfolio-showcase/covers/proj_008-cover.png", caption: "ระบบเว็บแอปพลิเคชัน — แพลตฟอร์มดิจิทัล", category: "Web App" },
+  { src: "/portfolio-showcase/covers/proj_009-cover.png", caption: "ระบบรายงานอัจฉริยะ — วิเคราะห์และแสดงผล", category: "Analytics" },
+  { src: "/portfolio-showcase/covers/proj_010-cover.png", caption: "ระบบอัตโนมัติ — สร้างเอกสารและแจ้งเตือน", category: "Automation" },
+  { src: "/portfolio-showcase/covers/proj_011-cover.png", caption: "ระบบจัดการประชุม — ติดตามวาระและมติ", category: "Meeting" },
+  { src: "/portfolio-showcase/covers/proj_012-cover.png", caption: "แดชบอร์ด KPI — ตัวชี้วัดประสิทธิภาพ", category: "Dashboard" },
+  { src: "/portfolio-showcase/covers/proj_013-cover.png", caption: "ระบบจัดเก็บเอกสาร — คลังข้อมูลดิจิทัล", category: "Document" },
 ];
 
 const ARCH_LAYERS = [

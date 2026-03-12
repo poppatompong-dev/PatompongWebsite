@@ -33,9 +33,14 @@ const nextConfig = {
   outputFileTracingExcludes: {
     "**/*": [
       "public/portfolio/**/*",
-      "public/portfolio-showcase/**/*",
+      "public/portfolio-showcase/covers/**",
+      "public/portfolio-showcase/screenshots/**",
+      "public/portfolio-showcase/slideshows/**",
       "temp_photos/**/*"
     ],
+  },
+  outputFileTracingIncludes: {
+    "**/*": ["prisma/dev.db"],
   },
   allowedDevOrigins: ["127.0.0.1", "localhost"],
   reactCompiler: true,

@@ -26,36 +26,47 @@ async function getDirectorySize(dirPath: string): Promise<number> {
 }
 
 export async function getSystemStats() {
-    const totalMem = os.totalmem();
-    const freeMem = os.freemem();
-    const usedMem = totalMem - freeMem;
-    const uptime = os.uptime();
+    try {
+        const totalMem = os.totalmem();
+        const freeMem = os.freemem();
+        const usedMem = totalMem - freeMem;
+        const uptime = os.uptime();
 
-    // Calculate storage usage specifically for photos
-    const projectRoot = process.cwd();
-    const tempPhotosSize = await getDirectorySize(path.join(projectRoot, "temp_photos"));
-    const publicSize = await getDirectorySize(path.join(projectRoot, "public"));
-    const totalStorageUsed = tempPhotosSize + publicSize;
+        // Calculate storage usage specifically for photos
+        const projectRoot = process.cwd();
+        const tempPhotosSize = await getDirectorySize(path.join(projectRoot, "temp_photos"));
+        const publicSize = await getDirectorySize(path.join(projectRoot, "public"));
+        const totalStorageUsed = tempPhotosSize + publicSize;
 
-    // GitHub recommended soft limit is 1GB (1024 * 1024 * 1024 bytes)
-    const MAX_STORAGE = 1073741824;
+        // GitHub recommended soft limit is 1GB (1024 * 1024 * 1024 bytes)
+        const MAX_STORAGE = 1073741824;
 
-    return {
-        memory: {
-            used: usedMem,
-            total: totalMem,
-            percentage: Math.round((usedMem / totalMem) * 100)
-        },
-        storage: {
-            used: totalStorageUsed,
-            total: MAX_STORAGE,
-            percentage: Math.min(100, Math.round((totalStorageUsed / MAX_STORAGE) * 100)),
-            tempPhotosSize
-        },
-        os: `${os.type()} ${os.release()} (${os.arch()})`,
-        node: process.version,
-        uptime,
-    };
+        return {
+            memory: {
+                used: usedMem,
+                total: totalMem,
+                percentage: Math.round((usedMem / totalMem) * 100)
+            },
+            storage: {
+                used: totalStorageUsed,
+                total: MAX_STORAGE,
+                percentage: Math.min(100, Math.round((totalStorageUsed / MAX_STORAGE) * 100)),
+                tempPhotosSize
+            },
+            os: `${os.type()} ${os.release()} (${os.arch()})`,
+            node: process.version,
+            uptime,
+        };
+    } catch (e) {
+        // Fallback for serverless environments (Netlify, etc.)
+        return {
+            memory: { used: 0, total: 0, percentage: 0 },
+            storage: { used: 0, total: 1073741824, percentage: 0, tempPhotosSize: 0 },
+            os: "Serverless",
+            node: process.version,
+            uptime: 0,
+        };
+    }
 }
 
 // ==================== Portfolio Actions ====================
