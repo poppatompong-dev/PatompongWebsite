@@ -30,6 +30,13 @@ const nextConfig = {
       allowedOrigins: ["localhost:3000", "127.0.0.1:50198", "localhost:3001", "127.0.0.1:63426", "localhost:63426"],
     },
   },
+  outputFileTracingExcludes: {
+    "**/*": [
+      "public/portfolio/**/*",
+      "public/portfolio-showcase/**/*",
+      "temp_photos/**/*"
+    ],
+  },
   allowedDevOrigins: ["127.0.0.1", "localhost"],
   reactCompiler: true,
   async headers() {
