@@ -1,0 +1,82 @@
+{
+  "generatedAt": "2026-03-12T04:09:48.819Z",
+  "projectId": "proj_029",
+  "slug": "uthai-smart-pa-system",
+  "projectName": "Uthai Thani Smart PA | ระบบจัดการเสียงไร้สายอัจฉริยะ",
+  "clientName": "เทศบาลเมืองอุทัยธานี",
+  "type": "Firebase",
+  "slides": [
+    {
+      "id": "proj_029-cover",
+      "kind": "cover",
+      "title": "Uthai Thani Smart PA | ระบบจัดการเสียงไร้สายอัจฉริยะ",
+      "subtitle": "Uthai Smart Pa System",
+      "image": "../../covers/proj_029-cover.png",
+      "badge": "Firebase",
+      "meta": "เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_029-screenshot-1",
+      "kind": "text",
+      "title": "Project Snapshot",
+      "subtitle": "Smart Systems",
+      "image": "../../covers/proj_029-cover.png",
+      "description": "ระบบจัดการเสียงไร้สายอัจฉริยะ ควบคุมลำโพงไร้สาย จัดตารางกระจายเสียง แสดงสถานะ Real-time อยู่ในหมวด Web Applications ประเภทย่อย Smart Systems และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_029-screenshot-2",
+      "kind": "text",
+      "title": "Key Details",
+      "subtitle": "Web Applications",
+      "image": "../../covers/proj_029-cover.png",
+      "description": "15 มิถุนายน 2565 - 30 สิงหาคม 2565"
+    },
+    {
+      "id": "proj_029-features",
+      "kind": "text",
+      "title": "Features & Description",
+      "subtitle": "Firebase",
+      "description": "ระบบจัดการเสียงไร้สายอัจฉริยะ ควบคุมลำโพงไร้สาย จัดตารางกระจายเสียง แสดงสถานะ Real-time อยู่ในหมวด Web Applications ประเภทย่อย Smart Systems และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "items": [
+        "firebase",
+        "smart system",
+        "audio",
+        "wireless",
+        "real-time",
+        "IoT"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_029-info",
+      "kind": "text",
+      "title": "Project Info",
+      "subtitle": "Project #03",
+      "items": [
+        "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+        "หมวดงาน: Web Applications",
+        "ประเภทย่อย: Smart Systems",
+        "ช่วงเวลา: 15 มิถุนายน 2565 - 30 สิงหาคม 2565"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_029-cta",
+      "kind": "cta",
+      "title": "View Live",
+      "subtitle": "เปิดดูระบบจริง",
+      "description": "https://uthai-smart-pa.web.app/",
+      "buttonLabel": "Open Project",
+      "href": "https://uthai-smart-pa.web.app/",
+      "image": null
+    },
+    {
+      "id": "proj_029-thanks",
+      "kind": "thanks",
+      "title": "Thank You",
+      "subtitle": "Patompong Tech Consultant",
+      "description": "เสียง • ไร้สาย • อัจฉริยะ • จัดการ",
+      "image": "../../covers/proj_029-cover.png"
+    }
+  ]
+}

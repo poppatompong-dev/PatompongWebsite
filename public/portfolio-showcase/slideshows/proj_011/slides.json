@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-03-12T04:09:48.955Z",
+  "projectId": "proj_011",
+  "slug": "material-requisition-system",
+  "projectName": "ระบบเบิกจ่ายวัสดุอุปกรณ์สำนักปลัด",
+  "clientName": "เทศบาลตำบลบ้านคลอง",
+  "type": "AppSheet",
+  "slides": [
+    {
+      "id": "proj_011-cover",
+      "kind": "cover",
+      "title": "ระบบเบิกจ่ายวัสดุอุปกรณ์สำนักปลัด",
+      "subtitle": "Material Requisition System",
+      "image": "../../covers/proj_011-cover.png",
+      "badge": "AppSheet",
+      "meta": "เทศบาลตำบลบ้านคลอง"
+    },
+    {
+      "id": "proj_011-screenshot-1",
+      "kind": "text",
+      "title": "Project Snapshot",
+      "subtitle": "Inventory Management",
+      "image": "../../covers/proj_011-cover.png",
+      "description": "จัดการการเบิกจ่ายวัสดุอุปกรณ์ บันทึกรายการ ยอดคงเหลือ อยู่ในหมวด Database & Data Management ประเภทย่อย Inventory Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง"
+    },
+    {
+      "id": "proj_011-screenshot-2",
+      "kind": "text",
+      "title": "Key Details",
+      "subtitle": "Database & Data Management",
+      "image": "../../covers/proj_011-cover.png",
+      "description": "15 สิงหาคม 2564 - 15 ตุลาคม 2564"
+    },
+    {
+      "id": "proj_011-features",
+      "kind": "text",
+      "title": "Features & Description",
+      "subtitle": "AppSheet",
+      "description": "จัดการการเบิกจ่ายวัสดุอุปกรณ์ บันทึกรายการ ยอดคงเหลือ อยู่ในหมวด Database & Data Management ประเภทย่อย Inventory Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+      "items": [
+        "appsheet",
+        "inventory",
+        "material",
+        "requisition"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_011-info",
+      "kind": "text",
+      "title": "Project Info",
+      "subtitle": "Project #26",
+      "items": [
+        "หน่วยงาน: เทศบาลตำบลบ้านคลอง",
+        "หมวดงาน: Database & Data Management",
+        "ประเภทย่อย: Inventory Management",
+        "ช่วงเวลา: 15 สิงหาคม 2564 - 15 ตุลาคม 2564"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_011-cta",
+      "kind": "cta",
+      "title": "View Live",
+      "subtitle": "เปิดดูระบบจริง",
+      "description": "https://www.appsheet.com/start/581c5055-8e02-4501-92ac-4747b0811b7c",
+      "buttonLabel": "Open Project",
+      "href": "https://www.appsheet.com/start/581c5055-8e02-4501-92ac-4747b0811b7c",
+      "image": null
+    },
+    {
+      "id": "proj_011-thanks",
+      "kind": "thanks",
+      "title": "Thank You",
+      "subtitle": "Patompong Tech Consultant",
+      "description": "วัสดุ • อุปกรณ์ • เบิก • จ่าย",
+      "image": "../../covers/proj_011-cover.png"
+    }
+  ]
+}

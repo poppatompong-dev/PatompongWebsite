@@ -1,0 +1,189 @@
+import fs from "node:fs/promises";
+import path from "node:path";
+import { buildManifestData } from "./build-manifest.mjs";
+import { ensureDir, escapeHtml, loadManifest, rootDir, toPosixPath, writeJson } from "./shared.mjs";
+
+function publicAssetToRelative(projectDir, assetPath) {
+  if (!assetPath) return null;
+  const targetAbsolutePath = path.join(rootDir, "public", assetPath.replace(/^\//, "").replace(/\//g, path.sep));
+  return toPosixPath(path.relative(projectDir, targetAbsolutePath));
+}
+
+function renderSlideBody(slide) {
+  if (slide.kind === "image" || slide.kind === "cover" || slide.kind === "thanks") {
+    return `<div class="visual">${slide.image ? `<img src="${escapeHtml(slide.image)}" alt="${escapeHtml(slide.title)}" />` : ""}</div><div class="copy"><span class="eyebrow">${escapeHtml(slide.subtitle || "")}</span><h2>${escapeHtml(slide.title)}</h2><p>${escapeHtml(slide.description || "")}</p></div>`;
+  }
+
+  if (slide.kind === "cta") {
+    return `<div class="copy full"><span class="eyebrow">${escapeHtml(slide.subtitle || "")}</span><h2>${escapeHtml(slide.title)}</h2><p>${escapeHtml(slide.description || "")}</p>${slide.href ? `<a class="cta" href="${escapeHtml(slide.href)}" target="_blank" rel="noreferrer">${escapeHtml(slide.buttonLabel || "Open")}</a>` : ""}</div>`;
+  }
+
+  const items = Array.isArray(slide.items) ? slide.items : [];
+  return `<div class="copy full"><span class="eyebrow">${escapeHtml(slide.subtitle || "")}</span><h2>${escapeHtml(slide.title)}</h2><p>${escapeHtml(slide.description || "")}</p>${items.length > 0 ? `<ul>${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : ""}</div>`;
+}
+
+function renderSlideshowHtml(project, slides) {
+  const panes = slides
+    .map(
+      (slide, index) =>
+        `<section class="slide-pane${index === 0 ? " active" : ""}" data-slide-index="${index}">${renderSlideBody(slide)}</section>`,
+    )
+    .join("");
+
+  return `<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>${escapeHtml(project.projectName)} Presentation</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; font-family: Inter, system-ui, sans-serif; background: #020617; color: #fefce8; }
+  body { display: flex; min-height: 100vh; }
+  .shell { width: 100%; display: flex; flex-direction: column; }
+  .topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 24px; border-bottom: 1px solid rgba(255,255,255,0.08); background: rgba(2,6,23,0.92); position: sticky; top: 0; z-index: 10; }
+  .brand { display: flex; flex-direction: column; gap: 6px; }
+  .brand .eyebrow { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #fbbf24; }
+  .brand strong { font-size: 18px; }
+  .actions { display: flex; align-items: center; gap: 10px; }
+  .button { display: inline-flex; align-items: center; justify-content: center; min-width: 42px; height: 42px; padding: 0 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.12); background: rgba(15,23,42,0.8); color: #fefce8; cursor: pointer; }
+  .button.primary { background: #d97706; border-color: #d97706; text-decoration: none; }
+  .meta { color: rgba(255,255,255,0.64); font-size: 13px; }
+  .stage { flex: 1; display: flex; padding: 24px; }
+  .slide { width: 100%; min-height: calc(100vh - 116px); border-radius: 28px; overflow: hidden; background: ${project.theme.gradient}; position: relative; box-shadow: 0 30px 80px rgba(0,0,0,0.35); }
+  .slide::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at top right, rgba(255,255,255,0.16), transparent 28%), radial-gradient(circle at bottom left, rgba(255,255,255,0.12), transparent 28%); }
+  .panes { position: relative; min-height: calc(100vh - 164px); }
+  .slide-pane { position: absolute; inset: 0; display: none; grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr); }
+  .slide-pane.active { display: grid; }
+  .visual { min-height: 320px; background: rgba(15,23,42,0.22); display: flex; align-items: center; justify-content: center; padding: 24px; }
+  .visual img { width: 100%; height: 100%; max-height: calc(100vh - 212px); object-fit: contain; border-radius: 20px; background: rgba(255,255,255,0.06); }
+  .copy { padding: 40px; display: flex; flex-direction: column; justify-content: center; background: rgba(2,6,23,0.44); backdrop-filter: blur(8px); }
+  .copy.full { grid-column: 1 / -1; max-width: 900px; }
+  .copy .eyebrow { font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #fbbf24; }
+  .copy h2 { margin: 16px 0 14px; font-size: clamp(34px, 5vw, 60px); line-height: 1.04; }
+  .copy p { margin: 0; font-size: 18px; line-height: 1.7; color: rgba(255,255,255,0.84); }
+  .copy ul { margin: 24px 0 0; padding-left: 20px; display: grid; gap: 12px; font-size: 18px; color: rgba(255,255,255,0.88); }
+  .cta { margin-top: 28px; display: inline-flex; align-self: flex-start; align-items: center; justify-content: center; padding: 14px 24px; border-radius: 999px; background: #f59e0b; color: #111827; text-decoration: none; font-weight: 700; }
+  .footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 24px 24px; color: rgba(255,255,255,0.7); font-size: 14px; }
+  .progress { display: flex; align-items: center; gap: 8px; }
+  .dot { width: 10px; height: 10px; border-radius: 999px; background: rgba(255,255,255,0.16); }
+  .dot.active { background: #fbbf24; }
+  @media (max-width: 900px) {
+    .slide-pane,
+    .slide-pane.active { grid-template-columns: 1fr; }
+    .copy, .copy.full { padding: 28px; }
+    .stage { padding: 14px; }
+    .slide { border-radius: 22px; }
+    .visual img { max-height: 42vh; }
+    .topbar { flex-wrap: wrap; }
+    .actions { width: 100%; justify-content: space-between; }
+  }
+</style>
+</head>
+<body>
+  <div class="shell">
+    <div class="topbar">
+      <div class="brand">
+        <span class="eyebrow">Patompong Tech Consultant</span>
+        <strong>${escapeHtml(project.projectName)}</strong>
+      </div>
+      <div class="actions">
+        <button class="button" id="prevButton">←</button>
+        <div class="meta" id="slideCounter"></div>
+        <button class="button" id="nextButton">→</button>
+        ${project.url ? `<a class="button primary" href="${escapeHtml(project.url)}" target="_blank" rel="noreferrer">View Live</a>` : ""}
+      </div>
+    </div>
+    <div class="stage">
+      <div class="slide">
+        <div class="panes">${panes}</div>
+        <div class="footer">
+          <div>${escapeHtml(project.clientName)} • ${escapeHtml(project.type)}</div>
+          <div class="progress" id="progressMount"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script>
+  const panes = Array.from(document.querySelectorAll('.slide-pane'));
+  let currentIndex = 0;
+  const progressMount = document.getElementById('progressMount');
+  const counter = document.getElementById('slideCounter');
+
+  function render() {
+    panes.forEach((pane, index) => pane.classList.toggle('active', index === currentIndex));
+    progressMount.innerHTML = panes.map((_, index) => '<span class="dot ' + (index === currentIndex ? 'active' : '') + '"></span>').join('');
+    counter.textContent = 'Slide ' + (currentIndex + 1) + ' / ' + panes.length;
+  }
+
+  function next() {
+    currentIndex = (currentIndex + 1) % panes.length;
+    render();
+  }
+
+  function prev() {
+    currentIndex = (currentIndex - 1 + panes.length) % panes.length;
+    render();
+  }
+
+  document.getElementById('nextButton').addEventListener('click', next);
+  document.getElementById('prevButton').addEventListener('click', prev);
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowRight' || event.key === 'PageDown') next();
+    if (event.key === 'ArrowLeft' || event.key === 'PageUp') prev();
+  });
+
+  let touchStartX = 0;
+  document.addEventListener('touchstart', (event) => {
+    touchStartX = event.touches[0]?.clientX || 0;
+  }, { passive: true });
+  document.addEventListener('touchend', (event) => {
+    const touchEndX = event.changedTouches[0]?.clientX || 0;
+    if (touchStartX - touchEndX > 40) next();
+    if (touchEndX - touchStartX > 40) prev();
+  }, { passive: true });
+
+  render();
+</script>
+</body>
+</html>`;
+}
+
+async function main() {
+  const manifest = await loadManifest();
+  if (!manifest) {
+    throw new Error("Manifest not found. Run earlier phases first.");
+  }
+
+  for (const project of manifest.projects) {
+    const projectDir = path.join(rootDir, "public", "portfolio-showcase", "slideshows", project.id);
+    await ensureDir(projectDir);
+
+    const slides = project.slides.map((slide) => ({
+      ...slide,
+      image: publicAssetToRelative(projectDir, slide.image),
+      href: slide.href && slide.href.startsWith("/") ? `../../../..${slide.href}` : slide.href,
+    }));
+
+    const slideshowJson = {
+      generatedAt: new Date().toISOString(),
+      projectId: project.id,
+      slug: project.slug,
+      projectName: project.projectName,
+      clientName: project.clientName,
+      type: project.type,
+      slides,
+    };
+
+    await writeJson(path.join(projectDir, "slides.json"), slideshowJson);
+    await fs.writeFile(path.join(projectDir, "presentation.html"), renderSlideshowHtml(project, slides), "utf8");
+  }
+
+  await buildManifestData();
+  console.log("Slideshows generated");
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});

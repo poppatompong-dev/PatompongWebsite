@@ -253,13 +253,13 @@ export default function CinematicGallery() {
         <div className="text-center mb-12">
           <div className="flex justify-center mb-5">
             <div className="relative w-28 h-28 sm:w-32 sm:h-32 mix-blend-screen drop-shadow-[0_0_20px_rgba(217,119,6,0.3)]">
-               <Image
-                 src="/logo-main.png"
-                 alt="Patompong Logo"
-                 fill
-                 className="object-contain invert brightness-200"
-                 priority
-               />
+              <Image
+                src="/logo-main.png"
+                alt="Patompong Logo"
+                fill
+                className="object-contain invert brightness-200"
+                priority
+              />
             </div>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">ผลงานของเรา</h2>

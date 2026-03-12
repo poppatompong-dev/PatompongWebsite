@@ -1,0 +1,293 @@
+{
+  "metadata": {
+    "generatedDate": "2026-03-10",
+    "totalProjects": 33,
+    "owner": "Patompongtec Consultant",
+    "position": "นักวิชาการคอมพิวเตอร์",
+    "startDate": "2564-05-01",
+    "description": "โปรเจกต์ของข้าราชการตั้งแต่พ.ค.2564 เป็นต้นไป"
+  },
+  "projects": [
+    {
+      "projectNumber": 1,
+      "projectName": "กล้อง (CCTV)",
+      "client": "เทศบาลตำบลบ้านคลอง",
+      "type": "Google Earth Map",
+      "url": "https://earth.google.com/earth/d/13NwgIrbGa1yzqcvzkYrsw_Tfl1evZECs?usp=sharing",
+      "description": "จุดติดตั้งกล้องวงจรปิด"
+    },
+    {
+      "projectNumber": 2,
+      "projectName": "เสียงตามสาย",
+      "client": "เทศบาลตำบลบ้านคลอง",
+      "type": "Google Earth Map",
+      "url": "https://earth.google.com/earth/d/1cLuR5Y0v_ppr5k6kKUNtFElUm_tvQ_zS?usp=sharing",
+      "description": "จุดติดตั้งลำโพงตามสาย"
+    },
+    {
+      "projectNumber": 3,
+      "projectName": "ถังเคมี",
+      "client": "เทศบาลตำบลบ้านคลอง",
+      "type": "Google Earth Map",
+      "url": "https://earth.google.com/earth/d/18tjC2SJ4sxoDGLltsXmfSHWEADZbWtsM?usp=sharing",
+      "description": "จุดติดตั้งถังเคมีดับเพลิง"
+    },
+    {
+      "projectNumber": 4,
+      "projectName": "กระจกโค้ง",
+      "client": "เทศบาลตำบลบ้านคลอง",
+      "type": "Google Earth Map",
+      "url": "https://earth.google.com/earth/d/18tjC2SJ4sxoDGLltsXmfSHWEADZbWtsM?usp=sharing",
+      "description": "จุดติดตั้งกระจกโค้ง"
+    },
+    {
+      "projectNumber": 5,
+      "projectName": "ท่อธาร",
+      "client": "เทศบาลตำบลบ้านคลอง",
+      "type": "Google Earth Map",
+      "url": "https://earth.google.com/earth/d/18tjC2SJ4sxoDGLltsXmfSHWEADZbWtsM?usp=sharing",
+      "description": "จุดติดตั้งท่อธาร"
+    },
+    {
+      "projectNumber": 6,
+      "projectName": "เสียงตามสาย",
+      "client": "เทศบาลเมืองอุทัยธานี",
+      "type": "Google Earth Map",
+      "url": "https://earth.google.com/earth/d/1BbGkeE_YAW1yH9N6Vp8TeVKIXir9JG0d?usp=sharing",
+      "description": "จุดติดตั้งลำโพงตามสาย"
+    },
+    {
+      "projectNumber": 7,
+      "projectName": "ระบบคลังข้อมูลครัวเรือน",
+      "client": "เทศบาลตำบลบ้านคลอง",
+      "type": "AppSheet",
+      "url": "https://www.appsheet.com/start/aa6e74b7-c014-4ae4-ac4b-799174b2620a",
+      "description": "ระบบเก็บข้อมูลครัวเรือนในเขตเทศบาล"
+    },
+    {
+      "projectNumber": 8,
+      "projectName": "ระบบฐานข้อมูลพนักงานสำนักปลัด",
+      "client": "เทศบาลตำบลบ้านคลอง",
+      "type": "AppSheet",
+      "url": "https://www.appsheet.com/start/c13b3ce6-62c9-47cd-8285-8f358ace410b",
+      "description": "จัดการข้อมูลพนักงานสำนักปลัด"
+    },
+    {
+      "projectNumber": 9,
+      "projectName": "ระบบเครือข่ายคุณภาพชีวิต",
+      "client": "เทศบาลตำบลบ้านคลอง",
+      "type": "AppSheet",
+      "url": "https://www.appsheet.com/start/f2ea2e88-4db7-4ec4-a960-79485d9039e9",
+      "description": "ติดตามและจัดการโครงการคุณภาพชีวิต"
+    },
+    {
+      "projectNumber": 10,
+      "projectName": "ระบบคนในบ้าน ทร.14",
+      "client": "เทศบาลตำบลบ้านคลอง",
+      "type": "AppSheet",
+      "url": "https://www.appsheet.com/start/11a73d45-4743-42fa-997f-fe31c2a68487",
+      "description": "ฟอร์ม ทร.14 บันทึกข้อมูลคนในบ้าน"
+    },
+    {
+      "projectNumber": 11,
+      "projectName": "ระบบเบิกจ่ายวัสดุอุปกรณ์สำนักปลัด",
+      "client": "เทศบาลตำบลบ้านคลอง",
+      "type": "AppSheet",
+      "url": "https://www.appsheet.com/start/581c5055-8e02-4501-92ac-4747b0811b7c",
+      "description": "จัดการการเบิกจ่ายวัสดุอุปกรณ์"
+    },
+    {
+      "projectNumber": 12,
+      "projectName": "ระบบแจ้งซ่อมรถสำนักปลัด",
+      "client": "เทศบาลตำบลบ้านคลอง",
+      "type": "AppSheet",
+      "url": "https://www.appsheet.com/start/52c9d815-b748-4d4c-817f-4bd31f2ab40a",
+      "description": "ระบบแจ้งซ่อมและบำรุงรักษารถยนต์"
+    },
+    {
+      "projectNumber": 13,
+      "projectName": "ระบบจัดการครุภัณฑ์กองยุทธศาสตร์และงบประมาณ",
+      "client": "เทศบาลเมืองอุทัยธานี",
+      "type": "AppSheet",
+      "url": "https://www.appsheet.com/start/ffdb65a4-f106-4aae-8fbf-ca68d13bcc86",
+      "description": "จัดการครุภัณฑ์และประมาณการ"
+    },
+    {
+      "projectNumber": 14,
+      "projectName": "ระบบรายงานผลการเลือกตั้งผู้บริหารท้องถิ่น",
+      "client": "เทศบาลเมืองอุทัยธานี",
+      "type": "AppSheet",
+      "url": "https://www.appsheet.com/start/945a11ba-f3d1-4130-a164-6b2a4a6fd0f2",
+      "description": "ระบบรายงานผลการเลือกตั้งผู้บริหาร"
+    },
+    {
+      "projectNumber": 15,
+      "projectName": "Dashboard ศูนย์ปฏิบัติการความปลอดภัยทางถนน",
+      "client": "เทศบาลตำบลบ้านคลอง",
+      "type": "Google Looker Studio",
+      "url": "https://lookerstudio.google.com/reporting/08f5945c-8535-47e2-8991-74d962a2db6b",
+      "description": "แสดงข้อมูลศูนย์ปฏิบัติการความปลอดภัยทางถนน"
+    },
+    {
+      "projectNumber": 16,
+      "projectName": "Dashboard สมาชิกไลน์",
+      "client": "เทศบาลเมืองอุทัยธานี",
+      "type": "Google Looker Studio",
+      "url": "https://lookerstudio.google.com/reporting/340173ab-e2ce-4fc7-8534-fbfff4cd0fb1",
+      "description": "รายงานสมาชิกไลน์เทศบาล"
+    },
+    {
+      "projectNumber": 17,
+      "projectName": "Dashboard รายงานการตรวจสอบพัสดุคงเหลือประจำปี 2566",
+      "client": "เทศบาลตำบลบ้านคลอง",
+      "type": "Google Looker Studio",
+      "url": "https://lookerstudio.google.com/reporting/9bf4822f-0d11-4891-9a86-feff0f333c96",
+      "description": "รายงานการตรวจสอบพัสดุคงเหลือ"
+    },
+    {
+      "projectNumber": 18,
+      "projectName": "Dashboard รายงานการตรวจสอบพัสดุคงเหลือประจำปี 2566 กองยุทธศาสตร์และงบประมาณ",
+      "client": "เทศบาลนคร",
+      "type": "Google Looker Studio",
+      "url": "https://lookerstudio.google.com/reporting/cec170fa-5117-456e-9d06-9187633d9a08",
+      "description": "รายงานการตรวจสอบพัสดุ (เทศบาลนคร)"
+    },
+    {
+      "projectNumber": 19,
+      "projectName": "Dashboard รายงานยอดค้างจ่ายค่าน้ำประปา",
+      "client": "เทศบาลตำบลบ้านคลอง",
+      "type": "Google Looker Studio",
+      "url": "https://lookerstudio.google.com/reporting/4d366405-072c-4b8d-890c-3f3222017151",
+      "description": "รายงานยอดค้างจ่ายค่าน้ำประปา"
+    },
+    {
+      "projectNumber": 20,
+      "projectName": "Dashboard รายงานการตรวจสอบพัสดุคงเหลือประจำปี 2566 งานเทคโนโลยีฯ",
+      "client": "เทศบาลนคร",
+      "type": "Google Looker Studio",
+      "url": "https://lookerstudio.google.com/reporting/e0acdc0c-c2e0-45d8-bf8a-e8c904c0ba55",
+      "description": "รายงานพัสดุงานเทคโนโลยี (เทศบาลนคร)"
+    },
+    {
+      "projectNumber": 21,
+      "projectName": "Dashboard รายงานครุภัณฑ์ประจำปี",
+      "client": "เทศบาลเมืองอุทัยธานี",
+      "type": "Google Looker Studio",
+      "url": "https://lookerstudio.google.com/reporting/34cab9c7-148d-4cf6-b3d1-fb73f9d99e61",
+      "description": "รายงานครุภัณฑ์ประจำปี"
+    },
+    {
+      "projectNumber": 22,
+      "projectName": "ระบบจองห้องประชุม",
+      "client": "เทศบาลเมืองอุทัยธานี",
+      "type": "React/Netlify",
+      "url": "https://uthai-room-booking-v20.netlify.app/",
+      "description": "ระบบจองห้องประชุมออนไลน์"
+    },
+    {
+      "projectNumber": 23,
+      "projectName": "ปฏิทินการใช้ห้องประชุม (สำหรับดูเท่านั้น)",
+      "client": "เทศบาลเมืองอุทัยธานี",
+      "type": "React/Netlify - Public View",
+      "url": "https://uthai-room-booking-v13.netlify.app/public-view.html?appId=default-app-id",
+      "description": "ปฏิทินการใช้ห้องประชุมแบบ Public View"
+    },
+    {
+      "projectNumber": 24,
+      "projectName": "ระบบสลิปเงินเดือนออนไลน์",
+      "client": "เทศบาลเมืองอุทัยธานี",
+      "type": "Google Apps Script",
+      "url": "https://script.google.com/macros/s/AKfycby32Id5rQIv2Cv0XjM2gysjRhUc4TIJqDLWOKlAS9UNpBtSKdg71QUuF3lR1kgH81sl/exec",
+      "description": "ระบบออกเอกสารสลิปเงินเดือน"
+    },
+    {
+      "projectNumber": 25,
+      "projectName": "ปฎิทินดำเนินงาน/นับวันราชการ",
+      "client": "เทศบาลเมืองอุทัยธานี",
+      "type": "Google Apps Script",
+      "url": "https://script.google.com/macros/s/AKfycbwc_rWWiFMiDdkoml_Oo1kdUMbNMxEtmBsSoY36UI1qMCohBruqiYowjIclOPLOOSsh/exec",
+      "description": "ปฏิทินดำเนินงานและนับวันราชการ"
+    },
+    {
+      "projectNumber": 26,
+      "projectName": "Salary Simulator — บัญชี 6 ระบบร้อยละ",
+      "client": "เทศบาลเมืองอุทัยธานี",
+      "type": "React/Vercel",
+      "url": "https://salary-simulator-khaki.vercel.app/",
+      "description": "ระบบจำลองการเลื่อนขั้นเงินเดือนบัญชี 6"
+    },
+    {
+      "projectNumber": 27,
+      "projectName": "ระบบจำลองการเลื่อนขั้นเงินเดือน (บัญชี ๕)",
+      "client": "เทศบาลเมืองอุทัยธานี",
+      "type": "React/Vercel",
+      "url": "https://salary-simulator5.vercel.app/",
+      "description": "ระบบจำลองการเลื่อนขั้นเงินเดือนบัญชี 5"
+    },
+    {
+      "projectNumber": 28,
+      "projectName": "ระบบรับสมัครงานออนไลน์",
+      "client": "เทศบาลเมืองอุทัยธานี",
+      "type": "React/Vercel",
+      "url": "https://test-hirejobs.vercel.app/",
+      "description": "ระบบรับสมัครสรรหาพนักงานออนไลน์"
+    },
+    {
+      "projectNumber": 29,
+      "projectName": "Uthai Thani Smart PA | ระบบจัดการเสียงไร้สายอัจฉริยะ",
+      "client": "เทศบาลเมืองอุทัยธานี",
+      "type": "Firebase",
+      "url": "https://uthai-smart-pa.web.app/",
+      "description": "ระบบจัดการเสียงไร้สายอัจฉริยะ"
+    },
+    {
+      "projectNumber": 30,
+      "projectName": "Uthai STGs",
+      "client": "เทศบาลเมืองอุทัยธานี",
+      "type": "React/Netlify",
+      "url": "https://uthaistgs2025.netlify.app/",
+      "description": "ระบบ STGs"
+    },
+    {
+      "projectNumber": 31,
+      "projectName": "ระบบฐานข้อมูลบุคลากร",
+      "client": "เทศบาลเมืองอุทัยธานี",
+      "type": "Google Apps Script",
+      "url": "https://script.google.com/macros/s/AKfycbzniowwQ5kKpGV_rv29VWYYV3SOVZ9iIO682jq5n5dG-UhDhWoFV3sgJmdp7_lvUkUI/exec",
+      "description": "ฐานข้อมูลบุคลากรเทศบาล"
+    },
+    {
+      "projectNumber": 32,
+      "projectName": "ระบบบริหารจัดการจุดติดตั้งเสียงตามสาย",
+      "client": "เทศบาลนคร",
+      "type": "Google Apps Script",
+      "url": "https://script.google.com/macros/s/AKfycbwrhQ9i1uvJnrzwQRf7MpCQmAiUCoibR774rJwXXbcr9Uc8T86muUrGHz38cFjzmkE/exec",
+      "description": "บริหารจัดการจุดติดตั้งลำโพง"
+    },
+    {
+      "projectNumber": 33,
+      "projectName": "ระบบประชาสัมพันธ์งานศพ",
+      "client": "เทศบาลเมืองอุทัยธานี",
+      "type": "Google Apps Script",
+      "url": "https://script.google.com/macros/s/AKfycbws3fgt01mjLj5tdeMyLq2NL4YjCgbE6wA6iSp_4yd_D2L0zMiLSg0n3sYdCOyReKFk/exec",
+      "description": "ระบบประชาสัมพันธ์งานศพ"
+    }
+  ],
+  "statistics": {
+    "byType": {
+      "Google Earth Map": 5,
+      "AppSheet": 8,
+      "Google Looker Studio": 7,
+      "React/Netlify": 3,
+      "React/Vercel": 3,
+      "Firebase": 1,
+      "Google Apps Script": 6
+    },
+    "byClient": {
+      "เทศบาลตำบลบ้านคลอง": 15,
+      "เทศบาลเมืองอุทัยธานี": 17,
+      "เทศบาลนคร": 1
+    },
+    "totalProjects": 33
+  }
+}

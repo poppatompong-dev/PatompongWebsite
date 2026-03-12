@@ -3,27 +3,20 @@ import fs from 'fs/promises';
 import path from 'path';
 
 export async function GET(
-  request: Request,
+  _request: Request,
   { params }: { params: Promise<{ path: string[] }> }
 ) {
   try {
-    const urlPath = (await params).path;
-    
-    if (!urlPath || urlPath.length === 0) {
-      return new NextResponse('File path is required', { status: 400 });
+    const segments = (await params).path;
+
+    if (!segments || segments.length === 0) {
+      return new NextResponse('Path is required', { status: 400 });
     }
 
-    // Join the path array and decode URI components to get the actual file path relative to temp_photos
-    const decodedPath = urlPath.map(p => decodeURIComponent(p)).join(path.sep);
-    
-    // Prevent directory traversal attacks
-    const normalizedPath = path.normalize(decodedPath);
-    if (normalizedPath.startsWith('..') || path.isAbsolute(normalizedPath)) {
-       return new NextResponse('Forbidden', { status: 403 });
-    }
+    // Sanitize each segment to prevent directory traversal
+    const sanitized = segments.map((s) => path.basename(decodeURIComponent(s)));
+    const filePath = path.join(process.cwd(), 'temp_photos', ...sanitized);
 
-    const filePath = path.join(process.cwd(), 'temp_photos', normalizedPath);
-    
     // Check if file exists
     try {
       await fs.access(filePath);
@@ -32,14 +25,14 @@ export async function GET(
     }
 
     const fileBuffer = await fs.readFile(filePath);
-    
+
     // Determine content type
-    const ext = path.extname(filePath).toLowerCase();
+    const ext = path.extname(sanitized[sanitized.length - 1]).toLowerCase();
     let contentType = 'image/jpeg';
     if (ext === '.png') contentType = 'image/png';
     else if (ext === '.webp') contentType = 'image/webp';
     else if (ext === '.gif') contentType = 'image/gif';
-    
+
     return new NextResponse(fileBuffer, {
       headers: {
         'Content-Type': contentType,

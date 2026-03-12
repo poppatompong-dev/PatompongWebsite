@@ -1,0 +1,7 @@
+{
+  "status": "fallback",
+  "attemptedAt": "2026-03-12T04:05:43.550Z",
+  "finalUrl": "https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Flookerstudio.google.com%2Freporting%2F340173ab-e2ce-4fc7-8534-fbfff4cd0fb1&dsh=S1979983578%3A1773288327226628&followup=https%3A%2F%2Flookerstudio.google.com%2Freporting%2F340173ab-e2ce-4fc7-8534-fbfff4cd0fb1&ifkv=ASfE1-qfL7STNaxGn_8gmmTaWINCe3er-iq38lBHKxQ4Xv6WU8puDAKt6YGpL8DEV3zul097quaj5w&ltmpl=datastudio&passive=1209600&flowName=WebLiteSignIn&flowEntry=ServiceLogin",
+  "credentialProfile": null,
+  "error": "Authentication required"
+}

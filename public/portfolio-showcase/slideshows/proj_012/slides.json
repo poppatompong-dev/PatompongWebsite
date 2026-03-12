@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-03-12T04:09:48.958Z",
+  "projectId": "proj_012",
+  "slug": "vehicle-maintenance-system",
+  "projectName": "ระบบแจ้งซ่อมรถสำนักปลัด",
+  "clientName": "เทศบาลตำบลบ้านคลอง",
+  "type": "AppSheet",
+  "slides": [
+    {
+      "id": "proj_012-cover",
+      "kind": "cover",
+      "title": "ระบบแจ้งซ่อมรถสำนักปลัด",
+      "subtitle": "Vehicle Maintenance System",
+      "image": "../../covers/proj_012-cover.png",
+      "badge": "AppSheet",
+      "meta": "เทศบาลตำบลบ้านคลอง"
+    },
+    {
+      "id": "proj_012-screenshot-1",
+      "kind": "text",
+      "title": "Project Snapshot",
+      "subtitle": "Asset Management",
+      "image": "../../covers/proj_012-cover.png",
+      "description": "ระบบแจ้งซ่อมและบำรุงรักษารถยนต์ ติดตามสถานะการซ่อม อยู่ในหมวด Database & Data Management ประเภทย่อย Asset Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง"
+    },
+    {
+      "id": "proj_012-screenshot-2",
+      "kind": "text",
+      "title": "Key Details",
+      "subtitle": "Database & Data Management",
+      "image": "../../covers/proj_012-cover.png",
+      "description": "1 กันยายน 2564 - 30 ตุลาคม 2564"
+    },
+    {
+      "id": "proj_012-features",
+      "kind": "text",
+      "title": "Features & Description",
+      "subtitle": "AppSheet",
+      "description": "ระบบแจ้งซ่อมและบำรุงรักษารถยนต์ ติดตามสถานะการซ่อม อยู่ในหมวด Database & Data Management ประเภทย่อย Asset Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+      "items": [
+        "appsheet",
+        "vehicle",
+        "maintenance",
+        "asset"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_012-info",
+      "kind": "text",
+      "title": "Project Info",
+      "subtitle": "Project #27",
+      "items": [
+        "หน่วยงาน: เทศบาลตำบลบ้านคลอง",
+        "หมวดงาน: Database & Data Management",
+        "ประเภทย่อย: Asset Management",
+        "ช่วงเวลา: 1 กันยายน 2564 - 30 ตุลาคม 2564"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_012-cta",
+      "kind": "cta",
+      "title": "View Live",
+      "subtitle": "เปิดดูระบบจริง",
+      "description": "https://www.appsheet.com/start/52c9d815-b748-4d4c-817f-4bd31f2ab40a",
+      "buttonLabel": "Open Project",
+      "href": "https://www.appsheet.com/start/52c9d815-b748-4d4c-817f-4bd31f2ab40a",
+      "image": null
+    },
+    {
+      "id": "proj_012-thanks",
+      "kind": "thanks",
+      "title": "Thank You",
+      "subtitle": "Patompong Tech Consultant",
+      "description": "รถ • ซ่อม • บำรุงรักษา • จัดการ",
+      "image": "../../covers/proj_012-cover.png"
+    }
+  ]
+}

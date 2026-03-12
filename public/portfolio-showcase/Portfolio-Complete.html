@@ -1,0 +1,2589 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio Complete | Patompong Tech Consultant</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 12mm;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      color: #0f172a;
+      background: #f8fafc;
+      font-family: Inter, Arial, sans-serif;
+    }
+    body {
+      counter-reset: page;
+    }
+    .cover-page,
+    .project-sheet {
+      page-break-after: always;
+    }
+    .cover-page {
+      min-height: calc(297mm - 24mm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 16mm;
+      color: white;
+      background: linear-gradient(135deg, #111827 0%, #0f172a 45%, #d97706 100%);
+      border-radius: 28px;
+    }
+    .cover-eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.08);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 11px;
+    }
+    .cover-page h1 {
+      margin: 24px 0 0;
+      font-size: 54px;
+      line-height: 1.02;
+      max-width: 680px;
+    }
+    .cover-page p {
+      margin: 18px 0 0;
+      max-width: 720px;
+      font-size: 17px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.84);
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .summary-card {
+      border-radius: 22px;
+      padding: 18px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .summary-card span {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.72);
+    }
+    .summary-card strong {
+      display: block;
+      margin-top: 12px;
+      font-size: 34px;
+    }
+    .summary-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .summary-panel {
+      border-radius: 24px;
+      padding: 20px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .summary-panel h2 {
+      margin: 0 0 14px;
+      font-size: 22px;
+    }
+    .summary-list {
+      display: grid;
+      gap: 10px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.84);
+    }
+    .summary-list div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 10px;
+    }
+    .summary-list div:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+    .project-sheet {
+      min-height: calc(297mm - 24mm);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 0;
+    }
+    .project-hero {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 18px;
+      min-height: 88mm;
+      padding: 18px;
+      border-radius: 26px;
+      color: white;
+    }
+    .project-index {
+      display: inline-flex;
+      width: fit-content;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.22);
+      border: 1px solid rgba(255,255,255,0.14);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .project-hero-copy h2 {
+      margin: 16px 0 0;
+      font-size: 34px;
+      line-height: 1.08;
+    }
+    .project-client {
+      margin: 12px 0 0;
+      font-size: 14px;
+      color: rgba(255,255,255,0.82);
+    }
+    .project-description {
+      margin: 14px 0 0;
+      font-size: 13px;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.88);
+    }
+    .project-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .project-pills span {
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.24);
+      border: 1px solid rgba(255,255,255,0.14);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .project-hero-visual {
+      overflow: hidden;
+      border-radius: 22px;
+      background: rgba(0,0,0,0.18);
+      border: 1px solid rgba(255,255,255,0.12);
+      min-height: 100%;
+    }
+    .project-hero-visual img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .fallback-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      padding: 22px;
+      background: linear-gradient(135deg, rgba(15,23,42,0.22), rgba(255,255,255,0.08));
+    }
+    .fallback-card strong {
+      font-size: 26px;
+      line-height: 1.1;
+    }
+    .fallback-card span {
+      margin-top: 12px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.82);
+    }
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 14px;
+    }
+    .panel {
+      border-radius: 22px;
+      padding: 18px;
+      background: white;
+      border: 1px solid rgba(15,23,42,0.08);
+      box-shadow: 0 18px 42px rgba(15,23,42,0.06);
+    }
+    .panel h3 {
+      margin: 0 0 14px;
+      font-size: 18px;
+    }
+    .info-grid,
+    .check-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .info-grid div,
+    .check-grid div {
+      border-radius: 16px;
+      padding: 12px 14px;
+      background: #f8fafc;
+      border: 1px solid rgba(15,23,42,0.08);
+    }
+    .info-grid span,
+    .check-grid span,
+    .token-block label,
+    .section-head span {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #64748b;
+    }
+    .info-grid strong,
+    .check-grid strong {
+      display: block;
+      margin-top: 9px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #0f172a;
+    }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      text-decoration: none;
+      border: 1px solid rgba(217,119,6,0.24);
+      background: rgba(245,158,11,0.08);
+      color: #b45309;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .token-block {
+      margin-top: 16px;
+    }
+    .token-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .token-row span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: #fff7ed;
+      border: 1px solid rgba(217,119,6,0.14);
+      color: #9a3412;
+      font-size: 11px;
+    }
+    .screenshot-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .section-head h3 {
+      margin: 0;
+    }
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .shot-card {
+      margin: 0;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(15,23,42,0.08);
+      background: #f8fafc;
+    }
+    .shot-card img {
+      display: block;
+      width: 100%;
+      height: 132px;
+      object-fit: cover;
+      background: #e2e8f0;
+    }
+    .shot-card figcaption {
+      padding: 10px 12px;
+      font-size: 12px;
+      color: #334155;
+    }
+    .placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 160px;
+      border-radius: 18px;
+      border: 1px dashed rgba(15,23,42,0.14);
+      color: #64748b;
+      font-size: 13px;
+      background: #f8fafc;
+    }
+    .project-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 0 6px;
+      color: #64748b;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <section class="cover-page">
+    <div>
+      <span class="cover-eyebrow">Portfolio Showcase System</span>
+      <h1>Portfolio Complete Book</h1>
+      <p>เอกสารรวมผลงานแบบ self-contained ที่สร้างจาก pipeline เดียวกันกับ cover, screenshots, slideshow และ manifest เพื่อใช้พรีเซนต์ผลงานทั้งหมดของ Patompong Tech Consultant</p>
+      <div class="summary-grid">
+        <div class="summary-card"><span>Total Projects</span><strong>30</strong></div>
+        <div class="summary-card"><span>Covers Ready</span><strong>30</strong></div>
+        <div class="summary-card"><span>Screenshots Ready</span><strong>13</strong></div>
+        <div class="summary-card"><span>Slideshows Ready</span><strong>30</strong></div>
+      </div>
+      <div class="summary-columns">
+        <div class="summary-panel">
+          <h2>Top Categories</h2>
+          <div class="summary-list">
+            <div><span>Web Applications</span><strong>9</strong></div><div><span>Database &amp; Data Management</span><strong>8</strong></div><div><span>Analytics &amp; Reporting</span><strong>7</strong></div><div><span>Automation &amp; Integration</span><strong>5</strong></div><div><span>Mapping &amp; Location</span><strong>1</strong></div>
+          </div>
+        </div>
+        <div class="summary-panel">
+          <h2>System Types</h2>
+          <div class="summary-list">
+            <div><span>AppSheet</span><strong>8</strong></div><div><span>Google Looker Studio</span><strong>7</strong></div><div><span>React/Vercel</span><strong>5</strong></div><div><span>Google Apps Script</span><strong>5</strong></div><div><span>React/Netlify</span><strong>3</strong></div><div><span>Firebase</span><strong>1</strong></div><div><span>Google Earth Map</span><strong>1</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p>Generated at 12/3/2569 11:12:30</p>
+      <p>Next.js Showcase: http://127.0.0.1:3000/projects</p>
+    </div>
+  </section>
+
+  
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #111827 0%, #2563EB 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #01</div>
+          <h2>ระบบจัดการวาระประชุมอัจฉริยะ</h2>
+          <p class="project-client">เทศบาลเมืองอุทัยธานี • React/Vercel</p>
+          <p class="project-description">ระบบจัดการวาระประชุมอัจฉริยะ สร้าง แก้ไข ติดตามวาระ พร้อมระบบลงมติและสรุปรายงานอัตโนมัติ อยู่ในหมวด Web Applications ประเภทย่อย Meeting Management และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี</p>
+          <div class="project-pills">
+            <span>Web Applications</span>
+            <span>Meeting Management</span>
+            <span>completed</span>
+            <span>public</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_034-cover.png" alt="ระบบจัดการวาระประชุมอัจฉริยะ" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลเมืองอุทัยธานี</strong></div>
+            <div><span>Category</span><strong>Web Applications</strong></div>
+            <div><span>Subcategory</span><strong>Meeting Management</strong></div>
+            <div><span>Type</span><strong>React/Vercel</strong></div>
+            <div><span>Start Date</span><strong>15 มกราคม 2568</strong></div>
+            <div><span>Completed</span><strong>1 มีนาคม 2568</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/agenda-meeting-system">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_034/presentation.html">Slideshow HTML</a>
+            <a href="https://agenda-meeting.vercel.app/">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>3</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>captured</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>react</span><span>vercel</span><span>meeting</span><span>agenda</span><span>smart system</span><span>real-time</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>วาระ</span><span>ประชุม</span><span>อัจฉริยะ</span><span>จัดการ</span><span>ลงมติ</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>3 asset(s)</span>
+        </div>
+        
+          <div class="screenshot-grid">
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_034/desktop-hero.png" alt="ระบบจัดการวาระประชุมอัจฉริยะ Hero View" />
+                <figcaption>Hero View</figcaption>
+              </figure>
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_034/desktop-full.png" alt="ระบบจัดการวาระประชุมอัจฉริยะ Desktop Full" />
+                <figcaption>Desktop Full</figcaption>
+              </figure>
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_034/mobile-hero.png" alt="ระบบจัดการวาระประชุมอัจฉริยะ Mobile View" />
+                <figcaption>Mobile View</figcaption>
+              </figure>
+            
+          </div>
+        
+      </div>
+
+      <footer class="project-footer">
+        <span>agenda-meeting-system</span>
+        <span>1</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #111827 0%, #2563EB 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #02</div>
+          <h2>ระบบจัดการผลการดำเนินงานอัจฉริยะ (KPI Dashboard)</h2>
+          <p class="project-client">เทศบาลเมืองอุทัยธานี • React/Vercel</p>
+          <p class="project-description">ระบบจัดการและติดตามผลการดำเนินงาน KPI อัจฉริยะ แสดง Dashboard แบบ Real-time พร้อมกราฟวิเคราะห์ อยู่ในหมวด Web Applications ประเภทย่อย KPI &amp; Performance และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี</p>
+          <div class="project-pills">
+            <span>Web Applications</span>
+            <span>KPI &amp; Performance</span>
+            <span>completed</span>
+            <span>public</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_035-cover.png" alt="ระบบจัดการผลการดำเนินงานอัจฉริยะ (KPI Dashboard)" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลเมืองอุทัยธานี</strong></div>
+            <div><span>Category</span><strong>Web Applications</strong></div>
+            <div><span>Subcategory</span><strong>KPI &amp; Performance</strong></div>
+            <div><span>Type</span><strong>React/Vercel</strong></div>
+            <div><span>Start Date</span><strong>1 กุมภาพันธ์ 2568</strong></div>
+            <div><span>Completed</span><strong>10 มีนาคม 2568</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/kpi-dashboard-system">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_035/presentation.html">Slideshow HTML</a>
+            <a href="https://kpi-dashboard-wheat-nine.vercel.app/">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>0</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>fallback</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>react</span><span>vercel</span><span>KPI</span><span>dashboard</span><span>performance</span><span>analytics</span><span>real-time</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>KPI</span><span>ผลการดำเนินงาน</span><span>ติดตาม</span><span>อัจฉริยะ</span><span>กราฟ</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>No screenshots</span>
+        </div>
+        <div class="placeholder">ยังไม่มี screenshot สำหรับโครงการนี้</div>
+      </div>
+
+      <footer class="project-footer">
+        <span>kpi-dashboard-system</span>
+        <span>2</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #F97316 0%, #1F2937 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #03</div>
+          <h2>Uthai Thani Smart PA | ระบบจัดการเสียงไร้สายอัจฉริยะ</h2>
+          <p class="project-client">เทศบาลเมืองอุทัยธานี • Firebase</p>
+          <p class="project-description">ระบบจัดการเสียงไร้สายอัจฉริยะ ควบคุมลำโพงไร้สาย จัดตารางกระจายเสียง แสดงสถานะ Real-time อยู่ในหมวด Web Applications ประเภทย่อย Smart Systems และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี</p>
+          <div class="project-pills">
+            <span>Web Applications</span>
+            <span>Smart Systems</span>
+            <span>completed</span>
+            <span>public</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_029-cover.png" alt="Uthai Thani Smart PA | ระบบจัดการเสียงไร้สายอัจฉริยะ" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลเมืองอุทัยธานี</strong></div>
+            <div><span>Category</span><strong>Web Applications</strong></div>
+            <div><span>Subcategory</span><strong>Smart Systems</strong></div>
+            <div><span>Type</span><strong>Firebase</strong></div>
+            <div><span>Start Date</span><strong>15 มิถุนายน 2565</strong></div>
+            <div><span>Completed</span><strong>30 สิงหาคม 2565</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/uthai-smart-pa-system">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_029/presentation.html">Slideshow HTML</a>
+            <a href="https://uthai-smart-pa.web.app/">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>0</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>fallback</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>firebase</span><span>smart system</span><span>audio</span><span>wireless</span><span>real-time</span><span>IoT</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>เสียง</span><span>ไร้สาย</span><span>อัจฉริยะ</span><span>จัดการ</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>No screenshots</span>
+        </div>
+        <div class="placeholder">ยังไม่มี screenshot สำหรับโครงการนี้</div>
+      </div>
+
+      <footer class="project-footer">
+        <span>uthai-smart-pa-system</span>
+        <span>3</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #111827 0%, #2563EB 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #04</div>
+          <h2>ระบบรับสมัครงานออนไลน์</h2>
+          <p class="project-client">เทศบาลเมืองอุทัยธานี • React/Vercel</p>
+          <p class="project-description">ระบบรับสมัครสรรหาพนักงานออนไลน์ ยื่นใบสมัคร ตรวจสอบคุณสมบัติ จัดอันดับผู้สมัคร อยู่ในหมวด Web Applications ประเภทย่อย HR &amp; Recruitment และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี</p>
+          <div class="project-pills">
+            <span>Web Applications</span>
+            <span>HR &amp; Recruitment</span>
+            <span>completed</span>
+            <span>public</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_028-cover.png" alt="ระบบรับสมัครงานออนไลน์" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลเมืองอุทัยธานี</strong></div>
+            <div><span>Category</span><strong>Web Applications</strong></div>
+            <div><span>Subcategory</span><strong>HR &amp; Recruitment</strong></div>
+            <div><span>Type</span><strong>React/Vercel</strong></div>
+            <div><span>Start Date</span><strong>1 มิถุนายน 2565</strong></div>
+            <div><span>Completed</span><strong>30 กรกฎาคม 2565</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/job-recruitment-system">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_028/presentation.html">Slideshow HTML</a>
+            <a href="https://test-hirejobs.vercel.app/">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>3</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>captured</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>react</span><span>vercel</span><span>recruitment</span><span>HR</span><span>online</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>สมัครงาน</span><span>บุคลากร</span><span>รับสมัคร</span><span>ออนไลน์</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>3 asset(s)</span>
+        </div>
+        
+          <div class="screenshot-grid">
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_028/desktop-hero.png" alt="ระบบรับสมัครงานออนไลน์ Hero View" />
+                <figcaption>Hero View</figcaption>
+              </figure>
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_028/desktop-full.png" alt="ระบบรับสมัครงานออนไลน์ Desktop Full" />
+                <figcaption>Desktop Full</figcaption>
+              </figure>
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_028/mobile-hero.png" alt="ระบบรับสมัครงานออนไลน์ Mobile View" />
+                <figcaption>Mobile View</figcaption>
+              </figure>
+            
+          </div>
+        
+      </div>
+
+      <footer class="project-footer">
+        <span>job-recruitment-system</span>
+        <span>4</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #111827 0%, #2563EB 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #05</div>
+          <h2>Salary Simulator — บัญชี 6 ระบบร้อยละ</h2>
+          <p class="project-client">เทศบาลเมืองอุทัยธานี • React/Vercel</p>
+          <p class="project-description">ระบบจำลองการเลื่อนขั้นเงินเดือนบัญชี 6 คำนวณร้อยละ แสดงผลแบบ Interactive อยู่ในหมวด Web Applications ประเภทย่อย Simulation &amp; Calculation และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี</p>
+          <div class="project-pills">
+            <span>Web Applications</span>
+            <span>Simulation &amp; Calculation</span>
+            <span>completed</span>
+            <span>public</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_026-cover.png" alt="Salary Simulator — บัญชี 6 ระบบร้อยละ" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลเมืองอุทัยธานี</strong></div>
+            <div><span>Category</span><strong>Web Applications</strong></div>
+            <div><span>Subcategory</span><strong>Simulation &amp; Calculation</strong></div>
+            <div><span>Type</span><strong>React/Vercel</strong></div>
+            <div><span>Start Date</span><strong>1 พฤษภาคม 2565</strong></div>
+            <div><span>Completed</span><strong>30 มิถุนายน 2565</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/salary-simulator-account-6">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_026/presentation.html">Slideshow HTML</a>
+            <a href="https://salary-simulator-khaki.vercel.app/">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>3</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>captured</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>react</span><span>vercel</span><span>simulation</span><span>salary</span><span>calculation</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>เงินเดือน</span><span>จำลอง</span><span>บัญชี</span><span>เลื่อนขั้น</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>3 asset(s)</span>
+        </div>
+        
+          <div class="screenshot-grid">
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_026/desktop-hero.png" alt="Salary Simulator — บัญชี 6 ระบบร้อยละ Hero View" />
+                <figcaption>Hero View</figcaption>
+              </figure>
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_026/desktop-full.png" alt="Salary Simulator — บัญชี 6 ระบบร้อยละ Desktop Full" />
+                <figcaption>Desktop Full</figcaption>
+              </figure>
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_026/mobile-hero.png" alt="Salary Simulator — บัญชี 6 ระบบร้อยละ Mobile View" />
+                <figcaption>Mobile View</figcaption>
+              </figure>
+            
+          </div>
+        
+      </div>
+
+      <footer class="project-footer">
+        <span>salary-simulator-account-6</span>
+        <span>5</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #111827 0%, #2563EB 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #06</div>
+          <h2>ระบบจำลองการเลื่อนขั้นเงินเดือน (บัญชี ๕)</h2>
+          <p class="project-client">เทศบาลเมืองอุทัยธานี • React/Vercel</p>
+          <p class="project-description">ระบบจำลองการเลื่อนขั้นเงินเดือนบัญชี 5 คำนวณอัตโนมัติ อยู่ในหมวด Web Applications ประเภทย่อย Simulation &amp; Calculation และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี</p>
+          <div class="project-pills">
+            <span>Web Applications</span>
+            <span>Simulation &amp; Calculation</span>
+            <span>completed</span>
+            <span>public</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_027-cover.png" alt="ระบบจำลองการเลื่อนขั้นเงินเดือน (บัญชี ๕)" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลเมืองอุทัยธานี</strong></div>
+            <div><span>Category</span><strong>Web Applications</strong></div>
+            <div><span>Subcategory</span><strong>Simulation &amp; Calculation</strong></div>
+            <div><span>Type</span><strong>React/Vercel</strong></div>
+            <div><span>Start Date</span><strong>15 พฤษภาคม 2565</strong></div>
+            <div><span>Completed</span><strong>15 กรกฎาคม 2565</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/salary-simulator-account-5">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_027/presentation.html">Slideshow HTML</a>
+            <a href="https://salary-simulator5.vercel.app/">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>3</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>captured</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>react</span><span>vercel</span><span>simulation</span><span>salary</span><span>calculation</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>เงินเดือน</span><span>จำลอง</span><span>บัญชี</span><span>เลื่อนขั้น</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>3 asset(s)</span>
+        </div>
+        
+          <div class="screenshot-grid">
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_027/desktop-hero.png" alt="ระบบจำลองการเลื่อนขั้นเงินเดือน (บัญชี ๕) Hero View" />
+                <figcaption>Hero View</figcaption>
+              </figure>
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_027/desktop-full.png" alt="ระบบจำลองการเลื่อนขั้นเงินเดือน (บัญชี ๕) Desktop Full" />
+                <figcaption>Desktop Full</figcaption>
+              </figure>
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_027/mobile-hero.png" alt="ระบบจำลองการเลื่อนขั้นเงินเดือน (บัญชี ๕) Mobile View" />
+                <figcaption>Mobile View</figcaption>
+              </figure>
+            
+          </div>
+        
+      </div>
+
+      <footer class="project-footer">
+        <span>salary-simulator-account-5</span>
+        <span>6</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #06B6D4 0%, #0F172A 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #07</div>
+          <h2>ระบบจองห้องประชุม</h2>
+          <p class="project-client">เทศบาลเมืองอุทัยธานี • React/Netlify</p>
+          <p class="project-description">ระบบจองห้องประชุมออนไลน์ ปฏิทินแสดงการจอง อนุมัติผ่านระบบ อยู่ในหมวด Web Applications ประเภทย่อย Booking &amp; Reservation และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี</p>
+          <div class="project-pills">
+            <span>Web Applications</span>
+            <span>Booking &amp; Reservation</span>
+            <span>completed</span>
+            <span>public</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_022-cover.png" alt="ระบบจองห้องประชุม" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลเมืองอุทัยธานี</strong></div>
+            <div><span>Category</span><strong>Web Applications</strong></div>
+            <div><span>Subcategory</span><strong>Booking &amp; Reservation</strong></div>
+            <div><span>Type</span><strong>React/Netlify</strong></div>
+            <div><span>Start Date</span><strong>15 มีนาคม 2565</strong></div>
+            <div><span>Completed</span><strong>15 พฤษภาคม 2565</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/meeting-room-booking-system">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_022/presentation.html">Slideshow HTML</a>
+            <a href="https://uthai-room-booking-v20.netlify.app/">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>0</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>fallback</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>react</span><span>netlify</span><span>booking</span><span>room</span><span>online</span><span>calendar</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>จอง</span><span>ห้องประชุม</span><span>ออนไลน์</span><span>ระบบ</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>No screenshots</span>
+        </div>
+        <div class="placeholder">ยังไม่มี screenshot สำหรับโครงการนี้</div>
+      </div>
+
+      <footer class="project-footer">
+        <span>meeting-room-booking-system</span>
+        <span>7</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #06B6D4 0%, #0F172A 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #08</div>
+          <h2>ปฏิทินการใช้ห้องประชุม (Public View)</h2>
+          <p class="project-client">เทศบาลเมืองอุทัยธานี • React/Netlify</p>
+          <p class="project-description">ปฏิทินการใช้ห้องประชุมแบบ Public View สำหรับจอแสดงผลสาธารณะ อยู่ในหมวด Web Applications ประเภทย่อย Public Display และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี</p>
+          <div class="project-pills">
+            <span>Web Applications</span>
+            <span>Public Display</span>
+            <span>completed</span>
+            <span>public</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_023-cover.png" alt="ปฏิทินการใช้ห้องประชุม (Public View)" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลเมืองอุทัยธานี</strong></div>
+            <div><span>Category</span><strong>Web Applications</strong></div>
+            <div><span>Subcategory</span><strong>Public Display</strong></div>
+            <div><span>Type</span><strong>React/Netlify</strong></div>
+            <div><span>Start Date</span><strong>15 มีนาคม 2565</strong></div>
+            <div><span>Completed</span><strong>15 พฤษภาคม 2565</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/meeting-room-calendar-public">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_023/presentation.html">Slideshow HTML</a>
+            <a href="https://uthai-room-booking-v13.netlify.app/public-view.html?appId=default-app-id">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>3</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>captured</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>react</span><span>netlify</span><span>calendar</span><span>public</span><span>view-only</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>ปฏิทิน</span><span>ห้องประชุม</span><span>สาธารณะ</span><span>ดู</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>3 asset(s)</span>
+        </div>
+        
+          <div class="screenshot-grid">
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_023/desktop-hero.png" alt="ปฏิทินการใช้ห้องประชุม (Public View) Hero View" />
+                <figcaption>Hero View</figcaption>
+              </figure>
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_023/desktop-full.png" alt="ปฏิทินการใช้ห้องประชุม (Public View) Desktop Full" />
+                <figcaption>Desktop Full</figcaption>
+              </figure>
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_023/mobile-hero.png" alt="ปฏิทินการใช้ห้องประชุม (Public View) Mobile View" />
+                <figcaption>Mobile View</figcaption>
+              </figure>
+            
+          </div>
+        
+      </div>
+
+      <footer class="project-footer">
+        <span>meeting-room-calendar-public</span>
+        <span>8</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #06B6D4 0%, #0F172A 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #09</div>
+          <h2>Uthai STGs</h2>
+          <p class="project-client">เทศบาลเมืองอุทัยธานี • React/Netlify</p>
+          <p class="project-description">ระบบ STGs สำหรับบริหารจัดการเป้าหมายการพัฒนาที่ยั่งยืน อยู่ในหมวด Web Applications ประเภทย่อย Government Systems และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี</p>
+          <div class="project-pills">
+            <span>Web Applications</span>
+            <span>Government Systems</span>
+            <span>completed</span>
+            <span>public</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_030-cover.png" alt="Uthai STGs" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลเมืองอุทัยธานี</strong></div>
+            <div><span>Category</span><strong>Web Applications</strong></div>
+            <div><span>Subcategory</span><strong>Government Systems</strong></div>
+            <div><span>Type</span><strong>React/Netlify</strong></div>
+            <div><span>Start Date</span><strong>1 กรกฎาคม 2565</strong></div>
+            <div><span>Completed</span><strong>15 กันยายน 2565</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/uthai-stgs-system">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_030/presentation.html">Slideshow HTML</a>
+            <a href="https://uthaistgs2025.netlify.app/">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>3</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>captured</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>react</span><span>netlify</span><span>government</span><span>STGs</span><span>sustainability</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>STGs</span><span>ระบบ</span><span>ยั่งยืน</span><span>เป้าหมาย</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>3 asset(s)</span>
+        </div>
+        
+          <div class="screenshot-grid">
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_030/desktop-hero.png" alt="Uthai STGs Hero View" />
+                <figcaption>Hero View</figcaption>
+              </figure>
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_030/desktop-full.png" alt="Uthai STGs Desktop Full" />
+                <figcaption>Desktop Full</figcaption>
+              </figure>
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_030/mobile-hero.png" alt="Uthai STGs Mobile View" />
+                <figcaption>Mobile View</figcaption>
+              </figure>
+            
+          </div>
+        
+      </div>
+
+      <footer class="project-footer">
+        <span>uthai-stgs-system</span>
+        <span>9</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #F59E0B 0%, #1F2937 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #10</div>
+          <h2>ระบบสลิปเงินเดือนออนไลน์</h2>
+          <p class="project-client">เทศบาลเมืองอุทัยธานี • Google Apps Script</p>
+          <p class="project-description">ระบบออกเอกสารสลิปเงินเดือนอัตโนมัติ ดึงข้อมูลจาก Sheets สร้าง PDF ส่ง LINE อยู่ในหมวด Automation &amp; Integration ประเภทย่อย HR Systems และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี</p>
+          <div class="project-pills">
+            <span>Automation &amp; Integration</span>
+            <span>HR Systems</span>
+            <span>completed</span>
+            <span>login_required</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_024-cover.png" alt="ระบบสลิปเงินเดือนออนไลน์" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลเมืองอุทัยธานี</strong></div>
+            <div><span>Category</span><strong>Automation &amp; Integration</strong></div>
+            <div><span>Subcategory</span><strong>HR Systems</strong></div>
+            <div><span>Type</span><strong>Google Apps Script</strong></div>
+            <div><span>Start Date</span><strong>1 เมษายน 2565</strong></div>
+            <div><span>Completed</span><strong>30 พฤษภาคม 2565</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/payslip-system">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_024/presentation.html">Slideshow HTML</a>
+            <a href="https://script.google.com/macros/s/AKfycby32Id5rQIv2Cv0XjM2gysjRhUc4TIJqDLWOKlAS9UNpBtSKdg71QUuF3lR1kgH81sl/exec">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>0</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>skipped</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>google apps script</span><span>automation</span><span>HR</span><span>salary</span><span>PDF</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>สลิป</span><span>เงินเดือน</span><span>เอกสาร</span><span>ระบบ</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>No screenshots</span>
+        </div>
+        <div class="placeholder">ยังไม่มี screenshot สำหรับโครงการนี้</div>
+      </div>
+
+      <footer class="project-footer">
+        <span>payslip-system</span>
+        <span>10</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #F59E0B 0%, #1F2937 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #11</div>
+          <h2>ปฎิทินดำเนินงาน/นับวันราชการ</h2>
+          <p class="project-client">เทศบาลเมืองอุทัยธานี • Google Apps Script</p>
+          <p class="project-description">ปฏิทินดำเนินงานและนับวันราชการอัตโนมัติ คำนวณวันทำการคงเหลือ อยู่ในหมวด Automation &amp; Integration ประเภทย่อย Calendar &amp; Scheduling และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี</p>
+          <div class="project-pills">
+            <span>Automation &amp; Integration</span>
+            <span>Calendar &amp; Scheduling</span>
+            <span>completed</span>
+            <span>login_required</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_025-cover.png" alt="ปฎิทินดำเนินงาน/นับวันราชการ" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลเมืองอุทัยธานี</strong></div>
+            <div><span>Category</span><strong>Automation &amp; Integration</strong></div>
+            <div><span>Subcategory</span><strong>Calendar &amp; Scheduling</strong></div>
+            <div><span>Type</span><strong>Google Apps Script</strong></div>
+            <div><span>Start Date</span><strong>15 เมษายน 2565</strong></div>
+            <div><span>Completed</span><strong>15 มิถุนายน 2565</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/calendar-operation-counting-system">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_025/presentation.html">Slideshow HTML</a>
+            <a href="https://script.google.com/macros/s/AKfycbwc_rWWiFMiDdkoml_Oo1kdUMbNMxEtmBsSoY36UI1qMCohBruqiYowjIclOPLOOSsh/exec">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>0</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>skipped</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>google apps script</span><span>automation</span><span>calendar</span><span>scheduling</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>ปฏิทิน</span><span>ราชการ</span><span>นับวัน</span><span>ดำเนินงาน</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>No screenshots</span>
+        </div>
+        <div class="placeholder">ยังไม่มี screenshot สำหรับโครงการนี้</div>
+      </div>
+
+      <footer class="project-footer">
+        <span>calendar-operation-counting-system</span>
+        <span>11</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #F59E0B 0%, #1F2937 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #12</div>
+          <h2>ระบบฐานข้อมูลบุคลากร</h2>
+          <p class="project-client">เทศบาลเมืองอุทัยธานี • Google Apps Script</p>
+          <p class="project-description">ฐานข้อมูลบุคลากร ค้นหา กรอง แสดงข้อมูลพนักงานทั้งหมด อยู่ในหมวด Automation &amp; Integration ประเภทย่อย HR Management และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี</p>
+          <div class="project-pills">
+            <span>Automation &amp; Integration</span>
+            <span>HR Management</span>
+            <span>completed</span>
+            <span>login_required</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_031-cover.png" alt="ระบบฐานข้อมูลบุคลากร" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลเมืองอุทัยธานี</strong></div>
+            <div><span>Category</span><strong>Automation &amp; Integration</strong></div>
+            <div><span>Subcategory</span><strong>HR Management</strong></div>
+            <div><span>Type</span><strong>Google Apps Script</strong></div>
+            <div><span>Start Date</span><strong>15 กรกฎาคม 2565</strong></div>
+            <div><span>Completed</span><strong>30 กันยายน 2565</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/personnel-database-system">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_031/presentation.html">Slideshow HTML</a>
+            <a href="https://script.google.com/macros/s/AKfycbzniowwQ5kKpGV_rv29VWYYV3SOVZ9iIO682jq5n5dG-UhDhWoFV3sgJmdp7_lvUkUI/exec">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>0</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>skipped</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>google apps script</span><span>database</span><span>HR</span><span>personnel</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>บุคลากร</span><span>ข้อมูล</span><span>ระบบ</span><span>ฐานข้อมูล</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>No screenshots</span>
+        </div>
+        <div class="placeholder">ยังไม่มี screenshot สำหรับโครงการนี้</div>
+      </div>
+
+      <footer class="project-footer">
+        <span>personnel-database-system</span>
+        <span>12</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #F59E0B 0%, #1F2937 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #13</div>
+          <h2>ระบบบริหารจัดการจุดติดตั้งเสียงตามสาย</h2>
+          <p class="project-client">เทศบาลนคร • Google Apps Script</p>
+          <p class="project-description">บริหารจัดการจุดติดตั้งลำโพง บันทึกพิกัด สถานะ ประวัติซ่อม อยู่ในหมวด Automation &amp; Integration ประเภทย่อย Infrastructure Management และพัฒนาสำหรับ เทศบาลนคร</p>
+          <div class="project-pills">
+            <span>Automation &amp; Integration</span>
+            <span>Infrastructure Management</span>
+            <span>completed</span>
+            <span>login_required</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_032-cover.png" alt="ระบบบริหารจัดการจุดติดตั้งเสียงตามสาย" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลนคร</strong></div>
+            <div><span>Category</span><strong>Automation &amp; Integration</strong></div>
+            <div><span>Subcategory</span><strong>Infrastructure Management</strong></div>
+            <div><span>Type</span><strong>Google Apps Script</strong></div>
+            <div><span>Start Date</span><strong>1 สิงหาคม 2565</strong></div>
+            <div><span>Completed</span><strong>15 ตุลาคม 2565</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/pa-system-management">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_032/presentation.html">Slideshow HTML</a>
+            <a href="https://script.google.com/macros/s/AKfycbwrhQ9i1uvJnrzwQRf7MpCQmAiUCoibR774rJwXXbcr9Uc8T86muUrGHz38cFjzmkE/exec">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>0</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>skipped</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>google apps script</span><span>management</span><span>PA system</span><span>infrastructure</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>เสียง</span><span>ลำโพง</span><span>ติดตั้ง</span><span>จัดการ</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>No screenshots</span>
+        </div>
+        <div class="placeholder">ยังไม่มี screenshot สำหรับโครงการนี้</div>
+      </div>
+
+      <footer class="project-footer">
+        <span>pa-system-management</span>
+        <span>13</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #F59E0B 0%, #1F2937 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #14</div>
+          <h2>ระบบประชาสัมพันธ์งานศพ</h2>
+          <p class="project-client">เทศบาลเมืองอุทัยธานี • Google Apps Script</p>
+          <p class="project-description">ระบบประชาสัมพันธ์งานศพผ่าน LINE OA แจ้งเตือนอัตโนมัติ อยู่ในหมวด Automation &amp; Integration ประเภทย่อย Public Relations และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี</p>
+          <div class="project-pills">
+            <span>Automation &amp; Integration</span>
+            <span>Public Relations</span>
+            <span>completed</span>
+            <span>login_required</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_033-cover.png" alt="ระบบประชาสัมพันธ์งานศพ" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลเมืองอุทัยธานี</strong></div>
+            <div><span>Category</span><strong>Automation &amp; Integration</strong></div>
+            <div><span>Subcategory</span><strong>Public Relations</strong></div>
+            <div><span>Type</span><strong>Google Apps Script</strong></div>
+            <div><span>Start Date</span><strong>15 สิงหาคม 2565</strong></div>
+            <div><span>Completed</span><strong>30 ตุลาคม 2565</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/funeral-pr-system">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_033/presentation.html">Slideshow HTML</a>
+            <a href="https://script.google.com/macros/s/AKfycbws3fgt01mjLj5tdeMyLq2NL4YjCgbE6wA6iSp_4yd_D2L0zMiLSg0n3sYdCOyReKFk/exec">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>0</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>skipped</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>google apps script</span><span>PR</span><span>funeral</span><span>LINE</span><span>notification</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>งานศพ</span><span>ประชาสัมพันธ์</span><span>ระบบ</span><span>สาธารณะ</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>No screenshots</span>
+        </div>
+        <div class="placeholder">ยังไม่มี screenshot สำหรับโครงการนี้</div>
+      </div>
+
+      <footer class="project-footer">
+        <span>funeral-pr-system</span>
+        <span>14</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #EC4899 0%, #1F2937 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #15</div>
+          <h2>Dashboard ศูนย์ปฏิบัติการความปลอดภัยทางถนน</h2>
+          <p class="project-client">เทศบาลตำบลบ้านคลอง • Google Looker Studio</p>
+          <p class="project-description">Dashboard แสดงข้อมูลศูนย์ปฏิบัติการความปลอดภัยทางถนน สถิติอุบัติเหตุ จุดเสี่ยง อยู่ในหมวด Analytics &amp; Reporting ประเภทย่อย Safety Monitoring และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง</p>
+          <div class="project-pills">
+            <span>Analytics &amp; Reporting</span>
+            <span>Safety Monitoring</span>
+            <span>completed</span>
+            <span>conditional</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_015-cover.png" alt="Dashboard ศูนย์ปฏิบัติการความปลอดภัยทางถนน" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลตำบลบ้านคลอง</strong></div>
+            <div><span>Category</span><strong>Analytics &amp; Reporting</strong></div>
+            <div><span>Subcategory</span><strong>Safety Monitoring</strong></div>
+            <div><span>Type</span><strong>Google Looker Studio</strong></div>
+            <div><span>Start Date</span><strong>15 ตุลาคม 2564</strong></div>
+            <div><span>Completed</span><strong>15 ธันวาคม 2564</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/road-safety-dashboard">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_015/presentation.html">Slideshow HTML</a>
+            <a href="https://lookerstudio.google.com/reporting/08f5945c-8535-47e2-8991-74d962a2db6b">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>3</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>captured</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>dashboard</span><span>analytics</span><span>safety</span><span>monitoring</span><span>real-time</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>ความปลอดภัย</span><span>ถนน</span><span>ศูนย์ปฏิบัติการ</span><span>รายงาน</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>3 asset(s)</span>
+        </div>
+        
+          <div class="screenshot-grid">
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_015/desktop-hero.png" alt="Dashboard ศูนย์ปฏิบัติการความปลอดภัยทางถนน Hero View" />
+                <figcaption>Hero View</figcaption>
+              </figure>
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_015/desktop-full.png" alt="Dashboard ศูนย์ปฏิบัติการความปลอดภัยทางถนน Desktop Full" />
+                <figcaption>Desktop Full</figcaption>
+              </figure>
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_015/mobile-hero.png" alt="Dashboard ศูนย์ปฏิบัติการความปลอดภัยทางถนน Mobile View" />
+                <figcaption>Mobile View</figcaption>
+              </figure>
+            
+          </div>
+        
+      </div>
+
+      <footer class="project-footer">
+        <span>road-safety-dashboard</span>
+        <span>15</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #EC4899 0%, #1F2937 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #16</div>
+          <h2>Dashboard สมาชิกไลน์</h2>
+          <p class="project-client">เทศบาลเมืองอุทัยธานี • Google Looker Studio</p>
+          <p class="project-description">รายงานวิเคราะห์สมาชิก LINE OA แนวโน้ม จำนวน การมีส่วนร่วม อยู่ในหมวด Analytics &amp; Reporting ประเภทย่อย Member Management และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี</p>
+          <div class="project-pills">
+            <span>Analytics &amp; Reporting</span>
+            <span>Member Management</span>
+            <span>completed</span>
+            <span>conditional</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_016-cover.png" alt="Dashboard สมาชิกไลน์" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลเมืองอุทัยธานี</strong></div>
+            <div><span>Category</span><strong>Analytics &amp; Reporting</strong></div>
+            <div><span>Subcategory</span><strong>Member Management</strong></div>
+            <div><span>Type</span><strong>Google Looker Studio</strong></div>
+            <div><span>Start Date</span><strong>1 พฤศจิกายน 2564</strong></div>
+            <div><span>Completed</span><strong>30 ธันวาคม 2564</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/line-members-dashboard">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_016/presentation.html">Slideshow HTML</a>
+            <a href="https://lookerstudio.google.com/reporting/340173ab-e2ce-4fc7-8534-fbfff4cd0fb1">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>0</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>fallback</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>dashboard</span><span>analytics</span><span>LINE</span><span>members</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>ไลน์</span><span>สมาชิก</span><span>รายงาน</span><span>จำนวน</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>No screenshots</span>
+        </div>
+        <div class="placeholder">ยังไม่มี screenshot สำหรับโครงการนี้</div>
+      </div>
+
+      <footer class="project-footer">
+        <span>line-members-dashboard</span>
+        <span>16</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #EC4899 0%, #1F2937 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #17</div>
+          <h2>Dashboard รายงานพัสดุคงเหลือ</h2>
+          <p class="project-client">เทศบาลตำบลบ้านคลอง • Google Looker Studio</p>
+          <p class="project-description">รายงานการตรวจสอบพัสดุคงเหลือประจำปี แสดงกราฟแยกหมวด อยู่ในหมวด Analytics &amp; Reporting ประเภทย่อย Asset Verification และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง</p>
+          <div class="project-pills">
+            <span>Analytics &amp; Reporting</span>
+            <span>Asset Verification</span>
+            <span>completed</span>
+            <span>conditional</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_017-cover.png" alt="Dashboard รายงานพัสดุคงเหลือ" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลตำบลบ้านคลอง</strong></div>
+            <div><span>Category</span><strong>Analytics &amp; Reporting</strong></div>
+            <div><span>Subcategory</span><strong>Asset Verification</strong></div>
+            <div><span>Type</span><strong>Google Looker Studio</strong></div>
+            <div><span>Start Date</span><strong>1 มกราคม 2565</strong></div>
+            <div><span>Completed</span><strong>28 กุมภาพันธ์ 2565</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/asset-verification-dashboard">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_017/presentation.html">Slideshow HTML</a>
+            <a href="https://lookerstudio.google.com/reporting/9bf4822f-0d11-4891-9a86-feff0f333c96">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>3</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>captured</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>dashboard</span><span>analytics</span><span>asset</span><span>verification</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>พัสดุ</span><span>ตรวจสอบ</span><span>คงเหลือ</span><span>รายงาน</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>3 asset(s)</span>
+        </div>
+        
+          <div class="screenshot-grid">
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_017/desktop-hero.png" alt="Dashboard รายงานพัสดุคงเหลือ Hero View" />
+                <figcaption>Hero View</figcaption>
+              </figure>
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_017/desktop-full.png" alt="Dashboard รายงานพัสดุคงเหลือ Desktop Full" />
+                <figcaption>Desktop Full</figcaption>
+              </figure>
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_017/mobile-hero.png" alt="Dashboard รายงานพัสดุคงเหลือ Mobile View" />
+                <figcaption>Mobile View</figcaption>
+              </figure>
+            
+          </div>
+        
+      </div>
+
+      <footer class="project-footer">
+        <span>asset-verification-dashboard</span>
+        <span>17</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #EC4899 0%, #1F2937 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #18</div>
+          <h2>Dashboard พัสดุกองยุทธศาสตร์และงบประมาณ</h2>
+          <p class="project-client">เทศบาลนคร • Google Looker Studio</p>
+          <p class="project-description">รายงานการตรวจสอบพัสดุกองยุทธศาสตร์และงบประมาณ อยู่ในหมวด Analytics &amp; Reporting ประเภทย่อย Asset Verification และพัฒนาสำหรับ เทศบาลนคร</p>
+          <div class="project-pills">
+            <span>Analytics &amp; Reporting</span>
+            <span>Asset Verification</span>
+            <span>completed</span>
+            <span>conditional</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_018-cover.png" alt="Dashboard พัสดุกองยุทธศาสตร์และงบประมาณ" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลนคร</strong></div>
+            <div><span>Category</span><strong>Analytics &amp; Reporting</strong></div>
+            <div><span>Subcategory</span><strong>Asset Verification</strong></div>
+            <div><span>Type</span><strong>Google Looker Studio</strong></div>
+            <div><span>Start Date</span><strong>15 มกราคม 2565</strong></div>
+            <div><span>Completed</span><strong>15 มีนาคม 2565</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/asset-verification-dashboard-strategy">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_018/presentation.html">Slideshow HTML</a>
+            <a href="https://lookerstudio.google.com/reporting/cec170fa-5117-456e-9d06-9187633d9a08">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>3</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>captured</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>dashboard</span><span>analytics</span><span>asset</span><span>verification</span><span>budget</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>พัสดุ</span><span>ตรวจสอบ</span><span>ยุทธศาสตร์</span><span>งบประมาณ</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>3 asset(s)</span>
+        </div>
+        
+          <div class="screenshot-grid">
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_018/desktop-hero.png" alt="Dashboard พัสดุกองยุทธศาสตร์และงบประมาณ Hero View" />
+                <figcaption>Hero View</figcaption>
+              </figure>
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_018/desktop-full.png" alt="Dashboard พัสดุกองยุทธศาสตร์และงบประมาณ Desktop Full" />
+                <figcaption>Desktop Full</figcaption>
+              </figure>
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_018/mobile-hero.png" alt="Dashboard พัสดุกองยุทธศาสตร์และงบประมาณ Mobile View" />
+                <figcaption>Mobile View</figcaption>
+              </figure>
+            
+          </div>
+        
+      </div>
+
+      <footer class="project-footer">
+        <span>asset-verification-dashboard-strategy</span>
+        <span>18</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #EC4899 0%, #1F2937 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #19</div>
+          <h2>Dashboard ยอดค้างจ่ายค่าน้ำประปา</h2>
+          <p class="project-client">เทศบาลตำบลบ้านคลอง • Google Looker Studio</p>
+          <p class="project-description">รายงานยอดค้างจ่ายค่าน้ำประปา วิเคราะห์ตามพื้นที่ ช่วงเวลา อยู่ในหมวด Analytics &amp; Reporting ประเภทย่อย Financial Reports และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง</p>
+          <div class="project-pills">
+            <span>Analytics &amp; Reporting</span>
+            <span>Financial Reports</span>
+            <span>completed</span>
+            <span>conditional</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_019-cover.png" alt="Dashboard ยอดค้างจ่ายค่าน้ำประปา" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลตำบลบ้านคลอง</strong></div>
+            <div><span>Category</span><strong>Analytics &amp; Reporting</strong></div>
+            <div><span>Subcategory</span><strong>Financial Reports</strong></div>
+            <div><span>Type</span><strong>Google Looker Studio</strong></div>
+            <div><span>Start Date</span><strong>1 กุมภาพันธ์ 2565</strong></div>
+            <div><span>Completed</span><strong>31 มีนาคม 2565</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/water-bill-outstanding-dashboard">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_019/presentation.html">Slideshow HTML</a>
+            <a href="https://lookerstudio.google.com/reporting/4d366405-072c-4b8d-890c-3f3222017151">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>3</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>captured</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>dashboard</span><span>analytics</span><span>finance</span><span>water</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>น้ำ</span><span>ประปา</span><span>ค้างจ่าย</span><span>รายงาน</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>3 asset(s)</span>
+        </div>
+        
+          <div class="screenshot-grid">
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_019/desktop-hero.png" alt="Dashboard ยอดค้างจ่ายค่าน้ำประปา Hero View" />
+                <figcaption>Hero View</figcaption>
+              </figure>
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_019/desktop-full.png" alt="Dashboard ยอดค้างจ่ายค่าน้ำประปา Desktop Full" />
+                <figcaption>Desktop Full</figcaption>
+              </figure>
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_019/mobile-hero.png" alt="Dashboard ยอดค้างจ่ายค่าน้ำประปา Mobile View" />
+                <figcaption>Mobile View</figcaption>
+              </figure>
+            
+          </div>
+        
+      </div>
+
+      <footer class="project-footer">
+        <span>water-bill-outstanding-dashboard</span>
+        <span>19</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #EC4899 0%, #1F2937 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #20</div>
+          <h2>Dashboard พัสดุงานเทคโนโลยี</h2>
+          <p class="project-client">เทศบาลนคร • Google Looker Studio</p>
+          <p class="project-description">รายงานพัสดุงานเทคโนโลยีสารสนเทศ ติดตามสถานะครุภัณฑ์ อยู่ในหมวด Analytics &amp; Reporting ประเภทย่อย Asset Verification และพัฒนาสำหรับ เทศบาลนคร</p>
+          <div class="project-pills">
+            <span>Analytics &amp; Reporting</span>
+            <span>Asset Verification</span>
+            <span>completed</span>
+            <span>conditional</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_020-cover.png" alt="Dashboard พัสดุงานเทคโนโลยี" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลนคร</strong></div>
+            <div><span>Category</span><strong>Analytics &amp; Reporting</strong></div>
+            <div><span>Subcategory</span><strong>Asset Verification</strong></div>
+            <div><span>Type</span><strong>Google Looker Studio</strong></div>
+            <div><span>Start Date</span><strong>15 กุมภาพันธ์ 2565</strong></div>
+            <div><span>Completed</span><strong>15 เมษายน 2565</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/asset-verification-it-dashboard">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_020/presentation.html">Slideshow HTML</a>
+            <a href="https://lookerstudio.google.com/reporting/e0acdc0c-c2e0-45d8-bf8a-e8c904c0ba55">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>3</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>captured</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>dashboard</span><span>analytics</span><span>asset</span><span>IT</span><span>verification</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>พัสดุ</span><span>เทคโนโลยี</span><span>ตรวจสอบ</span><span>รายงาน</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>3 asset(s)</span>
+        </div>
+        
+          <div class="screenshot-grid">
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_020/desktop-hero.png" alt="Dashboard พัสดุงานเทคโนโลยี Hero View" />
+                <figcaption>Hero View</figcaption>
+              </figure>
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_020/desktop-full.png" alt="Dashboard พัสดุงานเทคโนโลยี Desktop Full" />
+                <figcaption>Desktop Full</figcaption>
+              </figure>
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_020/mobile-hero.png" alt="Dashboard พัสดุงานเทคโนโลยี Mobile View" />
+                <figcaption>Mobile View</figcaption>
+              </figure>
+            
+          </div>
+        
+      </div>
+
+      <footer class="project-footer">
+        <span>asset-verification-it-dashboard</span>
+        <span>20</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #EC4899 0%, #1F2937 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #21</div>
+          <h2>Dashboard รายงานครุภัณฑ์ประจำปี</h2>
+          <p class="project-client">เทศบาลเมืองอุทัยธานี • Google Looker Studio</p>
+          <p class="project-description">รายงานครุภัณฑ์ประจำปี แยกตามหมวดหมู่ สถานะการใช้งาน อยู่ในหมวด Analytics &amp; Reporting ประเภทย่อย Asset Reports และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี</p>
+          <div class="project-pills">
+            <span>Analytics &amp; Reporting</span>
+            <span>Asset Reports</span>
+            <span>completed</span>
+            <span>conditional</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_021-cover.png" alt="Dashboard รายงานครุภัณฑ์ประจำปี" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลเมืองอุทัยธานี</strong></div>
+            <div><span>Category</span><strong>Analytics &amp; Reporting</strong></div>
+            <div><span>Subcategory</span><strong>Asset Reports</strong></div>
+            <div><span>Type</span><strong>Google Looker Studio</strong></div>
+            <div><span>Start Date</span><strong>1 มีนาคม 2565</strong></div>
+            <div><span>Completed</span><strong>30 เมษายน 2565</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/annual-asset-dashboard">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_021/presentation.html">Slideshow HTML</a>
+            <a href="https://lookerstudio.google.com/reporting/34cab9c7-148d-4cf6-b3d1-fb73f9d99e61">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>3</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>captured</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>dashboard</span><span>analytics</span><span>asset</span><span>annual</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>ครุภัณฑ์</span><span>ประจำปี</span><span>รายงาน</span><span>สินทรัพย์</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>3 asset(s)</span>
+        </div>
+        
+          <div class="screenshot-grid">
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_021/desktop-hero.png" alt="Dashboard รายงานครุภัณฑ์ประจำปี Hero View" />
+                <figcaption>Hero View</figcaption>
+              </figure>
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_021/desktop-full.png" alt="Dashboard รายงานครุภัณฑ์ประจำปี Desktop Full" />
+                <figcaption>Desktop Full</figcaption>
+              </figure>
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_021/mobile-hero.png" alt="Dashboard รายงานครุภัณฑ์ประจำปี Mobile View" />
+                <figcaption>Mobile View</figcaption>
+              </figure>
+            
+          </div>
+        
+      </div>
+
+      <footer class="project-footer">
+        <span>annual-asset-dashboard</span>
+        <span>21</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #8B5CF6 0%, #1F2937 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #22</div>
+          <h2>ระบบคลังข้อมูลครัวเรือน</h2>
+          <p class="project-client">เทศบาลตำบลบ้านคลอง • AppSheet</p>
+          <p class="project-description">ระบบเก็บข้อมูลครัวเรือนในเขตเทศบาล ค้นหา กรอง ส่งออกข้อมูล อยู่ในหมวด Database &amp; Data Management ประเภทย่อย Household Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง</p>
+          <div class="project-pills">
+            <span>Database &amp; Data Management</span>
+            <span>Household Management</span>
+            <span>completed</span>
+            <span>login_required</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_007-cover.png" alt="ระบบคลังข้อมูลครัวเรือน" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลตำบลบ้านคลอง</strong></div>
+            <div><span>Category</span><strong>Database &amp; Data Management</strong></div>
+            <div><span>Subcategory</span><strong>Household Management</strong></div>
+            <div><span>Type</span><strong>AppSheet</strong></div>
+            <div><span>Start Date</span><strong>1 กรกฎาคม 2564</strong></div>
+            <div><span>Completed</span><strong>30 สิงหาคม 2564</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/household-database-system">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_007/presentation.html">Slideshow HTML</a>
+            <a href="https://www.appsheet.com/start/aa6e74b7-c014-4ae4-ac4b-799174b2620a">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>0</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>skipped</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>appsheet</span><span>database</span><span>household</span><span>data management</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>ครัวเรือน</span><span>ข้อมูล</span><span>ระบบ</span><span>บันทึก</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>No screenshots</span>
+        </div>
+        <div class="placeholder">ยังไม่มี screenshot สำหรับโครงการนี้</div>
+      </div>
+
+      <footer class="project-footer">
+        <span>household-database-system</span>
+        <span>22</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #8B5CF6 0%, #1F2937 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #23</div>
+          <h2>ระบบฐานข้อมูลพนักงานสำนักปลัด</h2>
+          <p class="project-client">เทศบาลตำบลบ้านคลอง • AppSheet</p>
+          <p class="project-description">จัดการข้อมูลพนักงานสำนักปลัด ประวัติ ตำแหน่ง สังกัด อยู่ในหมวด Database &amp; Data Management ประเภทย่อย HR Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง</p>
+          <div class="project-pills">
+            <span>Database &amp; Data Management</span>
+            <span>HR Management</span>
+            <span>completed</span>
+            <span>login_required</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_008-cover.png" alt="ระบบฐานข้อมูลพนักงานสำนักปลัด" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลตำบลบ้านคลอง</strong></div>
+            <div><span>Category</span><strong>Database &amp; Data Management</strong></div>
+            <div><span>Subcategory</span><strong>HR Management</strong></div>
+            <div><span>Type</span><strong>AppSheet</strong></div>
+            <div><span>Start Date</span><strong>1 กรกฎาคม 2564</strong></div>
+            <div><span>Completed</span><strong>30 สิงหาคม 2564</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/employee-database-system">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_008/presentation.html">Slideshow HTML</a>
+            <a href="https://www.appsheet.com/start/c13b3ce6-62c9-47cd-8285-8f358ace410b">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>0</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>skipped</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>appsheet</span><span>database</span><span>HR</span><span>employee</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>พนักงาน</span><span>ข้อมูล</span><span>ระบบ</span><span>จัดการ</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>No screenshots</span>
+        </div>
+        <div class="placeholder">ยังไม่มี screenshot สำหรับโครงการนี้</div>
+      </div>
+
+      <footer class="project-footer">
+        <span>employee-database-system</span>
+        <span>23</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #8B5CF6 0%, #1F2937 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #24</div>
+          <h2>ระบบเครือข่ายคุณภาพชีวิต</h2>
+          <p class="project-client">เทศบาลตำบลบ้านคลอง • AppSheet</p>
+          <p class="project-description">ติดตามและจัดการโครงการคุณภาพชีวิต บันทึกผลการดำเนินงาน อยู่ในหมวด Database &amp; Data Management ประเภทย่อย Program Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง</p>
+          <div class="project-pills">
+            <span>Database &amp; Data Management</span>
+            <span>Program Management</span>
+            <span>completed</span>
+            <span>login_required</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_009-cover.png" alt="ระบบเครือข่ายคุณภาพชีวิต" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลตำบลบ้านคลอง</strong></div>
+            <div><span>Category</span><strong>Database &amp; Data Management</strong></div>
+            <div><span>Subcategory</span><strong>Program Management</strong></div>
+            <div><span>Type</span><strong>AppSheet</strong></div>
+            <div><span>Start Date</span><strong>15 กรกฎาคม 2564</strong></div>
+            <div><span>Completed</span><strong>15 กันยายน 2564</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/quality-of-life-network-system">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_009/presentation.html">Slideshow HTML</a>
+            <a href="https://www.appsheet.com/start/f2ea2e88-4db7-4ec4-a960-79485d9039e9">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>0</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>skipped</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>appsheet</span><span>database</span><span>quality of life</span><span>program management</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>คุณภาพชีวิต</span><span>โครงการ</span><span>ติดตาม</span><span>จัดการ</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>No screenshots</span>
+        </div>
+        <div class="placeholder">ยังไม่มี screenshot สำหรับโครงการนี้</div>
+      </div>
+
+      <footer class="project-footer">
+        <span>quality-of-life-network-system</span>
+        <span>24</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #8B5CF6 0%, #1F2937 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #25</div>
+          <h2>ระบบคนในบ้าน ทร.14</h2>
+          <p class="project-client">เทศบาลตำบลบ้านคลอง • AppSheet</p>
+          <p class="project-description">ฟอร์ม ทร.14 บันทึกข้อมูลคนในบ้านแบบดิจิทัล อยู่ในหมวด Database &amp; Data Management ประเภทย่อย Form Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง</p>
+          <div class="project-pills">
+            <span>Database &amp; Data Management</span>
+            <span>Form Management</span>
+            <span>completed</span>
+            <span>login_required</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_010-cover.png" alt="ระบบคนในบ้าน ทร.14" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลตำบลบ้านคลอง</strong></div>
+            <div><span>Category</span><strong>Database &amp; Data Management</strong></div>
+            <div><span>Subcategory</span><strong>Form Management</strong></div>
+            <div><span>Type</span><strong>AppSheet</strong></div>
+            <div><span>Start Date</span><strong>1 สิงหาคม 2564</strong></div>
+            <div><span>Completed</span><strong>30 กันยายน 2564</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/household-form-tr14-system">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_010/presentation.html">Slideshow HTML</a>
+            <a href="https://www.appsheet.com/start/11a73d45-4743-42fa-997f-fe31c2a68487">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>0</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>skipped</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>appsheet</span><span>form</span><span>household</span><span>TR14</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>ทร.14</span><span>ฟอร์ม</span><span>คน</span><span>บ้าน</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>No screenshots</span>
+        </div>
+        <div class="placeholder">ยังไม่มี screenshot สำหรับโครงการนี้</div>
+      </div>
+
+      <footer class="project-footer">
+        <span>household-form-tr14-system</span>
+        <span>25</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #8B5CF6 0%, #1F2937 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #26</div>
+          <h2>ระบบเบิกจ่ายวัสดุอุปกรณ์สำนักปลัด</h2>
+          <p class="project-client">เทศบาลตำบลบ้านคลอง • AppSheet</p>
+          <p class="project-description">จัดการการเบิกจ่ายวัสดุอุปกรณ์ บันทึกรายการ ยอดคงเหลือ อยู่ในหมวด Database &amp; Data Management ประเภทย่อย Inventory Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง</p>
+          <div class="project-pills">
+            <span>Database &amp; Data Management</span>
+            <span>Inventory Management</span>
+            <span>completed</span>
+            <span>login_required</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_011-cover.png" alt="ระบบเบิกจ่ายวัสดุอุปกรณ์สำนักปลัด" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลตำบลบ้านคลอง</strong></div>
+            <div><span>Category</span><strong>Database &amp; Data Management</strong></div>
+            <div><span>Subcategory</span><strong>Inventory Management</strong></div>
+            <div><span>Type</span><strong>AppSheet</strong></div>
+            <div><span>Start Date</span><strong>15 สิงหาคม 2564</strong></div>
+            <div><span>Completed</span><strong>15 ตุลาคม 2564</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/material-requisition-system">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_011/presentation.html">Slideshow HTML</a>
+            <a href="https://www.appsheet.com/start/581c5055-8e02-4501-92ac-4747b0811b7c">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>0</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>skipped</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>appsheet</span><span>inventory</span><span>material</span><span>requisition</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>วัสดุ</span><span>อุปกรณ์</span><span>เบิก</span><span>จ่าย</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>No screenshots</span>
+        </div>
+        <div class="placeholder">ยังไม่มี screenshot สำหรับโครงการนี้</div>
+      </div>
+
+      <footer class="project-footer">
+        <span>material-requisition-system</span>
+        <span>26</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #8B5CF6 0%, #1F2937 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #27</div>
+          <h2>ระบบแจ้งซ่อมรถสำนักปลัด</h2>
+          <p class="project-client">เทศบาลตำบลบ้านคลอง • AppSheet</p>
+          <p class="project-description">ระบบแจ้งซ่อมและบำรุงรักษารถยนต์ ติดตามสถานะการซ่อม อยู่ในหมวด Database &amp; Data Management ประเภทย่อย Asset Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง</p>
+          <div class="project-pills">
+            <span>Database &amp; Data Management</span>
+            <span>Asset Management</span>
+            <span>completed</span>
+            <span>login_required</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_012-cover.png" alt="ระบบแจ้งซ่อมรถสำนักปลัด" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลตำบลบ้านคลอง</strong></div>
+            <div><span>Category</span><strong>Database &amp; Data Management</strong></div>
+            <div><span>Subcategory</span><strong>Asset Management</strong></div>
+            <div><span>Type</span><strong>AppSheet</strong></div>
+            <div><span>Start Date</span><strong>1 กันยายน 2564</strong></div>
+            <div><span>Completed</span><strong>30 ตุลาคม 2564</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/vehicle-maintenance-system">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_012/presentation.html">Slideshow HTML</a>
+            <a href="https://www.appsheet.com/start/52c9d815-b748-4d4c-817f-4bd31f2ab40a">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>0</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>skipped</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>appsheet</span><span>vehicle</span><span>maintenance</span><span>asset</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>รถ</span><span>ซ่อม</span><span>บำรุงรักษา</span><span>จัดการ</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>No screenshots</span>
+        </div>
+        <div class="placeholder">ยังไม่มี screenshot สำหรับโครงการนี้</div>
+      </div>
+
+      <footer class="project-footer">
+        <span>vehicle-maintenance-system</span>
+        <span>27</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #8B5CF6 0%, #1F2937 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #28</div>
+          <h2>ระบบจัดการครุภัณฑ์กองยุทธศาสตร์</h2>
+          <p class="project-client">เทศบาลเมืองอุทัยธานี • AppSheet</p>
+          <p class="project-description">จัดการครุภัณฑ์และประมาณการ บันทึกสินทรัพย์ สถานะ อยู่ในหมวด Database &amp; Data Management ประเภทย่อย Asset &amp; Budget Management และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี</p>
+          <div class="project-pills">
+            <span>Database &amp; Data Management</span>
+            <span>Asset &amp; Budget Management</span>
+            <span>completed</span>
+            <span>login_required</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_013-cover.png" alt="ระบบจัดการครุภัณฑ์กองยุทธศาสตร์" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลเมืองอุทัยธานี</strong></div>
+            <div><span>Category</span><strong>Database &amp; Data Management</strong></div>
+            <div><span>Subcategory</span><strong>Asset &amp; Budget Management</strong></div>
+            <div><span>Type</span><strong>AppSheet</strong></div>
+            <div><span>Start Date</span><strong>15 กันยายน 2564</strong></div>
+            <div><span>Completed</span><strong>15 พฤศจิกายน 2564</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/asset-management-system">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_013/presentation.html">Slideshow HTML</a>
+            <a href="https://www.appsheet.com/start/ffdb65a4-f106-4aae-8fbf-ca68d13bcc86">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>0</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>skipped</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>appsheet</span><span>asset</span><span>budget</span><span>management</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>ครุภัณฑ์</span><span>งบประมาณ</span><span>จัดการ</span><span>ยุทธศาสตร์</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>No screenshots</span>
+        </div>
+        <div class="placeholder">ยังไม่มี screenshot สำหรับโครงการนี้</div>
+      </div>
+
+      <footer class="project-footer">
+        <span>asset-management-system</span>
+        <span>28</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #8B5CF6 0%, #1F2937 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #29</div>
+          <h2>ระบบรายงานผลการเลือกตั้งผู้บริหารท้องถิ่น</h2>
+          <p class="project-client">เทศบาลเมืองอุทัยธานี • AppSheet</p>
+          <p class="project-description">ระบบรายงานผลการเลือกตั้งผู้บริหาร นับคะแนน แสดงผล Real-time อยู่ในหมวด Database &amp; Data Management ประเภทย่อย Reporting &amp; Analytics และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี</p>
+          <div class="project-pills">
+            <span>Database &amp; Data Management</span>
+            <span>Reporting &amp; Analytics</span>
+            <span>completed</span>
+            <span>login_required</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_014-cover.png" alt="ระบบรายงานผลการเลือกตั้งผู้บริหารท้องถิ่น" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลเมืองอุทัยธานี</strong></div>
+            <div><span>Category</span><strong>Database &amp; Data Management</strong></div>
+            <div><span>Subcategory</span><strong>Reporting &amp; Analytics</strong></div>
+            <div><span>Type</span><strong>AppSheet</strong></div>
+            <div><span>Start Date</span><strong>1 ตุลาคม 2564</strong></div>
+            <div><span>Completed</span><strong>30 พฤศจิกายน 2564</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/election-result-reporting-system">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_014/presentation.html">Slideshow HTML</a>
+            <a href="https://www.appsheet.com/start/945a11ba-f3d1-4130-a164-6b2a4a6fd0f2">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>0</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>skipped</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>appsheet</span><span>election</span><span>reporting</span><span>government</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>เลือกตั้ง</span><span>ผลการ</span><span>รายงาน</span><span>บริหาร</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>No screenshots</span>
+        </div>
+        <div class="placeholder">ยังไม่มี screenshot สำหรับโครงการนี้</div>
+      </div>
+
+      <footer class="project-footer">
+        <span>election-result-reporting-system</span>
+        <span>29</span>
+      </footer>
+    </section>
+  
+
+    <section class="project-sheet">
+      <div class="project-hero" style="background:linear-gradient(135deg, #2563EB 0%, #0F172A 100%)">
+        <div class="project-hero-copy">
+          <div class="project-index">Project #30</div>
+          <h2>ระบบแผนที่โครงสร้างพื้นฐาน GIS</h2>
+          <p class="project-client">เทศบาลตำบลบ้านคลอง • Google Earth Map</p>
+          <p class="project-description">ระบบแผนที่ GIS รวม 5 ชั้นข้อมูล: จุดติดตั้งกล้อง CCTV, จุดลำโพงเสียงตามสาย, ถังเคมีดับเพลิง, กระจกโค้งความปลอดภัย, ท่อระบายน้ำ — แสดงผลบน Google Earth แบบ 3 มิติ อยู่ในหมวด Mapping &amp; Location ประเภทย่อย GIS Infrastructure และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง</p>
+          <div class="project-pills">
+            <span>Mapping &amp; Location</span>
+            <span>GIS Infrastructure</span>
+            <span>completed</span>
+            <span>public</span>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_gis-cover.png" alt="ระบบแผนที่โครงสร้างพื้นฐาน GIS" />
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h3>Project Overview</h3>
+          <div class="info-grid">
+            <div><span>Client</span><strong>เทศบาลตำบลบ้านคลอง</strong></div>
+            <div><span>Category</span><strong>Mapping &amp; Location</strong></div>
+            <div><span>Subcategory</span><strong>GIS Infrastructure</strong></div>
+            <div><span>Type</span><strong>Google Earth Map</strong></div>
+            <div><span>Start Date</span><strong>1 พฤษภาคม 2564</strong></div>
+            <div><span>Completed</span><strong>15 กรกฎาคม 2564</strong></div>
+          </div>
+          <div class="links">
+            <a href="http://127.0.0.1:3000/projects/gis-infrastructure-layers">Project Detail</a>
+            <a href="http://127.0.0.1:3000/portfolio-showcase/slideshows/proj_gis/presentation.html">Slideshow HTML</a>
+            <a href="https://earth.google.com/earth/d/13NwgIrbGa1yzqcvzkYrsw_Tfl1evZECs?usp=sharing">Live System</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Showcase Assets</h3>
+          <div class="check-grid">
+            <div><span>Cover</span><strong>Ready</strong></div>
+            <div><span>Screenshots</span><strong>3</strong></div>
+            <div><span>Slides</span><strong>7</strong></div>
+            <div><span>Capture Status</span><strong>captured</strong></div>
+          </div>
+          <div class="token-block"><label>Tags</label><div class="token-row"><span>mapping</span><span>GIS</span><span>CCTV</span><span>PA system</span><span>infrastructure</span><span>3D</span><span>Google Earth</span></div></div>
+          <div class="token-block"><label>Keywords</label><div class="token-row"><span>แผนที่</span><span>GIS</span><span>โครงสร้างพื้นฐาน</span><span>กล้อง</span><span>เสียง</span><span>ถังเคมี</span><span>กระจกโค้ง</span><span>ท่อธาร</span></div></div>
+        </article>
+      </div>
+
+      <div class="panel screenshot-panel">
+        <div class="section-head">
+          <h3>Screenshot Gallery</h3>
+          <span>3 asset(s)</span>
+        </div>
+        
+          <div class="screenshot-grid">
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_gis/desktop-hero.png" alt="ระบบแผนที่โครงสร้างพื้นฐาน GIS Hero View" />
+                <figcaption>Hero View</figcaption>
+              </figure>
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_gis/desktop-full.png" alt="ระบบแผนที่โครงสร้างพื้นฐาน GIS Desktop Full" />
+                <figcaption>Desktop Full</figcaption>
+              </figure>
+            
+              <figure class="shot-card">
+                <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/screenshots/proj_gis/mobile-hero.png" alt="ระบบแผนที่โครงสร้างพื้นฐาน GIS Mobile View" />
+                <figcaption>Mobile View</figcaption>
+              </figure>
+            
+          </div>
+        
+      </div>
+
+      <footer class="project-footer">
+        <span>gis-infrastructure-layers</span>
+        <span>30</span>
+      </footer>
+    </section>
+  
+</body>
+</html>

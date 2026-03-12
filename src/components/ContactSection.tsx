@@ -276,20 +276,19 @@ export default function ContactSection() {
               </div>
             </div>
 
-            {/* Google Map */}
-            <div className="bg-ink-800 border border-ink-700 rounded-sm overflow-hidden">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123845.35454613517!2d100.0330075!3d15.6930072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3114b9e0a64bd3e7%3A0x4025c4d5a6e8290!2z4LiI4Lix4LiH4Lir4Lin4Lix4LiU4LiZ4LiE4Lij4Liq4Lin4Lij4Lij4LiE4LmM!5e0!3m2!1sth!2sth!4v1710000000000!5m2!1sth!2sth"
-                width="100%"
-                height="180"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="พื้นที่ให้บริการ นครสวรรค์"
-                className="opacity-80 hover:opacity-100 transition-opacity"
-              />
-            </div>
+            {/* Google Map — static placeholder + direct link */}
+            <a
+              href="https://www.google.com/maps/place/%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%AA%E0%B8%A7%E0%B8%A3%E0%B8%A3%E0%B8%84%E0%B9%8C"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block bg-ink-800 border border-ink-700 rounded-sm overflow-hidden hover:border-gold-500/40 transition-colors"
+            >
+              <div className="relative h-[140px] bg-gradient-to-br from-ink-700 via-ink-800 to-ink-900 flex flex-col items-center justify-center gap-2 text-center p-4">
+                <MapPin className="w-8 h-8 text-gold-500/60 group-hover:text-gold-400 transition-colors" />
+                <p className="text-sm font-semibold text-cream-200 group-hover:text-gold-300 transition-colors">นครสวรรค์ และพื้นที่ใกล้เคียง</p>
+                <p className="text-[10px] text-ink-400 group-hover:text-ink-300 transition-colors">คลิกเพื่อเปิด Google Maps</p>
+              </div>
+            </a>
           </motion.div>
         </div>
       </div>

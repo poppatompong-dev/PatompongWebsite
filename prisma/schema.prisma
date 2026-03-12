@@ -58,3 +58,88 @@ model Attachment {
   timeline    TimelineEvent?    @relation(fields: [timelineId], references: [id], onDelete: Cascade)
   portfolio   PortfolioProject? @relation(fields: [portfolioId], references: [id], onDelete: Cascade)
 }
+
+// Client/Organization Model
+model Client {
+  id            String    @id @default(cuid())
+  clientId      String    @unique
+  clientName    String
+  slug          String    @unique
+  projectCount  Int       @default(0)
+  projects      Project[] @relation("ProjectClient")
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@index([clientId])
+  @@index([slug])
+}
+
+// Category Model
+model Category {
+  id            String    @id @default(cuid())
+  categoryId    String    @unique
+  name          String
+  projectCount  Int       @default(0)
+  color         String    @default("#3B82F6")
+  projects      Project[] @relation("ProjectCategory")
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@index([categoryId])
+}
+
+// Main Project Model
+model Project {
+  id              String    @id @default(cuid())
+  projectId       String    @unique
+  projectNumber   Int
+  projectName     String
+  slug            String    @unique
+  clientId        String
+  client          Client    @relation("ProjectClient", fields: [clientId], references: [clientId])
+  type            String    // Google Earth Map, AppSheet, etc.
+  categoryId      String
+  category        Category  @relation("ProjectCategory", fields: [categoryId], references: [categoryId])
+  subcategory     String
+  url             String?
+  description     String?   
+  tags            String?   // JSON array stored as string: ["tag1", "tag2"]
+  keywords        String?   // JSON array stored as string: ["keyword1", "keyword2"]
+  status          String    @default("completed") // completed, in_progress, planning
+  startDate       DateTime?
+  completedDate   DateTime?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@index([projectId])
+  @@index([slug])
+  @@index([clientId])
+  @@index([categoryId])
+  @@index([type])
+  @@index([status])
+}
+
+// Portfolio Metadata Model
+model PortfolioMetadata {
+  id              String    @id @default(cuid())
+  owner           String    @unique
+  position        String
+  startDate       DateTime?
+  description     String?   
+  totalProjects   Int       @default(0)
+  lastUpdated     DateTime  @default(now())
+  generatedDate   DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+}
+
+// Statistics/Cache Model (for performance)
+model ProjectStatistics {
+  id              String    @id @default(cuid())
+  totalProjects   Int
+  byType          String    // JSON object: {"Google Earth Map": 5, ...}
+  byCategory      String    // JSON object: {"Mapping & Location": 5, ...}
+  byClient        String    // JSON object: {"Client Name": 15, ...}
+  byStatus        String    // JSON object: {"completed": 33, ...}
+  lastUpdated     DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+}

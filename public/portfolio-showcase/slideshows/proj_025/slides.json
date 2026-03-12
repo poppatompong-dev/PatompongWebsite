@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-03-12T04:09:48.880Z",
+  "projectId": "proj_025",
+  "slug": "calendar-operation-counting-system",
+  "projectName": "ปฎิทินดำเนินงาน/นับวันราชการ",
+  "clientName": "เทศบาลเมืองอุทัยธานี",
+  "type": "Google Apps Script",
+  "slides": [
+    {
+      "id": "proj_025-cover",
+      "kind": "cover",
+      "title": "ปฎิทินดำเนินงาน/นับวันราชการ",
+      "subtitle": "Calendar Operation Counting System",
+      "image": "../../covers/proj_025-cover.png",
+      "badge": "Google Apps Script",
+      "meta": "เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_025-screenshot-1",
+      "kind": "text",
+      "title": "Project Snapshot",
+      "subtitle": "Calendar & Scheduling",
+      "image": "../../covers/proj_025-cover.png",
+      "description": "ปฏิทินดำเนินงานและนับวันราชการอัตโนมัติ คำนวณวันทำการคงเหลือ อยู่ในหมวด Automation & Integration ประเภทย่อย Calendar & Scheduling และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_025-screenshot-2",
+      "kind": "text",
+      "title": "Key Details",
+      "subtitle": "Automation & Integration",
+      "image": "../../covers/proj_025-cover.png",
+      "description": "15 เมษายน 2565 - 15 มิถุนายน 2565"
+    },
+    {
+      "id": "proj_025-features",
+      "kind": "text",
+      "title": "Features & Description",
+      "subtitle": "Google Apps Script",
+      "description": "ปฏิทินดำเนินงานและนับวันราชการอัตโนมัติ คำนวณวันทำการคงเหลือ อยู่ในหมวด Automation & Integration ประเภทย่อย Calendar & Scheduling และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "items": [
+        "google apps script",
+        "automation",
+        "calendar",
+        "scheduling"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_025-info",
+      "kind": "text",
+      "title": "Project Info",
+      "subtitle": "Project #11",
+      "items": [
+        "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+        "หมวดงาน: Automation & Integration",
+        "ประเภทย่อย: Calendar & Scheduling",
+        "ช่วงเวลา: 15 เมษายน 2565 - 15 มิถุนายน 2565"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_025-cta",
+      "kind": "cta",
+      "title": "View Live",
+      "subtitle": "เปิดดูระบบจริง",
+      "description": "https://script.google.com/macros/s/AKfycbwc_rWWiFMiDdkoml_Oo1kdUMbNMxEtmBsSoY36UI1qMCohBruqiYowjIclOPLOOSsh/exec",
+      "buttonLabel": "Open Project",
+      "href": "https://script.google.com/macros/s/AKfycbwc_rWWiFMiDdkoml_Oo1kdUMbNMxEtmBsSoY36UI1qMCohBruqiYowjIclOPLOOSsh/exec",
+      "image": null
+    },
+    {
+      "id": "proj_025-thanks",
+      "kind": "thanks",
+      "title": "Thank You",
+      "subtitle": "Patompong Tech Consultant",
+      "description": "ปฏิทิน • ราชการ • นับวัน • ดำเนินงาน",
+      "image": "../../covers/proj_025-cover.png"
+    }
+  ]
+}

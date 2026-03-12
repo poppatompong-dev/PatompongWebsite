@@ -1,0 +1,1319 @@
+{
+  "generatedAt": "2026-03-11T06:28:55.113Z",
+  "summary": {
+    "projects": 33,
+    "passProjects": 0,
+    "warnProjects": 0,
+    "failProjects": 33,
+    "outputFailures": 3,
+    "coversReady": 0,
+    "screenshotSetsReady": 0,
+    "slideshowsReady": 0
+  },
+  "outputs": [
+    {
+      "name": "standalone_shelf",
+      "status": "fail",
+      "details": "Standalone shelf file missing"
+    },
+    {
+      "name": "portfolio_html",
+      "status": "fail",
+      "details": "Portfolio HTML file missing"
+    },
+    {
+      "name": "portfolio_pdf",
+      "status": "fail",
+      "details": "Portfolio PDF file missing"
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj_001",
+      "slug": "cctv-installation",
+      "projectName": "กล้อง (CCTV)",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "fail",
+          "details": "No screenshots found"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_002",
+      "slug": "sound-system-installation-banklongs",
+      "projectName": "เสียงตามสาย",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "fail",
+          "details": "No screenshots found"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_003",
+      "slug": "chemical-tank-installation",
+      "projectName": "ถังเคมี",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "fail",
+          "details": "No screenshots found"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_004",
+      "slug": "curved-mirror-installation",
+      "projectName": "กระจกโค้ง",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "fail",
+          "details": "No screenshots found"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_005",
+      "slug": "drainage-pipe-installation",
+      "projectName": "ท่อธาร",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "fail",
+          "details": "No screenshots found"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_006",
+      "slug": "sound-system-installation-uthai",
+      "projectName": "เสียงตามสาย",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "fail",
+          "details": "No screenshots found"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_007",
+      "slug": "household-database-system",
+      "projectName": "ระบบคลังข้อมูลครัวเรือน",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "warn",
+          "details": "No public screenshots available for protected or fallback capture project"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_008",
+      "slug": "employee-database-system",
+      "projectName": "ระบบฐานข้อมูลพนักงานสำนักปลัด",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "warn",
+          "details": "No public screenshots available for protected or fallback capture project"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_009",
+      "slug": "quality-of-life-network-system",
+      "projectName": "ระบบเครือข่ายคุณภาพชีวิต",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "warn",
+          "details": "No public screenshots available for protected or fallback capture project"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_010",
+      "slug": "household-form-tr14-system",
+      "projectName": "ระบบคนในบ้าน ทร.14",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "warn",
+          "details": "No public screenshots available for protected or fallback capture project"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_011",
+      "slug": "material-requisition-system",
+      "projectName": "ระบบเบิกจ่ายวัสดุอุปกรณ์สำนักปลัด",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "warn",
+          "details": "No public screenshots available for protected or fallback capture project"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_012",
+      "slug": "vehicle-maintenance-system",
+      "projectName": "ระบบแจ้งซ่อมรถสำนักปลัด",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "warn",
+          "details": "No public screenshots available for protected or fallback capture project"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_013",
+      "slug": "asset-management-system",
+      "projectName": "ระบบจัดการครุภัณฑ์กองยุทธศาสตร์และงบประมาณ",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "warn",
+          "details": "No public screenshots available for protected or fallback capture project"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_014",
+      "slug": "election-result-reporting-system",
+      "projectName": "ระบบรายงานผลการเลือกตั้งผู้บริหารท้องถิ่น",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "warn",
+          "details": "No public screenshots available for protected or fallback capture project"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_015",
+      "slug": "road-safety-dashboard",
+      "projectName": "Dashboard ศูนย์ปฏิบัติการความปลอดภัยทางถนน",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "fail",
+          "details": "No screenshots found"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_016",
+      "slug": "line-members-dashboard",
+      "projectName": "Dashboard สมาชิกไลน์",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "fail",
+          "details": "No screenshots found"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_017",
+      "slug": "asset-verification-dashboard",
+      "projectName": "Dashboard รายงานการตรวจสอบพัสดุคงเหลือประจำปี 2566",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "fail",
+          "details": "No screenshots found"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_018",
+      "slug": "asset-verification-dashboard-strategy",
+      "projectName": "Dashboard รายงานการตรวจสอบพัสดุคงเหลือประจำปี 2566 กองยุทธศาสตร์และงบประมาณ",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "fail",
+          "details": "No screenshots found"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_019",
+      "slug": "water-bill-outstanding-dashboard",
+      "projectName": "Dashboard รายงานยอดค้างจ่ายค่าน้ำประปา",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "fail",
+          "details": "No screenshots found"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_020",
+      "slug": "asset-verification-it-dashboard",
+      "projectName": "Dashboard รายงานการตรวจสอบพัสดุคงเหลือประจำปี 2566 งานเทคโนโลยีฯ",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "fail",
+          "details": "No screenshots found"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_021",
+      "slug": "annual-asset-dashboard",
+      "projectName": "Dashboard รายงานครุภัณฑ์ประจำปี",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "fail",
+          "details": "No screenshots found"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_022",
+      "slug": "meeting-room-booking-system",
+      "projectName": "ระบบจองห้องประชุม",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "fail",
+          "details": "No screenshots found"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_023",
+      "slug": "meeting-room-calendar-public",
+      "projectName": "ปฏิทินการใช้ห้องประชุม (สำหรับดูเท่านั้น)",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "fail",
+          "details": "No screenshots found"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_024",
+      "slug": "payslip-system",
+      "projectName": "ระบบสลิปเงินเดือนออนไลน์",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "warn",
+          "details": "No public screenshots available for protected or fallback capture project"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_025",
+      "slug": "calendar-operation-counting-system",
+      "projectName": "ปฎิทินดำเนินงาน/นับวันราชการ",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "warn",
+          "details": "No public screenshots available for protected or fallback capture project"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_026",
+      "slug": "salary-simulator-account-6",
+      "projectName": "Salary Simulator — บัญชี 6 ระบบร้อยละ",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "fail",
+          "details": "No screenshots found"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_027",
+      "slug": "salary-simulator-account-5",
+      "projectName": "ระบบจำลองการเลื่อนขั้นเงินเดือน (บัญชี ๕)",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "fail",
+          "details": "No screenshots found"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_028",
+      "slug": "job-recruitment-system",
+      "projectName": "ระบบรับสมัครงานออนไลน์",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "fail",
+          "details": "No screenshots found"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_029",
+      "slug": "uthai-smart-pa-system",
+      "projectName": "Uthai Thani Smart PA | ระบบจัดการเสียงไร้สายอัจฉริยะ",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "fail",
+          "details": "No screenshots found"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_030",
+      "slug": "uthai-stgs-system",
+      "projectName": "Uthai STGs",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "fail",
+          "details": "No screenshots found"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_031",
+      "slug": "personnel-database-system",
+      "projectName": "ระบบฐานข้อมูลบุคลากร",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "warn",
+          "details": "No public screenshots available for protected or fallback capture project"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_032",
+      "slug": "pa-system-management",
+      "projectName": "ระบบบริหารจัดการจุดติดตั้งเสียงตามสาย",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "warn",
+          "details": "No public screenshots available for protected or fallback capture project"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    },
+    {
+      "id": "proj_033",
+      "slug": "funeral-pr-system",
+      "projectName": "ระบบประชาสัมพันธ์งานศพ",
+      "status": "fail",
+      "screenshotCount": 0,
+      "checks": [
+        {
+          "name": "cover_asset",
+          "status": "warn",
+          "details": "Cover file missing"
+        },
+        {
+          "name": "screenshots",
+          "status": "warn",
+          "details": "No public screenshots available for protected or fallback capture project"
+        },
+        {
+          "name": "slideshow_html",
+          "status": "fail",
+          "details": "Slideshow HTML missing"
+        },
+        {
+          "name": "slide_data",
+          "status": "pass",
+          "details": "7 slide record(s)"
+        },
+        {
+          "name": "live_url",
+          "status": "pass",
+          "details": "Live URL present"
+        },
+        {
+          "name": "capture_status",
+          "status": "warn",
+          "details": "Capture status: pending"
+        }
+      ]
+    }
+  ]
+}

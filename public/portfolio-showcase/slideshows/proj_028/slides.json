@@ -1,0 +1,81 @@
+{
+  "generatedAt": "2026-03-12T04:09:48.826Z",
+  "projectId": "proj_028",
+  "slug": "job-recruitment-system",
+  "projectName": "ระบบรับสมัครงานออนไลน์",
+  "clientName": "เทศบาลเมืองอุทัยธานี",
+  "type": "React/Vercel",
+  "slides": [
+    {
+      "id": "proj_028-cover",
+      "kind": "cover",
+      "title": "ระบบรับสมัครงานออนไลน์",
+      "subtitle": "Job Recruitment System",
+      "image": "../../covers/proj_028-cover.png",
+      "badge": "React/Vercel",
+      "meta": "เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_028-screenshot-1",
+      "kind": "image",
+      "title": "Desktop Hero",
+      "subtitle": "HR & Recruitment",
+      "image": "../../screenshots/proj_028/desktop-hero.png",
+      "description": "ระบบรับสมัครสรรหาพนักงานออนไลน์ ยื่นใบสมัคร ตรวจสอบคุณสมบัติ จัดอันดับผู้สมัคร อยู่ในหมวด Web Applications ประเภทย่อย HR & Recruitment และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_028-screenshot-2",
+      "kind": "image",
+      "title": "Desktop Full",
+      "subtitle": "Web Applications",
+      "image": "../../screenshots/proj_028/desktop-full.png",
+      "description": "1 มิถุนายน 2565 - 30 กรกฎาคม 2565"
+    },
+    {
+      "id": "proj_028-features",
+      "kind": "text",
+      "title": "Features & Description",
+      "subtitle": "React/Vercel",
+      "description": "ระบบรับสมัครสรรหาพนักงานออนไลน์ ยื่นใบสมัคร ตรวจสอบคุณสมบัติ จัดอันดับผู้สมัคร อยู่ในหมวด Web Applications ประเภทย่อย HR & Recruitment และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "items": [
+        "react",
+        "vercel",
+        "recruitment",
+        "HR",
+        "online"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_028-info",
+      "kind": "text",
+      "title": "Project Info",
+      "subtitle": "Project #04",
+      "items": [
+        "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+        "หมวดงาน: Web Applications",
+        "ประเภทย่อย: HR & Recruitment",
+        "ช่วงเวลา: 1 มิถุนายน 2565 - 30 กรกฎาคม 2565"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_028-cta",
+      "kind": "cta",
+      "title": "View Live",
+      "subtitle": "เปิดดูระบบจริง",
+      "description": "https://test-hirejobs.vercel.app/",
+      "buttonLabel": "Open Project",
+      "href": "https://test-hirejobs.vercel.app/",
+      "image": null
+    },
+    {
+      "id": "proj_028-thanks",
+      "kind": "thanks",
+      "title": "Thank You",
+      "subtitle": "Patompong Tech Consultant",
+      "description": "สมัครงาน • บุคลากร • รับสมัคร • ออนไลน์",
+      "image": "../../screenshots/proj_028/mobile-hero.png"
+    }
+  ]
+}

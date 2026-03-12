@@ -27,6 +27,7 @@ import QuotationManager from "@/components/admin/QuotationManager";
 import GalleryManager from "@/components/admin/GalleryManager";
 import PortfolioManager from "@/components/admin/PortfolioManager";
 import TimelineManager from "@/components/admin/TimelineManager";
+import ProjectManager from "@/components/admin/ProjectManager";
 import ReportGenerator from "@/components/admin/ReportGenerator";
 import {
   getPortfolioProjects,
@@ -60,7 +61,7 @@ interface SysStats {
   uptime: number;
 }
 
-type Tab = "dashboard" | "quotation" | "gallery" | "portfolio" | "timeline" | "report";
+type Tab = "dashboard" | "quotation" | "gallery" | "portfolio" | "timeline" | "projects" | "report";
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<Tab>("dashboard");
@@ -176,6 +177,7 @@ export default function AdminDashboard() {
               { id: "quotation" as Tab, label: "ใบเสนอราคา", icon: FileText },
               { id: "gallery" as Tab, label: "รูปภาพ (Claude)", icon: ImageIcon },
               { id: "portfolio" as Tab, label: "ผลงาน/ระบบ", icon: Code },
+              { id: "projects" as Tab, label: "โครงการ", icon: FolderOpen },
               { id: "timeline" as Tab, label: "ไทม์ไลน์", icon: Calendar },
               { id: "report" as Tab, label: "รายงาน", icon: TrendingUp },
             ]).map(tab => (
@@ -210,6 +212,7 @@ export default function AdminDashboard() {
         {activeTab === "quotation" && <QuotationManager />}
         {activeTab === "gallery" && <GalleryManager />}
         {activeTab === "portfolio" && <PortfolioManager />}
+        {activeTab === "projects" && <ProjectManager />}
         {activeTab === "timeline" && <TimelineManager />}
         {activeTab === "report" && <ReportGenerator />}
         {activeTab === "dashboard" && (
@@ -266,20 +269,18 @@ export default function AdminDashboard() {
                   {/* Progress Bar */}
                   <div className="w-full h-4 bg-ink-900 rounded-full overflow-hidden border border-ink-600 mb-3">
                     <div
-                      className={`h-full rounded-full transition-all duration-1000 ${
-                        sysStats.storage.percentage < 70 ? "bg-gradient-to-r from-green-600 to-green-400" :
-                        sysStats.storage.percentage < 90 ? "bg-gradient-to-r from-yellow-600 to-yellow-400" :
-                        "bg-gradient-to-r from-red-600 to-red-400"
-                      }`}
+                      className={`h-full rounded-full transition-all duration-1000 ${sysStats.storage.percentage < 70 ? "bg-gradient-to-r from-green-600 to-green-400" :
+                          sysStats.storage.percentage < 90 ? "bg-gradient-to-r from-yellow-600 to-yellow-400" :
+                            "bg-gradient-to-r from-red-600 to-red-400"
+                        }`}
                       style={{ width: `${sysStats.storage.percentage}%` }}
                     />
                   </div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className={`font-code text-sm font-bold ${
-                      sysStats.storage.percentage < 70 ? "text-green-400" :
-                      sysStats.storage.percentage < 90 ? "text-yellow-400" :
-                      "text-red-400"
-                    }`}>{sysStats.storage.percentage}% ใช้งาน</span>
+                    <span className={`font-code text-sm font-bold ${sysStats.storage.percentage < 70 ? "text-green-400" :
+                        sysStats.storage.percentage < 90 ? "text-yellow-400" :
+                          "text-red-400"
+                      }`}>{sysStats.storage.percentage}% ใช้งาน</span>
                     <span className="font-code text-xs text-ink-400">เหลือ: {formatBytes(sysStats.storage.total - sysStats.storage.used)}</span>
                   </div>
 

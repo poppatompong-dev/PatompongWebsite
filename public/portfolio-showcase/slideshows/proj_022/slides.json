@@ -1,0 +1,82 @@
+{
+  "generatedAt": "2026-03-12T04:09:48.849Z",
+  "projectId": "proj_022",
+  "slug": "meeting-room-booking-system",
+  "projectName": "ระบบจองห้องประชุม",
+  "clientName": "เทศบาลเมืองอุทัยธานี",
+  "type": "React/Netlify",
+  "slides": [
+    {
+      "id": "proj_022-cover",
+      "kind": "cover",
+      "title": "ระบบจองห้องประชุม",
+      "subtitle": "Meeting Room Booking System",
+      "image": "../../covers/proj_022-cover.png",
+      "badge": "React/Netlify",
+      "meta": "เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_022-screenshot-1",
+      "kind": "text",
+      "title": "Project Snapshot",
+      "subtitle": "Booking & Reservation",
+      "image": "../../covers/proj_022-cover.png",
+      "description": "ระบบจองห้องประชุมออนไลน์ ปฏิทินแสดงการจอง อนุมัติผ่านระบบ อยู่ในหมวด Web Applications ประเภทย่อย Booking & Reservation และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_022-screenshot-2",
+      "kind": "text",
+      "title": "Key Details",
+      "subtitle": "Web Applications",
+      "image": "../../covers/proj_022-cover.png",
+      "description": "15 มีนาคม 2565 - 15 พฤษภาคม 2565"
+    },
+    {
+      "id": "proj_022-features",
+      "kind": "text",
+      "title": "Features & Description",
+      "subtitle": "React/Netlify",
+      "description": "ระบบจองห้องประชุมออนไลน์ ปฏิทินแสดงการจอง อนุมัติผ่านระบบ อยู่ในหมวด Web Applications ประเภทย่อย Booking & Reservation และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "items": [
+        "react",
+        "netlify",
+        "booking",
+        "room",
+        "online",
+        "calendar"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_022-info",
+      "kind": "text",
+      "title": "Project Info",
+      "subtitle": "Project #07",
+      "items": [
+        "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+        "หมวดงาน: Web Applications",
+        "ประเภทย่อย: Booking & Reservation",
+        "ช่วงเวลา: 15 มีนาคม 2565 - 15 พฤษภาคม 2565"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_022-cta",
+      "kind": "cta",
+      "title": "View Live",
+      "subtitle": "เปิดดูระบบจริง",
+      "description": "https://uthai-room-booking-v20.netlify.app/",
+      "buttonLabel": "Open Project",
+      "href": "https://uthai-room-booking-v20.netlify.app/",
+      "image": null
+    },
+    {
+      "id": "proj_022-thanks",
+      "kind": "thanks",
+      "title": "Thank You",
+      "subtitle": "Patompong Tech Consultant",
+      "description": "จอง • ห้องประชุม • ออนไลน์ • ระบบ",
+      "image": "../../covers/proj_022-cover.png"
+    }
+  ]
+}

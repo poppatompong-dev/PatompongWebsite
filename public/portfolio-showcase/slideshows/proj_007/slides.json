@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-03-12T04:09:48.941Z",
+  "projectId": "proj_007",
+  "slug": "household-database-system",
+  "projectName": "ระบบคลังข้อมูลครัวเรือน",
+  "clientName": "เทศบาลตำบลบ้านคลอง",
+  "type": "AppSheet",
+  "slides": [
+    {
+      "id": "proj_007-cover",
+      "kind": "cover",
+      "title": "ระบบคลังข้อมูลครัวเรือน",
+      "subtitle": "Household Database System",
+      "image": "../../covers/proj_007-cover.png",
+      "badge": "AppSheet",
+      "meta": "เทศบาลตำบลบ้านคลอง"
+    },
+    {
+      "id": "proj_007-screenshot-1",
+      "kind": "text",
+      "title": "Project Snapshot",
+      "subtitle": "Household Management",
+      "image": "../../covers/proj_007-cover.png",
+      "description": "ระบบเก็บข้อมูลครัวเรือนในเขตเทศบาล ค้นหา กรอง ส่งออกข้อมูล อยู่ในหมวด Database & Data Management ประเภทย่อย Household Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง"
+    },
+    {
+      "id": "proj_007-screenshot-2",
+      "kind": "text",
+      "title": "Key Details",
+      "subtitle": "Database & Data Management",
+      "image": "../../covers/proj_007-cover.png",
+      "description": "1 กรกฎาคม 2564 - 30 สิงหาคม 2564"
+    },
+    {
+      "id": "proj_007-features",
+      "kind": "text",
+      "title": "Features & Description",
+      "subtitle": "AppSheet",
+      "description": "ระบบเก็บข้อมูลครัวเรือนในเขตเทศบาล ค้นหา กรอง ส่งออกข้อมูล อยู่ในหมวด Database & Data Management ประเภทย่อย Household Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+      "items": [
+        "appsheet",
+        "database",
+        "household",
+        "data management"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_007-info",
+      "kind": "text",
+      "title": "Project Info",
+      "subtitle": "Project #22",
+      "items": [
+        "หน่วยงาน: เทศบาลตำบลบ้านคลอง",
+        "หมวดงาน: Database & Data Management",
+        "ประเภทย่อย: Household Management",
+        "ช่วงเวลา: 1 กรกฎาคม 2564 - 30 สิงหาคม 2564"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_007-cta",
+      "kind": "cta",
+      "title": "View Live",
+      "subtitle": "เปิดดูระบบจริง",
+      "description": "https://www.appsheet.com/start/aa6e74b7-c014-4ae4-ac4b-799174b2620a",
+      "buttonLabel": "Open Project",
+      "href": "https://www.appsheet.com/start/aa6e74b7-c014-4ae4-ac4b-799174b2620a",
+      "image": null
+    },
+    {
+      "id": "proj_007-thanks",
+      "kind": "thanks",
+      "title": "Thank You",
+      "subtitle": "Patompong Tech Consultant",
+      "description": "ครัวเรือน • ข้อมูล • ระบบ • บันทึก",
+      "image": "../../covers/proj_007-cover.png"
+    }
+  ]
+}

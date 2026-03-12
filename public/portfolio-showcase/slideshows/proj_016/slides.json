@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-03-12T04:09:48.912Z",
+  "projectId": "proj_016",
+  "slug": "line-members-dashboard",
+  "projectName": "Dashboard สมาชิกไลน์",
+  "clientName": "เทศบาลเมืองอุทัยธานี",
+  "type": "Google Looker Studio",
+  "slides": [
+    {
+      "id": "proj_016-cover",
+      "kind": "cover",
+      "title": "Dashboard สมาชิกไลน์",
+      "subtitle": "Line Members Dashboard",
+      "image": "../../covers/proj_016-cover.png",
+      "badge": "Google Looker Studio",
+      "meta": "เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_016-screenshot-1",
+      "kind": "text",
+      "title": "Project Snapshot",
+      "subtitle": "Member Management",
+      "image": "../../covers/proj_016-cover.png",
+      "description": "รายงานวิเคราะห์สมาชิก LINE OA แนวโน้ม จำนวน การมีส่วนร่วม อยู่ในหมวด Analytics & Reporting ประเภทย่อย Member Management และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_016-screenshot-2",
+      "kind": "text",
+      "title": "Key Details",
+      "subtitle": "Analytics & Reporting",
+      "image": "../../covers/proj_016-cover.png",
+      "description": "1 พฤศจิกายน 2564 - 30 ธันวาคม 2564"
+    },
+    {
+      "id": "proj_016-features",
+      "kind": "text",
+      "title": "Features & Description",
+      "subtitle": "Google Looker Studio",
+      "description": "รายงานวิเคราะห์สมาชิก LINE OA แนวโน้ม จำนวน การมีส่วนร่วม อยู่ในหมวด Analytics & Reporting ประเภทย่อย Member Management และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "items": [
+        "dashboard",
+        "analytics",
+        "LINE",
+        "members"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_016-info",
+      "kind": "text",
+      "title": "Project Info",
+      "subtitle": "Project #16",
+      "items": [
+        "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+        "หมวดงาน: Analytics & Reporting",
+        "ประเภทย่อย: Member Management",
+        "ช่วงเวลา: 1 พฤศจิกายน 2564 - 30 ธันวาคม 2564"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_016-cta",
+      "kind": "cta",
+      "title": "View Live",
+      "subtitle": "เปิดดูระบบจริง",
+      "description": "https://lookerstudio.google.com/reporting/340173ab-e2ce-4fc7-8534-fbfff4cd0fb1",
+      "buttonLabel": "Open Project",
+      "href": "https://lookerstudio.google.com/reporting/340173ab-e2ce-4fc7-8534-fbfff4cd0fb1",
+      "image": null
+    },
+    {
+      "id": "proj_016-thanks",
+      "kind": "thanks",
+      "title": "Thank You",
+      "subtitle": "Patompong Tech Consultant",
+      "description": "ไลน์ • สมาชิก • รายงาน • จำนวน",
+      "image": "../../covers/proj_016-cover.png"
+    }
+  ]
+}

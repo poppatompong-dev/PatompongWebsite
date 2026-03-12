@@ -1,0 +1,81 @@
+{
+  "generatedAt": "2026-03-12T04:09:48.833Z",
+  "projectId": "proj_026",
+  "slug": "salary-simulator-account-6",
+  "projectName": "Salary Simulator — บัญชี 6 ระบบร้อยละ",
+  "clientName": "เทศบาลเมืองอุทัยธานี",
+  "type": "React/Vercel",
+  "slides": [
+    {
+      "id": "proj_026-cover",
+      "kind": "cover",
+      "title": "Salary Simulator — บัญชี 6 ระบบร้อยละ",
+      "subtitle": "Salary Simulator Account 6",
+      "image": "../../covers/proj_026-cover.png",
+      "badge": "React/Vercel",
+      "meta": "เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_026-screenshot-1",
+      "kind": "image",
+      "title": "Desktop Hero",
+      "subtitle": "Simulation & Calculation",
+      "image": "../../screenshots/proj_026/desktop-hero.png",
+      "description": "ระบบจำลองการเลื่อนขั้นเงินเดือนบัญชี 6 คำนวณร้อยละ แสดงผลแบบ Interactive อยู่ในหมวด Web Applications ประเภทย่อย Simulation & Calculation และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_026-screenshot-2",
+      "kind": "image",
+      "title": "Desktop Full",
+      "subtitle": "Web Applications",
+      "image": "../../screenshots/proj_026/desktop-full.png",
+      "description": "1 พฤษภาคม 2565 - 30 มิถุนายน 2565"
+    },
+    {
+      "id": "proj_026-features",
+      "kind": "text",
+      "title": "Features & Description",
+      "subtitle": "React/Vercel",
+      "description": "ระบบจำลองการเลื่อนขั้นเงินเดือนบัญชี 6 คำนวณร้อยละ แสดงผลแบบ Interactive อยู่ในหมวด Web Applications ประเภทย่อย Simulation & Calculation และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "items": [
+        "react",
+        "vercel",
+        "simulation",
+        "salary",
+        "calculation"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_026-info",
+      "kind": "text",
+      "title": "Project Info",
+      "subtitle": "Project #05",
+      "items": [
+        "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+        "หมวดงาน: Web Applications",
+        "ประเภทย่อย: Simulation & Calculation",
+        "ช่วงเวลา: 1 พฤษภาคม 2565 - 30 มิถุนายน 2565"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_026-cta",
+      "kind": "cta",
+      "title": "View Live",
+      "subtitle": "เปิดดูระบบจริง",
+      "description": "https://salary-simulator-khaki.vercel.app/",
+      "buttonLabel": "Open Project",
+      "href": "https://salary-simulator-khaki.vercel.app/",
+      "image": null
+    },
+    {
+      "id": "proj_026-thanks",
+      "kind": "thanks",
+      "title": "Thank You",
+      "subtitle": "Patompong Tech Consultant",
+      "description": "เงินเดือน • จำลอง • บัญชี • เลื่อนขั้น",
+      "image": "../../screenshots/proj_026/mobile-hero.png"
+    }
+  ]
+}

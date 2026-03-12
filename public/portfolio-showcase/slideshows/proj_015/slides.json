@@ -1,0 +1,81 @@
+{
+  "generatedAt": "2026-03-12T04:09:48.904Z",
+  "projectId": "proj_015",
+  "slug": "road-safety-dashboard",
+  "projectName": "Dashboard ศูนย์ปฏิบัติการความปลอดภัยทางถนน",
+  "clientName": "เทศบาลตำบลบ้านคลอง",
+  "type": "Google Looker Studio",
+  "slides": [
+    {
+      "id": "proj_015-cover",
+      "kind": "cover",
+      "title": "Dashboard ศูนย์ปฏิบัติการความปลอดภัยทางถนน",
+      "subtitle": "Road Safety Dashboard",
+      "image": "../../covers/proj_015-cover.png",
+      "badge": "Google Looker Studio",
+      "meta": "เทศบาลตำบลบ้านคลอง"
+    },
+    {
+      "id": "proj_015-screenshot-1",
+      "kind": "image",
+      "title": "Desktop Hero",
+      "subtitle": "Safety Monitoring",
+      "image": "../../screenshots/proj_015/desktop-hero.png",
+      "description": "Dashboard แสดงข้อมูลศูนย์ปฏิบัติการความปลอดภัยทางถนน สถิติอุบัติเหตุ จุดเสี่ยง อยู่ในหมวด Analytics & Reporting ประเภทย่อย Safety Monitoring และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง"
+    },
+    {
+      "id": "proj_015-screenshot-2",
+      "kind": "image",
+      "title": "Desktop Full",
+      "subtitle": "Analytics & Reporting",
+      "image": "../../screenshots/proj_015/desktop-full.png",
+      "description": "15 ตุลาคม 2564 - 15 ธันวาคม 2564"
+    },
+    {
+      "id": "proj_015-features",
+      "kind": "text",
+      "title": "Features & Description",
+      "subtitle": "Google Looker Studio",
+      "description": "Dashboard แสดงข้อมูลศูนย์ปฏิบัติการความปลอดภัยทางถนน สถิติอุบัติเหตุ จุดเสี่ยง อยู่ในหมวด Analytics & Reporting ประเภทย่อย Safety Monitoring และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+      "items": [
+        "dashboard",
+        "analytics",
+        "safety",
+        "monitoring",
+        "real-time"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_015-info",
+      "kind": "text",
+      "title": "Project Info",
+      "subtitle": "Project #15",
+      "items": [
+        "หน่วยงาน: เทศบาลตำบลบ้านคลอง",
+        "หมวดงาน: Analytics & Reporting",
+        "ประเภทย่อย: Safety Monitoring",
+        "ช่วงเวลา: 15 ตุลาคม 2564 - 15 ธันวาคม 2564"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_015-cta",
+      "kind": "cta",
+      "title": "View Live",
+      "subtitle": "เปิดดูระบบจริง",
+      "description": "https://lookerstudio.google.com/reporting/08f5945c-8535-47e2-8991-74d962a2db6b",
+      "buttonLabel": "Open Project",
+      "href": "https://lookerstudio.google.com/reporting/08f5945c-8535-47e2-8991-74d962a2db6b",
+      "image": null
+    },
+    {
+      "id": "proj_015-thanks",
+      "kind": "thanks",
+      "title": "Thank You",
+      "subtitle": "Patompong Tech Consultant",
+      "description": "ความปลอดภัย • ถนน • ศูนย์ปฏิบัติการ • รายงาน",
+      "image": "../../screenshots/proj_015/mobile-hero.png"
+    }
+  ]
+}

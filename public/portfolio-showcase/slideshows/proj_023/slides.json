@@ -1,0 +1,81 @@
+{
+  "generatedAt": "2026-03-12T04:09:48.855Z",
+  "projectId": "proj_023",
+  "slug": "meeting-room-calendar-public",
+  "projectName": "ปฏิทินการใช้ห้องประชุม (Public View)",
+  "clientName": "เทศบาลเมืองอุทัยธานี",
+  "type": "React/Netlify",
+  "slides": [
+    {
+      "id": "proj_023-cover",
+      "kind": "cover",
+      "title": "ปฏิทินการใช้ห้องประชุม (Public View)",
+      "subtitle": "Meeting Room Calendar Public",
+      "image": "../../covers/proj_023-cover.png",
+      "badge": "React/Netlify",
+      "meta": "เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_023-screenshot-1",
+      "kind": "image",
+      "title": "Desktop Hero",
+      "subtitle": "Public Display",
+      "image": "../../screenshots/proj_023/desktop-hero.png",
+      "description": "ปฏิทินการใช้ห้องประชุมแบบ Public View สำหรับจอแสดงผลสาธารณะ อยู่ในหมวด Web Applications ประเภทย่อย Public Display และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_023-screenshot-2",
+      "kind": "image",
+      "title": "Desktop Full",
+      "subtitle": "Web Applications",
+      "image": "../../screenshots/proj_023/desktop-full.png",
+      "description": "15 มีนาคม 2565 - 15 พฤษภาคม 2565"
+    },
+    {
+      "id": "proj_023-features",
+      "kind": "text",
+      "title": "Features & Description",
+      "subtitle": "React/Netlify",
+      "description": "ปฏิทินการใช้ห้องประชุมแบบ Public View สำหรับจอแสดงผลสาธารณะ อยู่ในหมวด Web Applications ประเภทย่อย Public Display และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "items": [
+        "react",
+        "netlify",
+        "calendar",
+        "public",
+        "view-only"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_023-info",
+      "kind": "text",
+      "title": "Project Info",
+      "subtitle": "Project #08",
+      "items": [
+        "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+        "หมวดงาน: Web Applications",
+        "ประเภทย่อย: Public Display",
+        "ช่วงเวลา: 15 มีนาคม 2565 - 15 พฤษภาคม 2565"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_023-cta",
+      "kind": "cta",
+      "title": "View Live",
+      "subtitle": "เปิดดูระบบจริง",
+      "description": "https://uthai-room-booking-v13.netlify.app/public-view.html?appId=default-app-id",
+      "buttonLabel": "Open Project",
+      "href": "https://uthai-room-booking-v13.netlify.app/public-view.html?appId=default-app-id",
+      "image": null
+    },
+    {
+      "id": "proj_023-thanks",
+      "kind": "thanks",
+      "title": "Thank You",
+      "subtitle": "Patompong Tech Consultant",
+      "description": "ปฏิทิน • ห้องประชุม • สาธารณะ • ดู",
+      "image": "../../screenshots/proj_023/mobile-hero.png"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-03-12T04:09:48.935Z",
+  "projectId": "proj_021",
+  "slug": "annual-asset-dashboard",
+  "projectName": "Dashboard รายงานครุภัณฑ์ประจำปี",
+  "clientName": "เทศบาลเมืองอุทัยธานี",
+  "type": "Google Looker Studio",
+  "slides": [
+    {
+      "id": "proj_021-cover",
+      "kind": "cover",
+      "title": "Dashboard รายงานครุภัณฑ์ประจำปี",
+      "subtitle": "Annual Asset Dashboard",
+      "image": "../../covers/proj_021-cover.png",
+      "badge": "Google Looker Studio",
+      "meta": "เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_021-screenshot-1",
+      "kind": "image",
+      "title": "Desktop Hero",
+      "subtitle": "Asset Reports",
+      "image": "../../screenshots/proj_021/desktop-hero.png",
+      "description": "รายงานครุภัณฑ์ประจำปี แยกตามหมวดหมู่ สถานะการใช้งาน อยู่ในหมวด Analytics & Reporting ประเภทย่อย Asset Reports และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_021-screenshot-2",
+      "kind": "image",
+      "title": "Desktop Full",
+      "subtitle": "Analytics & Reporting",
+      "image": "../../screenshots/proj_021/desktop-full.png",
+      "description": "1 มีนาคม 2565 - 30 เมษายน 2565"
+    },
+    {
+      "id": "proj_021-features",
+      "kind": "text",
+      "title": "Features & Description",
+      "subtitle": "Google Looker Studio",
+      "description": "รายงานครุภัณฑ์ประจำปี แยกตามหมวดหมู่ สถานะการใช้งาน อยู่ในหมวด Analytics & Reporting ประเภทย่อย Asset Reports และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "items": [
+        "dashboard",
+        "analytics",
+        "asset",
+        "annual"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_021-info",
+      "kind": "text",
+      "title": "Project Info",
+      "subtitle": "Project #21",
+      "items": [
+        "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+        "หมวดงาน: Analytics & Reporting",
+        "ประเภทย่อย: Asset Reports",
+        "ช่วงเวลา: 1 มีนาคม 2565 - 30 เมษายน 2565"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_021-cta",
+      "kind": "cta",
+      "title": "View Live",
+      "subtitle": "เปิดดูระบบจริง",
+      "description": "https://lookerstudio.google.com/reporting/34cab9c7-148d-4cf6-b3d1-fb73f9d99e61",
+      "buttonLabel": "Open Project",
+      "href": "https://lookerstudio.google.com/reporting/34cab9c7-148d-4cf6-b3d1-fb73f9d99e61",
+      "image": null
+    },
+    {
+      "id": "proj_021-thanks",
+      "kind": "thanks",
+      "title": "Thank You",
+      "subtitle": "Patompong Tech Consultant",
+      "description": "ครุภัณฑ์ • ประจำปี • รายงาน • สินทรัพย์",
+      "image": "../../screenshots/proj_021/mobile-hero.png"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-03-12T04:09:48.946Z",
+  "projectId": "proj_008",
+  "slug": "employee-database-system",
+  "projectName": "ระบบฐานข้อมูลพนักงานสำนักปลัด",
+  "clientName": "เทศบาลตำบลบ้านคลอง",
+  "type": "AppSheet",
+  "slides": [
+    {
+      "id": "proj_008-cover",
+      "kind": "cover",
+      "title": "ระบบฐานข้อมูลพนักงานสำนักปลัด",
+      "subtitle": "Employee Database System",
+      "image": "../../covers/proj_008-cover.png",
+      "badge": "AppSheet",
+      "meta": "เทศบาลตำบลบ้านคลอง"
+    },
+    {
+      "id": "proj_008-screenshot-1",
+      "kind": "text",
+      "title": "Project Snapshot",
+      "subtitle": "HR Management",
+      "image": "../../covers/proj_008-cover.png",
+      "description": "จัดการข้อมูลพนักงานสำนักปลัด ประวัติ ตำแหน่ง สังกัด อยู่ในหมวด Database & Data Management ประเภทย่อย HR Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง"
+    },
+    {
+      "id": "proj_008-screenshot-2",
+      "kind": "text",
+      "title": "Key Details",
+      "subtitle": "Database & Data Management",
+      "image": "../../covers/proj_008-cover.png",
+      "description": "1 กรกฎาคม 2564 - 30 สิงหาคม 2564"
+    },
+    {
+      "id": "proj_008-features",
+      "kind": "text",
+      "title": "Features & Description",
+      "subtitle": "AppSheet",
+      "description": "จัดการข้อมูลพนักงานสำนักปลัด ประวัติ ตำแหน่ง สังกัด อยู่ในหมวด Database & Data Management ประเภทย่อย HR Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+      "items": [
+        "appsheet",
+        "database",
+        "HR",
+        "employee"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_008-info",
+      "kind": "text",
+      "title": "Project Info",
+      "subtitle": "Project #23",
+      "items": [
+        "หน่วยงาน: เทศบาลตำบลบ้านคลอง",
+        "หมวดงาน: Database & Data Management",
+        "ประเภทย่อย: HR Management",
+        "ช่วงเวลา: 1 กรกฎาคม 2564 - 30 สิงหาคม 2564"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_008-cta",
+      "kind": "cta",
+      "title": "View Live",
+      "subtitle": "เปิดดูระบบจริง",
+      "description": "https://www.appsheet.com/start/c13b3ce6-62c9-47cd-8285-8f358ace410b",
+      "buttonLabel": "Open Project",
+      "href": "https://www.appsheet.com/start/c13b3ce6-62c9-47cd-8285-8f358ace410b",
+      "image": null
+    },
+    {
+      "id": "proj_008-thanks",
+      "kind": "thanks",
+      "title": "Thank You",
+      "subtitle": "Patompong Tech Consultant",
+      "description": "พนักงาน • ข้อมูล • ระบบ • จัดการ",
+      "image": "../../covers/proj_008-cover.png"
+    }
+  ]
+}

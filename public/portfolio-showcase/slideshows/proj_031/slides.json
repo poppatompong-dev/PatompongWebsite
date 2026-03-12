@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-03-12T04:09:48.885Z",
+  "projectId": "proj_031",
+  "slug": "personnel-database-system",
+  "projectName": "ระบบฐานข้อมูลบุคลากร",
+  "clientName": "เทศบาลเมืองอุทัยธานี",
+  "type": "Google Apps Script",
+  "slides": [
+    {
+      "id": "proj_031-cover",
+      "kind": "cover",
+      "title": "ระบบฐานข้อมูลบุคลากร",
+      "subtitle": "Personnel Database System",
+      "image": "../../covers/proj_031-cover.png",
+      "badge": "Google Apps Script",
+      "meta": "เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_031-screenshot-1",
+      "kind": "text",
+      "title": "Project Snapshot",
+      "subtitle": "HR Management",
+      "image": "../../covers/proj_031-cover.png",
+      "description": "ฐานข้อมูลบุคลากร ค้นหา กรอง แสดงข้อมูลพนักงานทั้งหมด อยู่ในหมวด Automation & Integration ประเภทย่อย HR Management และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_031-screenshot-2",
+      "kind": "text",
+      "title": "Key Details",
+      "subtitle": "Automation & Integration",
+      "image": "../../covers/proj_031-cover.png",
+      "description": "15 กรกฎาคม 2565 - 30 กันยายน 2565"
+    },
+    {
+      "id": "proj_031-features",
+      "kind": "text",
+      "title": "Features & Description",
+      "subtitle": "Google Apps Script",
+      "description": "ฐานข้อมูลบุคลากร ค้นหา กรอง แสดงข้อมูลพนักงานทั้งหมด อยู่ในหมวด Automation & Integration ประเภทย่อย HR Management และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "items": [
+        "google apps script",
+        "database",
+        "HR",
+        "personnel"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_031-info",
+      "kind": "text",
+      "title": "Project Info",
+      "subtitle": "Project #12",
+      "items": [
+        "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+        "หมวดงาน: Automation & Integration",
+        "ประเภทย่อย: HR Management",
+        "ช่วงเวลา: 15 กรกฎาคม 2565 - 30 กันยายน 2565"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_031-cta",
+      "kind": "cta",
+      "title": "View Live",
+      "subtitle": "เปิดดูระบบจริง",
+      "description": "https://script.google.com/macros/s/AKfycbzniowwQ5kKpGV_rv29VWYYV3SOVZ9iIO682jq5n5dG-UhDhWoFV3sgJmdp7_lvUkUI/exec",
+      "buttonLabel": "Open Project",
+      "href": "https://script.google.com/macros/s/AKfycbzniowwQ5kKpGV_rv29VWYYV3SOVZ9iIO682jq5n5dG-UhDhWoFV3sgJmdp7_lvUkUI/exec",
+      "image": null
+    },
+    {
+      "id": "proj_031-thanks",
+      "kind": "thanks",
+      "title": "Thank You",
+      "subtitle": "Patompong Tech Consultant",
+      "description": "บุคลากร • ข้อมูล • ระบบ • ฐานข้อมูล",
+      "image": "../../covers/proj_031-cover.png"
+    }
+  ]
+}

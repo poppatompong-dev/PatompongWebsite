@@ -1,0 +1,83 @@
+{
+  "generatedAt": "2026-03-12T04:09:48.976Z",
+  "projectId": "proj_gis",
+  "slug": "gis-infrastructure-layers",
+  "projectName": "ระบบแผนที่โครงสร้างพื้นฐาน GIS",
+  "clientName": "เทศบาลตำบลบ้านคลอง",
+  "type": "Google Earth Map",
+  "slides": [
+    {
+      "id": "proj_gis-cover",
+      "kind": "cover",
+      "title": "ระบบแผนที่โครงสร้างพื้นฐาน GIS",
+      "subtitle": "Gis Infrastructure Layers",
+      "image": "../../covers/proj_gis-cover.png",
+      "badge": "Google Earth Map",
+      "meta": "เทศบาลตำบลบ้านคลอง"
+    },
+    {
+      "id": "proj_gis-screenshot-1",
+      "kind": "image",
+      "title": "Desktop Hero",
+      "subtitle": "GIS Infrastructure",
+      "image": "../../screenshots/proj_gis/desktop-hero.png",
+      "description": "ระบบแผนที่ GIS รวม 5 ชั้นข้อมูล: จุดติดตั้งกล้อง CCTV, จุดลำโพงเสียงตามสาย, ถังเคมีดับเพลิง, กระจกโค้งความปลอดภัย, ท่อระบายน้ำ — แสดงผลบน Google Earth แบบ 3 มิติ อยู่ในหมวด Mapping & Location ประเภทย่อย GIS Infrastructure และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง"
+    },
+    {
+      "id": "proj_gis-screenshot-2",
+      "kind": "image",
+      "title": "Desktop Full",
+      "subtitle": "Mapping & Location",
+      "image": "../../screenshots/proj_gis/desktop-full.png",
+      "description": "1 พฤษภาคม 2564 - 15 กรกฎาคม 2564"
+    },
+    {
+      "id": "proj_gis-features",
+      "kind": "text",
+      "title": "Features & Description",
+      "subtitle": "Google Earth Map",
+      "description": "ระบบแผนที่ GIS รวม 5 ชั้นข้อมูล: จุดติดตั้งกล้อง CCTV, จุดลำโพงเสียงตามสาย, ถังเคมีดับเพลิง, กระจกโค้งความปลอดภัย, ท่อระบายน้ำ — แสดงผลบน Google Earth แบบ 3 มิติ อยู่ในหมวด Mapping & Location ประเภทย่อย GIS Infrastructure และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+      "items": [
+        "mapping",
+        "GIS",
+        "CCTV",
+        "PA system",
+        "infrastructure",
+        "3D",
+        "Google Earth"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_gis-info",
+      "kind": "text",
+      "title": "Project Info",
+      "subtitle": "Project #30",
+      "items": [
+        "หน่วยงาน: เทศบาลตำบลบ้านคลอง",
+        "หมวดงาน: Mapping & Location",
+        "ประเภทย่อย: GIS Infrastructure",
+        "ช่วงเวลา: 1 พฤษภาคม 2564 - 15 กรกฎาคม 2564"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_gis-cta",
+      "kind": "cta",
+      "title": "View Live",
+      "subtitle": "เปิดดูระบบจริง",
+      "description": "https://earth.google.com/earth/d/13NwgIrbGa1yzqcvzkYrsw_Tfl1evZECs?usp=sharing",
+      "buttonLabel": "Open Project",
+      "href": "https://earth.google.com/earth/d/13NwgIrbGa1yzqcvzkYrsw_Tfl1evZECs?usp=sharing",
+      "image": null
+    },
+    {
+      "id": "proj_gis-thanks",
+      "kind": "thanks",
+      "title": "Thank You",
+      "subtitle": "Patompong Tech Consultant",
+      "description": "แผนที่ • GIS • โครงสร้างพื้นฐาน • กล้อง • เสียง • ถังเคมี • กระจกโค้ง • ท่อธาร",
+      "image": "../../screenshots/proj_gis/mobile-hero.png"
+    }
+  ]
+}

@@ -7,6 +7,15 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "portfolio:catalog": "node scripts/portfolio-showcase/01-build-catalog.mjs",
+    "portfolio:screenshots": "node scripts/portfolio-showcase/02-capture-screenshots.mjs",
+    "portfolio:covers": "node scripts/portfolio-showcase/03-generate-covers.mjs",
+    "portfolio:slideshows": "node scripts/portfolio-showcase/04-generate-slideshows.mjs",
+    "portfolio:manifest": "node scripts/portfolio-showcase/build-manifest.mjs",
+    "portfolio:standalone": "node scripts/portfolio-showcase/05-build-standalone.mjs",
+    "portfolio:pdf": "node scripts/portfolio-showcase/06-build-portfolio-pdf.mjs",
+    "portfolio:qa": "node scripts/portfolio-showcase/07-run-qa.mjs",
+    "portfolio:showcase": "npm run portfolio:catalog && npm run portfolio:screenshots && npm run portfolio:covers && npm run portfolio:slideshows && npm run portfolio:manifest && npm run portfolio:standalone && npm run portfolio:pdf && npm run portfolio:qa",
     "postinstall": "prisma generate"
   },
   "dependencies": {
@@ -39,6 +48,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "prisma": "^5.22.0",
+    "puppeteer": "^24.39.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

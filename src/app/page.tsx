@@ -15,7 +15,6 @@ const TimelineSection = dynamic(() => import("@/components/TimelineSection"), { 
 const CCTVDetailSection = dynamic(() => import("@/components/CCTVDetailSection"), { ssr: true });
 const EducationSection = dynamic(() => import("@/components/EducationSection"), { ssr: true });
 const TestimonialSection = dynamic(() => import("@/components/TestimonialSection"), { ssr: true });
-const FAQSection = dynamic(() => import("@/components/FAQSection"), { ssr: true });
 const ContactSection = dynamic(() => import("@/components/ContactSection"), { ssr: true });
 const Footer = dynamic(() => import("@/components/Footer"), { ssr: true });
 
@@ -58,7 +57,6 @@ export default async function Home() {
         <CCTVDetailSection />
         <EducationSection />
         <TestimonialSection />
-        <FAQSection />
         <ContactSection />
       </main>
       <Footer />

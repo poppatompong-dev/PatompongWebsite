@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-03-12T04:09:48.929Z",
+  "projectId": "proj_019",
+  "slug": "water-bill-outstanding-dashboard",
+  "projectName": "Dashboard ยอดค้างจ่ายค่าน้ำประปา",
+  "clientName": "เทศบาลตำบลบ้านคลอง",
+  "type": "Google Looker Studio",
+  "slides": [
+    {
+      "id": "proj_019-cover",
+      "kind": "cover",
+      "title": "Dashboard ยอดค้างจ่ายค่าน้ำประปา",
+      "subtitle": "Water Bill Outstanding Dashboard",
+      "image": "../../covers/proj_019-cover.png",
+      "badge": "Google Looker Studio",
+      "meta": "เทศบาลตำบลบ้านคลอง"
+    },
+    {
+      "id": "proj_019-screenshot-1",
+      "kind": "image",
+      "title": "Desktop Hero",
+      "subtitle": "Financial Reports",
+      "image": "../../screenshots/proj_019/desktop-hero.png",
+      "description": "รายงานยอดค้างจ่ายค่าน้ำประปา วิเคราะห์ตามพื้นที่ ช่วงเวลา อยู่ในหมวด Analytics & Reporting ประเภทย่อย Financial Reports และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง"
+    },
+    {
+      "id": "proj_019-screenshot-2",
+      "kind": "image",
+      "title": "Desktop Full",
+      "subtitle": "Analytics & Reporting",
+      "image": "../../screenshots/proj_019/desktop-full.png",
+      "description": "1 กุมภาพันธ์ 2565 - 31 มีนาคม 2565"
+    },
+    {
+      "id": "proj_019-features",
+      "kind": "text",
+      "title": "Features & Description",
+      "subtitle": "Google Looker Studio",
+      "description": "รายงานยอดค้างจ่ายค่าน้ำประปา วิเคราะห์ตามพื้นที่ ช่วงเวลา อยู่ในหมวด Analytics & Reporting ประเภทย่อย Financial Reports และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+      "items": [
+        "dashboard",
+        "analytics",
+        "finance",
+        "water"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_019-info",
+      "kind": "text",
+      "title": "Project Info",
+      "subtitle": "Project #19",
+      "items": [
+        "หน่วยงาน: เทศบาลตำบลบ้านคลอง",
+        "หมวดงาน: Analytics & Reporting",
+        "ประเภทย่อย: Financial Reports",
+        "ช่วงเวลา: 1 กุมภาพันธ์ 2565 - 31 มีนาคม 2565"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_019-cta",
+      "kind": "cta",
+      "title": "View Live",
+      "subtitle": "เปิดดูระบบจริง",
+      "description": "https://lookerstudio.google.com/reporting/4d366405-072c-4b8d-890c-3f3222017151",
+      "buttonLabel": "Open Project",
+      "href": "https://lookerstudio.google.com/reporting/4d366405-072c-4b8d-890c-3f3222017151",
+      "image": null
+    },
+    {
+      "id": "proj_019-thanks",
+      "kind": "thanks",
+      "title": "Thank You",
+      "subtitle": "Patompong Tech Consultant",
+      "description": "น้ำ • ประปา • ค้างจ่าย • รายงาน",
+      "image": "../../screenshots/proj_019/mobile-hero.png"
+    }
+  ]
+}

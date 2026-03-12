@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-03-12T04:09:48.890Z",
+  "projectId": "proj_032",
+  "slug": "pa-system-management",
+  "projectName": "ระบบบริหารจัดการจุดติดตั้งเสียงตามสาย",
+  "clientName": "เทศบาลนคร",
+  "type": "Google Apps Script",
+  "slides": [
+    {
+      "id": "proj_032-cover",
+      "kind": "cover",
+      "title": "ระบบบริหารจัดการจุดติดตั้งเสียงตามสาย",
+      "subtitle": "Pa System Management",
+      "image": "../../covers/proj_032-cover.png",
+      "badge": "Google Apps Script",
+      "meta": "เทศบาลนคร"
+    },
+    {
+      "id": "proj_032-screenshot-1",
+      "kind": "text",
+      "title": "Project Snapshot",
+      "subtitle": "Infrastructure Management",
+      "image": "../../covers/proj_032-cover.png",
+      "description": "บริหารจัดการจุดติดตั้งลำโพง บันทึกพิกัด สถานะ ประวัติซ่อม อยู่ในหมวด Automation & Integration ประเภทย่อย Infrastructure Management และพัฒนาสำหรับ เทศบาลนคร"
+    },
+    {
+      "id": "proj_032-screenshot-2",
+      "kind": "text",
+      "title": "Key Details",
+      "subtitle": "Automation & Integration",
+      "image": "../../covers/proj_032-cover.png",
+      "description": "1 สิงหาคม 2565 - 15 ตุลาคม 2565"
+    },
+    {
+      "id": "proj_032-features",
+      "kind": "text",
+      "title": "Features & Description",
+      "subtitle": "Google Apps Script",
+      "description": "บริหารจัดการจุดติดตั้งลำโพง บันทึกพิกัด สถานะ ประวัติซ่อม อยู่ในหมวด Automation & Integration ประเภทย่อย Infrastructure Management และพัฒนาสำหรับ เทศบาลนคร",
+      "items": [
+        "google apps script",
+        "management",
+        "PA system",
+        "infrastructure"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_032-info",
+      "kind": "text",
+      "title": "Project Info",
+      "subtitle": "Project #13",
+      "items": [
+        "หน่วยงาน: เทศบาลนคร",
+        "หมวดงาน: Automation & Integration",
+        "ประเภทย่อย: Infrastructure Management",
+        "ช่วงเวลา: 1 สิงหาคม 2565 - 15 ตุลาคม 2565"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_032-cta",
+      "kind": "cta",
+      "title": "View Live",
+      "subtitle": "เปิดดูระบบจริง",
+      "description": "https://script.google.com/macros/s/AKfycbwrhQ9i1uvJnrzwQRf7MpCQmAiUCoibR774rJwXXbcr9Uc8T86muUrGHz38cFjzmkE/exec",
+      "buttonLabel": "Open Project",
+      "href": "https://script.google.com/macros/s/AKfycbwrhQ9i1uvJnrzwQRf7MpCQmAiUCoibR774rJwXXbcr9Uc8T86muUrGHz38cFjzmkE/exec",
+      "image": null
+    },
+    {
+      "id": "proj_032-thanks",
+      "kind": "thanks",
+      "title": "Thank You",
+      "subtitle": "Patompong Tech Consultant",
+      "description": "เสียง • ลำโพง • ติดตั้ง • จัดการ",
+      "image": "../../covers/proj_032-cover.png"
+    }
+  ]
+}

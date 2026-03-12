@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-03-12T04:09:48.953Z",
+  "projectId": "proj_010",
+  "slug": "household-form-tr14-system",
+  "projectName": "ระบบคนในบ้าน ทร.14",
+  "clientName": "เทศบาลตำบลบ้านคลอง",
+  "type": "AppSheet",
+  "slides": [
+    {
+      "id": "proj_010-cover",
+      "kind": "cover",
+      "title": "ระบบคนในบ้าน ทร.14",
+      "subtitle": "Household Form Tr14 System",
+      "image": "../../covers/proj_010-cover.png",
+      "badge": "AppSheet",
+      "meta": "เทศบาลตำบลบ้านคลอง"
+    },
+    {
+      "id": "proj_010-screenshot-1",
+      "kind": "text",
+      "title": "Project Snapshot",
+      "subtitle": "Form Management",
+      "image": "../../covers/proj_010-cover.png",
+      "description": "ฟอร์ม ทร.14 บันทึกข้อมูลคนในบ้านแบบดิจิทัล อยู่ในหมวด Database & Data Management ประเภทย่อย Form Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง"
+    },
+    {
+      "id": "proj_010-screenshot-2",
+      "kind": "text",
+      "title": "Key Details",
+      "subtitle": "Database & Data Management",
+      "image": "../../covers/proj_010-cover.png",
+      "description": "1 สิงหาคม 2564 - 30 กันยายน 2564"
+    },
+    {
+      "id": "proj_010-features",
+      "kind": "text",
+      "title": "Features & Description",
+      "subtitle": "AppSheet",
+      "description": "ฟอร์ม ทร.14 บันทึกข้อมูลคนในบ้านแบบดิจิทัล อยู่ในหมวด Database & Data Management ประเภทย่อย Form Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+      "items": [
+        "appsheet",
+        "form",
+        "household",
+        "TR14"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_010-info",
+      "kind": "text",
+      "title": "Project Info",
+      "subtitle": "Project #25",
+      "items": [
+        "หน่วยงาน: เทศบาลตำบลบ้านคลอง",
+        "หมวดงาน: Database & Data Management",
+        "ประเภทย่อย: Form Management",
+        "ช่วงเวลา: 1 สิงหาคม 2564 - 30 กันยายน 2564"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_010-cta",
+      "kind": "cta",
+      "title": "View Live",
+      "subtitle": "เปิดดูระบบจริง",
+      "description": "https://www.appsheet.com/start/11a73d45-4743-42fa-997f-fe31c2a68487",
+      "buttonLabel": "Open Project",
+      "href": "https://www.appsheet.com/start/11a73d45-4743-42fa-997f-fe31c2a68487",
+      "image": null
+    },
+    {
+      "id": "proj_010-thanks",
+      "kind": "thanks",
+      "title": "Thank You",
+      "subtitle": "Patompong Tech Consultant",
+      "description": "ทร.14 • ฟอร์ม • คน • บ้าน",
+      "image": "../../covers/proj_010-cover.png"
+    }
+  ]
+}

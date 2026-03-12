@@ -1,0 +1,4819 @@
+{
+  "generatedAt": "2026-03-12T04:12:30.683Z",
+  "totals": {
+    "projects": 30,
+    "coversReady": 30,
+    "screenshotSetsReady": 13,
+    "slideshowsReady": 30
+  },
+  "metadata": {
+    "generatedDate": "2026-03-12",
+    "totalProjects": 30,
+    "owner": "Patompongtec Consultant",
+    "position": "นักวิชาการคอมพิวเตอร์",
+    "startDate": "2564-05-01",
+    "description": "โปรเจกต์ของข้าราชการตั้งแต่พ.ค.2564 เป็นต้นไป",
+    "lastUpdated": "2026-03-12"
+  },
+  "statistics": {
+    "total": 30,
+    "byType": {
+      "React/Vercel": 5,
+      "Firebase": 1,
+      "React/Netlify": 3,
+      "Google Apps Script": 5,
+      "Google Looker Studio": 7,
+      "AppSheet": 8,
+      "Google Earth Map": 1
+    },
+    "byCategory": {
+      "Web Applications": 9,
+      "Automation & Integration": 5,
+      "Analytics & Reporting": 7,
+      "Database & Data Management": 8,
+      "Mapping & Location": 1
+    },
+    "byClient": {
+      "เทศบาลตำบลบ้านคลอง": 11,
+      "เทศบาลเมืองอุทัยธานี": 16,
+      "เทศบาลนคร": 3
+    },
+    "byStatus": {
+      "completed": 30
+    }
+  },
+  "outputs": {
+    "standaloneShelf": "/portfolio-showcase/portfolio-shelf.html",
+    "portfolioPdf": "/portfolio-showcase/Portfolio-Complete.pdf",
+    "portfolioHtml": "/portfolio-showcase/Portfolio-Complete.html",
+    "qaReport": "/portfolio-showcase/qa-report.json"
+  },
+  "projects": [
+    {
+      "id": "proj_034",
+      "projectId": "proj_034",
+      "projectNumber": 1,
+      "slug": "agenda-meeting-system",
+      "projectName": "ระบบจัดการวาระประชุมอัจฉริยะ",
+      "englishTitle": "Agenda Meeting System",
+      "clientId": "client_002",
+      "clientName": "เทศบาลเมืองอุทัยธานี",
+      "clientSlug": "municipality-uthai-thani",
+      "category": "Web Applications",
+      "categoryId": "cat_web",
+      "categoryColor": "#06B6D4",
+      "subcategory": "Meeting Management",
+      "type": "React/Vercel",
+      "status": "completed",
+      "url": "https://agenda-meeting.vercel.app/",
+      "description": "ระบบจัดการวาระประชุมอัจฉริยะ สร้าง แก้ไข ติดตามวาระ พร้อมระบบลงมติและสรุปรายงานอัตโนมัติ",
+      "preparedDescription": "ระบบจัดการวาระประชุมอัจฉริยะ สร้าง แก้ไข ติดตามวาระ พร้อมระบบลงมติและสรุปรายงานอัตโนมัติ อยู่ในหมวด Web Applications ประเภทย่อย Meeting Management และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "tags": [
+        "react",
+        "vercel",
+        "meeting",
+        "agenda",
+        "smart system",
+        "real-time"
+      ],
+      "keywords": [
+        "วาระ",
+        "ประชุม",
+        "อัจฉริยะ",
+        "จัดการ",
+        "ลงมติ"
+      ],
+      "startDate": "2568-01-15",
+      "completedDate": "2568-03-01",
+      "accessMode": "public",
+      "accessReason": "Public URL type",
+      "captureStatus": "captured",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #111827 0%, #2563EB 100%)",
+        "accent": "#93C5FD",
+        "icon": "▲",
+        "surface": "rgba(37,99,235,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_034-cover.png",
+        "screenshots": {
+          "desktop": "/portfolio-showcase/screenshots/proj_034/desktop-full.png",
+          "hero": "/portfolio-showcase/screenshots/proj_034/desktop-hero.png",
+          "mobile": "/portfolio-showcase/screenshots/proj_034/mobile-hero.png"
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_034/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_034/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_034-cover",
+          "kind": "cover",
+          "title": "ระบบจัดการวาระประชุมอัจฉริยะ",
+          "subtitle": "Agenda Meeting System",
+          "image": "/portfolio-showcase/covers/proj_034-cover.png",
+          "badge": "React/Vercel",
+          "meta": "เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_034-screenshot-1",
+          "kind": "image",
+          "title": "Desktop Hero",
+          "subtitle": "Meeting Management",
+          "image": "/portfolio-showcase/screenshots/proj_034/desktop-hero.png",
+          "description": "ระบบจัดการวาระประชุมอัจฉริยะ สร้าง แก้ไข ติดตามวาระ พร้อมระบบลงมติและสรุปรายงานอัตโนมัติ อยู่ในหมวด Web Applications ประเภทย่อย Meeting Management และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_034-screenshot-2",
+          "kind": "image",
+          "title": "Desktop Full",
+          "subtitle": "Web Applications",
+          "image": "/portfolio-showcase/screenshots/proj_034/desktop-full.png",
+          "description": "15 มกราคม 2568 - 1 มีนาคม 2568"
+        },
+        {
+          "id": "proj_034-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "React/Vercel",
+          "description": "ระบบจัดการวาระประชุมอัจฉริยะ สร้าง แก้ไข ติดตามวาระ พร้อมระบบลงมติและสรุปรายงานอัตโนมัติ อยู่ในหมวด Web Applications ประเภทย่อย Meeting Management และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+          "items": [
+            "react",
+            "vercel",
+            "meeting",
+            "agenda",
+            "smart system",
+            "real-time"
+          ]
+        },
+        {
+          "id": "proj_034-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #01",
+          "items": [
+            "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+            "หมวดงาน: Web Applications",
+            "ประเภทย่อย: Meeting Management",
+            "ช่วงเวลา: 15 มกราคม 2568 - 1 มีนาคม 2568"
+          ]
+        },
+        {
+          "id": "proj_034-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://agenda-meeting.vercel.app/",
+          "buttonLabel": "Open Project",
+          "href": "https://agenda-meeting.vercel.app/"
+        },
+        {
+          "id": "proj_034-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "วาระ • ประชุม • อัจฉริยะ • จัดการ • ลงมติ",
+          "image": "/portfolio-showcase/screenshots/proj_034/mobile-hero.png"
+        }
+      ],
+      "qa": null
+    },
+    {
+      "id": "proj_035",
+      "projectId": "proj_035",
+      "projectNumber": 2,
+      "slug": "kpi-dashboard-system",
+      "projectName": "ระบบจัดการผลการดำเนินงานอัจฉริยะ (KPI Dashboard)",
+      "englishTitle": "Kpi Dashboard System",
+      "clientId": "client_002",
+      "clientName": "เทศบาลเมืองอุทัยธานี",
+      "clientSlug": "municipality-uthai-thani",
+      "category": "Web Applications",
+      "categoryId": "cat_web",
+      "categoryColor": "#06B6D4",
+      "subcategory": "KPI & Performance",
+      "type": "React/Vercel",
+      "status": "completed",
+      "url": "https://kpi-dashboard-wheat-nine.vercel.app/",
+      "description": "ระบบจัดการและติดตามผลการดำเนินงาน KPI อัจฉริยะ แสดง Dashboard แบบ Real-time พร้อมกราฟวิเคราะห์",
+      "preparedDescription": "ระบบจัดการและติดตามผลการดำเนินงาน KPI อัจฉริยะ แสดง Dashboard แบบ Real-time พร้อมกราฟวิเคราะห์ อยู่ในหมวด Web Applications ประเภทย่อย KPI & Performance และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "tags": [
+        "react",
+        "vercel",
+        "KPI",
+        "dashboard",
+        "performance",
+        "analytics",
+        "real-time"
+      ],
+      "keywords": [
+        "KPI",
+        "ผลการดำเนินงาน",
+        "ติดตาม",
+        "อัจฉริยะ",
+        "กราฟ"
+      ],
+      "startDate": "2568-02-01",
+      "completedDate": "2568-03-10",
+      "accessMode": "public",
+      "accessReason": "Public URL type",
+      "captureStatus": "fallback",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #111827 0%, #2563EB 100%)",
+        "accent": "#93C5FD",
+        "icon": "▲",
+        "surface": "rgba(37,99,235,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_035-cover.png",
+        "screenshots": {
+          "desktop": null,
+          "hero": null,
+          "mobile": null
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_035/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_035/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_035-cover",
+          "kind": "cover",
+          "title": "ระบบจัดการผลการดำเนินงานอัจฉริยะ (KPI Dashboard)",
+          "subtitle": "Kpi Dashboard System",
+          "image": "/portfolio-showcase/covers/proj_035-cover.png",
+          "badge": "React/Vercel",
+          "meta": "เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_035-screenshot-1",
+          "kind": "text",
+          "title": "Project Snapshot",
+          "subtitle": "KPI & Performance",
+          "image": "/portfolio-showcase/covers/proj_035-cover.png",
+          "description": "ระบบจัดการและติดตามผลการดำเนินงาน KPI อัจฉริยะ แสดง Dashboard แบบ Real-time พร้อมกราฟวิเคราะห์ อยู่ในหมวด Web Applications ประเภทย่อย KPI & Performance และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_035-screenshot-2",
+          "kind": "text",
+          "title": "Key Details",
+          "subtitle": "Web Applications",
+          "image": "/portfolio-showcase/covers/proj_035-cover.png",
+          "description": "1 กุมภาพันธ์ 2568 - 10 มีนาคม 2568"
+        },
+        {
+          "id": "proj_035-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "React/Vercel",
+          "description": "ระบบจัดการและติดตามผลการดำเนินงาน KPI อัจฉริยะ แสดง Dashboard แบบ Real-time พร้อมกราฟวิเคราะห์ อยู่ในหมวด Web Applications ประเภทย่อย KPI & Performance และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+          "items": [
+            "react",
+            "vercel",
+            "KPI",
+            "dashboard",
+            "performance",
+            "analytics",
+            "real-time"
+          ]
+        },
+        {
+          "id": "proj_035-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #02",
+          "items": [
+            "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+            "หมวดงาน: Web Applications",
+            "ประเภทย่อย: KPI & Performance",
+            "ช่วงเวลา: 1 กุมภาพันธ์ 2568 - 10 มีนาคม 2568"
+          ]
+        },
+        {
+          "id": "proj_035-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://kpi-dashboard-wheat-nine.vercel.app/",
+          "buttonLabel": "Open Project",
+          "href": "https://kpi-dashboard-wheat-nine.vercel.app/"
+        },
+        {
+          "id": "proj_035-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "KPI • ผลการดำเนินงาน • ติดตาม • อัจฉริยะ • กราฟ",
+          "image": "/portfolio-showcase/covers/proj_035-cover.png"
+        }
+      ],
+      "qa": null
+    },
+    {
+      "id": "proj_029",
+      "projectId": "proj_029",
+      "projectNumber": 3,
+      "slug": "uthai-smart-pa-system",
+      "projectName": "Uthai Thani Smart PA | ระบบจัดการเสียงไร้สายอัจฉริยะ",
+      "englishTitle": "Uthai Smart Pa System",
+      "clientId": "client_002",
+      "clientName": "เทศบาลเมืองอุทัยธานี",
+      "clientSlug": "municipality-uthai-thani",
+      "category": "Web Applications",
+      "categoryId": "cat_web",
+      "categoryColor": "#06B6D4",
+      "subcategory": "Smart Systems",
+      "type": "Firebase",
+      "status": "completed",
+      "url": "https://uthai-smart-pa.web.app/",
+      "description": "ระบบจัดการเสียงไร้สายอัจฉริยะ ควบคุมลำโพงไร้สาย จัดตารางกระจายเสียง แสดงสถานะ Real-time",
+      "preparedDescription": "ระบบจัดการเสียงไร้สายอัจฉริยะ ควบคุมลำโพงไร้สาย จัดตารางกระจายเสียง แสดงสถานะ Real-time อยู่ในหมวด Web Applications ประเภทย่อย Smart Systems และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "tags": [
+        "firebase",
+        "smart system",
+        "audio",
+        "wireless",
+        "real-time",
+        "IoT"
+      ],
+      "keywords": [
+        "เสียง",
+        "ไร้สาย",
+        "อัจฉริยะ",
+        "จัดการ"
+      ],
+      "startDate": "2565-06-15",
+      "completedDate": "2565-08-30",
+      "accessMode": "public",
+      "accessReason": "Public URL type",
+      "captureStatus": "fallback",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #F97316 0%, #1F2937 100%)",
+        "accent": "#FDBA74",
+        "icon": "🔥",
+        "surface": "rgba(249,115,22,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_029-cover.png",
+        "screenshots": {
+          "desktop": null,
+          "hero": null,
+          "mobile": null
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_029/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_029/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_029-cover",
+          "kind": "cover",
+          "title": "Uthai Thani Smart PA | ระบบจัดการเสียงไร้สายอัจฉริยะ",
+          "subtitle": "Uthai Smart Pa System",
+          "image": "/portfolio-showcase/covers/proj_029-cover.png",
+          "badge": "Firebase",
+          "meta": "เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_029-screenshot-1",
+          "kind": "text",
+          "title": "Project Snapshot",
+          "subtitle": "Smart Systems",
+          "image": "/portfolio-showcase/covers/proj_029-cover.png",
+          "description": "ระบบจัดการเสียงไร้สายอัจฉริยะ ควบคุมลำโพงไร้สาย จัดตารางกระจายเสียง แสดงสถานะ Real-time อยู่ในหมวด Web Applications ประเภทย่อย Smart Systems และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_029-screenshot-2",
+          "kind": "text",
+          "title": "Key Details",
+          "subtitle": "Web Applications",
+          "image": "/portfolio-showcase/covers/proj_029-cover.png",
+          "description": "15 มิถุนายน 2565 - 30 สิงหาคม 2565"
+        },
+        {
+          "id": "proj_029-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "Firebase",
+          "description": "ระบบจัดการเสียงไร้สายอัจฉริยะ ควบคุมลำโพงไร้สาย จัดตารางกระจายเสียง แสดงสถานะ Real-time อยู่ในหมวด Web Applications ประเภทย่อย Smart Systems และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+          "items": [
+            "firebase",
+            "smart system",
+            "audio",
+            "wireless",
+            "real-time",
+            "IoT"
+          ]
+        },
+        {
+          "id": "proj_029-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #03",
+          "items": [
+            "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+            "หมวดงาน: Web Applications",
+            "ประเภทย่อย: Smart Systems",
+            "ช่วงเวลา: 15 มิถุนายน 2565 - 30 สิงหาคม 2565"
+          ]
+        },
+        {
+          "id": "proj_029-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://uthai-smart-pa.web.app/",
+          "buttonLabel": "Open Project",
+          "href": "https://uthai-smart-pa.web.app/"
+        },
+        {
+          "id": "proj_029-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "เสียง • ไร้สาย • อัจฉริยะ • จัดการ",
+          "image": "/portfolio-showcase/covers/proj_029-cover.png"
+        }
+      ],
+      "qa": {
+        "id": "proj_029",
+        "slug": "uthai-smart-pa-system",
+        "projectName": "Uthai Thani Smart PA | ระบบจัดการเสียงไร้สายอัจฉริยะ",
+        "status": "fail",
+        "screenshotCount": 0,
+        "checks": [
+          {
+            "name": "cover_asset",
+            "status": "warn",
+            "details": "Cover file missing"
+          },
+          {
+            "name": "screenshots",
+            "status": "fail",
+            "details": "No screenshots found"
+          },
+          {
+            "name": "slideshow_html",
+            "status": "fail",
+            "details": "Slideshow HTML missing"
+          },
+          {
+            "name": "slide_data",
+            "status": "pass",
+            "details": "7 slide record(s)"
+          },
+          {
+            "name": "live_url",
+            "status": "pass",
+            "details": "Live URL present"
+          },
+          {
+            "name": "capture_status",
+            "status": "warn",
+            "details": "Capture status: pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj_028",
+      "projectId": "proj_028",
+      "projectNumber": 4,
+      "slug": "job-recruitment-system",
+      "projectName": "ระบบรับสมัครงานออนไลน์",
+      "englishTitle": "Job Recruitment System",
+      "clientId": "client_002",
+      "clientName": "เทศบาลเมืองอุทัยธานี",
+      "clientSlug": "municipality-uthai-thani",
+      "category": "Web Applications",
+      "categoryId": "cat_web",
+      "categoryColor": "#06B6D4",
+      "subcategory": "HR & Recruitment",
+      "type": "React/Vercel",
+      "status": "completed",
+      "url": "https://test-hirejobs.vercel.app/",
+      "description": "ระบบรับสมัครสรรหาพนักงานออนไลน์ ยื่นใบสมัคร ตรวจสอบคุณสมบัติ จัดอันดับผู้สมัคร",
+      "preparedDescription": "ระบบรับสมัครสรรหาพนักงานออนไลน์ ยื่นใบสมัคร ตรวจสอบคุณสมบัติ จัดอันดับผู้สมัคร อยู่ในหมวด Web Applications ประเภทย่อย HR & Recruitment และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "tags": [
+        "react",
+        "vercel",
+        "recruitment",
+        "HR",
+        "online"
+      ],
+      "keywords": [
+        "สมัครงาน",
+        "บุคลากร",
+        "รับสมัคร",
+        "ออนไลน์"
+      ],
+      "startDate": "2565-06-01",
+      "completedDate": "2565-07-30",
+      "accessMode": "public",
+      "accessReason": "Public URL type",
+      "captureStatus": "captured",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #111827 0%, #2563EB 100%)",
+        "accent": "#93C5FD",
+        "icon": "▲",
+        "surface": "rgba(37,99,235,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_028-cover.png",
+        "screenshots": {
+          "desktop": "/portfolio-showcase/screenshots/proj_028/desktop-full.png",
+          "hero": "/portfolio-showcase/screenshots/proj_028/desktop-hero.png",
+          "mobile": "/portfolio-showcase/screenshots/proj_028/mobile-hero.png"
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_028/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_028/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_028-cover",
+          "kind": "cover",
+          "title": "ระบบรับสมัครงานออนไลน์",
+          "subtitle": "Job Recruitment System",
+          "image": "/portfolio-showcase/covers/proj_028-cover.png",
+          "badge": "React/Vercel",
+          "meta": "เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_028-screenshot-1",
+          "kind": "image",
+          "title": "Desktop Hero",
+          "subtitle": "HR & Recruitment",
+          "image": "/portfolio-showcase/screenshots/proj_028/desktop-hero.png",
+          "description": "ระบบรับสมัครสรรหาพนักงานออนไลน์ ยื่นใบสมัคร ตรวจสอบคุณสมบัติ จัดอันดับผู้สมัคร อยู่ในหมวด Web Applications ประเภทย่อย HR & Recruitment และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_028-screenshot-2",
+          "kind": "image",
+          "title": "Desktop Full",
+          "subtitle": "Web Applications",
+          "image": "/portfolio-showcase/screenshots/proj_028/desktop-full.png",
+          "description": "1 มิถุนายน 2565 - 30 กรกฎาคม 2565"
+        },
+        {
+          "id": "proj_028-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "React/Vercel",
+          "description": "ระบบรับสมัครสรรหาพนักงานออนไลน์ ยื่นใบสมัคร ตรวจสอบคุณสมบัติ จัดอันดับผู้สมัคร อยู่ในหมวด Web Applications ประเภทย่อย HR & Recruitment และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+          "items": [
+            "react",
+            "vercel",
+            "recruitment",
+            "HR",
+            "online"
+          ]
+        },
+        {
+          "id": "proj_028-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #04",
+          "items": [
+            "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+            "หมวดงาน: Web Applications",
+            "ประเภทย่อย: HR & Recruitment",
+            "ช่วงเวลา: 1 มิถุนายน 2565 - 30 กรกฎาคม 2565"
+          ]
+        },
+        {
+          "id": "proj_028-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://test-hirejobs.vercel.app/",
+          "buttonLabel": "Open Project",
+          "href": "https://test-hirejobs.vercel.app/"
+        },
+        {
+          "id": "proj_028-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "สมัครงาน • บุคลากร • รับสมัคร • ออนไลน์",
+          "image": "/portfolio-showcase/screenshots/proj_028/mobile-hero.png"
+        }
+      ],
+      "qa": {
+        "id": "proj_028",
+        "slug": "job-recruitment-system",
+        "projectName": "ระบบรับสมัครงานออนไลน์",
+        "status": "fail",
+        "screenshotCount": 0,
+        "checks": [
+          {
+            "name": "cover_asset",
+            "status": "warn",
+            "details": "Cover file missing"
+          },
+          {
+            "name": "screenshots",
+            "status": "fail",
+            "details": "No screenshots found"
+          },
+          {
+            "name": "slideshow_html",
+            "status": "fail",
+            "details": "Slideshow HTML missing"
+          },
+          {
+            "name": "slide_data",
+            "status": "pass",
+            "details": "7 slide record(s)"
+          },
+          {
+            "name": "live_url",
+            "status": "pass",
+            "details": "Live URL present"
+          },
+          {
+            "name": "capture_status",
+            "status": "warn",
+            "details": "Capture status: pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj_026",
+      "projectId": "proj_026",
+      "projectNumber": 5,
+      "slug": "salary-simulator-account-6",
+      "projectName": "Salary Simulator — บัญชี 6 ระบบร้อยละ",
+      "englishTitle": "Salary Simulator Account 6",
+      "clientId": "client_002",
+      "clientName": "เทศบาลเมืองอุทัยธานี",
+      "clientSlug": "municipality-uthai-thani",
+      "category": "Web Applications",
+      "categoryId": "cat_web",
+      "categoryColor": "#06B6D4",
+      "subcategory": "Simulation & Calculation",
+      "type": "React/Vercel",
+      "status": "completed",
+      "url": "https://salary-simulator-khaki.vercel.app/",
+      "description": "ระบบจำลองการเลื่อนขั้นเงินเดือนบัญชี 6 คำนวณร้อยละ แสดงผลแบบ Interactive",
+      "preparedDescription": "ระบบจำลองการเลื่อนขั้นเงินเดือนบัญชี 6 คำนวณร้อยละ แสดงผลแบบ Interactive อยู่ในหมวด Web Applications ประเภทย่อย Simulation & Calculation และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "tags": [
+        "react",
+        "vercel",
+        "simulation",
+        "salary",
+        "calculation"
+      ],
+      "keywords": [
+        "เงินเดือน",
+        "จำลอง",
+        "บัญชี",
+        "เลื่อนขั้น"
+      ],
+      "startDate": "2565-05-01",
+      "completedDate": "2565-06-30",
+      "accessMode": "public",
+      "accessReason": "Public URL type",
+      "captureStatus": "captured",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #111827 0%, #2563EB 100%)",
+        "accent": "#93C5FD",
+        "icon": "▲",
+        "surface": "rgba(37,99,235,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_026-cover.png",
+        "screenshots": {
+          "desktop": "/portfolio-showcase/screenshots/proj_026/desktop-full.png",
+          "hero": "/portfolio-showcase/screenshots/proj_026/desktop-hero.png",
+          "mobile": "/portfolio-showcase/screenshots/proj_026/mobile-hero.png"
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_026/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_026/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_026-cover",
+          "kind": "cover",
+          "title": "Salary Simulator — บัญชี 6 ระบบร้อยละ",
+          "subtitle": "Salary Simulator Account 6",
+          "image": "/portfolio-showcase/covers/proj_026-cover.png",
+          "badge": "React/Vercel",
+          "meta": "เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_026-screenshot-1",
+          "kind": "image",
+          "title": "Desktop Hero",
+          "subtitle": "Simulation & Calculation",
+          "image": "/portfolio-showcase/screenshots/proj_026/desktop-hero.png",
+          "description": "ระบบจำลองการเลื่อนขั้นเงินเดือนบัญชี 6 คำนวณร้อยละ แสดงผลแบบ Interactive อยู่ในหมวด Web Applications ประเภทย่อย Simulation & Calculation และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_026-screenshot-2",
+          "kind": "image",
+          "title": "Desktop Full",
+          "subtitle": "Web Applications",
+          "image": "/portfolio-showcase/screenshots/proj_026/desktop-full.png",
+          "description": "1 พฤษภาคม 2565 - 30 มิถุนายน 2565"
+        },
+        {
+          "id": "proj_026-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "React/Vercel",
+          "description": "ระบบจำลองการเลื่อนขั้นเงินเดือนบัญชี 6 คำนวณร้อยละ แสดงผลแบบ Interactive อยู่ในหมวด Web Applications ประเภทย่อย Simulation & Calculation และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+          "items": [
+            "react",
+            "vercel",
+            "simulation",
+            "salary",
+            "calculation"
+          ]
+        },
+        {
+          "id": "proj_026-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #05",
+          "items": [
+            "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+            "หมวดงาน: Web Applications",
+            "ประเภทย่อย: Simulation & Calculation",
+            "ช่วงเวลา: 1 พฤษภาคม 2565 - 30 มิถุนายน 2565"
+          ]
+        },
+        {
+          "id": "proj_026-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://salary-simulator-khaki.vercel.app/",
+          "buttonLabel": "Open Project",
+          "href": "https://salary-simulator-khaki.vercel.app/"
+        },
+        {
+          "id": "proj_026-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "เงินเดือน • จำลอง • บัญชี • เลื่อนขั้น",
+          "image": "/portfolio-showcase/screenshots/proj_026/mobile-hero.png"
+        }
+      ],
+      "qa": {
+        "id": "proj_026",
+        "slug": "salary-simulator-account-6",
+        "projectName": "Salary Simulator — บัญชี 6 ระบบร้อยละ",
+        "status": "fail",
+        "screenshotCount": 0,
+        "checks": [
+          {
+            "name": "cover_asset",
+            "status": "warn",
+            "details": "Cover file missing"
+          },
+          {
+            "name": "screenshots",
+            "status": "fail",
+            "details": "No screenshots found"
+          },
+          {
+            "name": "slideshow_html",
+            "status": "fail",
+            "details": "Slideshow HTML missing"
+          },
+          {
+            "name": "slide_data",
+            "status": "pass",
+            "details": "7 slide record(s)"
+          },
+          {
+            "name": "live_url",
+            "status": "pass",
+            "details": "Live URL present"
+          },
+          {
+            "name": "capture_status",
+            "status": "warn",
+            "details": "Capture status: pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj_027",
+      "projectId": "proj_027",
+      "projectNumber": 6,
+      "slug": "salary-simulator-account-5",
+      "projectName": "ระบบจำลองการเลื่อนขั้นเงินเดือน (บัญชี ๕)",
+      "englishTitle": "Salary Simulator Account 5",
+      "clientId": "client_002",
+      "clientName": "เทศบาลเมืองอุทัยธานี",
+      "clientSlug": "municipality-uthai-thani",
+      "category": "Web Applications",
+      "categoryId": "cat_web",
+      "categoryColor": "#06B6D4",
+      "subcategory": "Simulation & Calculation",
+      "type": "React/Vercel",
+      "status": "completed",
+      "url": "https://salary-simulator5.vercel.app/",
+      "description": "ระบบจำลองการเลื่อนขั้นเงินเดือนบัญชี 5 คำนวณอัตโนมัติ",
+      "preparedDescription": "ระบบจำลองการเลื่อนขั้นเงินเดือนบัญชี 5 คำนวณอัตโนมัติ อยู่ในหมวด Web Applications ประเภทย่อย Simulation & Calculation และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "tags": [
+        "react",
+        "vercel",
+        "simulation",
+        "salary",
+        "calculation"
+      ],
+      "keywords": [
+        "เงินเดือน",
+        "จำลอง",
+        "บัญชี",
+        "เลื่อนขั้น"
+      ],
+      "startDate": "2565-05-15",
+      "completedDate": "2565-07-15",
+      "accessMode": "public",
+      "accessReason": "Public URL type",
+      "captureStatus": "captured",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #111827 0%, #2563EB 100%)",
+        "accent": "#93C5FD",
+        "icon": "▲",
+        "surface": "rgba(37,99,235,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_027-cover.png",
+        "screenshots": {
+          "desktop": "/portfolio-showcase/screenshots/proj_027/desktop-full.png",
+          "hero": "/portfolio-showcase/screenshots/proj_027/desktop-hero.png",
+          "mobile": "/portfolio-showcase/screenshots/proj_027/mobile-hero.png"
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_027/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_027/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_027-cover",
+          "kind": "cover",
+          "title": "ระบบจำลองการเลื่อนขั้นเงินเดือน (บัญชี ๕)",
+          "subtitle": "Salary Simulator Account 5",
+          "image": "/portfolio-showcase/covers/proj_027-cover.png",
+          "badge": "React/Vercel",
+          "meta": "เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_027-screenshot-1",
+          "kind": "image",
+          "title": "Desktop Hero",
+          "subtitle": "Simulation & Calculation",
+          "image": "/portfolio-showcase/screenshots/proj_027/desktop-hero.png",
+          "description": "ระบบจำลองการเลื่อนขั้นเงินเดือนบัญชี 5 คำนวณอัตโนมัติ อยู่ในหมวด Web Applications ประเภทย่อย Simulation & Calculation และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_027-screenshot-2",
+          "kind": "image",
+          "title": "Desktop Full",
+          "subtitle": "Web Applications",
+          "image": "/portfolio-showcase/screenshots/proj_027/desktop-full.png",
+          "description": "15 พฤษภาคม 2565 - 15 กรกฎาคม 2565"
+        },
+        {
+          "id": "proj_027-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "React/Vercel",
+          "description": "ระบบจำลองการเลื่อนขั้นเงินเดือนบัญชี 5 คำนวณอัตโนมัติ อยู่ในหมวด Web Applications ประเภทย่อย Simulation & Calculation และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+          "items": [
+            "react",
+            "vercel",
+            "simulation",
+            "salary",
+            "calculation"
+          ]
+        },
+        {
+          "id": "proj_027-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #06",
+          "items": [
+            "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+            "หมวดงาน: Web Applications",
+            "ประเภทย่อย: Simulation & Calculation",
+            "ช่วงเวลา: 15 พฤษภาคม 2565 - 15 กรกฎาคม 2565"
+          ]
+        },
+        {
+          "id": "proj_027-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://salary-simulator5.vercel.app/",
+          "buttonLabel": "Open Project",
+          "href": "https://salary-simulator5.vercel.app/"
+        },
+        {
+          "id": "proj_027-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "เงินเดือน • จำลอง • บัญชี • เลื่อนขั้น",
+          "image": "/portfolio-showcase/screenshots/proj_027/mobile-hero.png"
+        }
+      ],
+      "qa": {
+        "id": "proj_027",
+        "slug": "salary-simulator-account-5",
+        "projectName": "ระบบจำลองการเลื่อนขั้นเงินเดือน (บัญชี ๕)",
+        "status": "fail",
+        "screenshotCount": 0,
+        "checks": [
+          {
+            "name": "cover_asset",
+            "status": "warn",
+            "details": "Cover file missing"
+          },
+          {
+            "name": "screenshots",
+            "status": "fail",
+            "details": "No screenshots found"
+          },
+          {
+            "name": "slideshow_html",
+            "status": "fail",
+            "details": "Slideshow HTML missing"
+          },
+          {
+            "name": "slide_data",
+            "status": "pass",
+            "details": "7 slide record(s)"
+          },
+          {
+            "name": "live_url",
+            "status": "pass",
+            "details": "Live URL present"
+          },
+          {
+            "name": "capture_status",
+            "status": "warn",
+            "details": "Capture status: pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj_022",
+      "projectId": "proj_022",
+      "projectNumber": 7,
+      "slug": "meeting-room-booking-system",
+      "projectName": "ระบบจองห้องประชุม",
+      "englishTitle": "Meeting Room Booking System",
+      "clientId": "client_002",
+      "clientName": "เทศบาลเมืองอุทัยธานี",
+      "clientSlug": "municipality-uthai-thani",
+      "category": "Web Applications",
+      "categoryId": "cat_web",
+      "categoryColor": "#06B6D4",
+      "subcategory": "Booking & Reservation",
+      "type": "React/Netlify",
+      "status": "completed",
+      "url": "https://uthai-room-booking-v20.netlify.app/",
+      "description": "ระบบจองห้องประชุมออนไลน์ ปฏิทินแสดงการจอง อนุมัติผ่านระบบ",
+      "preparedDescription": "ระบบจองห้องประชุมออนไลน์ ปฏิทินแสดงการจอง อนุมัติผ่านระบบ อยู่ในหมวด Web Applications ประเภทย่อย Booking & Reservation และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "tags": [
+        "react",
+        "netlify",
+        "booking",
+        "room",
+        "online",
+        "calendar"
+      ],
+      "keywords": [
+        "จอง",
+        "ห้องประชุม",
+        "ออนไลน์",
+        "ระบบ"
+      ],
+      "startDate": "2565-03-15",
+      "completedDate": "2565-05-15",
+      "accessMode": "public",
+      "accessReason": "Public URL type",
+      "captureStatus": "fallback",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #06B6D4 0%, #0F172A 100%)",
+        "accent": "#67E8F9",
+        "icon": "⚛️",
+        "surface": "rgba(6,182,212,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_022-cover.png",
+        "screenshots": {
+          "desktop": null,
+          "hero": null,
+          "mobile": null
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_022/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_022/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_022-cover",
+          "kind": "cover",
+          "title": "ระบบจองห้องประชุม",
+          "subtitle": "Meeting Room Booking System",
+          "image": "/portfolio-showcase/covers/proj_022-cover.png",
+          "badge": "React/Netlify",
+          "meta": "เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_022-screenshot-1",
+          "kind": "text",
+          "title": "Project Snapshot",
+          "subtitle": "Booking & Reservation",
+          "image": "/portfolio-showcase/covers/proj_022-cover.png",
+          "description": "ระบบจองห้องประชุมออนไลน์ ปฏิทินแสดงการจอง อนุมัติผ่านระบบ อยู่ในหมวด Web Applications ประเภทย่อย Booking & Reservation และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_022-screenshot-2",
+          "kind": "text",
+          "title": "Key Details",
+          "subtitle": "Web Applications",
+          "image": "/portfolio-showcase/covers/proj_022-cover.png",
+          "description": "15 มีนาคม 2565 - 15 พฤษภาคม 2565"
+        },
+        {
+          "id": "proj_022-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "React/Netlify",
+          "description": "ระบบจองห้องประชุมออนไลน์ ปฏิทินแสดงการจอง อนุมัติผ่านระบบ อยู่ในหมวด Web Applications ประเภทย่อย Booking & Reservation และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+          "items": [
+            "react",
+            "netlify",
+            "booking",
+            "room",
+            "online",
+            "calendar"
+          ]
+        },
+        {
+          "id": "proj_022-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #07",
+          "items": [
+            "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+            "หมวดงาน: Web Applications",
+            "ประเภทย่อย: Booking & Reservation",
+            "ช่วงเวลา: 15 มีนาคม 2565 - 15 พฤษภาคม 2565"
+          ]
+        },
+        {
+          "id": "proj_022-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://uthai-room-booking-v20.netlify.app/",
+          "buttonLabel": "Open Project",
+          "href": "https://uthai-room-booking-v20.netlify.app/"
+        },
+        {
+          "id": "proj_022-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "จอง • ห้องประชุม • ออนไลน์ • ระบบ",
+          "image": "/portfolio-showcase/covers/proj_022-cover.png"
+        }
+      ],
+      "qa": {
+        "id": "proj_022",
+        "slug": "meeting-room-booking-system",
+        "projectName": "ระบบจองห้องประชุม",
+        "status": "fail",
+        "screenshotCount": 0,
+        "checks": [
+          {
+            "name": "cover_asset",
+            "status": "warn",
+            "details": "Cover file missing"
+          },
+          {
+            "name": "screenshots",
+            "status": "fail",
+            "details": "No screenshots found"
+          },
+          {
+            "name": "slideshow_html",
+            "status": "fail",
+            "details": "Slideshow HTML missing"
+          },
+          {
+            "name": "slide_data",
+            "status": "pass",
+            "details": "7 slide record(s)"
+          },
+          {
+            "name": "live_url",
+            "status": "pass",
+            "details": "Live URL present"
+          },
+          {
+            "name": "capture_status",
+            "status": "warn",
+            "details": "Capture status: pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj_023",
+      "projectId": "proj_023",
+      "projectNumber": 8,
+      "slug": "meeting-room-calendar-public",
+      "projectName": "ปฏิทินการใช้ห้องประชุม (Public View)",
+      "englishTitle": "Meeting Room Calendar Public",
+      "clientId": "client_002",
+      "clientName": "เทศบาลเมืองอุทัยธานี",
+      "clientSlug": "municipality-uthai-thani",
+      "category": "Web Applications",
+      "categoryId": "cat_web",
+      "categoryColor": "#06B6D4",
+      "subcategory": "Public Display",
+      "type": "React/Netlify",
+      "status": "completed",
+      "url": "https://uthai-room-booking-v13.netlify.app/public-view.html?appId=default-app-id",
+      "description": "ปฏิทินการใช้ห้องประชุมแบบ Public View สำหรับจอแสดงผลสาธารณะ",
+      "preparedDescription": "ปฏิทินการใช้ห้องประชุมแบบ Public View สำหรับจอแสดงผลสาธารณะ อยู่ในหมวด Web Applications ประเภทย่อย Public Display และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "tags": [
+        "react",
+        "netlify",
+        "calendar",
+        "public",
+        "view-only"
+      ],
+      "keywords": [
+        "ปฏิทิน",
+        "ห้องประชุม",
+        "สาธารณะ",
+        "ดู"
+      ],
+      "startDate": "2565-03-15",
+      "completedDate": "2565-05-15",
+      "accessMode": "public",
+      "accessReason": "Public URL type",
+      "captureStatus": "captured",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #06B6D4 0%, #0F172A 100%)",
+        "accent": "#67E8F9",
+        "icon": "⚛️",
+        "surface": "rgba(6,182,212,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_023-cover.png",
+        "screenshots": {
+          "desktop": "/portfolio-showcase/screenshots/proj_023/desktop-full.png",
+          "hero": "/portfolio-showcase/screenshots/proj_023/desktop-hero.png",
+          "mobile": "/portfolio-showcase/screenshots/proj_023/mobile-hero.png"
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_023/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_023/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_023-cover",
+          "kind": "cover",
+          "title": "ปฏิทินการใช้ห้องประชุม (Public View)",
+          "subtitle": "Meeting Room Calendar Public",
+          "image": "/portfolio-showcase/covers/proj_023-cover.png",
+          "badge": "React/Netlify",
+          "meta": "เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_023-screenshot-1",
+          "kind": "image",
+          "title": "Desktop Hero",
+          "subtitle": "Public Display",
+          "image": "/portfolio-showcase/screenshots/proj_023/desktop-hero.png",
+          "description": "ปฏิทินการใช้ห้องประชุมแบบ Public View สำหรับจอแสดงผลสาธารณะ อยู่ในหมวด Web Applications ประเภทย่อย Public Display และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_023-screenshot-2",
+          "kind": "image",
+          "title": "Desktop Full",
+          "subtitle": "Web Applications",
+          "image": "/portfolio-showcase/screenshots/proj_023/desktop-full.png",
+          "description": "15 มีนาคม 2565 - 15 พฤษภาคม 2565"
+        },
+        {
+          "id": "proj_023-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "React/Netlify",
+          "description": "ปฏิทินการใช้ห้องประชุมแบบ Public View สำหรับจอแสดงผลสาธารณะ อยู่ในหมวด Web Applications ประเภทย่อย Public Display และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+          "items": [
+            "react",
+            "netlify",
+            "calendar",
+            "public",
+            "view-only"
+          ]
+        },
+        {
+          "id": "proj_023-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #08",
+          "items": [
+            "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+            "หมวดงาน: Web Applications",
+            "ประเภทย่อย: Public Display",
+            "ช่วงเวลา: 15 มีนาคม 2565 - 15 พฤษภาคม 2565"
+          ]
+        },
+        {
+          "id": "proj_023-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://uthai-room-booking-v13.netlify.app/public-view.html?appId=default-app-id",
+          "buttonLabel": "Open Project",
+          "href": "https://uthai-room-booking-v13.netlify.app/public-view.html?appId=default-app-id"
+        },
+        {
+          "id": "proj_023-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "ปฏิทิน • ห้องประชุม • สาธารณะ • ดู",
+          "image": "/portfolio-showcase/screenshots/proj_023/mobile-hero.png"
+        }
+      ],
+      "qa": {
+        "id": "proj_023",
+        "slug": "meeting-room-calendar-public",
+        "projectName": "ปฏิทินการใช้ห้องประชุม (สำหรับดูเท่านั้น)",
+        "status": "fail",
+        "screenshotCount": 0,
+        "checks": [
+          {
+            "name": "cover_asset",
+            "status": "warn",
+            "details": "Cover file missing"
+          },
+          {
+            "name": "screenshots",
+            "status": "fail",
+            "details": "No screenshots found"
+          },
+          {
+            "name": "slideshow_html",
+            "status": "fail",
+            "details": "Slideshow HTML missing"
+          },
+          {
+            "name": "slide_data",
+            "status": "pass",
+            "details": "7 slide record(s)"
+          },
+          {
+            "name": "live_url",
+            "status": "pass",
+            "details": "Live URL present"
+          },
+          {
+            "name": "capture_status",
+            "status": "warn",
+            "details": "Capture status: pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj_030",
+      "projectId": "proj_030",
+      "projectNumber": 9,
+      "slug": "uthai-stgs-system",
+      "projectName": "Uthai STGs",
+      "englishTitle": "Uthai Stgs System",
+      "clientId": "client_002",
+      "clientName": "เทศบาลเมืองอุทัยธานี",
+      "clientSlug": "municipality-uthai-thani",
+      "category": "Web Applications",
+      "categoryId": "cat_web",
+      "categoryColor": "#06B6D4",
+      "subcategory": "Government Systems",
+      "type": "React/Netlify",
+      "status": "completed",
+      "url": "https://uthaistgs2025.netlify.app/",
+      "description": "ระบบ STGs สำหรับบริหารจัดการเป้าหมายการพัฒนาที่ยั่งยืน",
+      "preparedDescription": "ระบบ STGs สำหรับบริหารจัดการเป้าหมายการพัฒนาที่ยั่งยืน อยู่ในหมวด Web Applications ประเภทย่อย Government Systems และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "tags": [
+        "react",
+        "netlify",
+        "government",
+        "STGs",
+        "sustainability"
+      ],
+      "keywords": [
+        "STGs",
+        "ระบบ",
+        "ยั่งยืน",
+        "เป้าหมาย"
+      ],
+      "startDate": "2565-07-01",
+      "completedDate": "2565-09-15",
+      "accessMode": "public",
+      "accessReason": "Public URL type",
+      "captureStatus": "captured",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #06B6D4 0%, #0F172A 100%)",
+        "accent": "#67E8F9",
+        "icon": "⚛️",
+        "surface": "rgba(6,182,212,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_030-cover.png",
+        "screenshots": {
+          "desktop": "/portfolio-showcase/screenshots/proj_030/desktop-full.png",
+          "hero": "/portfolio-showcase/screenshots/proj_030/desktop-hero.png",
+          "mobile": "/portfolio-showcase/screenshots/proj_030/mobile-hero.png"
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_030/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_030/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_030-cover",
+          "kind": "cover",
+          "title": "Uthai STGs",
+          "subtitle": "Uthai Stgs System",
+          "image": "/portfolio-showcase/covers/proj_030-cover.png",
+          "badge": "React/Netlify",
+          "meta": "เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_030-screenshot-1",
+          "kind": "image",
+          "title": "Desktop Hero",
+          "subtitle": "Government Systems",
+          "image": "/portfolio-showcase/screenshots/proj_030/desktop-hero.png",
+          "description": "ระบบ STGs สำหรับบริหารจัดการเป้าหมายการพัฒนาที่ยั่งยืน อยู่ในหมวด Web Applications ประเภทย่อย Government Systems และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_030-screenshot-2",
+          "kind": "image",
+          "title": "Desktop Full",
+          "subtitle": "Web Applications",
+          "image": "/portfolio-showcase/screenshots/proj_030/desktop-full.png",
+          "description": "1 กรกฎาคม 2565 - 15 กันยายน 2565"
+        },
+        {
+          "id": "proj_030-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "React/Netlify",
+          "description": "ระบบ STGs สำหรับบริหารจัดการเป้าหมายการพัฒนาที่ยั่งยืน อยู่ในหมวด Web Applications ประเภทย่อย Government Systems และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+          "items": [
+            "react",
+            "netlify",
+            "government",
+            "STGs",
+            "sustainability"
+          ]
+        },
+        {
+          "id": "proj_030-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #09",
+          "items": [
+            "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+            "หมวดงาน: Web Applications",
+            "ประเภทย่อย: Government Systems",
+            "ช่วงเวลา: 1 กรกฎาคม 2565 - 15 กันยายน 2565"
+          ]
+        },
+        {
+          "id": "proj_030-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://uthaistgs2025.netlify.app/",
+          "buttonLabel": "Open Project",
+          "href": "https://uthaistgs2025.netlify.app/"
+        },
+        {
+          "id": "proj_030-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "STGs • ระบบ • ยั่งยืน • เป้าหมาย",
+          "image": "/portfolio-showcase/screenshots/proj_030/mobile-hero.png"
+        }
+      ],
+      "qa": {
+        "id": "proj_030",
+        "slug": "uthai-stgs-system",
+        "projectName": "Uthai STGs",
+        "status": "fail",
+        "screenshotCount": 0,
+        "checks": [
+          {
+            "name": "cover_asset",
+            "status": "warn",
+            "details": "Cover file missing"
+          },
+          {
+            "name": "screenshots",
+            "status": "fail",
+            "details": "No screenshots found"
+          },
+          {
+            "name": "slideshow_html",
+            "status": "fail",
+            "details": "Slideshow HTML missing"
+          },
+          {
+            "name": "slide_data",
+            "status": "pass",
+            "details": "7 slide record(s)"
+          },
+          {
+            "name": "live_url",
+            "status": "pass",
+            "details": "Live URL present"
+          },
+          {
+            "name": "capture_status",
+            "status": "warn",
+            "details": "Capture status: pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj_024",
+      "projectId": "proj_024",
+      "projectNumber": 10,
+      "slug": "payslip-system",
+      "projectName": "ระบบสลิปเงินเดือนออนไลน์",
+      "englishTitle": "Payslip System",
+      "clientId": "client_002",
+      "clientName": "เทศบาลเมืองอุทัยธานี",
+      "clientSlug": "municipality-uthai-thani",
+      "category": "Automation & Integration",
+      "categoryId": "cat_automation",
+      "categoryColor": "#F59E0B",
+      "subcategory": "HR Systems",
+      "type": "Google Apps Script",
+      "status": "completed",
+      "url": "https://script.google.com/macros/s/AKfycby32Id5rQIv2Cv0XjM2gysjRhUc4TIJqDLWOKlAS9UNpBtSKdg71QUuF3lR1kgH81sl/exec",
+      "description": "ระบบออกเอกสารสลิปเงินเดือนอัตโนมัติ ดึงข้อมูลจาก Sheets สร้าง PDF ส่ง LINE",
+      "preparedDescription": "ระบบออกเอกสารสลิปเงินเดือนอัตโนมัติ ดึงข้อมูลจาก Sheets สร้าง PDF ส่ง LINE อยู่ในหมวด Automation & Integration ประเภทย่อย HR Systems และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "tags": [
+        "google apps script",
+        "automation",
+        "HR",
+        "salary",
+        "PDF"
+      ],
+      "keywords": [
+        "สลิป",
+        "เงินเดือน",
+        "เอกสาร",
+        "ระบบ"
+      ],
+      "startDate": "2565-04-01",
+      "completedDate": "2565-05-30",
+      "accessMode": "login_required",
+      "accessReason": "Likely protected by sign-in",
+      "captureStatus": "skipped",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #F59E0B 0%, #1F2937 100%)",
+        "accent": "#FCD34D",
+        "icon": "⚙️",
+        "surface": "rgba(245,158,11,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_024-cover.png",
+        "screenshots": {
+          "desktop": null,
+          "hero": null,
+          "mobile": null
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_024/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_024/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_024-cover",
+          "kind": "cover",
+          "title": "ระบบสลิปเงินเดือนออนไลน์",
+          "subtitle": "Payslip System",
+          "image": "/portfolio-showcase/covers/proj_024-cover.png",
+          "badge": "Google Apps Script",
+          "meta": "เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_024-screenshot-1",
+          "kind": "text",
+          "title": "Project Snapshot",
+          "subtitle": "HR Systems",
+          "image": "/portfolio-showcase/covers/proj_024-cover.png",
+          "description": "ระบบออกเอกสารสลิปเงินเดือนอัตโนมัติ ดึงข้อมูลจาก Sheets สร้าง PDF ส่ง LINE อยู่ในหมวด Automation & Integration ประเภทย่อย HR Systems และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_024-screenshot-2",
+          "kind": "text",
+          "title": "Key Details",
+          "subtitle": "Automation & Integration",
+          "image": "/portfolio-showcase/covers/proj_024-cover.png",
+          "description": "1 เมษายน 2565 - 30 พฤษภาคม 2565"
+        },
+        {
+          "id": "proj_024-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "Google Apps Script",
+          "description": "ระบบออกเอกสารสลิปเงินเดือนอัตโนมัติ ดึงข้อมูลจาก Sheets สร้าง PDF ส่ง LINE อยู่ในหมวด Automation & Integration ประเภทย่อย HR Systems และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+          "items": [
+            "google apps script",
+            "automation",
+            "HR",
+            "salary",
+            "PDF"
+          ]
+        },
+        {
+          "id": "proj_024-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #10",
+          "items": [
+            "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+            "หมวดงาน: Automation & Integration",
+            "ประเภทย่อย: HR Systems",
+            "ช่วงเวลา: 1 เมษายน 2565 - 30 พฤษภาคม 2565"
+          ]
+        },
+        {
+          "id": "proj_024-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://script.google.com/macros/s/AKfycby32Id5rQIv2Cv0XjM2gysjRhUc4TIJqDLWOKlAS9UNpBtSKdg71QUuF3lR1kgH81sl/exec",
+          "buttonLabel": "Open Project",
+          "href": "https://script.google.com/macros/s/AKfycby32Id5rQIv2Cv0XjM2gysjRhUc4TIJqDLWOKlAS9UNpBtSKdg71QUuF3lR1kgH81sl/exec"
+        },
+        {
+          "id": "proj_024-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "สลิป • เงินเดือน • เอกสาร • ระบบ",
+          "image": "/portfolio-showcase/covers/proj_024-cover.png"
+        }
+      ],
+      "qa": {
+        "id": "proj_024",
+        "slug": "payslip-system",
+        "projectName": "ระบบสลิปเงินเดือนออนไลน์",
+        "status": "fail",
+        "screenshotCount": 0,
+        "checks": [
+          {
+            "name": "cover_asset",
+            "status": "warn",
+            "details": "Cover file missing"
+          },
+          {
+            "name": "screenshots",
+            "status": "warn",
+            "details": "No public screenshots available for protected or fallback capture project"
+          },
+          {
+            "name": "slideshow_html",
+            "status": "fail",
+            "details": "Slideshow HTML missing"
+          },
+          {
+            "name": "slide_data",
+            "status": "pass",
+            "details": "7 slide record(s)"
+          },
+          {
+            "name": "live_url",
+            "status": "pass",
+            "details": "Live URL present"
+          },
+          {
+            "name": "capture_status",
+            "status": "warn",
+            "details": "Capture status: pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj_025",
+      "projectId": "proj_025",
+      "projectNumber": 11,
+      "slug": "calendar-operation-counting-system",
+      "projectName": "ปฎิทินดำเนินงาน/นับวันราชการ",
+      "englishTitle": "Calendar Operation Counting System",
+      "clientId": "client_002",
+      "clientName": "เทศบาลเมืองอุทัยธานี",
+      "clientSlug": "municipality-uthai-thani",
+      "category": "Automation & Integration",
+      "categoryId": "cat_automation",
+      "categoryColor": "#F59E0B",
+      "subcategory": "Calendar & Scheduling",
+      "type": "Google Apps Script",
+      "status": "completed",
+      "url": "https://script.google.com/macros/s/AKfycbwc_rWWiFMiDdkoml_Oo1kdUMbNMxEtmBsSoY36UI1qMCohBruqiYowjIclOPLOOSsh/exec",
+      "description": "ปฏิทินดำเนินงานและนับวันราชการอัตโนมัติ คำนวณวันทำการคงเหลือ",
+      "preparedDescription": "ปฏิทินดำเนินงานและนับวันราชการอัตโนมัติ คำนวณวันทำการคงเหลือ อยู่ในหมวด Automation & Integration ประเภทย่อย Calendar & Scheduling และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "tags": [
+        "google apps script",
+        "automation",
+        "calendar",
+        "scheduling"
+      ],
+      "keywords": [
+        "ปฏิทิน",
+        "ราชการ",
+        "นับวัน",
+        "ดำเนินงาน"
+      ],
+      "startDate": "2565-04-15",
+      "completedDate": "2565-06-15",
+      "accessMode": "login_required",
+      "accessReason": "Likely protected by sign-in",
+      "captureStatus": "skipped",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #F59E0B 0%, #1F2937 100%)",
+        "accent": "#FCD34D",
+        "icon": "⚙️",
+        "surface": "rgba(245,158,11,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_025-cover.png",
+        "screenshots": {
+          "desktop": null,
+          "hero": null,
+          "mobile": null
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_025/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_025/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_025-cover",
+          "kind": "cover",
+          "title": "ปฎิทินดำเนินงาน/นับวันราชการ",
+          "subtitle": "Calendar Operation Counting System",
+          "image": "/portfolio-showcase/covers/proj_025-cover.png",
+          "badge": "Google Apps Script",
+          "meta": "เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_025-screenshot-1",
+          "kind": "text",
+          "title": "Project Snapshot",
+          "subtitle": "Calendar & Scheduling",
+          "image": "/portfolio-showcase/covers/proj_025-cover.png",
+          "description": "ปฏิทินดำเนินงานและนับวันราชการอัตโนมัติ คำนวณวันทำการคงเหลือ อยู่ในหมวด Automation & Integration ประเภทย่อย Calendar & Scheduling และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_025-screenshot-2",
+          "kind": "text",
+          "title": "Key Details",
+          "subtitle": "Automation & Integration",
+          "image": "/portfolio-showcase/covers/proj_025-cover.png",
+          "description": "15 เมษายน 2565 - 15 มิถุนายน 2565"
+        },
+        {
+          "id": "proj_025-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "Google Apps Script",
+          "description": "ปฏิทินดำเนินงานและนับวันราชการอัตโนมัติ คำนวณวันทำการคงเหลือ อยู่ในหมวด Automation & Integration ประเภทย่อย Calendar & Scheduling และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+          "items": [
+            "google apps script",
+            "automation",
+            "calendar",
+            "scheduling"
+          ]
+        },
+        {
+          "id": "proj_025-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #11",
+          "items": [
+            "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+            "หมวดงาน: Automation & Integration",
+            "ประเภทย่อย: Calendar & Scheduling",
+            "ช่วงเวลา: 15 เมษายน 2565 - 15 มิถุนายน 2565"
+          ]
+        },
+        {
+          "id": "proj_025-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://script.google.com/macros/s/AKfycbwc_rWWiFMiDdkoml_Oo1kdUMbNMxEtmBsSoY36UI1qMCohBruqiYowjIclOPLOOSsh/exec",
+          "buttonLabel": "Open Project",
+          "href": "https://script.google.com/macros/s/AKfycbwc_rWWiFMiDdkoml_Oo1kdUMbNMxEtmBsSoY36UI1qMCohBruqiYowjIclOPLOOSsh/exec"
+        },
+        {
+          "id": "proj_025-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "ปฏิทิน • ราชการ • นับวัน • ดำเนินงาน",
+          "image": "/portfolio-showcase/covers/proj_025-cover.png"
+        }
+      ],
+      "qa": {
+        "id": "proj_025",
+        "slug": "calendar-operation-counting-system",
+        "projectName": "ปฎิทินดำเนินงาน/นับวันราชการ",
+        "status": "fail",
+        "screenshotCount": 0,
+        "checks": [
+          {
+            "name": "cover_asset",
+            "status": "warn",
+            "details": "Cover file missing"
+          },
+          {
+            "name": "screenshots",
+            "status": "warn",
+            "details": "No public screenshots available for protected or fallback capture project"
+          },
+          {
+            "name": "slideshow_html",
+            "status": "fail",
+            "details": "Slideshow HTML missing"
+          },
+          {
+            "name": "slide_data",
+            "status": "pass",
+            "details": "7 slide record(s)"
+          },
+          {
+            "name": "live_url",
+            "status": "pass",
+            "details": "Live URL present"
+          },
+          {
+            "name": "capture_status",
+            "status": "warn",
+            "details": "Capture status: pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj_031",
+      "projectId": "proj_031",
+      "projectNumber": 12,
+      "slug": "personnel-database-system",
+      "projectName": "ระบบฐานข้อมูลบุคลากร",
+      "englishTitle": "Personnel Database System",
+      "clientId": "client_002",
+      "clientName": "เทศบาลเมืองอุทัยธานี",
+      "clientSlug": "municipality-uthai-thani",
+      "category": "Automation & Integration",
+      "categoryId": "cat_automation",
+      "categoryColor": "#F59E0B",
+      "subcategory": "HR Management",
+      "type": "Google Apps Script",
+      "status": "completed",
+      "url": "https://script.google.com/macros/s/AKfycbzniowwQ5kKpGV_rv29VWYYV3SOVZ9iIO682jq5n5dG-UhDhWoFV3sgJmdp7_lvUkUI/exec",
+      "description": "ฐานข้อมูลบุคลากร ค้นหา กรอง แสดงข้อมูลพนักงานทั้งหมด",
+      "preparedDescription": "ฐานข้อมูลบุคลากร ค้นหา กรอง แสดงข้อมูลพนักงานทั้งหมด อยู่ในหมวด Automation & Integration ประเภทย่อย HR Management และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "tags": [
+        "google apps script",
+        "database",
+        "HR",
+        "personnel"
+      ],
+      "keywords": [
+        "บุคลากร",
+        "ข้อมูล",
+        "ระบบ",
+        "ฐานข้อมูล"
+      ],
+      "startDate": "2565-07-15",
+      "completedDate": "2565-09-30",
+      "accessMode": "login_required",
+      "accessReason": "Likely protected by sign-in",
+      "captureStatus": "skipped",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #F59E0B 0%, #1F2937 100%)",
+        "accent": "#FCD34D",
+        "icon": "⚙️",
+        "surface": "rgba(245,158,11,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_031-cover.png",
+        "screenshots": {
+          "desktop": null,
+          "hero": null,
+          "mobile": null
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_031/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_031/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_031-cover",
+          "kind": "cover",
+          "title": "ระบบฐานข้อมูลบุคลากร",
+          "subtitle": "Personnel Database System",
+          "image": "/portfolio-showcase/covers/proj_031-cover.png",
+          "badge": "Google Apps Script",
+          "meta": "เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_031-screenshot-1",
+          "kind": "text",
+          "title": "Project Snapshot",
+          "subtitle": "HR Management",
+          "image": "/portfolio-showcase/covers/proj_031-cover.png",
+          "description": "ฐานข้อมูลบุคลากร ค้นหา กรอง แสดงข้อมูลพนักงานทั้งหมด อยู่ในหมวด Automation & Integration ประเภทย่อย HR Management และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_031-screenshot-2",
+          "kind": "text",
+          "title": "Key Details",
+          "subtitle": "Automation & Integration",
+          "image": "/portfolio-showcase/covers/proj_031-cover.png",
+          "description": "15 กรกฎาคม 2565 - 30 กันยายน 2565"
+        },
+        {
+          "id": "proj_031-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "Google Apps Script",
+          "description": "ฐานข้อมูลบุคลากร ค้นหา กรอง แสดงข้อมูลพนักงานทั้งหมด อยู่ในหมวด Automation & Integration ประเภทย่อย HR Management และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+          "items": [
+            "google apps script",
+            "database",
+            "HR",
+            "personnel"
+          ]
+        },
+        {
+          "id": "proj_031-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #12",
+          "items": [
+            "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+            "หมวดงาน: Automation & Integration",
+            "ประเภทย่อย: HR Management",
+            "ช่วงเวลา: 15 กรกฎาคม 2565 - 30 กันยายน 2565"
+          ]
+        },
+        {
+          "id": "proj_031-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://script.google.com/macros/s/AKfycbzniowwQ5kKpGV_rv29VWYYV3SOVZ9iIO682jq5n5dG-UhDhWoFV3sgJmdp7_lvUkUI/exec",
+          "buttonLabel": "Open Project",
+          "href": "https://script.google.com/macros/s/AKfycbzniowwQ5kKpGV_rv29VWYYV3SOVZ9iIO682jq5n5dG-UhDhWoFV3sgJmdp7_lvUkUI/exec"
+        },
+        {
+          "id": "proj_031-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "บุคลากร • ข้อมูล • ระบบ • ฐานข้อมูล",
+          "image": "/portfolio-showcase/covers/proj_031-cover.png"
+        }
+      ],
+      "qa": {
+        "id": "proj_031",
+        "slug": "personnel-database-system",
+        "projectName": "ระบบฐานข้อมูลบุคลากร",
+        "status": "fail",
+        "screenshotCount": 0,
+        "checks": [
+          {
+            "name": "cover_asset",
+            "status": "warn",
+            "details": "Cover file missing"
+          },
+          {
+            "name": "screenshots",
+            "status": "warn",
+            "details": "No public screenshots available for protected or fallback capture project"
+          },
+          {
+            "name": "slideshow_html",
+            "status": "fail",
+            "details": "Slideshow HTML missing"
+          },
+          {
+            "name": "slide_data",
+            "status": "pass",
+            "details": "7 slide record(s)"
+          },
+          {
+            "name": "live_url",
+            "status": "pass",
+            "details": "Live URL present"
+          },
+          {
+            "name": "capture_status",
+            "status": "warn",
+            "details": "Capture status: pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj_032",
+      "projectId": "proj_032",
+      "projectNumber": 13,
+      "slug": "pa-system-management",
+      "projectName": "ระบบบริหารจัดการจุดติดตั้งเสียงตามสาย",
+      "englishTitle": "Pa System Management",
+      "clientId": "client_003",
+      "clientName": "เทศบาลนคร",
+      "clientSlug": "municipality-nakhon",
+      "category": "Automation & Integration",
+      "categoryId": "cat_automation",
+      "categoryColor": "#F59E0B",
+      "subcategory": "Infrastructure Management",
+      "type": "Google Apps Script",
+      "status": "completed",
+      "url": "https://script.google.com/macros/s/AKfycbwrhQ9i1uvJnrzwQRf7MpCQmAiUCoibR774rJwXXbcr9Uc8T86muUrGHz38cFjzmkE/exec",
+      "description": "บริหารจัดการจุดติดตั้งลำโพง บันทึกพิกัด สถานะ ประวัติซ่อม",
+      "preparedDescription": "บริหารจัดการจุดติดตั้งลำโพง บันทึกพิกัด สถานะ ประวัติซ่อม อยู่ในหมวด Automation & Integration ประเภทย่อย Infrastructure Management และพัฒนาสำหรับ เทศบาลนคร",
+      "tags": [
+        "google apps script",
+        "management",
+        "PA system",
+        "infrastructure"
+      ],
+      "keywords": [
+        "เสียง",
+        "ลำโพง",
+        "ติดตั้ง",
+        "จัดการ"
+      ],
+      "startDate": "2565-08-01",
+      "completedDate": "2565-10-15",
+      "accessMode": "login_required",
+      "accessReason": "Likely protected by sign-in",
+      "captureStatus": "skipped",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #F59E0B 0%, #1F2937 100%)",
+        "accent": "#FCD34D",
+        "icon": "⚙️",
+        "surface": "rgba(245,158,11,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_032-cover.png",
+        "screenshots": {
+          "desktop": null,
+          "hero": null,
+          "mobile": null
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_032/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_032/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_032-cover",
+          "kind": "cover",
+          "title": "ระบบบริหารจัดการจุดติดตั้งเสียงตามสาย",
+          "subtitle": "Pa System Management",
+          "image": "/portfolio-showcase/covers/proj_032-cover.png",
+          "badge": "Google Apps Script",
+          "meta": "เทศบาลนคร"
+        },
+        {
+          "id": "proj_032-screenshot-1",
+          "kind": "text",
+          "title": "Project Snapshot",
+          "subtitle": "Infrastructure Management",
+          "image": "/portfolio-showcase/covers/proj_032-cover.png",
+          "description": "บริหารจัดการจุดติดตั้งลำโพง บันทึกพิกัด สถานะ ประวัติซ่อม อยู่ในหมวด Automation & Integration ประเภทย่อย Infrastructure Management และพัฒนาสำหรับ เทศบาลนคร"
+        },
+        {
+          "id": "proj_032-screenshot-2",
+          "kind": "text",
+          "title": "Key Details",
+          "subtitle": "Automation & Integration",
+          "image": "/portfolio-showcase/covers/proj_032-cover.png",
+          "description": "1 สิงหาคม 2565 - 15 ตุลาคม 2565"
+        },
+        {
+          "id": "proj_032-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "Google Apps Script",
+          "description": "บริหารจัดการจุดติดตั้งลำโพง บันทึกพิกัด สถานะ ประวัติซ่อม อยู่ในหมวด Automation & Integration ประเภทย่อย Infrastructure Management และพัฒนาสำหรับ เทศบาลนคร",
+          "items": [
+            "google apps script",
+            "management",
+            "PA system",
+            "infrastructure"
+          ]
+        },
+        {
+          "id": "proj_032-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #13",
+          "items": [
+            "หน่วยงาน: เทศบาลนคร",
+            "หมวดงาน: Automation & Integration",
+            "ประเภทย่อย: Infrastructure Management",
+            "ช่วงเวลา: 1 สิงหาคม 2565 - 15 ตุลาคม 2565"
+          ]
+        },
+        {
+          "id": "proj_032-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://script.google.com/macros/s/AKfycbwrhQ9i1uvJnrzwQRf7MpCQmAiUCoibR774rJwXXbcr9Uc8T86muUrGHz38cFjzmkE/exec",
+          "buttonLabel": "Open Project",
+          "href": "https://script.google.com/macros/s/AKfycbwrhQ9i1uvJnrzwQRf7MpCQmAiUCoibR774rJwXXbcr9Uc8T86muUrGHz38cFjzmkE/exec"
+        },
+        {
+          "id": "proj_032-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "เสียง • ลำโพง • ติดตั้ง • จัดการ",
+          "image": "/portfolio-showcase/covers/proj_032-cover.png"
+        }
+      ],
+      "qa": {
+        "id": "proj_032",
+        "slug": "pa-system-management",
+        "projectName": "ระบบบริหารจัดการจุดติดตั้งเสียงตามสาย",
+        "status": "fail",
+        "screenshotCount": 0,
+        "checks": [
+          {
+            "name": "cover_asset",
+            "status": "warn",
+            "details": "Cover file missing"
+          },
+          {
+            "name": "screenshots",
+            "status": "warn",
+            "details": "No public screenshots available for protected or fallback capture project"
+          },
+          {
+            "name": "slideshow_html",
+            "status": "fail",
+            "details": "Slideshow HTML missing"
+          },
+          {
+            "name": "slide_data",
+            "status": "pass",
+            "details": "7 slide record(s)"
+          },
+          {
+            "name": "live_url",
+            "status": "pass",
+            "details": "Live URL present"
+          },
+          {
+            "name": "capture_status",
+            "status": "warn",
+            "details": "Capture status: pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj_033",
+      "projectId": "proj_033",
+      "projectNumber": 14,
+      "slug": "funeral-pr-system",
+      "projectName": "ระบบประชาสัมพันธ์งานศพ",
+      "englishTitle": "Funeral Pr System",
+      "clientId": "client_002",
+      "clientName": "เทศบาลเมืองอุทัยธานี",
+      "clientSlug": "municipality-uthai-thani",
+      "category": "Automation & Integration",
+      "categoryId": "cat_automation",
+      "categoryColor": "#F59E0B",
+      "subcategory": "Public Relations",
+      "type": "Google Apps Script",
+      "status": "completed",
+      "url": "https://script.google.com/macros/s/AKfycbws3fgt01mjLj5tdeMyLq2NL4YjCgbE6wA6iSp_4yd_D2L0zMiLSg0n3sYdCOyReKFk/exec",
+      "description": "ระบบประชาสัมพันธ์งานศพผ่าน LINE OA แจ้งเตือนอัตโนมัติ",
+      "preparedDescription": "ระบบประชาสัมพันธ์งานศพผ่าน LINE OA แจ้งเตือนอัตโนมัติ อยู่ในหมวด Automation & Integration ประเภทย่อย Public Relations และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "tags": [
+        "google apps script",
+        "PR",
+        "funeral",
+        "LINE",
+        "notification"
+      ],
+      "keywords": [
+        "งานศพ",
+        "ประชาสัมพันธ์",
+        "ระบบ",
+        "สาธารณะ"
+      ],
+      "startDate": "2565-08-15",
+      "completedDate": "2565-10-30",
+      "accessMode": "login_required",
+      "accessReason": "Likely protected by sign-in",
+      "captureStatus": "skipped",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #F59E0B 0%, #1F2937 100%)",
+        "accent": "#FCD34D",
+        "icon": "⚙️",
+        "surface": "rgba(245,158,11,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_033-cover.png",
+        "screenshots": {
+          "desktop": null,
+          "hero": null,
+          "mobile": null
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_033/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_033/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_033-cover",
+          "kind": "cover",
+          "title": "ระบบประชาสัมพันธ์งานศพ",
+          "subtitle": "Funeral Pr System",
+          "image": "/portfolio-showcase/covers/proj_033-cover.png",
+          "badge": "Google Apps Script",
+          "meta": "เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_033-screenshot-1",
+          "kind": "text",
+          "title": "Project Snapshot",
+          "subtitle": "Public Relations",
+          "image": "/portfolio-showcase/covers/proj_033-cover.png",
+          "description": "ระบบประชาสัมพันธ์งานศพผ่าน LINE OA แจ้งเตือนอัตโนมัติ อยู่ในหมวด Automation & Integration ประเภทย่อย Public Relations และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_033-screenshot-2",
+          "kind": "text",
+          "title": "Key Details",
+          "subtitle": "Automation & Integration",
+          "image": "/portfolio-showcase/covers/proj_033-cover.png",
+          "description": "15 สิงหาคม 2565 - 30 ตุลาคม 2565"
+        },
+        {
+          "id": "proj_033-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "Google Apps Script",
+          "description": "ระบบประชาสัมพันธ์งานศพผ่าน LINE OA แจ้งเตือนอัตโนมัติ อยู่ในหมวด Automation & Integration ประเภทย่อย Public Relations และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+          "items": [
+            "google apps script",
+            "PR",
+            "funeral",
+            "LINE",
+            "notification"
+          ]
+        },
+        {
+          "id": "proj_033-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #14",
+          "items": [
+            "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+            "หมวดงาน: Automation & Integration",
+            "ประเภทย่อย: Public Relations",
+            "ช่วงเวลา: 15 สิงหาคม 2565 - 30 ตุลาคม 2565"
+          ]
+        },
+        {
+          "id": "proj_033-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://script.google.com/macros/s/AKfycbws3fgt01mjLj5tdeMyLq2NL4YjCgbE6wA6iSp_4yd_D2L0zMiLSg0n3sYdCOyReKFk/exec",
+          "buttonLabel": "Open Project",
+          "href": "https://script.google.com/macros/s/AKfycbws3fgt01mjLj5tdeMyLq2NL4YjCgbE6wA6iSp_4yd_D2L0zMiLSg0n3sYdCOyReKFk/exec"
+        },
+        {
+          "id": "proj_033-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "งานศพ • ประชาสัมพันธ์ • ระบบ • สาธารณะ",
+          "image": "/portfolio-showcase/covers/proj_033-cover.png"
+        }
+      ],
+      "qa": {
+        "id": "proj_033",
+        "slug": "funeral-pr-system",
+        "projectName": "ระบบประชาสัมพันธ์งานศพ",
+        "status": "fail",
+        "screenshotCount": 0,
+        "checks": [
+          {
+            "name": "cover_asset",
+            "status": "warn",
+            "details": "Cover file missing"
+          },
+          {
+            "name": "screenshots",
+            "status": "warn",
+            "details": "No public screenshots available for protected or fallback capture project"
+          },
+          {
+            "name": "slideshow_html",
+            "status": "fail",
+            "details": "Slideshow HTML missing"
+          },
+          {
+            "name": "slide_data",
+            "status": "pass",
+            "details": "7 slide record(s)"
+          },
+          {
+            "name": "live_url",
+            "status": "pass",
+            "details": "Live URL present"
+          },
+          {
+            "name": "capture_status",
+            "status": "warn",
+            "details": "Capture status: pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj_015",
+      "projectId": "proj_015",
+      "projectNumber": 15,
+      "slug": "road-safety-dashboard",
+      "projectName": "Dashboard ศูนย์ปฏิบัติการความปลอดภัยทางถนน",
+      "englishTitle": "Road Safety Dashboard",
+      "clientId": "client_001",
+      "clientName": "เทศบาลตำบลบ้านคลอง",
+      "clientSlug": "municipality-banklongs",
+      "category": "Analytics & Reporting",
+      "categoryId": "cat_analytics",
+      "categoryColor": "#EC4899",
+      "subcategory": "Safety Monitoring",
+      "type": "Google Looker Studio",
+      "status": "completed",
+      "url": "https://lookerstudio.google.com/reporting/08f5945c-8535-47e2-8991-74d962a2db6b",
+      "description": "Dashboard แสดงข้อมูลศูนย์ปฏิบัติการความปลอดภัยทางถนน สถิติอุบัติเหตุ จุดเสี่ยง",
+      "preparedDescription": "Dashboard แสดงข้อมูลศูนย์ปฏิบัติการความปลอดภัยทางถนน สถิติอุบัติเหตุ จุดเสี่ยง อยู่ในหมวด Analytics & Reporting ประเภทย่อย Safety Monitoring และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+      "tags": [
+        "dashboard",
+        "analytics",
+        "safety",
+        "monitoring",
+        "real-time"
+      ],
+      "keywords": [
+        "ความปลอดภัย",
+        "ถนน",
+        "ศูนย์ปฏิบัติการ",
+        "รายงาน"
+      ],
+      "startDate": "2564-10-15",
+      "completedDate": "2564-12-15",
+      "accessMode": "conditional",
+      "accessReason": "May require Google authentication depending on sharing settings",
+      "captureStatus": "captured",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #EC4899 0%, #1F2937 100%)",
+        "accent": "#F9A8D4",
+        "icon": "📊",
+        "surface": "rgba(236,72,153,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_015-cover.png",
+        "screenshots": {
+          "desktop": "/portfolio-showcase/screenshots/proj_015/desktop-full.png",
+          "hero": "/portfolio-showcase/screenshots/proj_015/desktop-hero.png",
+          "mobile": "/portfolio-showcase/screenshots/proj_015/mobile-hero.png"
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_015/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_015/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_015-cover",
+          "kind": "cover",
+          "title": "Dashboard ศูนย์ปฏิบัติการความปลอดภัยทางถนน",
+          "subtitle": "Road Safety Dashboard",
+          "image": "/portfolio-showcase/covers/proj_015-cover.png",
+          "badge": "Google Looker Studio",
+          "meta": "เทศบาลตำบลบ้านคลอง"
+        },
+        {
+          "id": "proj_015-screenshot-1",
+          "kind": "image",
+          "title": "Desktop Hero",
+          "subtitle": "Safety Monitoring",
+          "image": "/portfolio-showcase/screenshots/proj_015/desktop-hero.png",
+          "description": "Dashboard แสดงข้อมูลศูนย์ปฏิบัติการความปลอดภัยทางถนน สถิติอุบัติเหตุ จุดเสี่ยง อยู่ในหมวด Analytics & Reporting ประเภทย่อย Safety Monitoring และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง"
+        },
+        {
+          "id": "proj_015-screenshot-2",
+          "kind": "image",
+          "title": "Desktop Full",
+          "subtitle": "Analytics & Reporting",
+          "image": "/portfolio-showcase/screenshots/proj_015/desktop-full.png",
+          "description": "15 ตุลาคม 2564 - 15 ธันวาคม 2564"
+        },
+        {
+          "id": "proj_015-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "Google Looker Studio",
+          "description": "Dashboard แสดงข้อมูลศูนย์ปฏิบัติการความปลอดภัยทางถนน สถิติอุบัติเหตุ จุดเสี่ยง อยู่ในหมวด Analytics & Reporting ประเภทย่อย Safety Monitoring และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+          "items": [
+            "dashboard",
+            "analytics",
+            "safety",
+            "monitoring",
+            "real-time"
+          ]
+        },
+        {
+          "id": "proj_015-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #15",
+          "items": [
+            "หน่วยงาน: เทศบาลตำบลบ้านคลอง",
+            "หมวดงาน: Analytics & Reporting",
+            "ประเภทย่อย: Safety Monitoring",
+            "ช่วงเวลา: 15 ตุลาคม 2564 - 15 ธันวาคม 2564"
+          ]
+        },
+        {
+          "id": "proj_015-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://lookerstudio.google.com/reporting/08f5945c-8535-47e2-8991-74d962a2db6b",
+          "buttonLabel": "Open Project",
+          "href": "https://lookerstudio.google.com/reporting/08f5945c-8535-47e2-8991-74d962a2db6b"
+        },
+        {
+          "id": "proj_015-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "ความปลอดภัย • ถนน • ศูนย์ปฏิบัติการ • รายงาน",
+          "image": "/portfolio-showcase/screenshots/proj_015/mobile-hero.png"
+        }
+      ],
+      "qa": {
+        "id": "proj_015",
+        "slug": "road-safety-dashboard",
+        "projectName": "Dashboard ศูนย์ปฏิบัติการความปลอดภัยทางถนน",
+        "status": "fail",
+        "screenshotCount": 0,
+        "checks": [
+          {
+            "name": "cover_asset",
+            "status": "warn",
+            "details": "Cover file missing"
+          },
+          {
+            "name": "screenshots",
+            "status": "fail",
+            "details": "No screenshots found"
+          },
+          {
+            "name": "slideshow_html",
+            "status": "fail",
+            "details": "Slideshow HTML missing"
+          },
+          {
+            "name": "slide_data",
+            "status": "pass",
+            "details": "7 slide record(s)"
+          },
+          {
+            "name": "live_url",
+            "status": "pass",
+            "details": "Live URL present"
+          },
+          {
+            "name": "capture_status",
+            "status": "warn",
+            "details": "Capture status: pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj_016",
+      "projectId": "proj_016",
+      "projectNumber": 16,
+      "slug": "line-members-dashboard",
+      "projectName": "Dashboard สมาชิกไลน์",
+      "englishTitle": "Line Members Dashboard",
+      "clientId": "client_002",
+      "clientName": "เทศบาลเมืองอุทัยธานี",
+      "clientSlug": "municipality-uthai-thani",
+      "category": "Analytics & Reporting",
+      "categoryId": "cat_analytics",
+      "categoryColor": "#EC4899",
+      "subcategory": "Member Management",
+      "type": "Google Looker Studio",
+      "status": "completed",
+      "url": "https://lookerstudio.google.com/reporting/340173ab-e2ce-4fc7-8534-fbfff4cd0fb1",
+      "description": "รายงานวิเคราะห์สมาชิก LINE OA แนวโน้ม จำนวน การมีส่วนร่วม",
+      "preparedDescription": "รายงานวิเคราะห์สมาชิก LINE OA แนวโน้ม จำนวน การมีส่วนร่วม อยู่ในหมวด Analytics & Reporting ประเภทย่อย Member Management และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "tags": [
+        "dashboard",
+        "analytics",
+        "LINE",
+        "members"
+      ],
+      "keywords": [
+        "ไลน์",
+        "สมาชิก",
+        "รายงาน",
+        "จำนวน"
+      ],
+      "startDate": "2564-11-01",
+      "completedDate": "2564-12-30",
+      "accessMode": "conditional",
+      "accessReason": "May require Google authentication depending on sharing settings",
+      "captureStatus": "fallback",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #EC4899 0%, #1F2937 100%)",
+        "accent": "#F9A8D4",
+        "icon": "📊",
+        "surface": "rgba(236,72,153,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_016-cover.png",
+        "screenshots": {
+          "desktop": null,
+          "hero": null,
+          "mobile": null
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_016/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_016/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_016-cover",
+          "kind": "cover",
+          "title": "Dashboard สมาชิกไลน์",
+          "subtitle": "Line Members Dashboard",
+          "image": "/portfolio-showcase/covers/proj_016-cover.png",
+          "badge": "Google Looker Studio",
+          "meta": "เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_016-screenshot-1",
+          "kind": "text",
+          "title": "Project Snapshot",
+          "subtitle": "Member Management",
+          "image": "/portfolio-showcase/covers/proj_016-cover.png",
+          "description": "รายงานวิเคราะห์สมาชิก LINE OA แนวโน้ม จำนวน การมีส่วนร่วม อยู่ในหมวด Analytics & Reporting ประเภทย่อย Member Management และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_016-screenshot-2",
+          "kind": "text",
+          "title": "Key Details",
+          "subtitle": "Analytics & Reporting",
+          "image": "/portfolio-showcase/covers/proj_016-cover.png",
+          "description": "1 พฤศจิกายน 2564 - 30 ธันวาคม 2564"
+        },
+        {
+          "id": "proj_016-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "Google Looker Studio",
+          "description": "รายงานวิเคราะห์สมาชิก LINE OA แนวโน้ม จำนวน การมีส่วนร่วม อยู่ในหมวด Analytics & Reporting ประเภทย่อย Member Management และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+          "items": [
+            "dashboard",
+            "analytics",
+            "LINE",
+            "members"
+          ]
+        },
+        {
+          "id": "proj_016-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #16",
+          "items": [
+            "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+            "หมวดงาน: Analytics & Reporting",
+            "ประเภทย่อย: Member Management",
+            "ช่วงเวลา: 1 พฤศจิกายน 2564 - 30 ธันวาคม 2564"
+          ]
+        },
+        {
+          "id": "proj_016-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://lookerstudio.google.com/reporting/340173ab-e2ce-4fc7-8534-fbfff4cd0fb1",
+          "buttonLabel": "Open Project",
+          "href": "https://lookerstudio.google.com/reporting/340173ab-e2ce-4fc7-8534-fbfff4cd0fb1"
+        },
+        {
+          "id": "proj_016-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "ไลน์ • สมาชิก • รายงาน • จำนวน",
+          "image": "/portfolio-showcase/covers/proj_016-cover.png"
+        }
+      ],
+      "qa": {
+        "id": "proj_016",
+        "slug": "line-members-dashboard",
+        "projectName": "Dashboard สมาชิกไลน์",
+        "status": "fail",
+        "screenshotCount": 0,
+        "checks": [
+          {
+            "name": "cover_asset",
+            "status": "warn",
+            "details": "Cover file missing"
+          },
+          {
+            "name": "screenshots",
+            "status": "fail",
+            "details": "No screenshots found"
+          },
+          {
+            "name": "slideshow_html",
+            "status": "fail",
+            "details": "Slideshow HTML missing"
+          },
+          {
+            "name": "slide_data",
+            "status": "pass",
+            "details": "7 slide record(s)"
+          },
+          {
+            "name": "live_url",
+            "status": "pass",
+            "details": "Live URL present"
+          },
+          {
+            "name": "capture_status",
+            "status": "warn",
+            "details": "Capture status: pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj_017",
+      "projectId": "proj_017",
+      "projectNumber": 17,
+      "slug": "asset-verification-dashboard",
+      "projectName": "Dashboard รายงานพัสดุคงเหลือ",
+      "englishTitle": "Asset Verification Dashboard",
+      "clientId": "client_001",
+      "clientName": "เทศบาลตำบลบ้านคลอง",
+      "clientSlug": "municipality-banklongs",
+      "category": "Analytics & Reporting",
+      "categoryId": "cat_analytics",
+      "categoryColor": "#EC4899",
+      "subcategory": "Asset Verification",
+      "type": "Google Looker Studio",
+      "status": "completed",
+      "url": "https://lookerstudio.google.com/reporting/9bf4822f-0d11-4891-9a86-feff0f333c96",
+      "description": "รายงานการตรวจสอบพัสดุคงเหลือประจำปี แสดงกราฟแยกหมวด",
+      "preparedDescription": "รายงานการตรวจสอบพัสดุคงเหลือประจำปี แสดงกราฟแยกหมวด อยู่ในหมวด Analytics & Reporting ประเภทย่อย Asset Verification และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+      "tags": [
+        "dashboard",
+        "analytics",
+        "asset",
+        "verification"
+      ],
+      "keywords": [
+        "พัสดุ",
+        "ตรวจสอบ",
+        "คงเหลือ",
+        "รายงาน"
+      ],
+      "startDate": "2565-01-01",
+      "completedDate": "2565-02-28",
+      "accessMode": "conditional",
+      "accessReason": "May require Google authentication depending on sharing settings",
+      "captureStatus": "captured",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #EC4899 0%, #1F2937 100%)",
+        "accent": "#F9A8D4",
+        "icon": "📊",
+        "surface": "rgba(236,72,153,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_017-cover.png",
+        "screenshots": {
+          "desktop": "/portfolio-showcase/screenshots/proj_017/desktop-full.png",
+          "hero": "/portfolio-showcase/screenshots/proj_017/desktop-hero.png",
+          "mobile": "/portfolio-showcase/screenshots/proj_017/mobile-hero.png"
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_017/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_017/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_017-cover",
+          "kind": "cover",
+          "title": "Dashboard รายงานพัสดุคงเหลือ",
+          "subtitle": "Asset Verification Dashboard",
+          "image": "/portfolio-showcase/covers/proj_017-cover.png",
+          "badge": "Google Looker Studio",
+          "meta": "เทศบาลตำบลบ้านคลอง"
+        },
+        {
+          "id": "proj_017-screenshot-1",
+          "kind": "image",
+          "title": "Desktop Hero",
+          "subtitle": "Asset Verification",
+          "image": "/portfolio-showcase/screenshots/proj_017/desktop-hero.png",
+          "description": "รายงานการตรวจสอบพัสดุคงเหลือประจำปี แสดงกราฟแยกหมวด อยู่ในหมวด Analytics & Reporting ประเภทย่อย Asset Verification และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง"
+        },
+        {
+          "id": "proj_017-screenshot-2",
+          "kind": "image",
+          "title": "Desktop Full",
+          "subtitle": "Analytics & Reporting",
+          "image": "/portfolio-showcase/screenshots/proj_017/desktop-full.png",
+          "description": "1 มกราคม 2565 - 28 กุมภาพันธ์ 2565"
+        },
+        {
+          "id": "proj_017-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "Google Looker Studio",
+          "description": "รายงานการตรวจสอบพัสดุคงเหลือประจำปี แสดงกราฟแยกหมวด อยู่ในหมวด Analytics & Reporting ประเภทย่อย Asset Verification และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+          "items": [
+            "dashboard",
+            "analytics",
+            "asset",
+            "verification"
+          ]
+        },
+        {
+          "id": "proj_017-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #17",
+          "items": [
+            "หน่วยงาน: เทศบาลตำบลบ้านคลอง",
+            "หมวดงาน: Analytics & Reporting",
+            "ประเภทย่อย: Asset Verification",
+            "ช่วงเวลา: 1 มกราคม 2565 - 28 กุมภาพันธ์ 2565"
+          ]
+        },
+        {
+          "id": "proj_017-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://lookerstudio.google.com/reporting/9bf4822f-0d11-4891-9a86-feff0f333c96",
+          "buttonLabel": "Open Project",
+          "href": "https://lookerstudio.google.com/reporting/9bf4822f-0d11-4891-9a86-feff0f333c96"
+        },
+        {
+          "id": "proj_017-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "พัสดุ • ตรวจสอบ • คงเหลือ • รายงาน",
+          "image": "/portfolio-showcase/screenshots/proj_017/mobile-hero.png"
+        }
+      ],
+      "qa": {
+        "id": "proj_017",
+        "slug": "asset-verification-dashboard",
+        "projectName": "Dashboard รายงานการตรวจสอบพัสดุคงเหลือประจำปี 2566",
+        "status": "fail",
+        "screenshotCount": 0,
+        "checks": [
+          {
+            "name": "cover_asset",
+            "status": "warn",
+            "details": "Cover file missing"
+          },
+          {
+            "name": "screenshots",
+            "status": "fail",
+            "details": "No screenshots found"
+          },
+          {
+            "name": "slideshow_html",
+            "status": "fail",
+            "details": "Slideshow HTML missing"
+          },
+          {
+            "name": "slide_data",
+            "status": "pass",
+            "details": "7 slide record(s)"
+          },
+          {
+            "name": "live_url",
+            "status": "pass",
+            "details": "Live URL present"
+          },
+          {
+            "name": "capture_status",
+            "status": "warn",
+            "details": "Capture status: pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj_018",
+      "projectId": "proj_018",
+      "projectNumber": 18,
+      "slug": "asset-verification-dashboard-strategy",
+      "projectName": "Dashboard พัสดุกองยุทธศาสตร์และงบประมาณ",
+      "englishTitle": "Asset Verification Dashboard Strategy",
+      "clientId": "client_003",
+      "clientName": "เทศบาลนคร",
+      "clientSlug": "municipality-nakhon",
+      "category": "Analytics & Reporting",
+      "categoryId": "cat_analytics",
+      "categoryColor": "#EC4899",
+      "subcategory": "Asset Verification",
+      "type": "Google Looker Studio",
+      "status": "completed",
+      "url": "https://lookerstudio.google.com/reporting/cec170fa-5117-456e-9d06-9187633d9a08",
+      "description": "รายงานการตรวจสอบพัสดุกองยุทธศาสตร์และงบประมาณ",
+      "preparedDescription": "รายงานการตรวจสอบพัสดุกองยุทธศาสตร์และงบประมาณ อยู่ในหมวด Analytics & Reporting ประเภทย่อย Asset Verification และพัฒนาสำหรับ เทศบาลนคร",
+      "tags": [
+        "dashboard",
+        "analytics",
+        "asset",
+        "verification",
+        "budget"
+      ],
+      "keywords": [
+        "พัสดุ",
+        "ตรวจสอบ",
+        "ยุทธศาสตร์",
+        "งบประมาณ"
+      ],
+      "startDate": "2565-01-15",
+      "completedDate": "2565-03-15",
+      "accessMode": "conditional",
+      "accessReason": "May require Google authentication depending on sharing settings",
+      "captureStatus": "captured",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #EC4899 0%, #1F2937 100%)",
+        "accent": "#F9A8D4",
+        "icon": "📊",
+        "surface": "rgba(236,72,153,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_018-cover.png",
+        "screenshots": {
+          "desktop": "/portfolio-showcase/screenshots/proj_018/desktop-full.png",
+          "hero": "/portfolio-showcase/screenshots/proj_018/desktop-hero.png",
+          "mobile": "/portfolio-showcase/screenshots/proj_018/mobile-hero.png"
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_018/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_018/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_018-cover",
+          "kind": "cover",
+          "title": "Dashboard พัสดุกองยุทธศาสตร์และงบประมาณ",
+          "subtitle": "Asset Verification Dashboard Strategy",
+          "image": "/portfolio-showcase/covers/proj_018-cover.png",
+          "badge": "Google Looker Studio",
+          "meta": "เทศบาลนคร"
+        },
+        {
+          "id": "proj_018-screenshot-1",
+          "kind": "image",
+          "title": "Desktop Hero",
+          "subtitle": "Asset Verification",
+          "image": "/portfolio-showcase/screenshots/proj_018/desktop-hero.png",
+          "description": "รายงานการตรวจสอบพัสดุกองยุทธศาสตร์และงบประมาณ อยู่ในหมวด Analytics & Reporting ประเภทย่อย Asset Verification และพัฒนาสำหรับ เทศบาลนคร"
+        },
+        {
+          "id": "proj_018-screenshot-2",
+          "kind": "image",
+          "title": "Desktop Full",
+          "subtitle": "Analytics & Reporting",
+          "image": "/portfolio-showcase/screenshots/proj_018/desktop-full.png",
+          "description": "15 มกราคม 2565 - 15 มีนาคม 2565"
+        },
+        {
+          "id": "proj_018-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "Google Looker Studio",
+          "description": "รายงานการตรวจสอบพัสดุกองยุทธศาสตร์และงบประมาณ อยู่ในหมวด Analytics & Reporting ประเภทย่อย Asset Verification และพัฒนาสำหรับ เทศบาลนคร",
+          "items": [
+            "dashboard",
+            "analytics",
+            "asset",
+            "verification",
+            "budget"
+          ]
+        },
+        {
+          "id": "proj_018-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #18",
+          "items": [
+            "หน่วยงาน: เทศบาลนคร",
+            "หมวดงาน: Analytics & Reporting",
+            "ประเภทย่อย: Asset Verification",
+            "ช่วงเวลา: 15 มกราคม 2565 - 15 มีนาคม 2565"
+          ]
+        },
+        {
+          "id": "proj_018-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://lookerstudio.google.com/reporting/cec170fa-5117-456e-9d06-9187633d9a08",
+          "buttonLabel": "Open Project",
+          "href": "https://lookerstudio.google.com/reporting/cec170fa-5117-456e-9d06-9187633d9a08"
+        },
+        {
+          "id": "proj_018-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "พัสดุ • ตรวจสอบ • ยุทธศาสตร์ • งบประมาณ",
+          "image": "/portfolio-showcase/screenshots/proj_018/mobile-hero.png"
+        }
+      ],
+      "qa": {
+        "id": "proj_018",
+        "slug": "asset-verification-dashboard-strategy",
+        "projectName": "Dashboard รายงานการตรวจสอบพัสดุคงเหลือประจำปี 2566 กองยุทธศาสตร์และงบประมาณ",
+        "status": "fail",
+        "screenshotCount": 0,
+        "checks": [
+          {
+            "name": "cover_asset",
+            "status": "warn",
+            "details": "Cover file missing"
+          },
+          {
+            "name": "screenshots",
+            "status": "fail",
+            "details": "No screenshots found"
+          },
+          {
+            "name": "slideshow_html",
+            "status": "fail",
+            "details": "Slideshow HTML missing"
+          },
+          {
+            "name": "slide_data",
+            "status": "pass",
+            "details": "7 slide record(s)"
+          },
+          {
+            "name": "live_url",
+            "status": "pass",
+            "details": "Live URL present"
+          },
+          {
+            "name": "capture_status",
+            "status": "warn",
+            "details": "Capture status: pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj_019",
+      "projectId": "proj_019",
+      "projectNumber": 19,
+      "slug": "water-bill-outstanding-dashboard",
+      "projectName": "Dashboard ยอดค้างจ่ายค่าน้ำประปา",
+      "englishTitle": "Water Bill Outstanding Dashboard",
+      "clientId": "client_001",
+      "clientName": "เทศบาลตำบลบ้านคลอง",
+      "clientSlug": "municipality-banklongs",
+      "category": "Analytics & Reporting",
+      "categoryId": "cat_analytics",
+      "categoryColor": "#EC4899",
+      "subcategory": "Financial Reports",
+      "type": "Google Looker Studio",
+      "status": "completed",
+      "url": "https://lookerstudio.google.com/reporting/4d366405-072c-4b8d-890c-3f3222017151",
+      "description": "รายงานยอดค้างจ่ายค่าน้ำประปา วิเคราะห์ตามพื้นที่ ช่วงเวลา",
+      "preparedDescription": "รายงานยอดค้างจ่ายค่าน้ำประปา วิเคราะห์ตามพื้นที่ ช่วงเวลา อยู่ในหมวด Analytics & Reporting ประเภทย่อย Financial Reports และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+      "tags": [
+        "dashboard",
+        "analytics",
+        "finance",
+        "water"
+      ],
+      "keywords": [
+        "น้ำ",
+        "ประปา",
+        "ค้างจ่าย",
+        "รายงาน"
+      ],
+      "startDate": "2565-02-01",
+      "completedDate": "2565-03-31",
+      "accessMode": "conditional",
+      "accessReason": "May require Google authentication depending on sharing settings",
+      "captureStatus": "captured",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #EC4899 0%, #1F2937 100%)",
+        "accent": "#F9A8D4",
+        "icon": "📊",
+        "surface": "rgba(236,72,153,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_019-cover.png",
+        "screenshots": {
+          "desktop": "/portfolio-showcase/screenshots/proj_019/desktop-full.png",
+          "hero": "/portfolio-showcase/screenshots/proj_019/desktop-hero.png",
+          "mobile": "/portfolio-showcase/screenshots/proj_019/mobile-hero.png"
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_019/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_019/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_019-cover",
+          "kind": "cover",
+          "title": "Dashboard ยอดค้างจ่ายค่าน้ำประปา",
+          "subtitle": "Water Bill Outstanding Dashboard",
+          "image": "/portfolio-showcase/covers/proj_019-cover.png",
+          "badge": "Google Looker Studio",
+          "meta": "เทศบาลตำบลบ้านคลอง"
+        },
+        {
+          "id": "proj_019-screenshot-1",
+          "kind": "image",
+          "title": "Desktop Hero",
+          "subtitle": "Financial Reports",
+          "image": "/portfolio-showcase/screenshots/proj_019/desktop-hero.png",
+          "description": "รายงานยอดค้างจ่ายค่าน้ำประปา วิเคราะห์ตามพื้นที่ ช่วงเวลา อยู่ในหมวด Analytics & Reporting ประเภทย่อย Financial Reports และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง"
+        },
+        {
+          "id": "proj_019-screenshot-2",
+          "kind": "image",
+          "title": "Desktop Full",
+          "subtitle": "Analytics & Reporting",
+          "image": "/portfolio-showcase/screenshots/proj_019/desktop-full.png",
+          "description": "1 กุมภาพันธ์ 2565 - 31 มีนาคม 2565"
+        },
+        {
+          "id": "proj_019-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "Google Looker Studio",
+          "description": "รายงานยอดค้างจ่ายค่าน้ำประปา วิเคราะห์ตามพื้นที่ ช่วงเวลา อยู่ในหมวด Analytics & Reporting ประเภทย่อย Financial Reports และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+          "items": [
+            "dashboard",
+            "analytics",
+            "finance",
+            "water"
+          ]
+        },
+        {
+          "id": "proj_019-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #19",
+          "items": [
+            "หน่วยงาน: เทศบาลตำบลบ้านคลอง",
+            "หมวดงาน: Analytics & Reporting",
+            "ประเภทย่อย: Financial Reports",
+            "ช่วงเวลา: 1 กุมภาพันธ์ 2565 - 31 มีนาคม 2565"
+          ]
+        },
+        {
+          "id": "proj_019-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://lookerstudio.google.com/reporting/4d366405-072c-4b8d-890c-3f3222017151",
+          "buttonLabel": "Open Project",
+          "href": "https://lookerstudio.google.com/reporting/4d366405-072c-4b8d-890c-3f3222017151"
+        },
+        {
+          "id": "proj_019-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "น้ำ • ประปา • ค้างจ่าย • รายงาน",
+          "image": "/portfolio-showcase/screenshots/proj_019/mobile-hero.png"
+        }
+      ],
+      "qa": {
+        "id": "proj_019",
+        "slug": "water-bill-outstanding-dashboard",
+        "projectName": "Dashboard รายงานยอดค้างจ่ายค่าน้ำประปา",
+        "status": "fail",
+        "screenshotCount": 0,
+        "checks": [
+          {
+            "name": "cover_asset",
+            "status": "warn",
+            "details": "Cover file missing"
+          },
+          {
+            "name": "screenshots",
+            "status": "fail",
+            "details": "No screenshots found"
+          },
+          {
+            "name": "slideshow_html",
+            "status": "fail",
+            "details": "Slideshow HTML missing"
+          },
+          {
+            "name": "slide_data",
+            "status": "pass",
+            "details": "7 slide record(s)"
+          },
+          {
+            "name": "live_url",
+            "status": "pass",
+            "details": "Live URL present"
+          },
+          {
+            "name": "capture_status",
+            "status": "warn",
+            "details": "Capture status: pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj_020",
+      "projectId": "proj_020",
+      "projectNumber": 20,
+      "slug": "asset-verification-it-dashboard",
+      "projectName": "Dashboard พัสดุงานเทคโนโลยี",
+      "englishTitle": "Asset Verification It Dashboard",
+      "clientId": "client_003",
+      "clientName": "เทศบาลนคร",
+      "clientSlug": "municipality-nakhon",
+      "category": "Analytics & Reporting",
+      "categoryId": "cat_analytics",
+      "categoryColor": "#EC4899",
+      "subcategory": "Asset Verification",
+      "type": "Google Looker Studio",
+      "status": "completed",
+      "url": "https://lookerstudio.google.com/reporting/e0acdc0c-c2e0-45d8-bf8a-e8c904c0ba55",
+      "description": "รายงานพัสดุงานเทคโนโลยีสารสนเทศ ติดตามสถานะครุภัณฑ์",
+      "preparedDescription": "รายงานพัสดุงานเทคโนโลยีสารสนเทศ ติดตามสถานะครุภัณฑ์ อยู่ในหมวด Analytics & Reporting ประเภทย่อย Asset Verification และพัฒนาสำหรับ เทศบาลนคร",
+      "tags": [
+        "dashboard",
+        "analytics",
+        "asset",
+        "IT",
+        "verification"
+      ],
+      "keywords": [
+        "พัสดุ",
+        "เทคโนโลยี",
+        "ตรวจสอบ",
+        "รายงาน"
+      ],
+      "startDate": "2565-02-15",
+      "completedDate": "2565-04-15",
+      "accessMode": "conditional",
+      "accessReason": "May require Google authentication depending on sharing settings",
+      "captureStatus": "captured",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #EC4899 0%, #1F2937 100%)",
+        "accent": "#F9A8D4",
+        "icon": "📊",
+        "surface": "rgba(236,72,153,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_020-cover.png",
+        "screenshots": {
+          "desktop": "/portfolio-showcase/screenshots/proj_020/desktop-full.png",
+          "hero": "/portfolio-showcase/screenshots/proj_020/desktop-hero.png",
+          "mobile": "/portfolio-showcase/screenshots/proj_020/mobile-hero.png"
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_020/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_020/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_020-cover",
+          "kind": "cover",
+          "title": "Dashboard พัสดุงานเทคโนโลยี",
+          "subtitle": "Asset Verification It Dashboard",
+          "image": "/portfolio-showcase/covers/proj_020-cover.png",
+          "badge": "Google Looker Studio",
+          "meta": "เทศบาลนคร"
+        },
+        {
+          "id": "proj_020-screenshot-1",
+          "kind": "image",
+          "title": "Desktop Hero",
+          "subtitle": "Asset Verification",
+          "image": "/portfolio-showcase/screenshots/proj_020/desktop-hero.png",
+          "description": "รายงานพัสดุงานเทคโนโลยีสารสนเทศ ติดตามสถานะครุภัณฑ์ อยู่ในหมวด Analytics & Reporting ประเภทย่อย Asset Verification และพัฒนาสำหรับ เทศบาลนคร"
+        },
+        {
+          "id": "proj_020-screenshot-2",
+          "kind": "image",
+          "title": "Desktop Full",
+          "subtitle": "Analytics & Reporting",
+          "image": "/portfolio-showcase/screenshots/proj_020/desktop-full.png",
+          "description": "15 กุมภาพันธ์ 2565 - 15 เมษายน 2565"
+        },
+        {
+          "id": "proj_020-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "Google Looker Studio",
+          "description": "รายงานพัสดุงานเทคโนโลยีสารสนเทศ ติดตามสถานะครุภัณฑ์ อยู่ในหมวด Analytics & Reporting ประเภทย่อย Asset Verification และพัฒนาสำหรับ เทศบาลนคร",
+          "items": [
+            "dashboard",
+            "analytics",
+            "asset",
+            "IT",
+            "verification"
+          ]
+        },
+        {
+          "id": "proj_020-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #20",
+          "items": [
+            "หน่วยงาน: เทศบาลนคร",
+            "หมวดงาน: Analytics & Reporting",
+            "ประเภทย่อย: Asset Verification",
+            "ช่วงเวลา: 15 กุมภาพันธ์ 2565 - 15 เมษายน 2565"
+          ]
+        },
+        {
+          "id": "proj_020-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://lookerstudio.google.com/reporting/e0acdc0c-c2e0-45d8-bf8a-e8c904c0ba55",
+          "buttonLabel": "Open Project",
+          "href": "https://lookerstudio.google.com/reporting/e0acdc0c-c2e0-45d8-bf8a-e8c904c0ba55"
+        },
+        {
+          "id": "proj_020-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "พัสดุ • เทคโนโลยี • ตรวจสอบ • รายงาน",
+          "image": "/portfolio-showcase/screenshots/proj_020/mobile-hero.png"
+        }
+      ],
+      "qa": {
+        "id": "proj_020",
+        "slug": "asset-verification-it-dashboard",
+        "projectName": "Dashboard รายงานการตรวจสอบพัสดุคงเหลือประจำปี 2566 งานเทคโนโลยีฯ",
+        "status": "fail",
+        "screenshotCount": 0,
+        "checks": [
+          {
+            "name": "cover_asset",
+            "status": "warn",
+            "details": "Cover file missing"
+          },
+          {
+            "name": "screenshots",
+            "status": "fail",
+            "details": "No screenshots found"
+          },
+          {
+            "name": "slideshow_html",
+            "status": "fail",
+            "details": "Slideshow HTML missing"
+          },
+          {
+            "name": "slide_data",
+            "status": "pass",
+            "details": "7 slide record(s)"
+          },
+          {
+            "name": "live_url",
+            "status": "pass",
+            "details": "Live URL present"
+          },
+          {
+            "name": "capture_status",
+            "status": "warn",
+            "details": "Capture status: pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj_021",
+      "projectId": "proj_021",
+      "projectNumber": 21,
+      "slug": "annual-asset-dashboard",
+      "projectName": "Dashboard รายงานครุภัณฑ์ประจำปี",
+      "englishTitle": "Annual Asset Dashboard",
+      "clientId": "client_002",
+      "clientName": "เทศบาลเมืองอุทัยธานี",
+      "clientSlug": "municipality-uthai-thani",
+      "category": "Analytics & Reporting",
+      "categoryId": "cat_analytics",
+      "categoryColor": "#EC4899",
+      "subcategory": "Asset Reports",
+      "type": "Google Looker Studio",
+      "status": "completed",
+      "url": "https://lookerstudio.google.com/reporting/34cab9c7-148d-4cf6-b3d1-fb73f9d99e61",
+      "description": "รายงานครุภัณฑ์ประจำปี แยกตามหมวดหมู่ สถานะการใช้งาน",
+      "preparedDescription": "รายงานครุภัณฑ์ประจำปี แยกตามหมวดหมู่ สถานะการใช้งาน อยู่ในหมวด Analytics & Reporting ประเภทย่อย Asset Reports และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "tags": [
+        "dashboard",
+        "analytics",
+        "asset",
+        "annual"
+      ],
+      "keywords": [
+        "ครุภัณฑ์",
+        "ประจำปี",
+        "รายงาน",
+        "สินทรัพย์"
+      ],
+      "startDate": "2565-03-01",
+      "completedDate": "2565-04-30",
+      "accessMode": "conditional",
+      "accessReason": "May require Google authentication depending on sharing settings",
+      "captureStatus": "captured",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #EC4899 0%, #1F2937 100%)",
+        "accent": "#F9A8D4",
+        "icon": "📊",
+        "surface": "rgba(236,72,153,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_021-cover.png",
+        "screenshots": {
+          "desktop": "/portfolio-showcase/screenshots/proj_021/desktop-full.png",
+          "hero": "/portfolio-showcase/screenshots/proj_021/desktop-hero.png",
+          "mobile": "/portfolio-showcase/screenshots/proj_021/mobile-hero.png"
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_021/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_021/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_021-cover",
+          "kind": "cover",
+          "title": "Dashboard รายงานครุภัณฑ์ประจำปี",
+          "subtitle": "Annual Asset Dashboard",
+          "image": "/portfolio-showcase/covers/proj_021-cover.png",
+          "badge": "Google Looker Studio",
+          "meta": "เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_021-screenshot-1",
+          "kind": "image",
+          "title": "Desktop Hero",
+          "subtitle": "Asset Reports",
+          "image": "/portfolio-showcase/screenshots/proj_021/desktop-hero.png",
+          "description": "รายงานครุภัณฑ์ประจำปี แยกตามหมวดหมู่ สถานะการใช้งาน อยู่ในหมวด Analytics & Reporting ประเภทย่อย Asset Reports และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_021-screenshot-2",
+          "kind": "image",
+          "title": "Desktop Full",
+          "subtitle": "Analytics & Reporting",
+          "image": "/portfolio-showcase/screenshots/proj_021/desktop-full.png",
+          "description": "1 มีนาคม 2565 - 30 เมษายน 2565"
+        },
+        {
+          "id": "proj_021-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "Google Looker Studio",
+          "description": "รายงานครุภัณฑ์ประจำปี แยกตามหมวดหมู่ สถานะการใช้งาน อยู่ในหมวด Analytics & Reporting ประเภทย่อย Asset Reports และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+          "items": [
+            "dashboard",
+            "analytics",
+            "asset",
+            "annual"
+          ]
+        },
+        {
+          "id": "proj_021-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #21",
+          "items": [
+            "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+            "หมวดงาน: Analytics & Reporting",
+            "ประเภทย่อย: Asset Reports",
+            "ช่วงเวลา: 1 มีนาคม 2565 - 30 เมษายน 2565"
+          ]
+        },
+        {
+          "id": "proj_021-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://lookerstudio.google.com/reporting/34cab9c7-148d-4cf6-b3d1-fb73f9d99e61",
+          "buttonLabel": "Open Project",
+          "href": "https://lookerstudio.google.com/reporting/34cab9c7-148d-4cf6-b3d1-fb73f9d99e61"
+        },
+        {
+          "id": "proj_021-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "ครุภัณฑ์ • ประจำปี • รายงาน • สินทรัพย์",
+          "image": "/portfolio-showcase/screenshots/proj_021/mobile-hero.png"
+        }
+      ],
+      "qa": {
+        "id": "proj_021",
+        "slug": "annual-asset-dashboard",
+        "projectName": "Dashboard รายงานครุภัณฑ์ประจำปี",
+        "status": "fail",
+        "screenshotCount": 0,
+        "checks": [
+          {
+            "name": "cover_asset",
+            "status": "warn",
+            "details": "Cover file missing"
+          },
+          {
+            "name": "screenshots",
+            "status": "fail",
+            "details": "No screenshots found"
+          },
+          {
+            "name": "slideshow_html",
+            "status": "fail",
+            "details": "Slideshow HTML missing"
+          },
+          {
+            "name": "slide_data",
+            "status": "pass",
+            "details": "7 slide record(s)"
+          },
+          {
+            "name": "live_url",
+            "status": "pass",
+            "details": "Live URL present"
+          },
+          {
+            "name": "capture_status",
+            "status": "warn",
+            "details": "Capture status: pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj_007",
+      "projectId": "proj_007",
+      "projectNumber": 22,
+      "slug": "household-database-system",
+      "projectName": "ระบบคลังข้อมูลครัวเรือน",
+      "englishTitle": "Household Database System",
+      "clientId": "client_001",
+      "clientName": "เทศบาลตำบลบ้านคลอง",
+      "clientSlug": "municipality-banklongs",
+      "category": "Database & Data Management",
+      "categoryId": "cat_database",
+      "categoryColor": "#8B5CF6",
+      "subcategory": "Household Management",
+      "type": "AppSheet",
+      "status": "completed",
+      "url": "https://www.appsheet.com/start/aa6e74b7-c014-4ae4-ac4b-799174b2620a",
+      "description": "ระบบเก็บข้อมูลครัวเรือนในเขตเทศบาล ค้นหา กรอง ส่งออกข้อมูล",
+      "preparedDescription": "ระบบเก็บข้อมูลครัวเรือนในเขตเทศบาล ค้นหา กรอง ส่งออกข้อมูล อยู่ในหมวด Database & Data Management ประเภทย่อย Household Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+      "tags": [
+        "appsheet",
+        "database",
+        "household",
+        "data management"
+      ],
+      "keywords": [
+        "ครัวเรือน",
+        "ข้อมูล",
+        "ระบบ",
+        "บันทึก"
+      ],
+      "startDate": "2564-07-01",
+      "completedDate": "2564-08-30",
+      "accessMode": "login_required",
+      "accessReason": "Likely protected by sign-in",
+      "captureStatus": "skipped",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #8B5CF6 0%, #1F2937 100%)",
+        "accent": "#C4B5FD",
+        "icon": "🧩",
+        "surface": "rgba(139,92,246,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_007-cover.png",
+        "screenshots": {
+          "desktop": null,
+          "hero": null,
+          "mobile": null
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_007/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_007/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_007-cover",
+          "kind": "cover",
+          "title": "ระบบคลังข้อมูลครัวเรือน",
+          "subtitle": "Household Database System",
+          "image": "/portfolio-showcase/covers/proj_007-cover.png",
+          "badge": "AppSheet",
+          "meta": "เทศบาลตำบลบ้านคลอง"
+        },
+        {
+          "id": "proj_007-screenshot-1",
+          "kind": "text",
+          "title": "Project Snapshot",
+          "subtitle": "Household Management",
+          "image": "/portfolio-showcase/covers/proj_007-cover.png",
+          "description": "ระบบเก็บข้อมูลครัวเรือนในเขตเทศบาล ค้นหา กรอง ส่งออกข้อมูล อยู่ในหมวด Database & Data Management ประเภทย่อย Household Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง"
+        },
+        {
+          "id": "proj_007-screenshot-2",
+          "kind": "text",
+          "title": "Key Details",
+          "subtitle": "Database & Data Management",
+          "image": "/portfolio-showcase/covers/proj_007-cover.png",
+          "description": "1 กรกฎาคม 2564 - 30 สิงหาคม 2564"
+        },
+        {
+          "id": "proj_007-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "AppSheet",
+          "description": "ระบบเก็บข้อมูลครัวเรือนในเขตเทศบาล ค้นหา กรอง ส่งออกข้อมูล อยู่ในหมวด Database & Data Management ประเภทย่อย Household Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+          "items": [
+            "appsheet",
+            "database",
+            "household",
+            "data management"
+          ]
+        },
+        {
+          "id": "proj_007-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #22",
+          "items": [
+            "หน่วยงาน: เทศบาลตำบลบ้านคลอง",
+            "หมวดงาน: Database & Data Management",
+            "ประเภทย่อย: Household Management",
+            "ช่วงเวลา: 1 กรกฎาคม 2564 - 30 สิงหาคม 2564"
+          ]
+        },
+        {
+          "id": "proj_007-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://www.appsheet.com/start/aa6e74b7-c014-4ae4-ac4b-799174b2620a",
+          "buttonLabel": "Open Project",
+          "href": "https://www.appsheet.com/start/aa6e74b7-c014-4ae4-ac4b-799174b2620a"
+        },
+        {
+          "id": "proj_007-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "ครัวเรือน • ข้อมูล • ระบบ • บันทึก",
+          "image": "/portfolio-showcase/covers/proj_007-cover.png"
+        }
+      ],
+      "qa": {
+        "id": "proj_007",
+        "slug": "household-database-system",
+        "projectName": "ระบบคลังข้อมูลครัวเรือน",
+        "status": "fail",
+        "screenshotCount": 0,
+        "checks": [
+          {
+            "name": "cover_asset",
+            "status": "warn",
+            "details": "Cover file missing"
+          },
+          {
+            "name": "screenshots",
+            "status": "warn",
+            "details": "No public screenshots available for protected or fallback capture project"
+          },
+          {
+            "name": "slideshow_html",
+            "status": "fail",
+            "details": "Slideshow HTML missing"
+          },
+          {
+            "name": "slide_data",
+            "status": "pass",
+            "details": "7 slide record(s)"
+          },
+          {
+            "name": "live_url",
+            "status": "pass",
+            "details": "Live URL present"
+          },
+          {
+            "name": "capture_status",
+            "status": "warn",
+            "details": "Capture status: pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj_008",
+      "projectId": "proj_008",
+      "projectNumber": 23,
+      "slug": "employee-database-system",
+      "projectName": "ระบบฐานข้อมูลพนักงานสำนักปลัด",
+      "englishTitle": "Employee Database System",
+      "clientId": "client_001",
+      "clientName": "เทศบาลตำบลบ้านคลอง",
+      "clientSlug": "municipality-banklongs",
+      "category": "Database & Data Management",
+      "categoryId": "cat_database",
+      "categoryColor": "#8B5CF6",
+      "subcategory": "HR Management",
+      "type": "AppSheet",
+      "status": "completed",
+      "url": "https://www.appsheet.com/start/c13b3ce6-62c9-47cd-8285-8f358ace410b",
+      "description": "จัดการข้อมูลพนักงานสำนักปลัด ประวัติ ตำแหน่ง สังกัด",
+      "preparedDescription": "จัดการข้อมูลพนักงานสำนักปลัด ประวัติ ตำแหน่ง สังกัด อยู่ในหมวด Database & Data Management ประเภทย่อย HR Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+      "tags": [
+        "appsheet",
+        "database",
+        "HR",
+        "employee"
+      ],
+      "keywords": [
+        "พนักงาน",
+        "ข้อมูล",
+        "ระบบ",
+        "จัดการ"
+      ],
+      "startDate": "2564-07-01",
+      "completedDate": "2564-08-30",
+      "accessMode": "login_required",
+      "accessReason": "Likely protected by sign-in",
+      "captureStatus": "skipped",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #8B5CF6 0%, #1F2937 100%)",
+        "accent": "#C4B5FD",
+        "icon": "🧩",
+        "surface": "rgba(139,92,246,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_008-cover.png",
+        "screenshots": {
+          "desktop": null,
+          "hero": null,
+          "mobile": null
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_008/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_008/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_008-cover",
+          "kind": "cover",
+          "title": "ระบบฐานข้อมูลพนักงานสำนักปลัด",
+          "subtitle": "Employee Database System",
+          "image": "/portfolio-showcase/covers/proj_008-cover.png",
+          "badge": "AppSheet",
+          "meta": "เทศบาลตำบลบ้านคลอง"
+        },
+        {
+          "id": "proj_008-screenshot-1",
+          "kind": "text",
+          "title": "Project Snapshot",
+          "subtitle": "HR Management",
+          "image": "/portfolio-showcase/covers/proj_008-cover.png",
+          "description": "จัดการข้อมูลพนักงานสำนักปลัด ประวัติ ตำแหน่ง สังกัด อยู่ในหมวด Database & Data Management ประเภทย่อย HR Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง"
+        },
+        {
+          "id": "proj_008-screenshot-2",
+          "kind": "text",
+          "title": "Key Details",
+          "subtitle": "Database & Data Management",
+          "image": "/portfolio-showcase/covers/proj_008-cover.png",
+          "description": "1 กรกฎาคม 2564 - 30 สิงหาคม 2564"
+        },
+        {
+          "id": "proj_008-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "AppSheet",
+          "description": "จัดการข้อมูลพนักงานสำนักปลัด ประวัติ ตำแหน่ง สังกัด อยู่ในหมวด Database & Data Management ประเภทย่อย HR Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+          "items": [
+            "appsheet",
+            "database",
+            "HR",
+            "employee"
+          ]
+        },
+        {
+          "id": "proj_008-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #23",
+          "items": [
+            "หน่วยงาน: เทศบาลตำบลบ้านคลอง",
+            "หมวดงาน: Database & Data Management",
+            "ประเภทย่อย: HR Management",
+            "ช่วงเวลา: 1 กรกฎาคม 2564 - 30 สิงหาคม 2564"
+          ]
+        },
+        {
+          "id": "proj_008-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://www.appsheet.com/start/c13b3ce6-62c9-47cd-8285-8f358ace410b",
+          "buttonLabel": "Open Project",
+          "href": "https://www.appsheet.com/start/c13b3ce6-62c9-47cd-8285-8f358ace410b"
+        },
+        {
+          "id": "proj_008-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "พนักงาน • ข้อมูล • ระบบ • จัดการ",
+          "image": "/portfolio-showcase/covers/proj_008-cover.png"
+        }
+      ],
+      "qa": {
+        "id": "proj_008",
+        "slug": "employee-database-system",
+        "projectName": "ระบบฐานข้อมูลพนักงานสำนักปลัด",
+        "status": "fail",
+        "screenshotCount": 0,
+        "checks": [
+          {
+            "name": "cover_asset",
+            "status": "warn",
+            "details": "Cover file missing"
+          },
+          {
+            "name": "screenshots",
+            "status": "warn",
+            "details": "No public screenshots available for protected or fallback capture project"
+          },
+          {
+            "name": "slideshow_html",
+            "status": "fail",
+            "details": "Slideshow HTML missing"
+          },
+          {
+            "name": "slide_data",
+            "status": "pass",
+            "details": "7 slide record(s)"
+          },
+          {
+            "name": "live_url",
+            "status": "pass",
+            "details": "Live URL present"
+          },
+          {
+            "name": "capture_status",
+            "status": "warn",
+            "details": "Capture status: pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj_009",
+      "projectId": "proj_009",
+      "projectNumber": 24,
+      "slug": "quality-of-life-network-system",
+      "projectName": "ระบบเครือข่ายคุณภาพชีวิต",
+      "englishTitle": "Quality Of Life Network System",
+      "clientId": "client_001",
+      "clientName": "เทศบาลตำบลบ้านคลอง",
+      "clientSlug": "municipality-banklongs",
+      "category": "Database & Data Management",
+      "categoryId": "cat_database",
+      "categoryColor": "#8B5CF6",
+      "subcategory": "Program Management",
+      "type": "AppSheet",
+      "status": "completed",
+      "url": "https://www.appsheet.com/start/f2ea2e88-4db7-4ec4-a960-79485d9039e9",
+      "description": "ติดตามและจัดการโครงการคุณภาพชีวิต บันทึกผลการดำเนินงาน",
+      "preparedDescription": "ติดตามและจัดการโครงการคุณภาพชีวิต บันทึกผลการดำเนินงาน อยู่ในหมวด Database & Data Management ประเภทย่อย Program Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+      "tags": [
+        "appsheet",
+        "database",
+        "quality of life",
+        "program management"
+      ],
+      "keywords": [
+        "คุณภาพชีวิต",
+        "โครงการ",
+        "ติดตาม",
+        "จัดการ"
+      ],
+      "startDate": "2564-07-15",
+      "completedDate": "2564-09-15",
+      "accessMode": "login_required",
+      "accessReason": "Likely protected by sign-in",
+      "captureStatus": "skipped",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #8B5CF6 0%, #1F2937 100%)",
+        "accent": "#C4B5FD",
+        "icon": "🧩",
+        "surface": "rgba(139,92,246,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_009-cover.png",
+        "screenshots": {
+          "desktop": null,
+          "hero": null,
+          "mobile": null
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_009/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_009/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_009-cover",
+          "kind": "cover",
+          "title": "ระบบเครือข่ายคุณภาพชีวิต",
+          "subtitle": "Quality Of Life Network System",
+          "image": "/portfolio-showcase/covers/proj_009-cover.png",
+          "badge": "AppSheet",
+          "meta": "เทศบาลตำบลบ้านคลอง"
+        },
+        {
+          "id": "proj_009-screenshot-1",
+          "kind": "text",
+          "title": "Project Snapshot",
+          "subtitle": "Program Management",
+          "image": "/portfolio-showcase/covers/proj_009-cover.png",
+          "description": "ติดตามและจัดการโครงการคุณภาพชีวิต บันทึกผลการดำเนินงาน อยู่ในหมวด Database & Data Management ประเภทย่อย Program Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง"
+        },
+        {
+          "id": "proj_009-screenshot-2",
+          "kind": "text",
+          "title": "Key Details",
+          "subtitle": "Database & Data Management",
+          "image": "/portfolio-showcase/covers/proj_009-cover.png",
+          "description": "15 กรกฎาคม 2564 - 15 กันยายน 2564"
+        },
+        {
+          "id": "proj_009-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "AppSheet",
+          "description": "ติดตามและจัดการโครงการคุณภาพชีวิต บันทึกผลการดำเนินงาน อยู่ในหมวด Database & Data Management ประเภทย่อย Program Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+          "items": [
+            "appsheet",
+            "database",
+            "quality of life",
+            "program management"
+          ]
+        },
+        {
+          "id": "proj_009-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #24",
+          "items": [
+            "หน่วยงาน: เทศบาลตำบลบ้านคลอง",
+            "หมวดงาน: Database & Data Management",
+            "ประเภทย่อย: Program Management",
+            "ช่วงเวลา: 15 กรกฎาคม 2564 - 15 กันยายน 2564"
+          ]
+        },
+        {
+          "id": "proj_009-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://www.appsheet.com/start/f2ea2e88-4db7-4ec4-a960-79485d9039e9",
+          "buttonLabel": "Open Project",
+          "href": "https://www.appsheet.com/start/f2ea2e88-4db7-4ec4-a960-79485d9039e9"
+        },
+        {
+          "id": "proj_009-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "คุณภาพชีวิต • โครงการ • ติดตาม • จัดการ",
+          "image": "/portfolio-showcase/covers/proj_009-cover.png"
+        }
+      ],
+      "qa": {
+        "id": "proj_009",
+        "slug": "quality-of-life-network-system",
+        "projectName": "ระบบเครือข่ายคุณภาพชีวิต",
+        "status": "fail",
+        "screenshotCount": 0,
+        "checks": [
+          {
+            "name": "cover_asset",
+            "status": "warn",
+            "details": "Cover file missing"
+          },
+          {
+            "name": "screenshots",
+            "status": "warn",
+            "details": "No public screenshots available for protected or fallback capture project"
+          },
+          {
+            "name": "slideshow_html",
+            "status": "fail",
+            "details": "Slideshow HTML missing"
+          },
+          {
+            "name": "slide_data",
+            "status": "pass",
+            "details": "7 slide record(s)"
+          },
+          {
+            "name": "live_url",
+            "status": "pass",
+            "details": "Live URL present"
+          },
+          {
+            "name": "capture_status",
+            "status": "warn",
+            "details": "Capture status: pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj_010",
+      "projectId": "proj_010",
+      "projectNumber": 25,
+      "slug": "household-form-tr14-system",
+      "projectName": "ระบบคนในบ้าน ทร.14",
+      "englishTitle": "Household Form Tr14 System",
+      "clientId": "client_001",
+      "clientName": "เทศบาลตำบลบ้านคลอง",
+      "clientSlug": "municipality-banklongs",
+      "category": "Database & Data Management",
+      "categoryId": "cat_database",
+      "categoryColor": "#8B5CF6",
+      "subcategory": "Form Management",
+      "type": "AppSheet",
+      "status": "completed",
+      "url": "https://www.appsheet.com/start/11a73d45-4743-42fa-997f-fe31c2a68487",
+      "description": "ฟอร์ม ทร.14 บันทึกข้อมูลคนในบ้านแบบดิจิทัล",
+      "preparedDescription": "ฟอร์ม ทร.14 บันทึกข้อมูลคนในบ้านแบบดิจิทัล อยู่ในหมวด Database & Data Management ประเภทย่อย Form Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+      "tags": [
+        "appsheet",
+        "form",
+        "household",
+        "TR14"
+      ],
+      "keywords": [
+        "ทร.14",
+        "ฟอร์ม",
+        "คน",
+        "บ้าน"
+      ],
+      "startDate": "2564-08-01",
+      "completedDate": "2564-09-30",
+      "accessMode": "login_required",
+      "accessReason": "Likely protected by sign-in",
+      "captureStatus": "skipped",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #8B5CF6 0%, #1F2937 100%)",
+        "accent": "#C4B5FD",
+        "icon": "🧩",
+        "surface": "rgba(139,92,246,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_010-cover.png",
+        "screenshots": {
+          "desktop": null,
+          "hero": null,
+          "mobile": null
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_010/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_010/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_010-cover",
+          "kind": "cover",
+          "title": "ระบบคนในบ้าน ทร.14",
+          "subtitle": "Household Form Tr14 System",
+          "image": "/portfolio-showcase/covers/proj_010-cover.png",
+          "badge": "AppSheet",
+          "meta": "เทศบาลตำบลบ้านคลอง"
+        },
+        {
+          "id": "proj_010-screenshot-1",
+          "kind": "text",
+          "title": "Project Snapshot",
+          "subtitle": "Form Management",
+          "image": "/portfolio-showcase/covers/proj_010-cover.png",
+          "description": "ฟอร์ม ทร.14 บันทึกข้อมูลคนในบ้านแบบดิจิทัล อยู่ในหมวด Database & Data Management ประเภทย่อย Form Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง"
+        },
+        {
+          "id": "proj_010-screenshot-2",
+          "kind": "text",
+          "title": "Key Details",
+          "subtitle": "Database & Data Management",
+          "image": "/portfolio-showcase/covers/proj_010-cover.png",
+          "description": "1 สิงหาคม 2564 - 30 กันยายน 2564"
+        },
+        {
+          "id": "proj_010-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "AppSheet",
+          "description": "ฟอร์ม ทร.14 บันทึกข้อมูลคนในบ้านแบบดิจิทัล อยู่ในหมวด Database & Data Management ประเภทย่อย Form Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+          "items": [
+            "appsheet",
+            "form",
+            "household",
+            "TR14"
+          ]
+        },
+        {
+          "id": "proj_010-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #25",
+          "items": [
+            "หน่วยงาน: เทศบาลตำบลบ้านคลอง",
+            "หมวดงาน: Database & Data Management",
+            "ประเภทย่อย: Form Management",
+            "ช่วงเวลา: 1 สิงหาคม 2564 - 30 กันยายน 2564"
+          ]
+        },
+        {
+          "id": "proj_010-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://www.appsheet.com/start/11a73d45-4743-42fa-997f-fe31c2a68487",
+          "buttonLabel": "Open Project",
+          "href": "https://www.appsheet.com/start/11a73d45-4743-42fa-997f-fe31c2a68487"
+        },
+        {
+          "id": "proj_010-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "ทร.14 • ฟอร์ม • คน • บ้าน",
+          "image": "/portfolio-showcase/covers/proj_010-cover.png"
+        }
+      ],
+      "qa": {
+        "id": "proj_010",
+        "slug": "household-form-tr14-system",
+        "projectName": "ระบบคนในบ้าน ทร.14",
+        "status": "fail",
+        "screenshotCount": 0,
+        "checks": [
+          {
+            "name": "cover_asset",
+            "status": "warn",
+            "details": "Cover file missing"
+          },
+          {
+            "name": "screenshots",
+            "status": "warn",
+            "details": "No public screenshots available for protected or fallback capture project"
+          },
+          {
+            "name": "slideshow_html",
+            "status": "fail",
+            "details": "Slideshow HTML missing"
+          },
+          {
+            "name": "slide_data",
+            "status": "pass",
+            "details": "7 slide record(s)"
+          },
+          {
+            "name": "live_url",
+            "status": "pass",
+            "details": "Live URL present"
+          },
+          {
+            "name": "capture_status",
+            "status": "warn",
+            "details": "Capture status: pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj_011",
+      "projectId": "proj_011",
+      "projectNumber": 26,
+      "slug": "material-requisition-system",
+      "projectName": "ระบบเบิกจ่ายวัสดุอุปกรณ์สำนักปลัด",
+      "englishTitle": "Material Requisition System",
+      "clientId": "client_001",
+      "clientName": "เทศบาลตำบลบ้านคลอง",
+      "clientSlug": "municipality-banklongs",
+      "category": "Database & Data Management",
+      "categoryId": "cat_database",
+      "categoryColor": "#8B5CF6",
+      "subcategory": "Inventory Management",
+      "type": "AppSheet",
+      "status": "completed",
+      "url": "https://www.appsheet.com/start/581c5055-8e02-4501-92ac-4747b0811b7c",
+      "description": "จัดการการเบิกจ่ายวัสดุอุปกรณ์ บันทึกรายการ ยอดคงเหลือ",
+      "preparedDescription": "จัดการการเบิกจ่ายวัสดุอุปกรณ์ บันทึกรายการ ยอดคงเหลือ อยู่ในหมวด Database & Data Management ประเภทย่อย Inventory Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+      "tags": [
+        "appsheet",
+        "inventory",
+        "material",
+        "requisition"
+      ],
+      "keywords": [
+        "วัสดุ",
+        "อุปกรณ์",
+        "เบิก",
+        "จ่าย"
+      ],
+      "startDate": "2564-08-15",
+      "completedDate": "2564-10-15",
+      "accessMode": "login_required",
+      "accessReason": "Likely protected by sign-in",
+      "captureStatus": "skipped",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #8B5CF6 0%, #1F2937 100%)",
+        "accent": "#C4B5FD",
+        "icon": "🧩",
+        "surface": "rgba(139,92,246,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_011-cover.png",
+        "screenshots": {
+          "desktop": null,
+          "hero": null,
+          "mobile": null
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_011/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_011/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_011-cover",
+          "kind": "cover",
+          "title": "ระบบเบิกจ่ายวัสดุอุปกรณ์สำนักปลัด",
+          "subtitle": "Material Requisition System",
+          "image": "/portfolio-showcase/covers/proj_011-cover.png",
+          "badge": "AppSheet",
+          "meta": "เทศบาลตำบลบ้านคลอง"
+        },
+        {
+          "id": "proj_011-screenshot-1",
+          "kind": "text",
+          "title": "Project Snapshot",
+          "subtitle": "Inventory Management",
+          "image": "/portfolio-showcase/covers/proj_011-cover.png",
+          "description": "จัดการการเบิกจ่ายวัสดุอุปกรณ์ บันทึกรายการ ยอดคงเหลือ อยู่ในหมวด Database & Data Management ประเภทย่อย Inventory Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง"
+        },
+        {
+          "id": "proj_011-screenshot-2",
+          "kind": "text",
+          "title": "Key Details",
+          "subtitle": "Database & Data Management",
+          "image": "/portfolio-showcase/covers/proj_011-cover.png",
+          "description": "15 สิงหาคม 2564 - 15 ตุลาคม 2564"
+        },
+        {
+          "id": "proj_011-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "AppSheet",
+          "description": "จัดการการเบิกจ่ายวัสดุอุปกรณ์ บันทึกรายการ ยอดคงเหลือ อยู่ในหมวด Database & Data Management ประเภทย่อย Inventory Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+          "items": [
+            "appsheet",
+            "inventory",
+            "material",
+            "requisition"
+          ]
+        },
+        {
+          "id": "proj_011-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #26",
+          "items": [
+            "หน่วยงาน: เทศบาลตำบลบ้านคลอง",
+            "หมวดงาน: Database & Data Management",
+            "ประเภทย่อย: Inventory Management",
+            "ช่วงเวลา: 15 สิงหาคม 2564 - 15 ตุลาคม 2564"
+          ]
+        },
+        {
+          "id": "proj_011-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://www.appsheet.com/start/581c5055-8e02-4501-92ac-4747b0811b7c",
+          "buttonLabel": "Open Project",
+          "href": "https://www.appsheet.com/start/581c5055-8e02-4501-92ac-4747b0811b7c"
+        },
+        {
+          "id": "proj_011-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "วัสดุ • อุปกรณ์ • เบิก • จ่าย",
+          "image": "/portfolio-showcase/covers/proj_011-cover.png"
+        }
+      ],
+      "qa": {
+        "id": "proj_011",
+        "slug": "material-requisition-system",
+        "projectName": "ระบบเบิกจ่ายวัสดุอุปกรณ์สำนักปลัด",
+        "status": "fail",
+        "screenshotCount": 0,
+        "checks": [
+          {
+            "name": "cover_asset",
+            "status": "warn",
+            "details": "Cover file missing"
+          },
+          {
+            "name": "screenshots",
+            "status": "warn",
+            "details": "No public screenshots available for protected or fallback capture project"
+          },
+          {
+            "name": "slideshow_html",
+            "status": "fail",
+            "details": "Slideshow HTML missing"
+          },
+          {
+            "name": "slide_data",
+            "status": "pass",
+            "details": "7 slide record(s)"
+          },
+          {
+            "name": "live_url",
+            "status": "pass",
+            "details": "Live URL present"
+          },
+          {
+            "name": "capture_status",
+            "status": "warn",
+            "details": "Capture status: pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj_012",
+      "projectId": "proj_012",
+      "projectNumber": 27,
+      "slug": "vehicle-maintenance-system",
+      "projectName": "ระบบแจ้งซ่อมรถสำนักปลัด",
+      "englishTitle": "Vehicle Maintenance System",
+      "clientId": "client_001",
+      "clientName": "เทศบาลตำบลบ้านคลอง",
+      "clientSlug": "municipality-banklongs",
+      "category": "Database & Data Management",
+      "categoryId": "cat_database",
+      "categoryColor": "#8B5CF6",
+      "subcategory": "Asset Management",
+      "type": "AppSheet",
+      "status": "completed",
+      "url": "https://www.appsheet.com/start/52c9d815-b748-4d4c-817f-4bd31f2ab40a",
+      "description": "ระบบแจ้งซ่อมและบำรุงรักษารถยนต์ ติดตามสถานะการซ่อม",
+      "preparedDescription": "ระบบแจ้งซ่อมและบำรุงรักษารถยนต์ ติดตามสถานะการซ่อม อยู่ในหมวด Database & Data Management ประเภทย่อย Asset Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+      "tags": [
+        "appsheet",
+        "vehicle",
+        "maintenance",
+        "asset"
+      ],
+      "keywords": [
+        "รถ",
+        "ซ่อม",
+        "บำรุงรักษา",
+        "จัดการ"
+      ],
+      "startDate": "2564-09-01",
+      "completedDate": "2564-10-30",
+      "accessMode": "login_required",
+      "accessReason": "Likely protected by sign-in",
+      "captureStatus": "skipped",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #8B5CF6 0%, #1F2937 100%)",
+        "accent": "#C4B5FD",
+        "icon": "🧩",
+        "surface": "rgba(139,92,246,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_012-cover.png",
+        "screenshots": {
+          "desktop": null,
+          "hero": null,
+          "mobile": null
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_012/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_012/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_012-cover",
+          "kind": "cover",
+          "title": "ระบบแจ้งซ่อมรถสำนักปลัด",
+          "subtitle": "Vehicle Maintenance System",
+          "image": "/portfolio-showcase/covers/proj_012-cover.png",
+          "badge": "AppSheet",
+          "meta": "เทศบาลตำบลบ้านคลอง"
+        },
+        {
+          "id": "proj_012-screenshot-1",
+          "kind": "text",
+          "title": "Project Snapshot",
+          "subtitle": "Asset Management",
+          "image": "/portfolio-showcase/covers/proj_012-cover.png",
+          "description": "ระบบแจ้งซ่อมและบำรุงรักษารถยนต์ ติดตามสถานะการซ่อม อยู่ในหมวด Database & Data Management ประเภทย่อย Asset Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง"
+        },
+        {
+          "id": "proj_012-screenshot-2",
+          "kind": "text",
+          "title": "Key Details",
+          "subtitle": "Database & Data Management",
+          "image": "/portfolio-showcase/covers/proj_012-cover.png",
+          "description": "1 กันยายน 2564 - 30 ตุลาคม 2564"
+        },
+        {
+          "id": "proj_012-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "AppSheet",
+          "description": "ระบบแจ้งซ่อมและบำรุงรักษารถยนต์ ติดตามสถานะการซ่อม อยู่ในหมวด Database & Data Management ประเภทย่อย Asset Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+          "items": [
+            "appsheet",
+            "vehicle",
+            "maintenance",
+            "asset"
+          ]
+        },
+        {
+          "id": "proj_012-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #27",
+          "items": [
+            "หน่วยงาน: เทศบาลตำบลบ้านคลอง",
+            "หมวดงาน: Database & Data Management",
+            "ประเภทย่อย: Asset Management",
+            "ช่วงเวลา: 1 กันยายน 2564 - 30 ตุลาคม 2564"
+          ]
+        },
+        {
+          "id": "proj_012-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://www.appsheet.com/start/52c9d815-b748-4d4c-817f-4bd31f2ab40a",
+          "buttonLabel": "Open Project",
+          "href": "https://www.appsheet.com/start/52c9d815-b748-4d4c-817f-4bd31f2ab40a"
+        },
+        {
+          "id": "proj_012-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "รถ • ซ่อม • บำรุงรักษา • จัดการ",
+          "image": "/portfolio-showcase/covers/proj_012-cover.png"
+        }
+      ],
+      "qa": {
+        "id": "proj_012",
+        "slug": "vehicle-maintenance-system",
+        "projectName": "ระบบแจ้งซ่อมรถสำนักปลัด",
+        "status": "fail",
+        "screenshotCount": 0,
+        "checks": [
+          {
+            "name": "cover_asset",
+            "status": "warn",
+            "details": "Cover file missing"
+          },
+          {
+            "name": "screenshots",
+            "status": "warn",
+            "details": "No public screenshots available for protected or fallback capture project"
+          },
+          {
+            "name": "slideshow_html",
+            "status": "fail",
+            "details": "Slideshow HTML missing"
+          },
+          {
+            "name": "slide_data",
+            "status": "pass",
+            "details": "7 slide record(s)"
+          },
+          {
+            "name": "live_url",
+            "status": "pass",
+            "details": "Live URL present"
+          },
+          {
+            "name": "capture_status",
+            "status": "warn",
+            "details": "Capture status: pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj_013",
+      "projectId": "proj_013",
+      "projectNumber": 28,
+      "slug": "asset-management-system",
+      "projectName": "ระบบจัดการครุภัณฑ์กองยุทธศาสตร์",
+      "englishTitle": "Asset Management System",
+      "clientId": "client_002",
+      "clientName": "เทศบาลเมืองอุทัยธานี",
+      "clientSlug": "municipality-uthai-thani",
+      "category": "Database & Data Management",
+      "categoryId": "cat_database",
+      "categoryColor": "#8B5CF6",
+      "subcategory": "Asset & Budget Management",
+      "type": "AppSheet",
+      "status": "completed",
+      "url": "https://www.appsheet.com/start/ffdb65a4-f106-4aae-8fbf-ca68d13bcc86",
+      "description": "จัดการครุภัณฑ์และประมาณการ บันทึกสินทรัพย์ สถานะ",
+      "preparedDescription": "จัดการครุภัณฑ์และประมาณการ บันทึกสินทรัพย์ สถานะ อยู่ในหมวด Database & Data Management ประเภทย่อย Asset & Budget Management และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "tags": [
+        "appsheet",
+        "asset",
+        "budget",
+        "management"
+      ],
+      "keywords": [
+        "ครุภัณฑ์",
+        "งบประมาณ",
+        "จัดการ",
+        "ยุทธศาสตร์"
+      ],
+      "startDate": "2564-09-15",
+      "completedDate": "2564-11-15",
+      "accessMode": "login_required",
+      "accessReason": "Likely protected by sign-in",
+      "captureStatus": "skipped",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #8B5CF6 0%, #1F2937 100%)",
+        "accent": "#C4B5FD",
+        "icon": "🧩",
+        "surface": "rgba(139,92,246,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_013-cover.png",
+        "screenshots": {
+          "desktop": null,
+          "hero": null,
+          "mobile": null
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_013/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_013/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_013-cover",
+          "kind": "cover",
+          "title": "ระบบจัดการครุภัณฑ์กองยุทธศาสตร์",
+          "subtitle": "Asset Management System",
+          "image": "/portfolio-showcase/covers/proj_013-cover.png",
+          "badge": "AppSheet",
+          "meta": "เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_013-screenshot-1",
+          "kind": "text",
+          "title": "Project Snapshot",
+          "subtitle": "Asset & Budget Management",
+          "image": "/portfolio-showcase/covers/proj_013-cover.png",
+          "description": "จัดการครุภัณฑ์และประมาณการ บันทึกสินทรัพย์ สถานะ อยู่ในหมวด Database & Data Management ประเภทย่อย Asset & Budget Management และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_013-screenshot-2",
+          "kind": "text",
+          "title": "Key Details",
+          "subtitle": "Database & Data Management",
+          "image": "/portfolio-showcase/covers/proj_013-cover.png",
+          "description": "15 กันยายน 2564 - 15 พฤศจิกายน 2564"
+        },
+        {
+          "id": "proj_013-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "AppSheet",
+          "description": "จัดการครุภัณฑ์และประมาณการ บันทึกสินทรัพย์ สถานะ อยู่ในหมวด Database & Data Management ประเภทย่อย Asset & Budget Management และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+          "items": [
+            "appsheet",
+            "asset",
+            "budget",
+            "management"
+          ]
+        },
+        {
+          "id": "proj_013-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #28",
+          "items": [
+            "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+            "หมวดงาน: Database & Data Management",
+            "ประเภทย่อย: Asset & Budget Management",
+            "ช่วงเวลา: 15 กันยายน 2564 - 15 พฤศจิกายน 2564"
+          ]
+        },
+        {
+          "id": "proj_013-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://www.appsheet.com/start/ffdb65a4-f106-4aae-8fbf-ca68d13bcc86",
+          "buttonLabel": "Open Project",
+          "href": "https://www.appsheet.com/start/ffdb65a4-f106-4aae-8fbf-ca68d13bcc86"
+        },
+        {
+          "id": "proj_013-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "ครุภัณฑ์ • งบประมาณ • จัดการ • ยุทธศาสตร์",
+          "image": "/portfolio-showcase/covers/proj_013-cover.png"
+        }
+      ],
+      "qa": {
+        "id": "proj_013",
+        "slug": "asset-management-system",
+        "projectName": "ระบบจัดการครุภัณฑ์กองยุทธศาสตร์และงบประมาณ",
+        "status": "fail",
+        "screenshotCount": 0,
+        "checks": [
+          {
+            "name": "cover_asset",
+            "status": "warn",
+            "details": "Cover file missing"
+          },
+          {
+            "name": "screenshots",
+            "status": "warn",
+            "details": "No public screenshots available for protected or fallback capture project"
+          },
+          {
+            "name": "slideshow_html",
+            "status": "fail",
+            "details": "Slideshow HTML missing"
+          },
+          {
+            "name": "slide_data",
+            "status": "pass",
+            "details": "7 slide record(s)"
+          },
+          {
+            "name": "live_url",
+            "status": "pass",
+            "details": "Live URL present"
+          },
+          {
+            "name": "capture_status",
+            "status": "warn",
+            "details": "Capture status: pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj_014",
+      "projectId": "proj_014",
+      "projectNumber": 29,
+      "slug": "election-result-reporting-system",
+      "projectName": "ระบบรายงานผลการเลือกตั้งผู้บริหารท้องถิ่น",
+      "englishTitle": "Election Result Reporting System",
+      "clientId": "client_002",
+      "clientName": "เทศบาลเมืองอุทัยธานี",
+      "clientSlug": "municipality-uthai-thani",
+      "category": "Database & Data Management",
+      "categoryId": "cat_database",
+      "categoryColor": "#8B5CF6",
+      "subcategory": "Reporting & Analytics",
+      "type": "AppSheet",
+      "status": "completed",
+      "url": "https://www.appsheet.com/start/945a11ba-f3d1-4130-a164-6b2a4a6fd0f2",
+      "description": "ระบบรายงานผลการเลือกตั้งผู้บริหาร นับคะแนน แสดงผล Real-time",
+      "preparedDescription": "ระบบรายงานผลการเลือกตั้งผู้บริหาร นับคะแนน แสดงผล Real-time อยู่ในหมวด Database & Data Management ประเภทย่อย Reporting & Analytics และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "tags": [
+        "appsheet",
+        "election",
+        "reporting",
+        "government"
+      ],
+      "keywords": [
+        "เลือกตั้ง",
+        "ผลการ",
+        "รายงาน",
+        "บริหาร"
+      ],
+      "startDate": "2564-10-01",
+      "completedDate": "2564-11-30",
+      "accessMode": "login_required",
+      "accessReason": "Likely protected by sign-in",
+      "captureStatus": "skipped",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #8B5CF6 0%, #1F2937 100%)",
+        "accent": "#C4B5FD",
+        "icon": "🧩",
+        "surface": "rgba(139,92,246,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_014-cover.png",
+        "screenshots": {
+          "desktop": null,
+          "hero": null,
+          "mobile": null
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_014/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_014/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_014-cover",
+          "kind": "cover",
+          "title": "ระบบรายงานผลการเลือกตั้งผู้บริหารท้องถิ่น",
+          "subtitle": "Election Result Reporting System",
+          "image": "/portfolio-showcase/covers/proj_014-cover.png",
+          "badge": "AppSheet",
+          "meta": "เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_014-screenshot-1",
+          "kind": "text",
+          "title": "Project Snapshot",
+          "subtitle": "Reporting & Analytics",
+          "image": "/portfolio-showcase/covers/proj_014-cover.png",
+          "description": "ระบบรายงานผลการเลือกตั้งผู้บริหาร นับคะแนน แสดงผล Real-time อยู่ในหมวด Database & Data Management ประเภทย่อย Reporting & Analytics และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+        },
+        {
+          "id": "proj_014-screenshot-2",
+          "kind": "text",
+          "title": "Key Details",
+          "subtitle": "Database & Data Management",
+          "image": "/portfolio-showcase/covers/proj_014-cover.png",
+          "description": "1 ตุลาคม 2564 - 30 พฤศจิกายน 2564"
+        },
+        {
+          "id": "proj_014-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "AppSheet",
+          "description": "ระบบรายงานผลการเลือกตั้งผู้บริหาร นับคะแนน แสดงผล Real-time อยู่ในหมวด Database & Data Management ประเภทย่อย Reporting & Analytics และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+          "items": [
+            "appsheet",
+            "election",
+            "reporting",
+            "government"
+          ]
+        },
+        {
+          "id": "proj_014-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #29",
+          "items": [
+            "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+            "หมวดงาน: Database & Data Management",
+            "ประเภทย่อย: Reporting & Analytics",
+            "ช่วงเวลา: 1 ตุลาคม 2564 - 30 พฤศจิกายน 2564"
+          ]
+        },
+        {
+          "id": "proj_014-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://www.appsheet.com/start/945a11ba-f3d1-4130-a164-6b2a4a6fd0f2",
+          "buttonLabel": "Open Project",
+          "href": "https://www.appsheet.com/start/945a11ba-f3d1-4130-a164-6b2a4a6fd0f2"
+        },
+        {
+          "id": "proj_014-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "เลือกตั้ง • ผลการ • รายงาน • บริหาร",
+          "image": "/portfolio-showcase/covers/proj_014-cover.png"
+        }
+      ],
+      "qa": {
+        "id": "proj_014",
+        "slug": "election-result-reporting-system",
+        "projectName": "ระบบรายงานผลการเลือกตั้งผู้บริหารท้องถิ่น",
+        "status": "fail",
+        "screenshotCount": 0,
+        "checks": [
+          {
+            "name": "cover_asset",
+            "status": "warn",
+            "details": "Cover file missing"
+          },
+          {
+            "name": "screenshots",
+            "status": "warn",
+            "details": "No public screenshots available for protected or fallback capture project"
+          },
+          {
+            "name": "slideshow_html",
+            "status": "fail",
+            "details": "Slideshow HTML missing"
+          },
+          {
+            "name": "slide_data",
+            "status": "pass",
+            "details": "7 slide record(s)"
+          },
+          {
+            "name": "live_url",
+            "status": "pass",
+            "details": "Live URL present"
+          },
+          {
+            "name": "capture_status",
+            "status": "warn",
+            "details": "Capture status: pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj_gis",
+      "projectId": "proj_gis",
+      "projectNumber": 30,
+      "slug": "gis-infrastructure-layers",
+      "projectName": "ระบบแผนที่โครงสร้างพื้นฐาน GIS",
+      "englishTitle": "Gis Infrastructure Layers",
+      "clientId": "client_001",
+      "clientName": "เทศบาลตำบลบ้านคลอง",
+      "clientSlug": "municipality-banklongs",
+      "category": "Mapping & Location",
+      "categoryId": "cat_mapping",
+      "categoryColor": "#3B82F6",
+      "subcategory": "GIS Infrastructure",
+      "type": "Google Earth Map",
+      "status": "completed",
+      "url": "https://earth.google.com/earth/d/13NwgIrbGa1yzqcvzkYrsw_Tfl1evZECs?usp=sharing",
+      "description": "ระบบแผนที่ GIS รวม 5 ชั้นข้อมูล: จุดติดตั้งกล้อง CCTV, จุดลำโพงเสียงตามสาย, ถังเคมีดับเพลิง, กระจกโค้งความปลอดภัย, ท่อระบายน้ำ — แสดงผลบน Google Earth แบบ 3 มิติ",
+      "preparedDescription": "ระบบแผนที่ GIS รวม 5 ชั้นข้อมูล: จุดติดตั้งกล้อง CCTV, จุดลำโพงเสียงตามสาย, ถังเคมีดับเพลิง, กระจกโค้งความปลอดภัย, ท่อระบายน้ำ — แสดงผลบน Google Earth แบบ 3 มิติ อยู่ในหมวด Mapping & Location ประเภทย่อย GIS Infrastructure และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+      "tags": [
+        "mapping",
+        "GIS",
+        "CCTV",
+        "PA system",
+        "infrastructure",
+        "3D",
+        "Google Earth"
+      ],
+      "keywords": [
+        "แผนที่",
+        "GIS",
+        "โครงสร้างพื้นฐาน",
+        "กล้อง",
+        "เสียง",
+        "ถังเคมี",
+        "กระจกโค้ง",
+        "ท่อธาร"
+      ],
+      "startDate": "2564-05-01",
+      "completedDate": "2564-07-15",
+      "accessMode": "public",
+      "accessReason": "Public URL type",
+      "captureStatus": "captured",
+      "theme": {
+        "gradient": "linear-gradient(135deg, #2563EB 0%, #0F172A 100%)",
+        "accent": "#60A5FA",
+        "icon": "🗺️",
+        "surface": "rgba(37,99,235,0.18)"
+      },
+      "assets": {
+        "cover": "/portfolio-showcase/covers/proj_gis-cover.png",
+        "screenshots": {
+          "desktop": "/portfolio-showcase/screenshots/proj_gis/desktop-full.png",
+          "hero": "/portfolio-showcase/screenshots/proj_gis/desktop-hero.png",
+          "mobile": "/portfolio-showcase/screenshots/proj_gis/mobile-hero.png"
+        },
+        "slideshow": "/portfolio-showcase/slideshows/proj_gis/presentation.html",
+        "slideshowData": "/portfolio-showcase/slideshows/proj_gis/slides.json"
+      },
+      "slides": [
+        {
+          "id": "proj_gis-cover",
+          "kind": "cover",
+          "title": "ระบบแผนที่โครงสร้างพื้นฐาน GIS",
+          "subtitle": "Gis Infrastructure Layers",
+          "image": "/portfolio-showcase/covers/proj_gis-cover.png",
+          "badge": "Google Earth Map",
+          "meta": "เทศบาลตำบลบ้านคลอง"
+        },
+        {
+          "id": "proj_gis-screenshot-1",
+          "kind": "image",
+          "title": "Desktop Hero",
+          "subtitle": "GIS Infrastructure",
+          "image": "/portfolio-showcase/screenshots/proj_gis/desktop-hero.png",
+          "description": "ระบบแผนที่ GIS รวม 5 ชั้นข้อมูล: จุดติดตั้งกล้อง CCTV, จุดลำโพงเสียงตามสาย, ถังเคมีดับเพลิง, กระจกโค้งความปลอดภัย, ท่อระบายน้ำ — แสดงผลบน Google Earth แบบ 3 มิติ อยู่ในหมวด Mapping & Location ประเภทย่อย GIS Infrastructure และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง"
+        },
+        {
+          "id": "proj_gis-screenshot-2",
+          "kind": "image",
+          "title": "Desktop Full",
+          "subtitle": "Mapping & Location",
+          "image": "/portfolio-showcase/screenshots/proj_gis/desktop-full.png",
+          "description": "1 พฤษภาคม 2564 - 15 กรกฎาคม 2564"
+        },
+        {
+          "id": "proj_gis-features",
+          "kind": "text",
+          "title": "Features & Description",
+          "subtitle": "Google Earth Map",
+          "description": "ระบบแผนที่ GIS รวม 5 ชั้นข้อมูล: จุดติดตั้งกล้อง CCTV, จุดลำโพงเสียงตามสาย, ถังเคมีดับเพลิง, กระจกโค้งความปลอดภัย, ท่อระบายน้ำ — แสดงผลบน Google Earth แบบ 3 มิติ อยู่ในหมวด Mapping & Location ประเภทย่อย GIS Infrastructure และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+          "items": [
+            "mapping",
+            "GIS",
+            "CCTV",
+            "PA system",
+            "infrastructure",
+            "3D",
+            "Google Earth"
+          ]
+        },
+        {
+          "id": "proj_gis-info",
+          "kind": "text",
+          "title": "Project Info",
+          "subtitle": "Project #30",
+          "items": [
+            "หน่วยงาน: เทศบาลตำบลบ้านคลอง",
+            "หมวดงาน: Mapping & Location",
+            "ประเภทย่อย: GIS Infrastructure",
+            "ช่วงเวลา: 1 พฤษภาคม 2564 - 15 กรกฎาคม 2564"
+          ]
+        },
+        {
+          "id": "proj_gis-cta",
+          "kind": "cta",
+          "title": "View Live",
+          "subtitle": "เปิดดูระบบจริง",
+          "description": "https://earth.google.com/earth/d/13NwgIrbGa1yzqcvzkYrsw_Tfl1evZECs?usp=sharing",
+          "buttonLabel": "Open Project",
+          "href": "https://earth.google.com/earth/d/13NwgIrbGa1yzqcvzkYrsw_Tfl1evZECs?usp=sharing"
+        },
+        {
+          "id": "proj_gis-thanks",
+          "kind": "thanks",
+          "title": "Thank You",
+          "subtitle": "Patompong Tech Consultant",
+          "description": "แผนที่ • GIS • โครงสร้างพื้นฐาน • กล้อง • เสียง • ถังเคมี • กระจกโค้ง • ท่อธาร",
+          "image": "/portfolio-showcase/screenshots/proj_gis/mobile-hero.png"
+        }
+      ],
+      "qa": null
+    }
+  ]
+}

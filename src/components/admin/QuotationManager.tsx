@@ -298,7 +298,7 @@ export default function QuotationManager() {
             <div className="px-8 pt-6 pb-5">
               <div className="flex items-start justify-between">
                 <div className="flex items-start gap-4">
-                  <img src="/logo-main.png" alt="Patompong Tech" className="w-16 h-16 object-contain rounded-lg shadow-md border border-slate-200 bg-white p-1" />
+                  <img src="/logo-main.png" alt="Patompong Tech" className="w-16 h-16 object-contain" />
                   <div>
                     <h1 className="text-lg font-bold text-slate-800 leading-tight">Patompong Tech Consultant</h1>
                     <p className="text-[11px] text-slate-500 mt-0.5">นักวิชาการคอมพิวเตอร์ · ระบบ CCTV · Network · Software</p>
@@ -437,9 +437,10 @@ export default function QuotationManager() {
                   </div>
                   <div className="text-center">
                     <div className="h-16 border-b-2 border-amber-400 mb-2 flex items-end justify-center pb-1">
-                      <span className="text-lg italic text-amber-700 font-heading">Patompong T.</span>
+                      <span className="text-lg italic text-amber-700 font-heading">Patompong L.</span>
                     </div>
-                    <p className="text-[12px] font-bold text-slate-700">ปฐมพงษ์ ลำมะหัด</p>
+                    <p className="text-[12px] font-bold text-slate-700">ปฐมพงษ์ หล้ามหศักดิ์</p>
+                    <p className="text-[10px] text-slate-500">Patompong Lamahasak</p>
                     <p className="text-[10px] text-slate-400">Patompong Tech Consultant</p>
                   </div>
                 </div>

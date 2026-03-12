@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-03-12T04:09:48.964Z",
+  "projectId": "proj_013",
+  "slug": "asset-management-system",
+  "projectName": "ระบบจัดการครุภัณฑ์กองยุทธศาสตร์",
+  "clientName": "เทศบาลเมืองอุทัยธานี",
+  "type": "AppSheet",
+  "slides": [
+    {
+      "id": "proj_013-cover",
+      "kind": "cover",
+      "title": "ระบบจัดการครุภัณฑ์กองยุทธศาสตร์",
+      "subtitle": "Asset Management System",
+      "image": "../../covers/proj_013-cover.png",
+      "badge": "AppSheet",
+      "meta": "เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_013-screenshot-1",
+      "kind": "text",
+      "title": "Project Snapshot",
+      "subtitle": "Asset & Budget Management",
+      "image": "../../covers/proj_013-cover.png",
+      "description": "จัดการครุภัณฑ์และประมาณการ บันทึกสินทรัพย์ สถานะ อยู่ในหมวด Database & Data Management ประเภทย่อย Asset & Budget Management และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_013-screenshot-2",
+      "kind": "text",
+      "title": "Key Details",
+      "subtitle": "Database & Data Management",
+      "image": "../../covers/proj_013-cover.png",
+      "description": "15 กันยายน 2564 - 15 พฤศจิกายน 2564"
+    },
+    {
+      "id": "proj_013-features",
+      "kind": "text",
+      "title": "Features & Description",
+      "subtitle": "AppSheet",
+      "description": "จัดการครุภัณฑ์และประมาณการ บันทึกสินทรัพย์ สถานะ อยู่ในหมวด Database & Data Management ประเภทย่อย Asset & Budget Management และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "items": [
+        "appsheet",
+        "asset",
+        "budget",
+        "management"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_013-info",
+      "kind": "text",
+      "title": "Project Info",
+      "subtitle": "Project #28",
+      "items": [
+        "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+        "หมวดงาน: Database & Data Management",
+        "ประเภทย่อย: Asset & Budget Management",
+        "ช่วงเวลา: 15 กันยายน 2564 - 15 พฤศจิกายน 2564"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_013-cta",
+      "kind": "cta",
+      "title": "View Live",
+      "subtitle": "เปิดดูระบบจริง",
+      "description": "https://www.appsheet.com/start/ffdb65a4-f106-4aae-8fbf-ca68d13bcc86",
+      "buttonLabel": "Open Project",
+      "href": "https://www.appsheet.com/start/ffdb65a4-f106-4aae-8fbf-ca68d13bcc86",
+      "image": null
+    },
+    {
+      "id": "proj_013-thanks",
+      "kind": "thanks",
+      "title": "Thank You",
+      "subtitle": "Patompong Tech Consultant",
+      "description": "ครุภัณฑ์ • งบประมาณ • จัดการ • ยุทธศาสตร์",
+      "image": "../../covers/proj_013-cover.png"
+    }
+  ]
+}

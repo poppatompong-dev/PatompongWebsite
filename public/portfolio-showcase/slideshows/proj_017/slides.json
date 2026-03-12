@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-03-12T04:09:48.918Z",
+  "projectId": "proj_017",
+  "slug": "asset-verification-dashboard",
+  "projectName": "Dashboard รายงานพัสดุคงเหลือ",
+  "clientName": "เทศบาลตำบลบ้านคลอง",
+  "type": "Google Looker Studio",
+  "slides": [
+    {
+      "id": "proj_017-cover",
+      "kind": "cover",
+      "title": "Dashboard รายงานพัสดุคงเหลือ",
+      "subtitle": "Asset Verification Dashboard",
+      "image": "../../covers/proj_017-cover.png",
+      "badge": "Google Looker Studio",
+      "meta": "เทศบาลตำบลบ้านคลอง"
+    },
+    {
+      "id": "proj_017-screenshot-1",
+      "kind": "image",
+      "title": "Desktop Hero",
+      "subtitle": "Asset Verification",
+      "image": "../../screenshots/proj_017/desktop-hero.png",
+      "description": "รายงานการตรวจสอบพัสดุคงเหลือประจำปี แสดงกราฟแยกหมวด อยู่ในหมวด Analytics & Reporting ประเภทย่อย Asset Verification และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง"
+    },
+    {
+      "id": "proj_017-screenshot-2",
+      "kind": "image",
+      "title": "Desktop Full",
+      "subtitle": "Analytics & Reporting",
+      "image": "../../screenshots/proj_017/desktop-full.png",
+      "description": "1 มกราคม 2565 - 28 กุมภาพันธ์ 2565"
+    },
+    {
+      "id": "proj_017-features",
+      "kind": "text",
+      "title": "Features & Description",
+      "subtitle": "Google Looker Studio",
+      "description": "รายงานการตรวจสอบพัสดุคงเหลือประจำปี แสดงกราฟแยกหมวด อยู่ในหมวด Analytics & Reporting ประเภทย่อย Asset Verification และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+      "items": [
+        "dashboard",
+        "analytics",
+        "asset",
+        "verification"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_017-info",
+      "kind": "text",
+      "title": "Project Info",
+      "subtitle": "Project #17",
+      "items": [
+        "หน่วยงาน: เทศบาลตำบลบ้านคลอง",
+        "หมวดงาน: Analytics & Reporting",
+        "ประเภทย่อย: Asset Verification",
+        "ช่วงเวลา: 1 มกราคม 2565 - 28 กุมภาพันธ์ 2565"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_017-cta",
+      "kind": "cta",
+      "title": "View Live",
+      "subtitle": "เปิดดูระบบจริง",
+      "description": "https://lookerstudio.google.com/reporting/9bf4822f-0d11-4891-9a86-feff0f333c96",
+      "buttonLabel": "Open Project",
+      "href": "https://lookerstudio.google.com/reporting/9bf4822f-0d11-4891-9a86-feff0f333c96",
+      "image": null
+    },
+    {
+      "id": "proj_017-thanks",
+      "kind": "thanks",
+      "title": "Thank You",
+      "subtitle": "Patompong Tech Consultant",
+      "description": "พัสดุ • ตรวจสอบ • คงเหลือ • รายงาน",
+      "image": "../../screenshots/proj_017/mobile-hero.png"
+    }
+  ]
+}

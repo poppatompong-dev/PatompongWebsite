@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-03-12T04:09:48.950Z",
+  "projectId": "proj_009",
+  "slug": "quality-of-life-network-system",
+  "projectName": "ระบบเครือข่ายคุณภาพชีวิต",
+  "clientName": "เทศบาลตำบลบ้านคลอง",
+  "type": "AppSheet",
+  "slides": [
+    {
+      "id": "proj_009-cover",
+      "kind": "cover",
+      "title": "ระบบเครือข่ายคุณภาพชีวิต",
+      "subtitle": "Quality Of Life Network System",
+      "image": "../../covers/proj_009-cover.png",
+      "badge": "AppSheet",
+      "meta": "เทศบาลตำบลบ้านคลอง"
+    },
+    {
+      "id": "proj_009-screenshot-1",
+      "kind": "text",
+      "title": "Project Snapshot",
+      "subtitle": "Program Management",
+      "image": "../../covers/proj_009-cover.png",
+      "description": "ติดตามและจัดการโครงการคุณภาพชีวิต บันทึกผลการดำเนินงาน อยู่ในหมวด Database & Data Management ประเภทย่อย Program Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง"
+    },
+    {
+      "id": "proj_009-screenshot-2",
+      "kind": "text",
+      "title": "Key Details",
+      "subtitle": "Database & Data Management",
+      "image": "../../covers/proj_009-cover.png",
+      "description": "15 กรกฎาคม 2564 - 15 กันยายน 2564"
+    },
+    {
+      "id": "proj_009-features",
+      "kind": "text",
+      "title": "Features & Description",
+      "subtitle": "AppSheet",
+      "description": "ติดตามและจัดการโครงการคุณภาพชีวิต บันทึกผลการดำเนินงาน อยู่ในหมวด Database & Data Management ประเภทย่อย Program Management และพัฒนาสำหรับ เทศบาลตำบลบ้านคลอง",
+      "items": [
+        "appsheet",
+        "database",
+        "quality of life",
+        "program management"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_009-info",
+      "kind": "text",
+      "title": "Project Info",
+      "subtitle": "Project #24",
+      "items": [
+        "หน่วยงาน: เทศบาลตำบลบ้านคลอง",
+        "หมวดงาน: Database & Data Management",
+        "ประเภทย่อย: Program Management",
+        "ช่วงเวลา: 15 กรกฎาคม 2564 - 15 กันยายน 2564"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_009-cta",
+      "kind": "cta",
+      "title": "View Live",
+      "subtitle": "เปิดดูระบบจริง",
+      "description": "https://www.appsheet.com/start/f2ea2e88-4db7-4ec4-a960-79485d9039e9",
+      "buttonLabel": "Open Project",
+      "href": "https://www.appsheet.com/start/f2ea2e88-4db7-4ec4-a960-79485d9039e9",
+      "image": null
+    },
+    {
+      "id": "proj_009-thanks",
+      "kind": "thanks",
+      "title": "Thank You",
+      "subtitle": "Patompong Tech Consultant",
+      "description": "คุณภาพชีวิต • โครงการ • ติดตาม • จัดการ",
+      "image": "../../covers/proj_009-cover.png"
+    }
+  ]
+}

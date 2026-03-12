@@ -1,0 +1,81 @@
+{
+  "generatedAt": "2026-03-12T04:09:48.860Z",
+  "projectId": "proj_030",
+  "slug": "uthai-stgs-system",
+  "projectName": "Uthai STGs",
+  "clientName": "เทศบาลเมืองอุทัยธานี",
+  "type": "React/Netlify",
+  "slides": [
+    {
+      "id": "proj_030-cover",
+      "kind": "cover",
+      "title": "Uthai STGs",
+      "subtitle": "Uthai Stgs System",
+      "image": "../../covers/proj_030-cover.png",
+      "badge": "React/Netlify",
+      "meta": "เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_030-screenshot-1",
+      "kind": "image",
+      "title": "Desktop Hero",
+      "subtitle": "Government Systems",
+      "image": "../../screenshots/proj_030/desktop-hero.png",
+      "description": "ระบบ STGs สำหรับบริหารจัดการเป้าหมายการพัฒนาที่ยั่งยืน อยู่ในหมวด Web Applications ประเภทย่อย Government Systems และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_030-screenshot-2",
+      "kind": "image",
+      "title": "Desktop Full",
+      "subtitle": "Web Applications",
+      "image": "../../screenshots/proj_030/desktop-full.png",
+      "description": "1 กรกฎาคม 2565 - 15 กันยายน 2565"
+    },
+    {
+      "id": "proj_030-features",
+      "kind": "text",
+      "title": "Features & Description",
+      "subtitle": "React/Netlify",
+      "description": "ระบบ STGs สำหรับบริหารจัดการเป้าหมายการพัฒนาที่ยั่งยืน อยู่ในหมวด Web Applications ประเภทย่อย Government Systems และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "items": [
+        "react",
+        "netlify",
+        "government",
+        "STGs",
+        "sustainability"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_030-info",
+      "kind": "text",
+      "title": "Project Info",
+      "subtitle": "Project #09",
+      "items": [
+        "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+        "หมวดงาน: Web Applications",
+        "ประเภทย่อย: Government Systems",
+        "ช่วงเวลา: 1 กรกฎาคม 2565 - 15 กันยายน 2565"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_030-cta",
+      "kind": "cta",
+      "title": "View Live",
+      "subtitle": "เปิดดูระบบจริง",
+      "description": "https://uthaistgs2025.netlify.app/",
+      "buttonLabel": "Open Project",
+      "href": "https://uthaistgs2025.netlify.app/",
+      "image": null
+    },
+    {
+      "id": "proj_030-thanks",
+      "kind": "thanks",
+      "title": "Thank You",
+      "subtitle": "Patompong Tech Consultant",
+      "description": "STGs • ระบบ • ยั่งยืน • เป้าหมาย",
+      "image": "../../screenshots/proj_030/mobile-hero.png"
+    }
+  ]
+}

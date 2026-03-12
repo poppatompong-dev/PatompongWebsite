@@ -1,0 +1,473 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import {
+  ArrowRight,
+  BarChart3,
+  Bot,
+  ChevronRight,
+  Cloud,
+  Database,
+  FileText,
+  Globe,
+  Layers,
+  LayoutTemplate,
+  Lock,
+  Map as MapIcon,
+  MonitorSmartphone,
+  Settings,
+  Smartphone,
+  Users,
+  Zap,
+} from "lucide-react";
+import { Prisma } from "@prisma/client";
+import AnimatedCounter from "@/components/AnimatedCounter";
+import CoverSlideshow from "@/components/CoverSlideshow";
+import GalleryLightbox from "@/components/GalleryLightbox";
+import type { GalleryPhoto } from "@/components/GalleryLightbox";
+import ProjectCard from "@/components/ProjectCard";
+import ProjectFilterBar from "@/components/ProjectFilterBar";
+import { loadShowcaseManifest } from "@/lib/portfolio-showcase";
+import { prisma } from "@/lib/prisma";
+import { formatDate, parseTags } from "@/types/portfolio";
+
+type SearchParams = Promise<{
+  q?: string | string[];
+  clientId?: string | string[];
+  categoryId?: string | string[];
+  type?: string | string[];
+  status?: string | string[];
+}>;
+
+export const metadata: Metadata = {
+  title: "ระบบและซอฟต์แวร์ | Patompong Tech Consultant",
+  description: "รวมผลงานระบบ ซอฟต์แวร์ และโครงการดิจิทัลที่นำไปใช้งานจริง ทั้งด้านแผนที่ ข้อมูล รายงาน ระบบเว็บ และงานอัตโนมัติ",
+};
+
+function firstValue(value?: string | string[]) {
+  if (Array.isArray(value)) return value[0] || "";
+  return value || "";
+}
+
+function parseRecord(value?: string | null) {
+  if (!value) return {} as Record<string, number>;
+  try {
+    return JSON.parse(value) as Record<string, number>;
+  } catch {
+    return {} as Record<string, number>;
+  }
+}
+
+function anonymizeText(text: string): string {
+  return text
+    .replace(/เทศบาลตำบลบ้านคลอง/g, "หน่วยงานส่วนท้องถิ่น ก.")
+    .replace(/เทศบาลเมืองอุทัยธานี/g, "หน่วยงานส่วนท้องถิ่น ข.")
+    .replace(/เทศบาลนคร/g, "หน่วยงานส่วนท้องถิ่น ค.")
+    .replace(/นครสวรรค์/g, "จังหวัด")
+    .replace(/อุทัยธานี/g, "จังหวัด")
+    .replace(/บ้านคลอง/g, "พื้นที่ ก.");
+}
+
+const GALLERY_PHOTOS: GalleryPhoto[] = [
+  { src: "/api/local-photos/01_CCTV_Surveillance/01_CCTV_Surveillance_001.jpg", caption: "ระบบกล้องวงจรปิด — ติดตั้งและดูแลจุดสำคัญในพื้นที่", category: "CCTV" },
+  { src: "/api/local-photos/02_Network_Server/02_Network_Server_001.jpg", caption: "ห้องเซิร์ฟเวอร์ — ศูนย์กลางเครือข่ายและประมวลผลข้อมูล", category: "Network" },
+  { src: "/api/local-photos/03_Wireless_Antenna/03_Wireless_Antenna_001.jpg", caption: "เสาอากาศไร้สาย — ขยายสัญญาณครอบคลุมพื้นที่บริการ", category: "Wireless" },
+  { src: "/api/local-photos/04_Fiber_Optic_Cabling/04_Fiber_Optic_Cabling_003.jpg", caption: "ระบบไฟเบอร์ออปติก — เชื่อมต่อเครือข่ายความเร็วสูง", category: "Fiber Optic" },
+  { src: "/api/local-photos/05_Broadcasting_AV/05_Broadcasting_AV_001.jpg", caption: "ระบบเสียงตามสาย — กระจายข่าวสารสู่ชุมชน", category: "Broadcasting" },
+  { src: "/api/local-photos/06_Field_Operations/06_Field_Operations_001.jpg", caption: "ปฏิบัติการภาคสนาม — สำรวจและติดตั้งอุปกรณ์จริง", category: "Field Ops" },
+  { src: "/api/local-photos/07_Drone_Survey/07_Drone_Survey_001.jpg", caption: "สำรวจทางอากาศ — ถ่ายภาพมุมสูงด้วยโดรน", category: "Drone" },
+  { src: "/api/local-photos/06_Field_Operations/06_Field_Operations_002.jpg", caption: "ทีมงานภาคสนาม — ตรวจสอบระบบโครงสร้างพื้นฐาน", category: "Field Ops" },
+];
+
+const ARCH_LAYERS = [
+  {
+    label: "Presentation Layer",
+    desc: "ส่วนติดต่อผู้ใช้ — เว็บแอป, Dashboard, Mobile-ready UI",
+    techs: ["React", "Firebase", "Netlify", "Vercel"],
+    color: "from-cyan-500 to-blue-600",
+    icon: Globe,
+  },
+  {
+    label: "Analytics Layer",
+    desc: "วิเคราะห์และแสดงผลข้อมูล — รายงาน Real-time",
+    techs: ["Google Looker Studio", "Charts", "KPI Monitors"],
+    color: "from-pink-500 to-rose-600",
+    icon: BarChart3,
+  },
+  {
+    label: "Data & Logic Layer",
+    desc: "จัดเก็บ ประมวลผล และจัดการข้อมูลหลัก",
+    techs: ["AppSheet", "Google Sheets", "Cloud SQL"],
+    color: "from-violet-500 to-purple-600",
+    icon: Database,
+  },
+  {
+    label: "Automation Layer",
+    desc: "ระบบอัตโนมัติ — สร้างเอกสาร, แจ้งเตือน, Sync",
+    techs: ["Google Apps Script", "LINE API", "Webhooks"],
+    color: "from-amber-500 to-orange-600",
+    icon: Bot,
+  },
+  {
+    label: "Infrastructure Layer",
+    desc: "โครงสร้างพื้นฐาน — แผนที่, เครือข่าย, ระบบกายภาพ",
+    techs: ["Google Earth", "CCTV", "Fiber Optic", "Wireless"],
+    color: "from-emerald-500 to-green-600",
+    icon: Layers,
+  },
+];
+
+const WORKFLOW_STEPS = [
+  {
+    step: 1,
+    title: "สำรวจ & วิเคราะห์",
+    desc: "เก็บข้อมูลความต้องการจากหน่วยงาน วิเคราะห์ปัญหาและกำหนดขอบเขต",
+    icon: Users,
+  },
+  {
+    step: 2,
+    title: "ออกแบบระบบ",
+    desc: "เลือก Platform ที่เหมาะสม ออกแบบ UI/UX และโครงสร้างข้อมูล",
+    icon: Settings,
+  },
+  {
+    step: 3,
+    title: "พัฒนา & ทดสอบ",
+    desc: "สร้างระบบ ทดสอบกับผู้ใช้จริง ปรับปรุงจนพร้อมใช้งาน",
+    icon: Zap,
+  },
+  {
+    step: 4,
+    title: "ส่งมอบ & ดูแล",
+    desc: "อบรมผู้ใช้ ส่งมอบระบบ ดูแลบำรุงรักษาอย่างต่อเนื่อง",
+    icon: Cloud,
+  },
+];
+
+const FEATURES = [
+  { icon: MapIcon, title: "Mapping & GIS", desc: "ระบุตำแหน่งโครงสร้างพื้นฐานบนแผนที่ดิจิทัล 3 มิติ" },
+  { icon: BarChart3, title: "Dashboard & Analytics", desc: "สร้างรายงานเชิงวิเคราะห์แบบ Real-time ดูได้ทุกที่" },
+  { icon: MonitorSmartphone, title: "Responsive Design", desc: "ใช้งานได้ทุกอุปกรณ์ทั้ง Desktop, Tablet และ Mobile" },
+  { icon: Bot, title: "Automation", desc: "ลดงานซ้ำ สร้างเอกสาร แจ้งเตือน และ Sync อัตโนมัติ" },
+  { icon: Users, title: "Multi-tenant", desc: "รองรับหลายหน่วยงาน หลายแผนก ในระบบเดียวกัน" },
+  { icon: Lock, title: "Access Control", desc: "จัดการสิทธิ์การเข้าถึงตามบทบาทและระดับความลับ" },
+  { icon: FileText, title: "PDF & Report Gen", desc: "สร้างเอกสาร PDF สลิป ใบเสร็จ รายงานอัตโนมัติ" },
+  { icon: Smartphone, title: "LINE Integration", desc: "เชื่อมต่อ LINE OA แจ้งเตือน ส่งข้อมูลถึงผู้ใช้ทันที" },
+];
+
+export default async function ProjectsPage({ searchParams }: { searchParams: SearchParams }) {
+  const resolvedSearchParams = await searchParams;
+  const q = firstValue(resolvedSearchParams.q).trim();
+  const clientId = firstValue(resolvedSearchParams.clientId).trim();
+  const categoryId = firstValue(resolvedSearchParams.categoryId).trim();
+  const type = firstValue(resolvedSearchParams.type).trim();
+  const status = firstValue(resolvedSearchParams.status).trim();
+
+  const where: Prisma.ProjectWhereInput = {};
+
+  if (clientId) where.clientId = clientId;
+  if (categoryId) where.categoryId = categoryId;
+  if (type) where.type = type;
+  if (status) where.status = status;
+  if (q) {
+    where.OR = [
+      { projectName: { contains: q } },
+      { description: { contains: q } },
+      { subcategory: { contains: q } },
+      { tags: { contains: q } },
+      { keywords: { contains: q } },
+    ];
+  }
+
+  const [projects, stats, portfolioMetadata, clients, categories, manifest] = await Promise.all([
+    prisma.project.findMany({
+      where,
+      include: {
+        client: true,
+        category: true,
+      },
+      orderBy: [{ projectNumber: "asc" }],
+    }),
+    prisma.projectStatistics.findFirst(),
+    prisma.portfolioMetadata.findFirst(),
+    prisma.client.findMany({ orderBy: { clientName: "asc" } }),
+    prisma.category.findMany({ orderBy: { name: "asc" } }),
+    loadShowcaseManifest(),
+  ]);
+
+  const byType = parseRecord(stats?.byType);
+  const typeOptions = (Object.keys(byType).length > 0 ? Object.keys(byType) : Array.from(new Set(projects.map((project) => project.type)))).map((value) => ({
+    value,
+    label: value,
+  }));
+  const showcaseBySlug = new Map((manifest?.projects || []).map((project) => [project.slug, project]));
+  const heroImages = (manifest?.projects || []).map((p) => p.assets.cover).filter(Boolean).slice(0, 12) as string[];
+  const totalProjects = stats?.totalProjects || projects.length;
+
+  return (
+    <div className="min-h-screen bg-cream-100 text-ink-700">
+
+      {/* ═══════════════════════════════════════════════════════════════
+          PART 1 — System Overview (Hero)
+          ═══════════════════════════════════════════════════════════════ */}
+      <header className="relative overflow-hidden bg-ink-900 text-cream-50">
+        {/* Slideshow of cover images behind text */}
+        <CoverSlideshow images={heroImages} interval={5000} />
+        <div className="absolute inset-0 bg-ink-900/70" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(217,119,6,0.15),transparent_40%),radial-gradient(circle_at_bottom_left,rgba(6,182,212,0.08),transparent_35%)]" />
+
+        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+          <div className="flex flex-wrap items-center gap-3 font-code text-xs uppercase tracking-[0.2em] text-gold-400/80">
+            <Link href="/" className="transition-colors hover:text-gold-300">หน้าแรก</Link>
+            <ChevronRight className="h-3 w-3" />
+            <span>ระบบและซอฟต์แวร์</span>
+          </div>
+
+          <div className="mt-8 max-w-4xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-gold-500/20 bg-gold-500/10 px-4 py-1.5 font-code text-xs uppercase tracking-[0.15em] text-gold-400">
+              <Zap className="h-3.5 w-3.5" />
+              Digital Transformation Portfolio
+            </div>
+
+            <h1 className="mt-6 font-heading text-4xl font-bold leading-[1.15] sm:text-5xl lg:text-6xl">
+              ออกแบบ พัฒนา ส่งมอบ
+              <span className="mt-2 block bg-gradient-to-r from-gold-300 to-gold-500 bg-clip-text text-transparent">
+                ระบบดิจิทัลที่ใช้งานจริง
+              </span>
+            </h1>
+
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream-200/80">
+              รวม <span className="font-semibold text-gold-400">{totalProjects} ระบบ</span> ที่ออกแบบและพัฒนาให้หน่วยงานภาครัฐ ครอบคลุมตั้งแต่ระบบข้อมูล แผนที่ GIS
+              ไปจนถึง Dashboard วิเคราะห์ เว็บแอปพลิเคชัน และระบบอัตโนมัติ —
+              ทุกระบบใช้งานจริงในสภาพแวดล้อมการทำงานจริง
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              {manifest?.outputs?.portfolioPdf && (
+                <a href={manifest.outputs.portfolioPdf} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-gold-500/30 bg-gold-500/10 px-5 py-3 text-sm font-semibold text-gold-300 transition-colors hover:bg-gold-500/20">
+                  <FileText className="h-4 w-4" />
+                  เปิด PDF รวมผลงาน
+                </a>
+              )}
+              {manifest?.outputs?.standaloneShelf && (
+                <a href={manifest.outputs.standaloneShelf} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-ink-700 bg-ink-800 px-5 py-3 text-sm font-semibold text-cream-100 transition-colors hover:border-gold-500/30 hover:text-gold-300">
+                  <LayoutTemplate className="h-4 w-4" />
+                  เปิด Standalone Shelf
+                </a>
+              )}
+              <Link href="#project-listing" className="inline-flex items-center gap-2 rounded-full border border-ink-700 bg-transparent px-5 py-3 text-sm font-semibold text-cream-200 transition-colors hover:border-gold-500/30 hover:text-gold-300">
+                ดูรายการโครงการ
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="rounded-2xl border border-ink-700 bg-ink-800/60 p-5 backdrop-blur-sm">
+              <p className="font-code text-[11px] uppercase tracking-[0.18em] text-gold-400/70">โครงการทั้งหมด</p>
+              <div className="mt-2 font-heading text-4xl font-bold text-cream-50">
+                <AnimatedCounter value={totalProjects} />
+              </div>
+            </div>
+            <div className="rounded-2xl border border-ink-700 bg-ink-800/60 p-5 backdrop-blur-sm">
+              <p className="font-code text-[11px] uppercase tracking-[0.18em] text-gold-400/70">หมวดหมู่</p>
+              <div className="mt-2 font-heading text-4xl font-bold text-cream-50">
+                <AnimatedCounter value={categories.length || 5} />
+              </div>
+            </div>
+            <div className="rounded-2xl border border-ink-700 bg-ink-800/60 p-5 backdrop-blur-sm">
+              <p className="font-code text-[11px] uppercase tracking-[0.18em] text-gold-400/70">แพลตฟอร์ม</p>
+              <div className="mt-2 font-heading text-4xl font-bold text-cream-50">
+                <AnimatedCounter value={Object.keys(byType).length || 7} />
+              </div>
+            </div>
+            <div className="rounded-2xl border border-ink-700 bg-ink-800/60 p-5 backdrop-blur-sm">
+              <p className="font-code text-[11px] uppercase tracking-[0.18em] text-gold-400/70">เริ่มสะสมผลงาน</p>
+              <p className="mt-2 font-heading text-lg font-bold text-cream-50">{formatDate(portfolioMetadata?.startDate)}</p>
+              <p className="mt-1 text-sm text-cream-200/60">
+                อัปเดต {manifest?.generatedAt ? new Date(manifest.generatedAt).toLocaleDateString("th-TH") : formatDate(portfolioMetadata?.lastUpdated)}
+              </p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* ═══════════════════════════════════════════════════════════════
+          PART 2 — System Architecture
+          ═══════════════════════════════════════════════════════════════ */}
+      <section className="bg-cream-100 py-10 lg:py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <span className="font-code text-[11px] uppercase tracking-[0.15em] text-gold-500">System Architecture</span>
+            <h2 className="mt-2 font-heading text-2xl font-bold text-ink-800 sm:text-3xl">สถาปัตยกรรมระบบ 5 ชั้น</h2>
+          </div>
+
+          <div className="mt-8 space-y-2">
+            {ARCH_LAYERS.map((layer, i) => {
+              const IconComponent = layer.icon;
+              return (
+                <div key={layer.label} className="group card-retro card-retro-hover overflow-hidden rounded-xl">
+                  <div className="flex items-center gap-3 p-3 sm:gap-4 sm:p-4">
+                    <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br ${layer.color} text-white`}>
+                      <IconComponent className="h-5 w-5" />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <h3 className="text-sm font-bold text-ink-800">{layer.label}</h3>
+                      <p className="truncate text-xs text-ink-500">{layer.desc}</p>
+                    </div>
+                    <div className="hidden flex-wrap gap-1.5 sm:flex sm:justify-end">
+                      {layer.techs.map((tech) => (
+                        <span key={tech} className="rounded-full border border-cream-300 bg-cream-50 px-2 py-0.5 text-[10px] font-code uppercase tracking-wide text-ink-400">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="mt-4 text-center">
+            <p className="font-code text-[10px] uppercase tracking-[0.15em] text-ink-400">
+              ทุกชั้นเชื่อมต่อผ่าน REST API / Webhook / Google Cloud — Zero Server Maintenance
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════
+          PART 3 — Operational Workflow
+          ═══════════════════════════════════════════════════════════════ */}
+      <section className="bg-ink-900 py-10 text-cream-50 lg:py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <span className="font-code text-[11px] uppercase tracking-[0.15em] text-gold-400">Operational Workflow</span>
+            <h2 className="mt-2 font-heading text-2xl font-bold sm:text-3xl">กระบวนการทำงาน 4 ขั้นตอน</h2>
+          </div>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {WORKFLOW_STEPS.map((ws, i) => {
+              const StepIcon = ws.icon;
+              return (
+                <div key={ws.step} className="group relative">
+                  <div className="rounded-xl border border-ink-700 bg-ink-800/50 p-4 transition-all group-hover:border-gold-500/30">
+                    <div className="flex items-center gap-2">
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold-400 to-gold-600 text-sm font-bold text-ink-900">
+                        {ws.step}
+                      </div>
+                      <h3 className="text-sm font-bold">{ws.title}</h3>
+                    </div>
+                    <p className="mt-2 text-xs leading-relaxed text-cream-200/70">{ws.desc}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════
+          PART 4 — Key Feature Highlights
+          ═══════════════════════════════════════════════════════════════ */}
+      <section className="bg-cream-100 py-10 lg:py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <span className="font-code text-[11px] uppercase tracking-[0.15em] text-gold-500">Key Features</span>
+            <h2 className="mt-2 font-heading text-2xl font-bold text-ink-800 sm:text-3xl">ฟีเจอร์เด่นของระบบ</h2>
+          </div>
+
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {FEATURES.map((feat) => {
+              const FeatIcon = feat.icon;
+              return (
+                <div key={feat.title} className="card-retro card-retro-hover rounded-xl p-4">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-gold-500/20 bg-gold-500/5">
+                      <FeatIcon className="h-4 w-4 text-gold-500" />
+                    </div>
+                    <h3 className="text-sm font-bold text-ink-800">{feat.title}</h3>
+                  </div>
+                  <p className="mt-2 text-xs leading-relaxed text-ink-500">{feat.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════
+          PART 5 — Gallery Shelf (Screen Captures)
+          ═══════════════════════════════════════════════════════════════ */}
+      <section className="bg-ink-900 py-10 text-cream-50 lg:py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <span className="font-code text-[11px] uppercase tracking-[0.15em] text-gold-400">Gallery Shelf</span>
+            <h2 className="mt-2 font-heading text-2xl font-bold sm:text-3xl">ภาพผลงานจริง</h2>
+            <p className="mx-auto mt-3 max-w-xl text-sm text-cream-200/70">
+              ภาพการติดตั้ง ดูแลระบบ และปฏิบัติงานจริงในพื้นที่ — คลิกเพื่อดูขนาดเต็ม
+            </p>
+          </div>
+
+          <div className="mt-8">
+            <GalleryLightbox photos={GALLERY_PHOTOS} />
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════
+          PART 6 — Project Listing (Filter + Cards)
+          ═══════════════════════════════════════════════════════════════ */}
+      <main id="project-listing" className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        <ProjectFilterBar
+          categories={categories.map((category) => ({ value: category.categoryId, label: category.name, color: category.color }))}
+          clients={clients.map((client) => ({ value: client.clientId, label: anonymizeText(client.clientName) }))}
+          initialCategoryId={categoryId}
+          initialClientId={clientId}
+          initialQuery={q}
+          initialStatus={status}
+          initialType={type}
+          resultCount={projects.length}
+          totalCount={totalProjects}
+          types={typeOptions}
+        />
+
+        <section className="mt-10">
+          <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <span className="font-code text-xs uppercase tracking-[0.15em] text-gold-500">Showcase Results</span>
+              <h2 className="mt-2 font-heading text-2xl font-bold text-ink-800 sm:text-3xl">พบ {projects.length} โครงการ</h2>
+            </div>
+            <div className="flex flex-wrap gap-3 text-sm text-ink-400">
+              <span>เรียงตามลำดับโครงการจากฐานข้อมูล</span>
+              <Link href="/projects" className="inline-flex items-center gap-2 font-semibold text-gold-600 transition-colors hover:text-gold-500">
+                ดูทั้งหมด
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {projects.map((project) => (
+              <ProjectCard
+                key={project.id}
+                project={{
+                  ...project,
+                  client: { clientName: anonymizeText(project.client.clientName) },
+                }}
+                showcase={showcaseBySlug.get(project.slug) || null}
+                tags={parseTags(project.tags)}
+              />
+            ))}
+          </div>
+
+          {projects.length === 0 && (
+            <div className="card-retro mt-6 rounded-[28px] p-10 text-center">
+              <h3 className="font-heading text-2xl font-bold text-ink-800">ไม่พบโครงการตามตัวกรองที่เลือก</h3>
+              <p className="mt-3 text-ink-500">ลองล้างตัวกรองหรือเปลี่ยนคำค้นหาแล้วค้นหาใหม่อีกครั้ง</p>
+            </div>
+          )}
+        </section>
+      </main>
+    </div>
+  );
+}

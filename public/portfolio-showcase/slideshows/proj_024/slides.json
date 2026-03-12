@@ -1,0 +1,81 @@
+{
+  "generatedAt": "2026-03-12T04:09:48.871Z",
+  "projectId": "proj_024",
+  "slug": "payslip-system",
+  "projectName": "ระบบสลิปเงินเดือนออนไลน์",
+  "clientName": "เทศบาลเมืองอุทัยธานี",
+  "type": "Google Apps Script",
+  "slides": [
+    {
+      "id": "proj_024-cover",
+      "kind": "cover",
+      "title": "ระบบสลิปเงินเดือนออนไลน์",
+      "subtitle": "Payslip System",
+      "image": "../../covers/proj_024-cover.png",
+      "badge": "Google Apps Script",
+      "meta": "เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_024-screenshot-1",
+      "kind": "text",
+      "title": "Project Snapshot",
+      "subtitle": "HR Systems",
+      "image": "../../covers/proj_024-cover.png",
+      "description": "ระบบออกเอกสารสลิปเงินเดือนอัตโนมัติ ดึงข้อมูลจาก Sheets สร้าง PDF ส่ง LINE อยู่ในหมวด Automation & Integration ประเภทย่อย HR Systems และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_024-screenshot-2",
+      "kind": "text",
+      "title": "Key Details",
+      "subtitle": "Automation & Integration",
+      "image": "../../covers/proj_024-cover.png",
+      "description": "1 เมษายน 2565 - 30 พฤษภาคม 2565"
+    },
+    {
+      "id": "proj_024-features",
+      "kind": "text",
+      "title": "Features & Description",
+      "subtitle": "Google Apps Script",
+      "description": "ระบบออกเอกสารสลิปเงินเดือนอัตโนมัติ ดึงข้อมูลจาก Sheets สร้าง PDF ส่ง LINE อยู่ในหมวด Automation & Integration ประเภทย่อย HR Systems และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "items": [
+        "google apps script",
+        "automation",
+        "HR",
+        "salary",
+        "PDF"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_024-info",
+      "kind": "text",
+      "title": "Project Info",
+      "subtitle": "Project #10",
+      "items": [
+        "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+        "หมวดงาน: Automation & Integration",
+        "ประเภทย่อย: HR Systems",
+        "ช่วงเวลา: 1 เมษายน 2565 - 30 พฤษภาคม 2565"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_024-cta",
+      "kind": "cta",
+      "title": "View Live",
+      "subtitle": "เปิดดูระบบจริง",
+      "description": "https://script.google.com/macros/s/AKfycby32Id5rQIv2Cv0XjM2gysjRhUc4TIJqDLWOKlAS9UNpBtSKdg71QUuF3lR1kgH81sl/exec",
+      "buttonLabel": "Open Project",
+      "href": "https://script.google.com/macros/s/AKfycby32Id5rQIv2Cv0XjM2gysjRhUc4TIJqDLWOKlAS9UNpBtSKdg71QUuF3lR1kgH81sl/exec",
+      "image": null
+    },
+    {
+      "id": "proj_024-thanks",
+      "kind": "thanks",
+      "title": "Thank You",
+      "subtitle": "Patompong Tech Consultant",
+      "description": "สลิป • เงินเดือน • เอกสาร • ระบบ",
+      "image": "../../covers/proj_024-cover.png"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "status": "fallback",
+  "attemptedAt": "2026-03-12T04:03:38.257Z",
+  "finalUrl": "https://kpi-dashboard-wheat-nine.vercel.app/",
+  "credentialProfile": null,
+  "error": "Authentication required"
+}

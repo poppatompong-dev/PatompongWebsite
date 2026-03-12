@@ -5,6 +5,15 @@ import { GraduationCap, BookOpen, CheckCircle } from "lucide-react";
 
 const education = [
   {
+    levelEn: "Higher than Bachelor's Degree",
+    level: "สูงกว่าปริญญาตรี",
+    field: "IS — Information Science (วิทยาการสารสนเทศ)",
+    institution: "",
+    year: "",
+    icon: GraduationCap,
+    highlight: true,
+  },
+  {
     levelEn: "Bachelor's Degree",
     level: "ปริญญาตรี",
     field: "วิทยาการคอมพิวเตอร์",

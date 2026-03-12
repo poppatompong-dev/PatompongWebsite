@@ -1,0 +1,81 @@
+{
+  "generatedAt": "2026-03-12T04:09:48.896Z",
+  "projectId": "proj_033",
+  "slug": "funeral-pr-system",
+  "projectName": "ระบบประชาสัมพันธ์งานศพ",
+  "clientName": "เทศบาลเมืองอุทัยธานี",
+  "type": "Google Apps Script",
+  "slides": [
+    {
+      "id": "proj_033-cover",
+      "kind": "cover",
+      "title": "ระบบประชาสัมพันธ์งานศพ",
+      "subtitle": "Funeral Pr System",
+      "image": "../../covers/proj_033-cover.png",
+      "badge": "Google Apps Script",
+      "meta": "เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_033-screenshot-1",
+      "kind": "text",
+      "title": "Project Snapshot",
+      "subtitle": "Public Relations",
+      "image": "../../covers/proj_033-cover.png",
+      "description": "ระบบประชาสัมพันธ์งานศพผ่าน LINE OA แจ้งเตือนอัตโนมัติ อยู่ในหมวด Automation & Integration ประเภทย่อย Public Relations และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_033-screenshot-2",
+      "kind": "text",
+      "title": "Key Details",
+      "subtitle": "Automation & Integration",
+      "image": "../../covers/proj_033-cover.png",
+      "description": "15 สิงหาคม 2565 - 30 ตุลาคม 2565"
+    },
+    {
+      "id": "proj_033-features",
+      "kind": "text",
+      "title": "Features & Description",
+      "subtitle": "Google Apps Script",
+      "description": "ระบบประชาสัมพันธ์งานศพผ่าน LINE OA แจ้งเตือนอัตโนมัติ อยู่ในหมวด Automation & Integration ประเภทย่อย Public Relations และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "items": [
+        "google apps script",
+        "PR",
+        "funeral",
+        "LINE",
+        "notification"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_033-info",
+      "kind": "text",
+      "title": "Project Info",
+      "subtitle": "Project #14",
+      "items": [
+        "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+        "หมวดงาน: Automation & Integration",
+        "ประเภทย่อย: Public Relations",
+        "ช่วงเวลา: 15 สิงหาคม 2565 - 30 ตุลาคม 2565"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_033-cta",
+      "kind": "cta",
+      "title": "View Live",
+      "subtitle": "เปิดดูระบบจริง",
+      "description": "https://script.google.com/macros/s/AKfycbws3fgt01mjLj5tdeMyLq2NL4YjCgbE6wA6iSp_4yd_D2L0zMiLSg0n3sYdCOyReKFk/exec",
+      "buttonLabel": "Open Project",
+      "href": "https://script.google.com/macros/s/AKfycbws3fgt01mjLj5tdeMyLq2NL4YjCgbE6wA6iSp_4yd_D2L0zMiLSg0n3sYdCOyReKFk/exec",
+      "image": null
+    },
+    {
+      "id": "proj_033-thanks",
+      "kind": "thanks",
+      "title": "Thank You",
+      "subtitle": "Patompong Tech Consultant",
+      "description": "งานศพ • ประชาสัมพันธ์ • ระบบ • สาธารณะ",
+      "image": "../../covers/proj_033-cover.png"
+    }
+  ]
+}

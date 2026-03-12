@@ -1,0 +1,81 @@
+{
+  "generatedAt": "2026-03-12T04:09:48.933Z",
+  "projectId": "proj_020",
+  "slug": "asset-verification-it-dashboard",
+  "projectName": "Dashboard พัสดุงานเทคโนโลยี",
+  "clientName": "เทศบาลนคร",
+  "type": "Google Looker Studio",
+  "slides": [
+    {
+      "id": "proj_020-cover",
+      "kind": "cover",
+      "title": "Dashboard พัสดุงานเทคโนโลยี",
+      "subtitle": "Asset Verification It Dashboard",
+      "image": "../../covers/proj_020-cover.png",
+      "badge": "Google Looker Studio",
+      "meta": "เทศบาลนคร"
+    },
+    {
+      "id": "proj_020-screenshot-1",
+      "kind": "image",
+      "title": "Desktop Hero",
+      "subtitle": "Asset Verification",
+      "image": "../../screenshots/proj_020/desktop-hero.png",
+      "description": "รายงานพัสดุงานเทคโนโลยีสารสนเทศ ติดตามสถานะครุภัณฑ์ อยู่ในหมวด Analytics & Reporting ประเภทย่อย Asset Verification และพัฒนาสำหรับ เทศบาลนคร"
+    },
+    {
+      "id": "proj_020-screenshot-2",
+      "kind": "image",
+      "title": "Desktop Full",
+      "subtitle": "Analytics & Reporting",
+      "image": "../../screenshots/proj_020/desktop-full.png",
+      "description": "15 กุมภาพันธ์ 2565 - 15 เมษายน 2565"
+    },
+    {
+      "id": "proj_020-features",
+      "kind": "text",
+      "title": "Features & Description",
+      "subtitle": "Google Looker Studio",
+      "description": "รายงานพัสดุงานเทคโนโลยีสารสนเทศ ติดตามสถานะครุภัณฑ์ อยู่ในหมวด Analytics & Reporting ประเภทย่อย Asset Verification และพัฒนาสำหรับ เทศบาลนคร",
+      "items": [
+        "dashboard",
+        "analytics",
+        "asset",
+        "IT",
+        "verification"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_020-info",
+      "kind": "text",
+      "title": "Project Info",
+      "subtitle": "Project #20",
+      "items": [
+        "หน่วยงาน: เทศบาลนคร",
+        "หมวดงาน: Analytics & Reporting",
+        "ประเภทย่อย: Asset Verification",
+        "ช่วงเวลา: 15 กุมภาพันธ์ 2565 - 15 เมษายน 2565"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_020-cta",
+      "kind": "cta",
+      "title": "View Live",
+      "subtitle": "เปิดดูระบบจริง",
+      "description": "https://lookerstudio.google.com/reporting/e0acdc0c-c2e0-45d8-bf8a-e8c904c0ba55",
+      "buttonLabel": "Open Project",
+      "href": "https://lookerstudio.google.com/reporting/e0acdc0c-c2e0-45d8-bf8a-e8c904c0ba55",
+      "image": null
+    },
+    {
+      "id": "proj_020-thanks",
+      "kind": "thanks",
+      "title": "Thank You",
+      "subtitle": "Patompong Tech Consultant",
+      "description": "พัสดุ • เทคโนโลยี • ตรวจสอบ • รายงาน",
+      "image": "../../screenshots/proj_020/mobile-hero.png"
+    }
+  ]
+}

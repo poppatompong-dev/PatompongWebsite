@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-03-12T04:09:48.968Z",
+  "projectId": "proj_014",
+  "slug": "election-result-reporting-system",
+  "projectName": "ระบบรายงานผลการเลือกตั้งผู้บริหารท้องถิ่น",
+  "clientName": "เทศบาลเมืองอุทัยธานี",
+  "type": "AppSheet",
+  "slides": [
+    {
+      "id": "proj_014-cover",
+      "kind": "cover",
+      "title": "ระบบรายงานผลการเลือกตั้งผู้บริหารท้องถิ่น",
+      "subtitle": "Election Result Reporting System",
+      "image": "../../covers/proj_014-cover.png",
+      "badge": "AppSheet",
+      "meta": "เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_014-screenshot-1",
+      "kind": "text",
+      "title": "Project Snapshot",
+      "subtitle": "Reporting & Analytics",
+      "image": "../../covers/proj_014-cover.png",
+      "description": "ระบบรายงานผลการเลือกตั้งผู้บริหาร นับคะแนน แสดงผล Real-time อยู่ในหมวด Database & Data Management ประเภทย่อย Reporting & Analytics และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี"
+    },
+    {
+      "id": "proj_014-screenshot-2",
+      "kind": "text",
+      "title": "Key Details",
+      "subtitle": "Database & Data Management",
+      "image": "../../covers/proj_014-cover.png",
+      "description": "1 ตุลาคม 2564 - 30 พฤศจิกายน 2564"
+    },
+    {
+      "id": "proj_014-features",
+      "kind": "text",
+      "title": "Features & Description",
+      "subtitle": "AppSheet",
+      "description": "ระบบรายงานผลการเลือกตั้งผู้บริหาร นับคะแนน แสดงผล Real-time อยู่ในหมวด Database & Data Management ประเภทย่อย Reporting & Analytics และพัฒนาสำหรับ เทศบาลเมืองอุทัยธานี",
+      "items": [
+        "appsheet",
+        "election",
+        "reporting",
+        "government"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_014-info",
+      "kind": "text",
+      "title": "Project Info",
+      "subtitle": "Project #29",
+      "items": [
+        "หน่วยงาน: เทศบาลเมืองอุทัยธานี",
+        "หมวดงาน: Database & Data Management",
+        "ประเภทย่อย: Reporting & Analytics",
+        "ช่วงเวลา: 1 ตุลาคม 2564 - 30 พฤศจิกายน 2564"
+      ],
+      "image": null
+    },
+    {
+      "id": "proj_014-cta",
+      "kind": "cta",
+      "title": "View Live",
+      "subtitle": "เปิดดูระบบจริง",
+      "description": "https://www.appsheet.com/start/945a11ba-f3d1-4130-a164-6b2a4a6fd0f2",
+      "buttonLabel": "Open Project",
+      "href": "https://www.appsheet.com/start/945a11ba-f3d1-4130-a164-6b2a4a6fd0f2",
+      "image": null
+    },
+    {
+      "id": "proj_014-thanks",
+      "kind": "thanks",
+      "title": "Thank You",
+      "subtitle": "Patompong Tech Consultant",
+      "description": "เลือกตั้ง • ผลการ • รายงาน • บริหาร",
+      "image": "../../covers/proj_014-cover.png"
+    }
+  ]
+}

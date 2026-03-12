@@ -38,7 +38,7 @@ export async function getSystemStats() {
     const totalStorageUsed = tempPhotosSize + publicSize;
 
     // GitHub recommended soft limit is 1GB (1024 * 1024 * 1024 bytes)
-    const MAX_STORAGE = 1073741824; 
+    const MAX_STORAGE = 1073741824;
 
     return {
         memory: {
@@ -202,6 +202,113 @@ export async function addAttachment(data: {
 export async function deleteAttachment(id: string) {
     await prisma.attachment.delete({ where: { id } });
     revalidatePath("/admin");
+    return { success: true };
+}
+
+// ==================== Project (Showcase) Actions ====================
+
+export async function getProjects() {
+    return await prisma.project.findMany({
+        orderBy: { projectNumber: "asc" },
+        include: { client: true, category: true },
+    });
+}
+
+export async function getProjectClients() {
+    return await prisma.client.findMany({ orderBy: { clientName: "asc" } });
+}
+
+export async function getProjectCategories() {
+    return await prisma.category.findMany({ orderBy: { name: "asc" } });
+}
+
+export async function createProject(formData: FormData) {
+    const projectName = formData.get("projectName") as string;
+    const slug = formData.get("slug") as string;
+    const clientId = formData.get("clientId") as string;
+    const categoryId = formData.get("categoryId") as string;
+    const type = formData.get("type") as string;
+    const subcategory = formData.get("subcategory") as string;
+    const description = formData.get("description") as string | null;
+    const url = formData.get("url") as string | null;
+    const tags = formData.get("tags") as string | null;
+    const keywords = formData.get("keywords") as string | null;
+    const status = (formData.get("status") as string) || "completed";
+    const startDate = formData.get("startDate") as string | null;
+    const completedDate = formData.get("completedDate") as string | null;
+
+    const maxNum = await prisma.project.aggregate({ _max: { projectNumber: true } });
+    const nextNum = (maxNum._max.projectNumber || 0) + 1;
+    const projectId = `proj_${String(nextNum).padStart(3, "0")}`;
+
+    await prisma.project.create({
+        data: {
+            projectId,
+            projectNumber: nextNum,
+            projectName,
+            slug,
+            clientId,
+            categoryId,
+            type,
+            subcategory,
+            description: description || null,
+            url: url || null,
+            tags: tags || null,
+            keywords: keywords || null,
+            status,
+            startDate: startDate ? new Date(startDate) : null,
+            completedDate: completedDate ? new Date(completedDate) : null,
+        },
+    });
+
+    revalidatePath("/admin");
+    revalidatePath("/projects");
+    return { success: true };
+}
+
+export async function updateProject(id: string, formData: FormData) {
+    const projectName = formData.get("projectName") as string;
+    const slug = formData.get("slug") as string;
+    const clientId = formData.get("clientId") as string;
+    const categoryId = formData.get("categoryId") as string;
+    const type = formData.get("type") as string;
+    const subcategory = formData.get("subcategory") as string;
+    const description = formData.get("description") as string | null;
+    const url = formData.get("url") as string | null;
+    const tags = formData.get("tags") as string | null;
+    const keywords = formData.get("keywords") as string | null;
+    const status = (formData.get("status") as string) || "completed";
+    const startDate = formData.get("startDate") as string | null;
+    const completedDate = formData.get("completedDate") as string | null;
+
+    await prisma.project.update({
+        where: { id },
+        data: {
+            projectName,
+            slug,
+            clientId,
+            categoryId,
+            type,
+            subcategory,
+            description: description || null,
+            url: url || null,
+            tags: tags || null,
+            keywords: keywords || null,
+            status,
+            startDate: startDate ? new Date(startDate) : null,
+            completedDate: completedDate ? new Date(completedDate) : null,
+        },
+    });
+
+    revalidatePath("/admin");
+    revalidatePath("/projects");
+    return { success: true };
+}
+
+export async function deleteProject(id: string) {
+    await prisma.project.delete({ where: { id } });
+    revalidatePath("/admin");
+    revalidatePath("/projects");
     return { success: true };
 }
 

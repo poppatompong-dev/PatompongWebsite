@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Portfolio Shelf | Patompong Tech Consultant</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:#0f172a;color:#f1f5f9;min-height:100vh}
+.header{padding:48px 32px 32px;text-align:center;background:linear-gradient(135deg,#111827 0%,#0f172a 60%,#d97706 100%);border-bottom:1px solid rgba(255,255,255,.08)}
+.header h1{font-size:clamp(28px,4vw,48px);font-weight:800;letter-spacing:-.03em;margin-bottom:8px}
+.header p{color:rgba(255,255,255,.7);font-size:15px;max-width:640px;margin:0 auto}
+.stats{display:flex;justify-content:center;gap:28px;margin-top:24px;flex-wrap:wrap}
+.stat{text-align:center}
+.stat strong{display:block;font-size:28px;color:#fcd34d}
+.stat span{font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:rgba(255,255,255,.6)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px;padding:32px;max-width:1400px;margin:0 auto}
+.card{border-radius:20px;overflow:hidden;background:#1e293b;border:1px solid rgba(255,255,255,.06);transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.card-cover{position:relative;height:200px;overflow:hidden}
+.card-cover img{width:100%;height:100%;object-fit:cover}
+.card-fallback{height:100%;display:flex;align-items:center;justify-content:center}
+.card-icon{font-size:48px;opacity:.6}
+.card-num{position:absolute;top:12px;right:12px;padding:5px 10px;border-radius:999px;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);font-size:11px;letter-spacing:.1em;color:rgba(255,255,255,.8)}
+.card-type{position:absolute;bottom:12px;left:12px;padding:6px 12px;border-radius:999px;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);font-size:12px;color:rgba(255,255,255,.9)}
+.card-body{padding:18px}
+.card-body h3{font-size:17px;font-weight:700;line-height:1.3;margin-bottom:6px;color:#f8fafc}
+.card-client{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:10px}
+.card-desc{font-size:13px;line-height:1.6;color:rgba(255,255,255,.7);margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.card-tags span{padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);font-size:11px;color:rgba(255,255,255,.7)}
+.card-meta{display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.5);padding-top:10px;border-top:1px solid rgba(255,255,255,.06);margin-bottom:12px}
+.card-actions{display:flex;gap:8px}
+.card-actions a{flex:1;text-align:center;padding:8px 12px;border-radius:10px;text-decoration:none;font-size:12px;font-weight:600;border:1px solid var(--accent,#d97706);color:var(--accent,#d97706);transition:all .15s}
+.card-actions a:first-child{background:var(--accent,#d97706);color:#0f172a;border-color:var(--accent,#d97706)}
+.card-actions a:hover{opacity:.85}
+.footer{text-align:center;padding:32px;color:rgba(255,255,255,.4);font-size:12px;border-top:1px solid rgba(255,255,255,.06)}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Portfolio Shelf</h1>
+  <p>Standalone portfolio showcase — Patompong Tech Consultant</p>
+  <div class="stats">
+    <div class="stat"><strong>30</strong><span>Projects</span></div>
+    <div class="stat"><strong>30</strong><span>Covers</span></div>
+    <div class="stat"><strong>13</strong><span>Screenshots</span></div>
+  </div>
+</div>
+<div class="grid">
+
+    <article class="card" style="--accent:#93C5FD">
+      <div class="card-cover" style="background:linear-gradient(135deg, #111827 0%, #2563EB 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_034-cover.png" alt="ระบบจัดการวาระประชุมอัจฉริยะ" loading="lazy"/>
+        <span class="card-num">#01</span>
+        <span class="card-type">▲ React/Vercel</span>
+      </div>
+      <div class="card-body">
+        <h3>ระบบจัดการวาระประชุมอัจฉริยะ</h3>
+        <p class="card-client">เทศบาลเมืองอุทัยธานี</p>
+        <p class="card-desc">ระบบจัดการวาระประชุมอัจฉริยะ สร้าง แก้ไข ติดตามวาระ พร้อมระบบลงมติและสรุปรายงานอัตโนมัติ</p>
+        <div class="card-tags"><span>react</span><span>vercel</span><span>meeting</span><span>agenda</span></div>
+        <div class="card-meta">
+          <span>Web Applications</span>
+          <span>15 มกราคม 2568 - 1 มีนาคม 2568</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://agenda-meeting.vercel.app/" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/agenda-meeting-system" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#93C5FD">
+      <div class="card-cover" style="background:linear-gradient(135deg, #111827 0%, #2563EB 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_035-cover.png" alt="ระบบจัดการผลการดำเนินงานอัจฉริยะ (KPI Dashboard)" loading="lazy"/>
+        <span class="card-num">#02</span>
+        <span class="card-type">▲ React/Vercel</span>
+      </div>
+      <div class="card-body">
+        <h3>ระบบจัดการผลการดำเนินงานอัจฉริยะ (KPI Dashboard)</h3>
+        <p class="card-client">เทศบาลเมืองอุทัยธานี</p>
+        <p class="card-desc">ระบบจัดการและติดตามผลการดำเนินงาน KPI อัจฉริยะ แสดง Dashboard แบบ Real-time พร้อมกราฟวิเคราะห์</p>
+        <div class="card-tags"><span>react</span><span>vercel</span><span>KPI</span><span>dashboard</span></div>
+        <div class="card-meta">
+          <span>Web Applications</span>
+          <span>1 กุมภาพันธ์ 2568 - 10 มีนาคม 2568</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://kpi-dashboard-wheat-nine.vercel.app/" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/kpi-dashboard-system" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#FDBA74">
+      <div class="card-cover" style="background:linear-gradient(135deg, #F97316 0%, #1F2937 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_029-cover.png" alt="Uthai Thani Smart PA | ระบบจัดการเสียงไร้สายอัจฉริยะ" loading="lazy"/>
+        <span class="card-num">#03</span>
+        <span class="card-type">🔥 Firebase</span>
+      </div>
+      <div class="card-body">
+        <h3>Uthai Thani Smart PA | ระบบจัดการเสียงไร้สายอัจฉริยะ</h3>
+        <p class="card-client">เทศบาลเมืองอุทัยธานี</p>
+        <p class="card-desc">ระบบจัดการเสียงไร้สายอัจฉริยะ ควบคุมลำโพงไร้สาย จัดตารางกระจายเสียง แสดงสถานะ Real-time</p>
+        <div class="card-tags"><span>firebase</span><span>smart system</span><span>audio</span><span>wireless</span></div>
+        <div class="card-meta">
+          <span>Web Applications</span>
+          <span>15 มิถุนายน 2565 - 30 สิงหาคม 2565</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://uthai-smart-pa.web.app/" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/uthai-smart-pa-system" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#93C5FD">
+      <div class="card-cover" style="background:linear-gradient(135deg, #111827 0%, #2563EB 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_028-cover.png" alt="ระบบรับสมัครงานออนไลน์" loading="lazy"/>
+        <span class="card-num">#04</span>
+        <span class="card-type">▲ React/Vercel</span>
+      </div>
+      <div class="card-body">
+        <h3>ระบบรับสมัครงานออนไลน์</h3>
+        <p class="card-client">เทศบาลเมืองอุทัยธานี</p>
+        <p class="card-desc">ระบบรับสมัครสรรหาพนักงานออนไลน์ ยื่นใบสมัคร ตรวจสอบคุณสมบัติ จัดอันดับผู้สมัคร</p>
+        <div class="card-tags"><span>react</span><span>vercel</span><span>recruitment</span><span>HR</span></div>
+        <div class="card-meta">
+          <span>Web Applications</span>
+          <span>1 มิถุนายน 2565 - 30 กรกฎาคม 2565</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://test-hirejobs.vercel.app/" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/job-recruitment-system" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#93C5FD">
+      <div class="card-cover" style="background:linear-gradient(135deg, #111827 0%, #2563EB 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_026-cover.png" alt="Salary Simulator — บัญชี 6 ระบบร้อยละ" loading="lazy"/>
+        <span class="card-num">#05</span>
+        <span class="card-type">▲ React/Vercel</span>
+      </div>
+      <div class="card-body">
+        <h3>Salary Simulator — บัญชี 6 ระบบร้อยละ</h3>
+        <p class="card-client">เทศบาลเมืองอุทัยธานี</p>
+        <p class="card-desc">ระบบจำลองการเลื่อนขั้นเงินเดือนบัญชี 6 คำนวณร้อยละ แสดงผลแบบ Interactive</p>
+        <div class="card-tags"><span>react</span><span>vercel</span><span>simulation</span><span>salary</span></div>
+        <div class="card-meta">
+          <span>Web Applications</span>
+          <span>1 พฤษภาคม 2565 - 30 มิถุนายน 2565</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://salary-simulator-khaki.vercel.app/" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/salary-simulator-account-6" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#93C5FD">
+      <div class="card-cover" style="background:linear-gradient(135deg, #111827 0%, #2563EB 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_027-cover.png" alt="ระบบจำลองการเลื่อนขั้นเงินเดือน (บัญชี ๕)" loading="lazy"/>
+        <span class="card-num">#06</span>
+        <span class="card-type">▲ React/Vercel</span>
+      </div>
+      <div class="card-body">
+        <h3>ระบบจำลองการเลื่อนขั้นเงินเดือน (บัญชี ๕)</h3>
+        <p class="card-client">เทศบาลเมืองอุทัยธานี</p>
+        <p class="card-desc">ระบบจำลองการเลื่อนขั้นเงินเดือนบัญชี 5 คำนวณอัตโนมัติ</p>
+        <div class="card-tags"><span>react</span><span>vercel</span><span>simulation</span><span>salary</span></div>
+        <div class="card-meta">
+          <span>Web Applications</span>
+          <span>15 พฤษภาคม 2565 - 15 กรกฎาคม 2565</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://salary-simulator5.vercel.app/" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/salary-simulator-account-5" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#67E8F9">
+      <div class="card-cover" style="background:linear-gradient(135deg, #06B6D4 0%, #0F172A 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_022-cover.png" alt="ระบบจองห้องประชุม" loading="lazy"/>
+        <span class="card-num">#07</span>
+        <span class="card-type">⚛️ React/Netlify</span>
+      </div>
+      <div class="card-body">
+        <h3>ระบบจองห้องประชุม</h3>
+        <p class="card-client">เทศบาลเมืองอุทัยธานี</p>
+        <p class="card-desc">ระบบจองห้องประชุมออนไลน์ ปฏิทินแสดงการจอง อนุมัติผ่านระบบ</p>
+        <div class="card-tags"><span>react</span><span>netlify</span><span>booking</span><span>room</span></div>
+        <div class="card-meta">
+          <span>Web Applications</span>
+          <span>15 มีนาคม 2565 - 15 พฤษภาคม 2565</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://uthai-room-booking-v20.netlify.app/" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/meeting-room-booking-system" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#67E8F9">
+      <div class="card-cover" style="background:linear-gradient(135deg, #06B6D4 0%, #0F172A 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_023-cover.png" alt="ปฏิทินการใช้ห้องประชุม (Public View)" loading="lazy"/>
+        <span class="card-num">#08</span>
+        <span class="card-type">⚛️ React/Netlify</span>
+      </div>
+      <div class="card-body">
+        <h3>ปฏิทินการใช้ห้องประชุม (Public View)</h3>
+        <p class="card-client">เทศบาลเมืองอุทัยธานี</p>
+        <p class="card-desc">ปฏิทินการใช้ห้องประชุมแบบ Public View สำหรับจอแสดงผลสาธารณะ</p>
+        <div class="card-tags"><span>react</span><span>netlify</span><span>calendar</span><span>public</span></div>
+        <div class="card-meta">
+          <span>Web Applications</span>
+          <span>15 มีนาคม 2565 - 15 พฤษภาคม 2565</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://uthai-room-booking-v13.netlify.app/public-view.html?appId=default-app-id" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/meeting-room-calendar-public" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#67E8F9">
+      <div class="card-cover" style="background:linear-gradient(135deg, #06B6D4 0%, #0F172A 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_030-cover.png" alt="Uthai STGs" loading="lazy"/>
+        <span class="card-num">#09</span>
+        <span class="card-type">⚛️ React/Netlify</span>
+      </div>
+      <div class="card-body">
+        <h3>Uthai STGs</h3>
+        <p class="card-client">เทศบาลเมืองอุทัยธานี</p>
+        <p class="card-desc">ระบบ STGs สำหรับบริหารจัดการเป้าหมายการพัฒนาที่ยั่งยืน</p>
+        <div class="card-tags"><span>react</span><span>netlify</span><span>government</span><span>STGs</span></div>
+        <div class="card-meta">
+          <span>Web Applications</span>
+          <span>1 กรกฎาคม 2565 - 15 กันยายน 2565</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://uthaistgs2025.netlify.app/" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/uthai-stgs-system" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#FCD34D">
+      <div class="card-cover" style="background:linear-gradient(135deg, #F59E0B 0%, #1F2937 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_024-cover.png" alt="ระบบสลิปเงินเดือนออนไลน์" loading="lazy"/>
+        <span class="card-num">#10</span>
+        <span class="card-type">⚙️ Google Apps Script</span>
+      </div>
+      <div class="card-body">
+        <h3>ระบบสลิปเงินเดือนออนไลน์</h3>
+        <p class="card-client">เทศบาลเมืองอุทัยธานี</p>
+        <p class="card-desc">ระบบออกเอกสารสลิปเงินเดือนอัตโนมัติ ดึงข้อมูลจาก Sheets สร้าง PDF ส่ง LINE</p>
+        <div class="card-tags"><span>google apps script</span><span>automation</span><span>HR</span><span>salary</span></div>
+        <div class="card-meta">
+          <span>Automation &amp; Integration</span>
+          <span>1 เมษายน 2565 - 30 พฤษภาคม 2565</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://script.google.com/macros/s/AKfycby32Id5rQIv2Cv0XjM2gysjRhUc4TIJqDLWOKlAS9UNpBtSKdg71QUuF3lR1kgH81sl/exec" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/payslip-system" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#FCD34D">
+      <div class="card-cover" style="background:linear-gradient(135deg, #F59E0B 0%, #1F2937 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_025-cover.png" alt="ปฎิทินดำเนินงาน/นับวันราชการ" loading="lazy"/>
+        <span class="card-num">#11</span>
+        <span class="card-type">⚙️ Google Apps Script</span>
+      </div>
+      <div class="card-body">
+        <h3>ปฎิทินดำเนินงาน/นับวันราชการ</h3>
+        <p class="card-client">เทศบาลเมืองอุทัยธานี</p>
+        <p class="card-desc">ปฏิทินดำเนินงานและนับวันราชการอัตโนมัติ คำนวณวันทำการคงเหลือ</p>
+        <div class="card-tags"><span>google apps script</span><span>automation</span><span>calendar</span><span>scheduling</span></div>
+        <div class="card-meta">
+          <span>Automation &amp; Integration</span>
+          <span>15 เมษายน 2565 - 15 มิถุนายน 2565</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://script.google.com/macros/s/AKfycbwc_rWWiFMiDdkoml_Oo1kdUMbNMxEtmBsSoY36UI1qMCohBruqiYowjIclOPLOOSsh/exec" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/calendar-operation-counting-system" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#FCD34D">
+      <div class="card-cover" style="background:linear-gradient(135deg, #F59E0B 0%, #1F2937 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_031-cover.png" alt="ระบบฐานข้อมูลบุคลากร" loading="lazy"/>
+        <span class="card-num">#12</span>
+        <span class="card-type">⚙️ Google Apps Script</span>
+      </div>
+      <div class="card-body">
+        <h3>ระบบฐานข้อมูลบุคลากร</h3>
+        <p class="card-client">เทศบาลเมืองอุทัยธานี</p>
+        <p class="card-desc">ฐานข้อมูลบุคลากร ค้นหา กรอง แสดงข้อมูลพนักงานทั้งหมด</p>
+        <div class="card-tags"><span>google apps script</span><span>database</span><span>HR</span><span>personnel</span></div>
+        <div class="card-meta">
+          <span>Automation &amp; Integration</span>
+          <span>15 กรกฎาคม 2565 - 30 กันยายน 2565</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://script.google.com/macros/s/AKfycbzniowwQ5kKpGV_rv29VWYYV3SOVZ9iIO682jq5n5dG-UhDhWoFV3sgJmdp7_lvUkUI/exec" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/personnel-database-system" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#FCD34D">
+      <div class="card-cover" style="background:linear-gradient(135deg, #F59E0B 0%, #1F2937 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_032-cover.png" alt="ระบบบริหารจัดการจุดติดตั้งเสียงตามสาย" loading="lazy"/>
+        <span class="card-num">#13</span>
+        <span class="card-type">⚙️ Google Apps Script</span>
+      </div>
+      <div class="card-body">
+        <h3>ระบบบริหารจัดการจุดติดตั้งเสียงตามสาย</h3>
+        <p class="card-client">เทศบาลนคร</p>
+        <p class="card-desc">บริหารจัดการจุดติดตั้งลำโพง บันทึกพิกัด สถานะ ประวัติซ่อม</p>
+        <div class="card-tags"><span>google apps script</span><span>management</span><span>PA system</span><span>infrastructure</span></div>
+        <div class="card-meta">
+          <span>Automation &amp; Integration</span>
+          <span>1 สิงหาคม 2565 - 15 ตุลาคม 2565</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://script.google.com/macros/s/AKfycbwrhQ9i1uvJnrzwQRf7MpCQmAiUCoibR774rJwXXbcr9Uc8T86muUrGHz38cFjzmkE/exec" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/pa-system-management" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#FCD34D">
+      <div class="card-cover" style="background:linear-gradient(135deg, #F59E0B 0%, #1F2937 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_033-cover.png" alt="ระบบประชาสัมพันธ์งานศพ" loading="lazy"/>
+        <span class="card-num">#14</span>
+        <span class="card-type">⚙️ Google Apps Script</span>
+      </div>
+      <div class="card-body">
+        <h3>ระบบประชาสัมพันธ์งานศพ</h3>
+        <p class="card-client">เทศบาลเมืองอุทัยธานี</p>
+        <p class="card-desc">ระบบประชาสัมพันธ์งานศพผ่าน LINE OA แจ้งเตือนอัตโนมัติ</p>
+        <div class="card-tags"><span>google apps script</span><span>PR</span><span>funeral</span><span>LINE</span></div>
+        <div class="card-meta">
+          <span>Automation &amp; Integration</span>
+          <span>15 สิงหาคม 2565 - 30 ตุลาคม 2565</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://script.google.com/macros/s/AKfycbws3fgt01mjLj5tdeMyLq2NL4YjCgbE6wA6iSp_4yd_D2L0zMiLSg0n3sYdCOyReKFk/exec" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/funeral-pr-system" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#F9A8D4">
+      <div class="card-cover" style="background:linear-gradient(135deg, #EC4899 0%, #1F2937 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_015-cover.png" alt="Dashboard ศูนย์ปฏิบัติการความปลอดภัยทางถนน" loading="lazy"/>
+        <span class="card-num">#15</span>
+        <span class="card-type">📊 Google Looker Studio</span>
+      </div>
+      <div class="card-body">
+        <h3>Dashboard ศูนย์ปฏิบัติการความปลอดภัยทางถนน</h3>
+        <p class="card-client">เทศบาลตำบลบ้านคลอง</p>
+        <p class="card-desc">Dashboard แสดงข้อมูลศูนย์ปฏิบัติการความปลอดภัยทางถนน สถิติอุบัติเหตุ จุดเสี่ยง</p>
+        <div class="card-tags"><span>dashboard</span><span>analytics</span><span>safety</span><span>monitoring</span></div>
+        <div class="card-meta">
+          <span>Analytics &amp; Reporting</span>
+          <span>15 ตุลาคม 2564 - 15 ธันวาคม 2564</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://lookerstudio.google.com/reporting/08f5945c-8535-47e2-8991-74d962a2db6b" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/road-safety-dashboard" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#F9A8D4">
+      <div class="card-cover" style="background:linear-gradient(135deg, #EC4899 0%, #1F2937 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_016-cover.png" alt="Dashboard สมาชิกไลน์" loading="lazy"/>
+        <span class="card-num">#16</span>
+        <span class="card-type">📊 Google Looker Studio</span>
+      </div>
+      <div class="card-body">
+        <h3>Dashboard สมาชิกไลน์</h3>
+        <p class="card-client">เทศบาลเมืองอุทัยธานี</p>
+        <p class="card-desc">รายงานวิเคราะห์สมาชิก LINE OA แนวโน้ม จำนวน การมีส่วนร่วม</p>
+        <div class="card-tags"><span>dashboard</span><span>analytics</span><span>LINE</span><span>members</span></div>
+        <div class="card-meta">
+          <span>Analytics &amp; Reporting</span>
+          <span>1 พฤศจิกายน 2564 - 30 ธันวาคม 2564</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://lookerstudio.google.com/reporting/340173ab-e2ce-4fc7-8534-fbfff4cd0fb1" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/line-members-dashboard" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#F9A8D4">
+      <div class="card-cover" style="background:linear-gradient(135deg, #EC4899 0%, #1F2937 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_017-cover.png" alt="Dashboard รายงานพัสดุคงเหลือ" loading="lazy"/>
+        <span class="card-num">#17</span>
+        <span class="card-type">📊 Google Looker Studio</span>
+      </div>
+      <div class="card-body">
+        <h3>Dashboard รายงานพัสดุคงเหลือ</h3>
+        <p class="card-client">เทศบาลตำบลบ้านคลอง</p>
+        <p class="card-desc">รายงานการตรวจสอบพัสดุคงเหลือประจำปี แสดงกราฟแยกหมวด</p>
+        <div class="card-tags"><span>dashboard</span><span>analytics</span><span>asset</span><span>verification</span></div>
+        <div class="card-meta">
+          <span>Analytics &amp; Reporting</span>
+          <span>1 มกราคม 2565 - 28 กุมภาพันธ์ 2565</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://lookerstudio.google.com/reporting/9bf4822f-0d11-4891-9a86-feff0f333c96" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/asset-verification-dashboard" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#F9A8D4">
+      <div class="card-cover" style="background:linear-gradient(135deg, #EC4899 0%, #1F2937 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_018-cover.png" alt="Dashboard พัสดุกองยุทธศาสตร์และงบประมาณ" loading="lazy"/>
+        <span class="card-num">#18</span>
+        <span class="card-type">📊 Google Looker Studio</span>
+      </div>
+      <div class="card-body">
+        <h3>Dashboard พัสดุกองยุทธศาสตร์และงบประมาณ</h3>
+        <p class="card-client">เทศบาลนคร</p>
+        <p class="card-desc">รายงานการตรวจสอบพัสดุกองยุทธศาสตร์และงบประมาณ</p>
+        <div class="card-tags"><span>dashboard</span><span>analytics</span><span>asset</span><span>verification</span></div>
+        <div class="card-meta">
+          <span>Analytics &amp; Reporting</span>
+          <span>15 มกราคม 2565 - 15 มีนาคม 2565</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://lookerstudio.google.com/reporting/cec170fa-5117-456e-9d06-9187633d9a08" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/asset-verification-dashboard-strategy" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#F9A8D4">
+      <div class="card-cover" style="background:linear-gradient(135deg, #EC4899 0%, #1F2937 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_019-cover.png" alt="Dashboard ยอดค้างจ่ายค่าน้ำประปา" loading="lazy"/>
+        <span class="card-num">#19</span>
+        <span class="card-type">📊 Google Looker Studio</span>
+      </div>
+      <div class="card-body">
+        <h3>Dashboard ยอดค้างจ่ายค่าน้ำประปา</h3>
+        <p class="card-client">เทศบาลตำบลบ้านคลอง</p>
+        <p class="card-desc">รายงานยอดค้างจ่ายค่าน้ำประปา วิเคราะห์ตามพื้นที่ ช่วงเวลา</p>
+        <div class="card-tags"><span>dashboard</span><span>analytics</span><span>finance</span><span>water</span></div>
+        <div class="card-meta">
+          <span>Analytics &amp; Reporting</span>
+          <span>1 กุมภาพันธ์ 2565 - 31 มีนาคม 2565</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://lookerstudio.google.com/reporting/4d366405-072c-4b8d-890c-3f3222017151" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/water-bill-outstanding-dashboard" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#F9A8D4">
+      <div class="card-cover" style="background:linear-gradient(135deg, #EC4899 0%, #1F2937 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_020-cover.png" alt="Dashboard พัสดุงานเทคโนโลยี" loading="lazy"/>
+        <span class="card-num">#20</span>
+        <span class="card-type">📊 Google Looker Studio</span>
+      </div>
+      <div class="card-body">
+        <h3>Dashboard พัสดุงานเทคโนโลยี</h3>
+        <p class="card-client">เทศบาลนคร</p>
+        <p class="card-desc">รายงานพัสดุงานเทคโนโลยีสารสนเทศ ติดตามสถานะครุภัณฑ์</p>
+        <div class="card-tags"><span>dashboard</span><span>analytics</span><span>asset</span><span>IT</span></div>
+        <div class="card-meta">
+          <span>Analytics &amp; Reporting</span>
+          <span>15 กุมภาพันธ์ 2565 - 15 เมษายน 2565</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://lookerstudio.google.com/reporting/e0acdc0c-c2e0-45d8-bf8a-e8c904c0ba55" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/asset-verification-it-dashboard" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#F9A8D4">
+      <div class="card-cover" style="background:linear-gradient(135deg, #EC4899 0%, #1F2937 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_021-cover.png" alt="Dashboard รายงานครุภัณฑ์ประจำปี" loading="lazy"/>
+        <span class="card-num">#21</span>
+        <span class="card-type">📊 Google Looker Studio</span>
+      </div>
+      <div class="card-body">
+        <h3>Dashboard รายงานครุภัณฑ์ประจำปี</h3>
+        <p class="card-client">เทศบาลเมืองอุทัยธานี</p>
+        <p class="card-desc">รายงานครุภัณฑ์ประจำปี แยกตามหมวดหมู่ สถานะการใช้งาน</p>
+        <div class="card-tags"><span>dashboard</span><span>analytics</span><span>asset</span><span>annual</span></div>
+        <div class="card-meta">
+          <span>Analytics &amp; Reporting</span>
+          <span>1 มีนาคม 2565 - 30 เมษายน 2565</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://lookerstudio.google.com/reporting/34cab9c7-148d-4cf6-b3d1-fb73f9d99e61" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/annual-asset-dashboard" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#C4B5FD">
+      <div class="card-cover" style="background:linear-gradient(135deg, #8B5CF6 0%, #1F2937 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_007-cover.png" alt="ระบบคลังข้อมูลครัวเรือน" loading="lazy"/>
+        <span class="card-num">#22</span>
+        <span class="card-type">🧩 AppSheet</span>
+      </div>
+      <div class="card-body">
+        <h3>ระบบคลังข้อมูลครัวเรือน</h3>
+        <p class="card-client">เทศบาลตำบลบ้านคลอง</p>
+        <p class="card-desc">ระบบเก็บข้อมูลครัวเรือนในเขตเทศบาล ค้นหา กรอง ส่งออกข้อมูล</p>
+        <div class="card-tags"><span>appsheet</span><span>database</span><span>household</span><span>data management</span></div>
+        <div class="card-meta">
+          <span>Database &amp; Data Management</span>
+          <span>1 กรกฎาคม 2564 - 30 สิงหาคม 2564</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://www.appsheet.com/start/aa6e74b7-c014-4ae4-ac4b-799174b2620a" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/household-database-system" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#C4B5FD">
+      <div class="card-cover" style="background:linear-gradient(135deg, #8B5CF6 0%, #1F2937 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_008-cover.png" alt="ระบบฐานข้อมูลพนักงานสำนักปลัด" loading="lazy"/>
+        <span class="card-num">#23</span>
+        <span class="card-type">🧩 AppSheet</span>
+      </div>
+      <div class="card-body">
+        <h3>ระบบฐานข้อมูลพนักงานสำนักปลัด</h3>
+        <p class="card-client">เทศบาลตำบลบ้านคลอง</p>
+        <p class="card-desc">จัดการข้อมูลพนักงานสำนักปลัด ประวัติ ตำแหน่ง สังกัด</p>
+        <div class="card-tags"><span>appsheet</span><span>database</span><span>HR</span><span>employee</span></div>
+        <div class="card-meta">
+          <span>Database &amp; Data Management</span>
+          <span>1 กรกฎาคม 2564 - 30 สิงหาคม 2564</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://www.appsheet.com/start/c13b3ce6-62c9-47cd-8285-8f358ace410b" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/employee-database-system" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#C4B5FD">
+      <div class="card-cover" style="background:linear-gradient(135deg, #8B5CF6 0%, #1F2937 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_009-cover.png" alt="ระบบเครือข่ายคุณภาพชีวิต" loading="lazy"/>
+        <span class="card-num">#24</span>
+        <span class="card-type">🧩 AppSheet</span>
+      </div>
+      <div class="card-body">
+        <h3>ระบบเครือข่ายคุณภาพชีวิต</h3>
+        <p class="card-client">เทศบาลตำบลบ้านคลอง</p>
+        <p class="card-desc">ติดตามและจัดการโครงการคุณภาพชีวิต บันทึกผลการดำเนินงาน</p>
+        <div class="card-tags"><span>appsheet</span><span>database</span><span>quality of life</span><span>program management</span></div>
+        <div class="card-meta">
+          <span>Database &amp; Data Management</span>
+          <span>15 กรกฎาคม 2564 - 15 กันยายน 2564</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://www.appsheet.com/start/f2ea2e88-4db7-4ec4-a960-79485d9039e9" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/quality-of-life-network-system" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#C4B5FD">
+      <div class="card-cover" style="background:linear-gradient(135deg, #8B5CF6 0%, #1F2937 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_010-cover.png" alt="ระบบคนในบ้าน ทร.14" loading="lazy"/>
+        <span class="card-num">#25</span>
+        <span class="card-type">🧩 AppSheet</span>
+      </div>
+      <div class="card-body">
+        <h3>ระบบคนในบ้าน ทร.14</h3>
+        <p class="card-client">เทศบาลตำบลบ้านคลอง</p>
+        <p class="card-desc">ฟอร์ม ทร.14 บันทึกข้อมูลคนในบ้านแบบดิจิทัล</p>
+        <div class="card-tags"><span>appsheet</span><span>form</span><span>household</span><span>TR14</span></div>
+        <div class="card-meta">
+          <span>Database &amp; Data Management</span>
+          <span>1 สิงหาคม 2564 - 30 กันยายน 2564</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://www.appsheet.com/start/11a73d45-4743-42fa-997f-fe31c2a68487" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/household-form-tr14-system" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#C4B5FD">
+      <div class="card-cover" style="background:linear-gradient(135deg, #8B5CF6 0%, #1F2937 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_011-cover.png" alt="ระบบเบิกจ่ายวัสดุอุปกรณ์สำนักปลัด" loading="lazy"/>
+        <span class="card-num">#26</span>
+        <span class="card-type">🧩 AppSheet</span>
+      </div>
+      <div class="card-body">
+        <h3>ระบบเบิกจ่ายวัสดุอุปกรณ์สำนักปลัด</h3>
+        <p class="card-client">เทศบาลตำบลบ้านคลอง</p>
+        <p class="card-desc">จัดการการเบิกจ่ายวัสดุอุปกรณ์ บันทึกรายการ ยอดคงเหลือ</p>
+        <div class="card-tags"><span>appsheet</span><span>inventory</span><span>material</span><span>requisition</span></div>
+        <div class="card-meta">
+          <span>Database &amp; Data Management</span>
+          <span>15 สิงหาคม 2564 - 15 ตุลาคม 2564</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://www.appsheet.com/start/581c5055-8e02-4501-92ac-4747b0811b7c" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/material-requisition-system" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#C4B5FD">
+      <div class="card-cover" style="background:linear-gradient(135deg, #8B5CF6 0%, #1F2937 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_012-cover.png" alt="ระบบแจ้งซ่อมรถสำนักปลัด" loading="lazy"/>
+        <span class="card-num">#27</span>
+        <span class="card-type">🧩 AppSheet</span>
+      </div>
+      <div class="card-body">
+        <h3>ระบบแจ้งซ่อมรถสำนักปลัด</h3>
+        <p class="card-client">เทศบาลตำบลบ้านคลอง</p>
+        <p class="card-desc">ระบบแจ้งซ่อมและบำรุงรักษารถยนต์ ติดตามสถานะการซ่อม</p>
+        <div class="card-tags"><span>appsheet</span><span>vehicle</span><span>maintenance</span><span>asset</span></div>
+        <div class="card-meta">
+          <span>Database &amp; Data Management</span>
+          <span>1 กันยายน 2564 - 30 ตุลาคม 2564</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://www.appsheet.com/start/52c9d815-b748-4d4c-817f-4bd31f2ab40a" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/vehicle-maintenance-system" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#C4B5FD">
+      <div class="card-cover" style="background:linear-gradient(135deg, #8B5CF6 0%, #1F2937 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_013-cover.png" alt="ระบบจัดการครุภัณฑ์กองยุทธศาสตร์" loading="lazy"/>
+        <span class="card-num">#28</span>
+        <span class="card-type">🧩 AppSheet</span>
+      </div>
+      <div class="card-body">
+        <h3>ระบบจัดการครุภัณฑ์กองยุทธศาสตร์</h3>
+        <p class="card-client">เทศบาลเมืองอุทัยธานี</p>
+        <p class="card-desc">จัดการครุภัณฑ์และประมาณการ บันทึกสินทรัพย์ สถานะ</p>
+        <div class="card-tags"><span>appsheet</span><span>asset</span><span>budget</span><span>management</span></div>
+        <div class="card-meta">
+          <span>Database &amp; Data Management</span>
+          <span>15 กันยายน 2564 - 15 พฤศจิกายน 2564</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://www.appsheet.com/start/ffdb65a4-f106-4aae-8fbf-ca68d13bcc86" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/asset-management-system" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#C4B5FD">
+      <div class="card-cover" style="background:linear-gradient(135deg, #8B5CF6 0%, #1F2937 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_014-cover.png" alt="ระบบรายงานผลการเลือกตั้งผู้บริหารท้องถิ่น" loading="lazy"/>
+        <span class="card-num">#29</span>
+        <span class="card-type">🧩 AppSheet</span>
+      </div>
+      <div class="card-body">
+        <h3>ระบบรายงานผลการเลือกตั้งผู้บริหารท้องถิ่น</h3>
+        <p class="card-client">เทศบาลเมืองอุทัยธานี</p>
+        <p class="card-desc">ระบบรายงานผลการเลือกตั้งผู้บริหาร นับคะแนน แสดงผล Real-time</p>
+        <div class="card-tags"><span>appsheet</span><span>election</span><span>reporting</span><span>government</span></div>
+        <div class="card-meta">
+          <span>Database &amp; Data Management</span>
+          <span>1 ตุลาคม 2564 - 30 พฤศจิกายน 2564</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://www.appsheet.com/start/945a11ba-f3d1-4130-a164-6b2a4a6fd0f2" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/election-result-reporting-system" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" style="--accent:#60A5FA">
+      <div class="card-cover" style="background:linear-gradient(135deg, #2563EB 0%, #0F172A 100%)">
+        <img src="file:///D:/Web%20Application/PatompongWebsite/public/portfolio-showcase/covers/proj_gis-cover.png" alt="ระบบแผนที่โครงสร้างพื้นฐาน GIS" loading="lazy"/>
+        <span class="card-num">#30</span>
+        <span class="card-type">🗺️ Google Earth Map</span>
+      </div>
+      <div class="card-body">
+        <h3>ระบบแผนที่โครงสร้างพื้นฐาน GIS</h3>
+        <p class="card-client">เทศบาลตำบลบ้านคลอง</p>
+        <p class="card-desc">ระบบแผนที่ GIS รวม 5 ชั้นข้อมูล: จุดติดตั้งกล้อง CCTV, จุดลำโพงเสียงตามสาย, ถังเคมีดับเพลิง, กระจกโค้งความปลอดภัย, ท่อระบายน้ำ — แสดงผลบน Google Earth</p>
+        <div class="card-tags"><span>mapping</span><span>GIS</span><span>CCTV</span><span>PA system</span></div>
+        <div class="card-meta">
+          <span>Mapping &amp; Location</span>
+          <span>1 พฤษภาคม 2564 - 15 กรกฎาคม 2564</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://earth.google.com/earth/d/13NwgIrbGa1yzqcvzkYrsw_Tfl1evZECs?usp=sharing" target="_blank" rel="noopener">Open Live</a>
+          <a href="http://127.0.0.1:3000/projects/gis-infrastructure-layers" target="_blank" rel="noopener">Details</a>
+        </div>
+      </div>
+    </article>
+</div>
+<div class="footer">
+  Generated 12/3/2569 11:12:20 &bull; Patompong Tech Consultant
+</div>
+</body>
+</html>
