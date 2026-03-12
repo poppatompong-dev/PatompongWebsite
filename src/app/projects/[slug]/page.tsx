@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, Building2, CalendarDays, ExternalLink, FolderKanban, ImageIcon, Layers3, MonitorPlay, Tag } from "lucide-react";
+import { ArrowLeft, ArrowRight, Building2, CalendarDays, ExternalLink, FolderKanban, Layers3, MonitorPlay, Tag } from "lucide-react";
 import SlideshowViewer from "@/components/SlideshowViewer";
 import { getShowcaseProjectBySlug, getShowcaseScreenshotEntries } from "@/lib/portfolio-showcase";
 import { prisma } from "@/lib/prisma";
@@ -167,204 +167,120 @@ export default async function ProjectDetailPage({ params }: { params: Params }) 
           </div>
         </section>
 
-        <section className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[1.45fr_0.9fr] lg:px-8 lg:py-16">
-          <div className="space-y-8">
-            {showcase?.slides?.length ? (
-              <SlideshowViewer
-                liveUrl={project.url}
-                projectName={project.projectName}
-                slideshowUrl={showcase.assets.slideshow}
-                slides={showcase.slides}
-                theme={showcase.theme}
-              />
-            ) : null}
-
-            <div className="rounded-[28px] border border-ink-800 bg-ink-800/60 p-6 lg:p-8">
-              <h2 className="font-heading text-2xl font-bold text-cream-50 lg:text-3xl">ภาพรวมโครงการ</h2>
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl border border-ink-700 bg-ink-900/50 p-4">
-                  <div className="flex items-center gap-2 text-gold-400"><Building2 className="h-4 w-4" /><span className="font-code text-[11px] uppercase tracking-[0.18em]">หน่วยงาน</span></div>
-                  <p className="mt-3 text-lg text-cream-100">{project.client.clientName}</p>
-                </div>
-                <div className="rounded-2xl border border-ink-700 bg-ink-900/50 p-4">
-                  <div className="flex items-center gap-2 text-gold-400"><FolderKanban className="h-4 w-4" /><span className="font-code text-[11px] uppercase tracking-[0.18em]">ประเภทระบบ</span></div>
-                  <p className="mt-3 text-lg text-cream-100">{project.type}</p>
-                </div>
-                <div className="rounded-2xl border border-ink-700 bg-ink-900/50 p-4">
-                  <div className="flex items-center gap-2 text-gold-400"><Layers3 className="h-4 w-4" /><span className="font-code text-[11px] uppercase tracking-[0.18em]">หมวดงาน</span></div>
-                  <p className="mt-3 text-lg text-cream-100">{project.category.name}</p>
-                  <p className="mt-1 text-sm text-ink-300">{project.subcategory}</p>
-                </div>
-                <div className="rounded-2xl border border-ink-700 bg-ink-900/50 p-4">
-                  <div className="flex items-center gap-2 text-gold-400"><CalendarDays className="h-4 w-4" /><span className="font-code text-[11px] uppercase tracking-[0.18em]">ช่วงเวลาดำเนินการ</span></div>
-                  <p className="mt-3 text-lg text-cream-100">{formatDate(project.startDate)}</p>
-                  <p className="mt-1 text-sm text-ink-300">เสร็จสิ้น: {formatDate(project.completedDate)}</p>
-                </div>
-              </div>
+        <section className="mx-auto max-w-5xl space-y-10 px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+          {/* ── Project Info Cards ── */}
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="rounded-2xl border border-ink-700 bg-ink-800/60 p-5">
+              <div className="flex items-center gap-2 text-gold-400"><Building2 className="h-4 w-4" /><span className="font-code text-[11px] uppercase tracking-[0.18em]">หน่วยงาน</span></div>
+              <p className="mt-3 text-base font-semibold text-cream-100">{project.client.clientName}</p>
             </div>
-
-            <div className="rounded-[28px] border border-ink-800 bg-ink-800/60 p-6 lg:p-8">
-              <div className="flex items-end justify-between gap-4">
-                <div>
-                  <span className="font-code text-xs uppercase tracking-[0.15em] text-gold-400">Screenshot Gallery</span>
-                  <h2 className="mt-2 font-heading text-2xl font-bold text-cream-50">ภาพหน้าจอของโครงการ</h2>
-                </div>
-              </div>
-
-              {screenshotEntries.length > 0 ? (
-                <div className="mt-6 grid gap-4 lg:grid-cols-2">
-                  {screenshotEntries.map((item) => (
-                    <a
-                      key={item.key}
-                      href={item.src}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="group overflow-hidden rounded-[24px] border border-ink-700 bg-ink-900/50 transition-colors hover:border-gold-500/35"
-                    >
-                      <div className="aspect-[16/10] overflow-hidden bg-black/20">
-                        <div className="relative h-full w-full">
-                          <Image src={item.src} alt={`${project.projectName} ${item.label}`} fill unoptimized sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover transition duration-500 group-hover:scale-[1.03]" />
-                        </div>
-                      </div>
-                      <div className="flex items-center justify-between gap-3 px-4 py-3">
-                        <span className="text-sm font-semibold text-cream-100">{item.label}</span>
-                        <ExternalLink className="h-4 w-4 text-gold-400" />
-                      </div>
-                    </a>
-                  ))}
-                </div>
-              ) : (
-                <div className="mt-6 rounded-2xl border border-dashed border-ink-700 bg-ink-900/50 p-5 text-sm leading-7 text-ink-300">
-                  {showcase?.accessMode === "login_required" || showcase?.captureStatus === "fallback"
-                    ? "โครงการนี้ต้องเข้าสู่ระบบก่อน จึงยังไม่มี screenshot แบบสาธารณะในแกลเลอรี"
-                    : "ยังไม่มี screenshot ถูกสร้างสำหรับโครงการนี้"}
-                </div>
-              )}
+            <div className="rounded-2xl border border-ink-700 bg-ink-800/60 p-5">
+              <div className="flex items-center gap-2 text-gold-400"><FolderKanban className="h-4 w-4" /><span className="font-code text-[11px] uppercase tracking-[0.18em]">ประเภทระบบ</span></div>
+              <p className="mt-3 text-base font-semibold text-cream-100">{project.type}</p>
             </div>
-
-            {project.url && (
-              <div className="rounded-[28px] border border-gold-500/20 bg-gradient-to-r from-gold-500/10 to-transparent p-6 lg:p-8">
-                <h2 className="font-heading text-2xl font-bold text-cream-50">ลิงก์ระบบ</h2>
-                <p className="mt-3 text-cream-200/75 leading-relaxed">เปิดดูระบบหรือผลงานจริงจากลิงก์ด้านล่าง</p>
-                <a href={project.url} target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-2 rounded-full bg-gold-500 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-gold-400">
-                  เปิดลิงก์โครงการ
-                  <ExternalLink className="h-4 w-4" />
-                </a>
-                <p className="mt-4 break-all font-code text-xs text-gold-300/80">{project.url}</p>
-              </div>
-            )}
-
-            {relatedProjects.length > 0 && (
-              <div>
-                <div className="mb-5 flex items-end justify-between gap-4">
-                  <div>
-                    <span className="font-code text-xs text-gold-400 tracking-[0.15em] uppercase">Related Projects</span>
-                    <h2 className="mt-2 font-heading text-2xl font-bold text-cream-50">โครงการที่เกี่ยวข้อง</h2>
-                  </div>
-                  <Link href="/projects" className="text-sm font-semibold text-gold-400 transition-colors hover:text-gold-300">ดูทั้งหมด</Link>
-                </div>
-                <div className="grid gap-4 md:grid-cols-3">
-                  {relatedProjects.map((item) => (
-                    <Link key={item.id} href={`/projects/${item.slug}`} className="rounded-[24px] border border-ink-800 bg-ink-800/60 p-5 transition-colors hover:border-gold-500/40 hover:bg-ink-800">
-                      <p className="font-code text-[11px] uppercase tracking-[0.18em] text-gold-500">#{String(item.projectNumber).padStart(2, "0")}</p>
-                      <h3 className="mt-3 font-heading text-xl font-bold text-cream-50 leading-snug">{item.projectName}</h3>
-                      <p className="mt-3 line-clamp-3 text-sm text-ink-300">{item.description || "ไม่มีคำอธิบายเพิ่มเติม"}</p>
-                      <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-gold-400">
-                        อ่านต่อ
-                        <ArrowRight className="h-4 w-4" />
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
+            <div className="rounded-2xl border border-ink-700 bg-ink-800/60 p-5">
+              <div className="flex items-center gap-2 text-gold-400"><Layers3 className="h-4 w-4" /><span className="font-code text-[11px] uppercase tracking-[0.18em]">หมวดงาน</span></div>
+              <p className="mt-3 text-base font-semibold text-cream-100">{project.category.name}</p>
+              <p className="mt-1 text-xs text-ink-400">{project.subcategory}</p>
+            </div>
+            <div className="rounded-2xl border border-ink-700 bg-ink-800/60 p-5">
+              <div className="flex items-center gap-2 text-gold-400"><CalendarDays className="h-4 w-4" /><span className="font-code text-[11px] uppercase tracking-[0.18em]">ระยะเวลา</span></div>
+              <p className="mt-3 text-base font-semibold text-cream-100">{formatDate(project.startDate)}</p>
+              {project.completedDate && <p className="mt-1 text-xs text-ink-400">เสร็จ: {formatDate(project.completedDate)}</p>}
+            </div>
           </div>
 
-          <aside className="space-y-6">
-            {tags.length > 0 && (
-              <div className="rounded-[24px] border border-ink-800 bg-ink-800/60 p-6">
-                <h2 className="font-heading text-xl font-bold text-cream-50">Tags</h2>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {tags.map((tag) => (
-                    <span key={tag} className="inline-flex items-center gap-2 rounded-full border border-gold-500/20 bg-gold-500/10 px-3 py-1.5 text-[11px] font-code uppercase tracking-wide text-gold-300">
-                      <Tag className="h-3 w-3" />
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {keywords.length > 0 && (
-              <div className="rounded-[24px] border border-ink-800 bg-ink-800/60 p-6">
-                <h2 className="font-heading text-xl font-bold text-cream-50">Keywords</h2>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {keywords.map((keyword) => (
-                    <span key={keyword} className="rounded-full border border-ink-700 bg-ink-900/60 px-3 py-1.5 text-[11px] font-code tracking-wide text-cream-200">
-                      {keyword}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            <div className="rounded-[24px] border border-ink-800 bg-ink-800/60 p-6">
-              <h2 className="font-heading text-xl font-bold text-cream-50">Asset Status</h2>
-              <dl className="mt-4 space-y-4 text-sm">
-                <div>
-                  <dt className="font-code text-[11px] uppercase tracking-[0.18em] text-gold-400/75">Cover</dt>
-                  <dd className="mt-1 text-cream-100">{showcase?.assets.cover ? "พร้อมใช้งาน" : "ยังไม่มี"}</dd>
-                </div>
-                <div>
-                  <dt className="font-code text-[11px] uppercase tracking-[0.18em] text-gold-400/75">Screenshots</dt>
-                  <dd className="mt-1 text-cream-100">{screenshotEntries.length} รายการ</dd>
-                </div>
-                <div>
-                  <dt className="font-code text-[11px] uppercase tracking-[0.18em] text-gold-400/75">Slideshow</dt>
-                  <dd className="mt-1 text-cream-100">{showcase?.assets.slideshow ? "พร้อมใช้งาน" : "ยังไม่มี"}</dd>
-                </div>
-                <div>
-                  <dt className="font-code text-[11px] uppercase tracking-[0.18em] text-gold-400/75">Access Mode</dt>
-                  <dd className="mt-1 text-cream-100">{showcase?.accessMode || "unknown"}</dd>
-                </div>
-              </dl>
+          {/* ── Tags ── */}
+          {(tags.length > 0 || keywords.length > 0) && (
+            <div className="flex flex-wrap gap-2">
+              {tags.map((tag) => (
+                <span key={tag} className="inline-flex items-center gap-1.5 rounded-full border border-gold-500/20 bg-gold-500/10 px-3 py-1.5 text-[11px] font-code uppercase tracking-wide text-gold-300">
+                  <Tag className="h-3 w-3" />
+                  {tag}
+                </span>
+              ))}
+              {keywords.map((kw) => (
+                <span key={kw} className="rounded-full border border-ink-700 bg-ink-900/60 px-3 py-1.5 text-[11px] font-code tracking-wide text-cream-300">
+                  {kw}
+                </span>
+              ))}
             </div>
+          )}
 
-            <div className="rounded-[24px] border border-ink-800 bg-ink-800/60 p-6">
-              <h2 className="font-heading text-xl font-bold text-cream-50">ข้อมูลอ้างอิง</h2>
-              <dl className="mt-4 space-y-4 text-sm">
-                <div>
-                  <dt className="font-code text-[11px] uppercase tracking-[0.18em] text-gold-400/75">Project ID</dt>
-                  <dd className="mt-1 text-cream-100">{project.projectId}</dd>
-                </div>
-                <div>
-                  <dt className="font-code text-[11px] uppercase tracking-[0.18em] text-gold-400/75">Slug</dt>
-                  <dd className="mt-1 break-all text-cream-100">{project.slug}</dd>
-                </div>
-                <div>
-                  <dt className="font-code text-[11px] uppercase tracking-[0.18em] text-gold-400/75">Last Updated</dt>
-                  <dd className="mt-1 text-cream-100">{formatDate(project.updatedAt)}</dd>
-                </div>
-                <div>
-                  <dt className="font-code text-[11px] uppercase tracking-[0.18em] text-gold-400/75">Capture Status</dt>
-                  <dd className="mt-1 text-cream-100">{showcase?.captureStatus || "pending"}</dd>
-                </div>
-              </dl>
-            </div>
+          {/* ── Slideshow ── */}
+          {showcase?.slides?.length ? (
+            <SlideshowViewer
+              liveUrl={project.url}
+              projectName={project.projectName}
+              slideshowUrl={showcase.assets.slideshow}
+              slides={showcase.slides}
+              theme={showcase.theme}
+            />
+          ) : null}
 
-            <div className="rounded-[24px] border border-ink-800 bg-ink-800/60 p-6">
-              <h2 className="font-heading text-xl font-bold text-cream-50">Showcase Notes</h2>
-              <div className="mt-4 space-y-3 text-sm leading-7 text-ink-300">
-                <p>{showcase?.preparedDescription || project.description || "ไม่มีข้อมูลเพิ่มเติม"}</p>
-                {showcase?.assets.cover && (
-                  <a href={showcase.assets.cover} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-gold-400 transition-colors hover:text-gold-300">
-                    เปิดภาพปก
-                    <ImageIcon className="h-4 w-4" />
+          {/* ── Screenshot Gallery ── */}
+          {screenshotEntries.length > 0 && (
+            <div className="rounded-[24px] border border-ink-800 bg-ink-800/60 p-6 lg:p-8">
+              <h2 className="font-heading text-2xl font-bold text-cream-50">ภาพหน้าจอ</h2>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {screenshotEntries.map((item) => (
+                  <a
+                    key={item.key}
+                    href={item.src}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group overflow-hidden rounded-2xl border border-ink-700 bg-ink-900/50 transition-colors hover:border-gold-500/35"
+                  >
+                    <div className="aspect-[16/10] overflow-hidden bg-black/20">
+                      <div className="relative h-full w-full">
+                        <Image src={item.src} alt={`${project.projectName} ${item.label}`} fill unoptimized sizes="(min-width: 1024px) 30vw, 50vw" className="object-cover transition duration-500 group-hover:scale-[1.03]" />
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between gap-3 px-4 py-2.5">
+                      <span className="text-sm font-medium text-cream-100">{item.label}</span>
+                      <ExternalLink className="h-3.5 w-3.5 text-gold-400" />
+                    </div>
                   </a>
-                )}
+                ))}
               </div>
             </div>
-          </aside>
+          )}
+
+          {/* ── Link to live system ── */}
+          {project.url && (
+            <div className="flex flex-wrap items-center gap-4 rounded-2xl border border-gold-500/20 bg-gradient-to-r from-gold-500/10 to-transparent p-6">
+              <div className="flex-1">
+                <h2 className="font-heading text-xl font-bold text-cream-50">เปิดดูระบบจริง</h2>
+                <p className="mt-1 break-all font-code text-xs text-gold-300/80">{project.url}</p>
+              </div>
+              <a href={project.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-gold-500 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-gold-400">
+                เปิดลิงก์
+                <ExternalLink className="h-4 w-4" />
+              </a>
+            </div>
+          )}
+
+          {/* ── Related Projects ── */}
+          {relatedProjects.length > 0 && (
+            <div>
+              <div className="mb-5 flex items-end justify-between gap-4">
+                <h2 className="font-heading text-2xl font-bold text-cream-50">โครงการที่เกี่ยวข้อง</h2>
+                <Link href="/projects" className="text-sm font-semibold text-gold-400 transition-colors hover:text-gold-300">ดูทั้งหมด</Link>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {relatedProjects.map((item) => (
+                  <Link key={item.id} href={`/projects/${item.slug}`} className="rounded-2xl border border-ink-800 bg-ink-800/60 p-5 transition-colors hover:border-gold-500/40 hover:bg-ink-800">
+                    <p className="font-code text-[11px] uppercase tracking-[0.18em] text-gold-500">#{String(item.projectNumber).padStart(2, "0")}</p>
+                    <h3 className="mt-2 font-heading text-lg font-bold text-cream-50 leading-snug">{item.projectName}</h3>
+                    <p className="mt-2 line-clamp-2 text-sm text-ink-300">{item.description || "ไม่มีคำอธิบายเพิ่มเติม"}</p>
+                    <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-gold-400">
+                      ดูรายละเอียด <ArrowRight className="h-3.5 w-3.5" />
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
         </section>
       </main>
     </div>

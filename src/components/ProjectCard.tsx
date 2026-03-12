@@ -32,8 +32,9 @@ const STATUS_LABEL: Record<string, { label: string; color: string }> = {
 };
 
 export default function ProjectCard({ project, showcase, tags }: ProjectCardProps) {
-  const coverImage = showcase?.assets.cover || null;
-  const heroImage = showcase?.assets.screenshots.hero || showcase?.assets.screenshots.desktop || null;
+  // Prioritize screenshot gallery images as card cover
+  const coverImage = showcase?.assets.screenshots.hero || showcase?.assets.screenshots.desktop || showcase?.assets.cover || null;
+  const mobileImage = showcase?.assets.screenshots.mobile || null;
   const detailHref = `/projects/${project.slug}`;
   const categoryColor = showcase?.categoryColor || project.category.color || "#D97706";
   const headerStyle = showcase?.theme?.gradient
@@ -104,32 +105,24 @@ export default function ProjectCard({ project, showcase, tags }: ProjectCardProp
             ))}
           </div>
 
-          {/* Screenshot Thumbnails */}
-          {heroImage && (
-            <div className="flex gap-2 pt-1">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={heroImage}
-                alt="Screenshot"
-                loading="lazy"
-                className="h-14 w-24 rounded-md border border-cream-300 object-cover"
-              />
-              {showcase?.assets.screenshots.mobile && (
-                /* eslint-disable-next-line @next/next/no-img-element */
+          {/* Footer */}
+          <div className="flex items-center justify-between pt-1">
+            {mobileImage && (
+              <div className="flex items-center gap-2">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={showcase.assets.screenshots.mobile}
+                  src={mobileImage}
                   alt="Mobile"
                   loading="lazy"
-                  className="h-14 w-8 rounded-md border border-cream-300 object-cover"
+                  className="h-10 w-6 rounded border border-cream-300 object-cover"
                 />
-              )}
-              <div className="flex flex-1 items-center justify-end">
-                <span className="text-[10px] font-code text-gold-500 group-hover:text-gold-600 transition-colors">
-                  ดูรายละเอียด →
-                </span>
+                <span className="text-[10px] text-ink-400">Mobile</span>
               </div>
-            </div>
-          )}
+            )}
+            <span className="ml-auto text-[11px] font-semibold text-gold-500 group-hover:text-gold-600 transition-colors">
+              ดูรายละเอียด →
+            </span>
+          </div>
         </div>
       </article>
     </Link>

@@ -22,58 +22,20 @@ function humanName(filename: string): string {
     .replace(/_/g, " ");
 }
 
-async function getShowcaseFallbackPhotos(): Promise<
-  { id: string; url: string; name: string; category: string }[]
-> {
+async function scanPhotosDir(
+  baseDir: string,
+  urlPrefix: string,
+  idPrefix: string,
+): Promise<{ id: string; url: string; name: string; category: string }[]> {
+  const photos: { id: string; url: string; name: string; category: string }[] = [];
   try {
-    const manifestPath = path.join(process.cwd(), "public", "portfolio-showcase", "manifest.json");
-    const raw = await fs.readFile(manifestPath, "utf8");
-    const manifest = JSON.parse(raw);
-    const photos: { id: string; url: string; name: string; category: string }[] = [];
-
-    for (const p of manifest.projects || []) {
-      if (p.assets?.cover) {
-        photos.push({
-          id: `showcase-cover-${p.projectId}`,
-          url: p.assets.cover.startsWith("/") ? p.assets.cover : `/${p.assets.cover}`,
-          name: p.projectName || p.slug,
-          category: p.category || "Project",
-        });
-      }
-      if (p.assets?.screenshots?.hero) {
-        photos.push({
-          id: `showcase-hero-${p.projectId}`,
-          url: p.assets.screenshots.hero.startsWith("/") ? p.assets.screenshots.hero : `/${p.assets.screenshots.hero}`,
-          name: `${p.projectName} (Screenshot)`,
-          category: p.category || "Project",
-        });
-      }
-    }
-
-    return photos;
-  } catch {
-    return [];
-  }
-}
-
-export async function GET() {
-  try {
-    const photosDir = path.join(process.cwd(), "temp_photos");
-    await fs.access(photosDir);
-
-    const folders = await fs.readdir(photosDir, { withFileTypes: true });
-    const photos: {
-      id: string;
-      url: string;
-      name: string;
-      category: string;
-      description?: string;
-    }[] = [];
+    await fs.access(baseDir);
+    const folders = await fs.readdir(baseDir, { withFileTypes: true });
 
     for (const folder of folders) {
       if (!folder.isDirectory()) continue;
       const category = FOLDER_TO_CATEGORY[folder.name] || "Uncategorized";
-      const folderPath = path.join(photosDir, folder.name);
+      const folderPath = path.join(baseDir, folder.name);
       const files = await fs.readdir(folderPath);
 
       for (const file of files) {
@@ -81,24 +43,31 @@ export async function GET() {
         if (!IMAGE_EXTS.has(ext)) continue;
 
         photos.push({
-          id: `local-${folder.name}-${file}`,
-          url: `/api/local-photos/${encodeURIComponent(folder.name)}/${encodeURIComponent(file)}`,
+          id: `${idPrefix}-${folder.name}-${file}`,
+          url: `${urlPrefix}/${encodeURIComponent(folder.name)}/${encodeURIComponent(file)}`,
           name: humanName(file),
           category,
         });
       }
     }
-
-    if (photos.length > 0) {
-      return NextResponse.json({ photos, total: photos.length });
-    }
-
-    // Fallback: use portfolio showcase images when temp_photos is empty
-    const fallback = await getShowcaseFallbackPhotos();
-    return NextResponse.json({ photos: fallback, total: fallback.length });
   } catch {
-    // temp_photos/ not found — use portfolio showcase images as fallback
-    const fallback = await getShowcaseFallbackPhotos();
-    return NextResponse.json({ photos: fallback, total: fallback.length });
+    // directory not found — return empty
   }
+  return photos;
+}
+
+export async function GET() {
+  // Priority 1: public/portfolio/ — static files served by CDN on production
+  const publicPortfolio = path.join(process.cwd(), "public", "portfolio");
+  const photos = await scanPhotosDir(publicPortfolio, "/portfolio", "portfolio");
+
+  if (photos.length > 0) {
+    return NextResponse.json({ photos, total: photos.length });
+  }
+
+  // Priority 2: temp_photos/ — local dev fallback
+  const tempPhotos = path.join(process.cwd(), "temp_photos");
+  const localPhotos = await scanPhotosDir(tempPhotos, "/api/local-photos", "local");
+
+  return NextResponse.json({ photos: localPhotos, total: localPhotos.length });
 }
