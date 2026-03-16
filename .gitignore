@@ -45,6 +45,9 @@ yarn-error.log*
 # uploads (user-uploaded files)
 /public/uploads
 
+# Gallery images — hosted on Supabase Storage, not in Git
+/public/portfolio/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

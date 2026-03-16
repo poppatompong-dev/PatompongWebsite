@@ -12,6 +12,7 @@ const nextConfig = {
       { protocol: "https", hostname: "images.unsplash.com" },
       { protocol: "https", hostname: "lh3.googleusercontent.com" },
       { protocol: "https", hostname: "res.cloudinary.com" },
+      { protocol: "https", hostname: "sjiqecggciaxkurjswts.supabase.co" },
     ],
   },
   eslint: {
@@ -52,7 +53,7 @@ const nextConfig = {
         : "script-src 'self' 'unsafe-inline'",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
-      "img-src 'self' data: blob: https://lh3.googleusercontent.com https://images.unsplash.com https://res.cloudinary.com",
+      "img-src 'self' data: blob: https://lh3.googleusercontent.com https://images.unsplash.com https://res.cloudinary.com https://sjiqecggciaxkurjswts.supabase.co",
       "connect-src 'self' https://notify-api.line.me https://api.resend.com https://photos.app.goo.gl",
       "frame-src 'none'",
       "object-src 'none'",
