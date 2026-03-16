@@ -1,12 +1,7 @@
 import type { NextConfig } from "next";
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "standalone",
-  basePath: basePath,
-  assetPrefix: basePath ? `${basePath}/` : "",
   images: {
     // ✅ Image optimization ENABLED — Next.js will serve WebP/AVIF at correct sizes
     formats: ["image/avif", "image/webp"],
@@ -37,7 +32,6 @@ const nextConfig = {
   },
   outputFileTracingExcludes: {
     "**/*": [
-      "public/portfolio/**/*",
       "public/portfolio-showcase/covers/**",
       "public/portfolio-showcase/screenshots/**",
       "public/portfolio-showcase/slideshows/**",

@@ -36,6 +36,9 @@ yarn-error.log*
 # local databases
 # (dev.db removed so the pre-seeded database goes to Netlify)
 
+# Prevent nested repo from being staged as submodule
+/PatompongWebsite
+
 # vercel
 .vercel
 
