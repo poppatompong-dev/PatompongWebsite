@@ -1,28 +1,68 @@
 import { NextResponse } from "next/server";
 import fs from "fs/promises";
 import path from "path";
-import { prisma } from "@/lib/prisma";
+
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+// Server-side only — never exposed to client
+const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
+const BUCKET = "gallery";
+
+const FOLDER_TO_CATEGORY: Record<string, string> = {
+  "01_CCTV_Surveillance": "CCTV & Security",
+  "02_Network_Server": "Network & Server",
+  "03_Wireless_Antenna": "Wireless & Antenna",
+  "04_Fiber_Optic_Cabling": "Fiber Optic",
+  "05_Broadcasting_AV": "Broadcasting & AV",
+  "06_Field_Operations": "Field Operations",
+  "07_Drone_Survey": "Drone Survey",
+};
 
 const IMAGE_EXTS = new Set([".jpg", ".jpeg", ".png", ".webp", ".gif"]);
 
-function humanName(filename: string): string {
-  const base = path.basename(filename, path.extname(filename));
-  return base
-    .replace(/^\d+_/, "")
-    .replace(/_\d+$/, "")
-    .replace(/_/g, " ");
+function humanName(s: string): string {
+  const base = path.basename(s, path.extname(s));
+  return base.replace(/^\d+_/, "").replace(/_\d+$/, "").replace(/_/g, " ");
+}
+
+async function listSupabaseBucket(): Promise<{ id: string; url: string; name: string; category: string }[]> {
+  const photos: { id: string; url: string; name: string; category: string }[] = [];
+  const folders = Object.keys(FOLDER_TO_CATEGORY);
+
+  for (const folder of folders) {
+    const category = FOLDER_TO_CATEGORY[folder];
+    try {
+      const res = await fetch(`${SUPABASE_URL}/storage/v1/object/list/${BUCKET}`, {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${SUPABASE_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ prefix: `${folder}/`, limit: 200, offset: 0 }),
+        next: { revalidate: 3600 },
+      } as RequestInit);
+      if (!res.ok) continue;
+      const files: { name: string; id: string }[] = await res.json();
+      for (const file of files) {
+        if (!file.name) continue;
+        const ext = path.extname(file.name).toLowerCase();
+        if (!IMAGE_EXTS.has(ext)) continue;
+        const storagePath = `${folder}/${file.name}`;
+        const publicUrl = `${SUPABASE_URL}/storage/v1/object/public/${BUCKET}/${storagePath}`;
+        photos.push({
+          id: file.id || storagePath,
+          url: publicUrl,
+          name: humanName(file.name),
+          category,
+        });
+      }
+    } catch {
+      // skip folder on error
+    }
+  }
+  return photos;
 }
 
 async function scanTempPhotos(): Promise<{ id: string; url: string; name: string; category: string }[]> {
-  const FOLDER_TO_CATEGORY: Record<string, string> = {
-    "01_CCTV_Surveillance": "CCTV & Security",
-    "02_Network_Server": "Network & Server",
-    "03_Wireless_Antenna": "Wireless & Antenna",
-    "04_Fiber_Optic_Cabling": "Fiber Optic",
-    "05_Broadcasting_AV": "Broadcasting & AV",
-    "06_Field_Operations": "Field Operations",
-    "07_Drone_Survey": "Drone Survey",
-  };
   const photos: { id: string; url: string; name: string; category: string }[] = [];
   try {
     const baseDir = path.join(process.cwd(), "temp_photos");
@@ -45,33 +85,21 @@ async function scanTempPhotos(): Promise<{ id: string; url: string; name: string
       }
     }
   } catch {
-    // temp_photos not available — expected on production
+    // temp_photos not available
   }
   return photos;
 }
 
 export async function GET() {
-  // Priority 1: DB — contains Supabase CDN URLs on production
-  try {
-    const dbPhotos = await prisma.galleryPhoto.findMany({
-      where: { isHidden: false },
-      orderBy: { createdAt: "asc" },
-    });
-
-    if (dbPhotos.length > 0) {
-      const photos = dbPhotos.map((p) => ({
-        id: p.id,
-        url: p.url,
-        name: p.description || humanName(p.url.split("/").pop() || "photo"),
-        category: p.category,
-      }));
+  // Priority 1: Supabase Storage — works on any platform, no Prisma needed
+  if (SUPABASE_URL && SUPABASE_KEY) {
+    const photos = await listSupabaseBucket();
+    if (photos.length > 0) {
       return NextResponse.json({ photos, total: photos.length });
     }
-  } catch {
-    // DB not available — fall through to filesystem
   }
 
-  // Priority 2: temp_photos/ — local dev fallback when DB is empty
+  // Priority 2: temp_photos/ — local dev fallback
   const localPhotos = await scanTempPhotos();
   return NextResponse.json({ photos: localPhotos, total: localPhotos.length });
 }

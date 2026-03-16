@@ -5,6 +5,7 @@
 [build.environment]
   DATABASE_URL = "file:/opt/build/repo/prisma/dev.db"
   PRISMA_QUERY_ENGINE_TYPE = "library"
+  NEXT_PUBLIC_SUPABASE_URL = "https://sjiqecggciaxkurjswts.supabase.co"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
