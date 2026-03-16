@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "generatedDate": "2026-03-12",
-    "totalProjects": 30,
+    "generatedDate": "2026-03-16",
+    "totalProjects": 31,
     "owner": "Patompongtec Consultant",
     "position": "นักวิชาการคอมพิวเตอร์",
     "startDate": "2564-05-01",
     "description": "โปรเจกต์ของข้าราชการตั้งแต่พ.ค.2564 เป็นต้นไป",
-    "lastUpdated": "2026-03-12"
+    "lastUpdated": "2026-03-16"
   },
   "projects": [
     {
@@ -555,13 +555,31 @@
         { "name": "กระจกโค้ง", "url": "https://earth.google.com/earth/d/18tjC2SJ4sxoDGLltsXmfSHWEADZbWtsM?usp=sharing" },
         { "name": "ท่อระบายน้ำ", "url": "https://earth.google.com/earth/d/18tjC2SJ4sxoDGLltsXmfSHWEADZbWtsM?usp=sharing" }
       ]
+    },
+    {
+      "id": "proj_leave",
+      "projectNumber": 31,
+      "projectName": "ระบบวันลาพนักงานเทศบาลฯ",
+      "slug": "employee-leave-system",
+      "client": "เทศบาลตำบลบ้านคลอง",
+      "clientId": "client_001",
+      "type": "Google Apps Script",
+      "category": "Web Applications",
+      "subcategory": "HR & Personnel",
+      "url": "https://script.google.com/macros/s/AKfycbyYg96TAcpfaam4WIES1bWbhB_jxXOLU3kXTIQSgzcGUXP75XTOwAiNFRa2KJez9XPG/exec",
+      "description": "ระบบลาออนไลน์สำหรับพนักงานเทศบาล รองรับการยื่นคำขอลา อนุมัติ ติดตามสถานะ และสรุปวันลาคงเหลือ พัฒนาด้วย Google Apps Script เชื่อมต่อ Google Sheets",
+      "tags": ["google apps script", "leave", "HR", "personnel", "automation", "google sheets"],
+      "keywords": ["ลา", "วันลา", "พนักงาน", "เทศบาล", "บุคลากร", "HR"],
+      "status": "completed",
+      "startDate": "2567-10-01",
+      "completedDate": "2568-01-31"
     }
   ],
   "clients": [
     {
       "clientId": "client_001",
       "clientName": "เทศบาลตำบลบ้านคลอง",
-      "projectCount": 11,
+      "projectCount": 12,
       "slug": "municipality-banklongs"
     },
     {
@@ -581,7 +599,7 @@
     {
       "id": "cat_web",
       "name": "Web Applications",
-      "projectCount": 9,
+      "projectCount": 10,
       "color": "#06B6D4"
     },
     {
@@ -610,30 +628,30 @@
     }
   ],
   "statistics": {
-    "total": 30,
+    "total": 31,
     "byType": {
       "React/Vercel": 5,
       "Firebase": 1,
       "React/Netlify": 3,
-      "Google Apps Script": 5,
+      "Google Apps Script": 6,
       "Google Looker Studio": 7,
       "AppSheet": 8,
       "Google Earth Map": 1
     },
     "byCategory": {
-      "Web Applications": 9,
+      "Web Applications": 10,
       "Automation & Integration": 5,
       "Analytics & Reporting": 7,
       "Database & Data Management": 8,
       "Mapping & Location": 1
     },
     "byClient": {
-      "เทศบาลตำบลบ้านคลอง": 11,
+      "เทศบาลตำบลบ้านคลอง": 12,
       "เทศบาลเมืองอุทัยธานี": 16,
       "เทศบาลนคร": 3
     },
     "byStatus": {
-      "completed": 30
+      "completed": 31
     }
   }
 }

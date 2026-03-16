@@ -21,11 +21,10 @@ import {
 } from "lucide-react";
 import { Prisma } from "@prisma/client";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import ArchitectureFilter from "@/components/ArchitectureFilter";
 import CoverSlideshow from "@/components/CoverSlideshow";
-import GalleryLightbox from "@/components/GalleryLightbox";
-import type { GalleryPhoto } from "@/components/GalleryLightbox";
-import ProjectCard from "@/components/ProjectCard";
 import ProjectFilterBar from "@/components/ProjectFilterBar";
+import ProjectsListing from "@/components/ProjectsListing";
 import { loadShowcaseManifest } from "@/lib/portfolio-showcase";
 import { prisma } from "@/lib/prisma";
 import { formatDate, parseTags } from "@/types/portfolio";
@@ -66,18 +65,6 @@ function anonymizeText(text: string): string {
     .replace(/อุทัยธานี/g, "จังหวัด")
     .replace(/บ้านคลอง/g, "พื้นที่ ก.");
 }
-
-// Gallery photos: use public/portfolio (7 work experience categories)
-const GALLERY_PHOTOS: GalleryPhoto[] = [
-  { src: "/portfolio/01_CCTV_Surveillance/01_CCTV_Surveillance_001.jpg", caption: "ระบบกล้องวงจรปิด — ติดตั้งและดูแลจุดสำคัญในพื้นที่", category: "CCTV" },
-  { src: "/portfolio/02_Network_Server/02_Network_Server_001.jpg", caption: "ห้องเซิร์ฟเวอร์ — ศูนย์กลางเครือข่ายและประมวลผลข้อมูล", category: "Network" },
-  { src: "/portfolio/03_Wireless_Antenna/03_Wireless_Antenna_001.jpg", caption: "เสาอากาศไร้สาย — ขยายสัญญาณครอบคลุมพื้นที่บริการ", category: "Wireless" },
-  { src: "/portfolio/04_Fiber_Optic_Cabling/04_Fiber_Optic_Cabling_003.jpg", caption: "ระบบไฟเบอร์ออปติก — เชื่อมต่อเครือข่ายความเร็วสูง", category: "Fiber Optic" },
-  { src: "/portfolio/05_Broadcasting_AV/05_Broadcasting_AV_001.jpg", caption: "ระบบเสียงตามสาย — กระจายข่าวสารสู่ชุมชน", category: "Broadcasting" },
-  { src: "/portfolio/06_Field_Operations/06_Field_Operations_001.jpg", caption: "ปฏิบัติการภาคสนาม — สำรวจและติดตั้งอุปกรณ์จริง", category: "Field Ops" },
-  { src: "/portfolio/07_Drone_Survey/07_Drone_Survey_001.jpg", caption: "สำรวจทางอากาศ — ถ่ายภาพมุมสูงด้วยโดรน", category: "Drone" },
-  { src: "/portfolio/06_Field_Operations/06_Field_Operations_002.jpg", caption: "ทีมงานภาคสนาม — ตรวจสอบระบบโครงสร้างพื้นฐาน", category: "Field Ops" },
-];
 
 const ARCH_LAYERS = [
   {
@@ -293,40 +280,17 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Sea
       </header>
 
       {/* ═══════════════════════════════════════════════════════════════
-          PART 2 — System Architecture
+          PART 2 — System Architecture (clickable layer filters)
           ═══════════════════════════════════════════════════════════════ */}
       <section className="bg-cream-100 py-10 lg:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <span className="font-code text-[11px] uppercase tracking-[0.15em] text-gold-500">System Architecture</span>
             <h2 className="mt-2 font-heading text-2xl font-bold text-ink-800 sm:text-3xl">สถาปัตยกรรมระบบ 5 ชั้น</h2>
+            <p className="mt-2 text-sm text-ink-500">คลิกที่ Layer เพื่อกรองโครงการตามหมวดหมู่</p>
           </div>
 
-          <div className="mt-8 space-y-2">
-            {ARCH_LAYERS.map((layer, i) => {
-              const IconComponent = layer.icon;
-              return (
-                <div key={layer.label} className="group card-retro card-retro-hover overflow-hidden rounded-xl">
-                  <div className="flex items-center gap-3 p-3 sm:gap-4 sm:p-4">
-                    <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br ${layer.color} text-white`}>
-                      <IconComponent className="h-5 w-5" />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <h3 className="text-sm font-bold text-ink-800">{layer.label}</h3>
-                      <p className="truncate text-xs text-ink-500">{layer.desc}</p>
-                    </div>
-                    <div className="hidden flex-wrap gap-1.5 sm:flex sm:justify-end">
-                      {layer.techs.map((tech) => (
-                        <span key={tech} className="rounded-full border border-cream-300 bg-cream-50 px-2 py-0.5 text-[10px] font-code uppercase tracking-wide text-ink-400">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          <ArchitectureFilter activeCategoryId={categoryId} />
 
           <div className="mt-4 text-center">
             <p className="font-code text-[10px] uppercase tracking-[0.15em] text-ink-400">
@@ -397,26 +361,7 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Sea
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════
-          PART 5 — Gallery Shelf (Screen Captures)
-          ═══════════════════════════════════════════════════════════════ */}
-      <section className="bg-ink-900 py-10 text-cream-50 lg:py-14">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <span className="font-code text-[11px] uppercase tracking-[0.15em] text-gold-400">Gallery Shelf</span>
-            <h2 className="mt-2 font-heading text-2xl font-bold sm:text-3xl">ภาพผลงานจริง</h2>
-            <p className="mx-auto mt-3 max-w-xl text-sm text-cream-200/70">
-              ภาพการติดตั้ง ดูแลระบบ และปฏิบัติงานจริงในพื้นที่ — คลิกเพื่อดูขนาดเต็ม
-            </p>
-          </div>
-
-          <div className="mt-8">
-            <GalleryLightbox photos={GALLERY_PHOTOS} />
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════════
-          PART 6 — Project Listing (Filter + Cards)
+          PART 5 — Project Listing (Filter + Cards/Table)
           ═══════════════════════════════════════════════════════════════ */}
       <main id="project-listing" className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <ProjectFilterBar
@@ -432,42 +377,13 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Sea
           types={typeOptions}
         />
 
-        <section className="mt-10">
-          <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <span className="font-code text-xs uppercase tracking-[0.15em] text-gold-500">Showcase Results</span>
-              <h2 className="mt-2 font-heading text-2xl font-bold text-ink-800 sm:text-3xl">พบ {projects.length} โครงการ</h2>
-            </div>
-            <div className="flex flex-wrap gap-3 text-sm text-ink-400">
-              <span>เรียงตามลำดับโครงการจากฐานข้อมูล</span>
-              <Link href="/projects" className="inline-flex items-center gap-2 font-semibold text-gold-600 transition-colors hover:text-gold-500">
-                ดูทั้งหมด
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </div>
-
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {projects.map((project) => (
-              <ProjectCard
-                key={project.id}
-                project={{
-                  ...project,
-                  client: { clientName: anonymizeText(project.client.clientName) },
-                }}
-                showcase={showcaseBySlug.get(project.slug) || null}
-                tags={parseTags(project.tags)}
-              />
-            ))}
-          </div>
-
-          {projects.length === 0 && (
-            <div className="card-retro mt-6 rounded-[28px] p-10 text-center">
-              <h3 className="font-heading text-2xl font-bold text-ink-800">ไม่พบโครงการตามตัวกรองที่เลือก</h3>
-              <p className="mt-3 text-ink-500">ลองล้างตัวกรองหรือเปลี่ยนคำค้นหาแล้วค้นหาใหม่อีกครั้ง</p>
-            </div>
-          )}
-        </section>
+        <ProjectsListing
+          projects={projects}
+          showcaseBySlug={showcaseBySlug}
+          totalProjects={totalProjects}
+          anonymizeText={anonymizeText}
+          parseTags={parseTags}
+        />
       </main>
     </div>
   );
