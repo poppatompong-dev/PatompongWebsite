@@ -21,7 +21,7 @@ const mainServices = [
     tagline: "Enterprise Software & Automation",
     description:
       "ออกแบบและพัฒนาซอฟต์แวร์ด้วยเทคโนโลยีสมัยใหม่ ผสาน AI และระบบอัตโนมัติ ช่วยลดงานซ้ำซ้อน เพิ่มความแม่นยำ และยกระดับประสิทธิภาพการทำงานขององค์กรอย่างเป็นระบบ",
-    features: ["Web & Mobile Application", "AI Automation & Vibe Coding", "ระบบจัดการข้อมูลและรายงาน", "เชื่อมต่อระบบเดิมขององค์กร"],
+    features: ["Web & Mobile Application", "AI Automation & Vibe Coding", "Agentic Development", "ระบบจัดการข้อมูลและรายงาน", "เชื่อมต่อระบบเดิมขององค์กร"],
     highlight: false,
   },
 ];

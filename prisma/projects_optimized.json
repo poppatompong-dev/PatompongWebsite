@@ -1,7 +1,7 @@
 {
   "metadata": {
     "generatedDate": "2026-03-16",
-    "totalProjects": 31,
+    "totalProjects": 33,
     "owner": "Patompongtec Consultant",
     "position": "นักวิชาการคอมพิวเตอร์",
     "startDate": "2564-05-01",
@@ -573,13 +573,49 @@
       "status": "completed",
       "startDate": "2567-10-01",
       "completedDate": "2568-01-31"
+    },
+    {
+      "id": "proj_green",
+      "projectNumber": 32,
+      "projectName": "Top 100 Green Destinations Portal",
+      "slug": "top-100-green-destinations-portal",
+      "client": "เทศบาลตำบลบ้านคลอง",
+      "clientId": "client_001",
+      "type": "React/Vercel",
+      "category": "Web Applications",
+      "subcategory": "Environment & Tourism",
+      "url": "https://top-100-green-des-portal.vercel.app/",
+      "description": "พอร์ทัลจัดอันดับ 100 จุดหมายปลายทางสีเขียว เชื่อมข้อมูลสิ่งแวดล้อม การท่องเที่ยวเชิงอนุรักษ์ และตัวชี้วัดความยั่งยืน พัฒนาด้วย React บน Vercel",
+      "tags": ["react", "vercel", "green", "environment", "tourism", "sustainability", "portal"],
+      "keywords": ["สีเขียว", "สิ่งแวดล้อม", "การท่องเที่ยว", "ความยั่งยืน", "พอร์ทัล", "อันดับ"],
+      "status": "completed",
+      "startDate": "2567-09-01",
+      "completedDate": "2568-02-28"
+    },
+    {
+      "id": "proj_stats",
+      "projectNumber": 33,
+      "projectName": "ระบบสนับสนุนข้อมูลเชิงสถิติสำหรับผู้บริหาร",
+      "slug": "statistical-data-support-system",
+      "client": "เทศบาลตำบลบ้านคลอง",
+      "clientId": "client_001",
+      "type": "React/Vercel",
+      "category": "Analytics & Reporting",
+      "subcategory": "Executive Dashboard",
+      "url": "https://analysis-add-on-7-project.vercel.app/",
+      "description": "ระบบวิเคราะห์และนำเสนอข้อมูลเชิงสถิติสำหรับผู้บริหาร ครอบคลุมตัวชี้วัดสำคัญ 7 โครงการ แสดงผลด้วยกราฟและ Dashboard แบบ Interactive",
+      "tags": ["react", "vercel", "statistics", "analytics", "dashboard", "executive", "KPI"],
+      "keywords": ["สถิติ", "ผู้บริหาร", "วิเคราะห์", "Dashboard", "ตัวชี้วัด", "รายงาน"],
+      "status": "completed",
+      "startDate": "2567-11-01",
+      "completedDate": "2568-03-15"
     }
   ],
   "clients": [
     {
       "clientId": "client_001",
       "clientName": "เทศบาลตำบลบ้านคลอง",
-      "projectCount": 12,
+      "projectCount": 14,
       "slug": "municipality-banklongs"
     },
     {
@@ -599,7 +635,7 @@
     {
       "id": "cat_web",
       "name": "Web Applications",
-      "projectCount": 10,
+      "projectCount": 11,
       "color": "#06B6D4"
     },
     {
@@ -611,7 +647,7 @@
     {
       "id": "cat_analytics",
       "name": "Analytics & Reporting",
-      "projectCount": 7,
+      "projectCount": 8,
       "color": "#EC4899"
     },
     {
@@ -628,9 +664,9 @@
     }
   ],
   "statistics": {
-    "total": 31,
+    "total": 33,
     "byType": {
-      "React/Vercel": 5,
+      "React/Vercel": 7,
       "Firebase": 1,
       "React/Netlify": 3,
       "Google Apps Script": 6,
@@ -639,19 +675,19 @@
       "Google Earth Map": 1
     },
     "byCategory": {
-      "Web Applications": 10,
+      "Web Applications": 11,
       "Automation & Integration": 5,
-      "Analytics & Reporting": 7,
+      "Analytics & Reporting": 8,
       "Database & Data Management": 8,
       "Mapping & Location": 1
     },
     "byClient": {
-      "เทศบาลตำบลบ้านคลอง": 12,
+      "เทศบาลตำบลบ้านคลอง": 14,
       "เทศบาลเมืองอุทัยธานี": 16,
       "เทศบาลนคร": 3
     },
     "byStatus": {
-      "completed": 31
+      "completed": 33
     }
   }
 }
