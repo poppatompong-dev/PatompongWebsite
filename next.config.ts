@@ -25,9 +25,14 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  compress: true,
+  poweredByHeader: false,
   experimental: {
+    optimizePackageImports: ["lucide-react", "framer-motion"],
     serverActions: {
-      allowedOrigins: ["localhost:3000", "127.0.0.1:50198", "localhost:3001", "127.0.0.1:63426", "localhost:63426"],
+      allowedOrigins: process.env.NODE_ENV === "development"
+        ? ["localhost:3000", "127.0.0.1:50198", "localhost:3001", "127.0.0.1:63426", "localhost:63426"]
+        : (process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(",") : []),
     },
   },
   outputFileTracingExcludes: {

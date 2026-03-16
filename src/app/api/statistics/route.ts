@@ -1,10 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import { prisma } from "@/lib/prisma";
 
 // GET /api/statistics - Get portfolio statistics
-export async function GET(request: NextRequest) {
+export async function GET(_request: NextRequest) {
   try {
     const stats = await prisma.projectStatistics.findFirst();
     const totalProjects = await prisma.project.count();
@@ -13,17 +11,10 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      data: {
-        ...stats,
-        totalProjects,
-        clientCount,
-        categoryCount,
-      },
+      data: { ...stats, totalProjects, clientCount, categoryCount },
     });
   } catch (error) {
-    return NextResponse.json(
-      { success: false, error: error instanceof Error ? error.message : "Unknown error" },
-      { status: 500 }
-    );
+    console.error("[GET /api/statistics]", error);
+    return NextResponse.json({ success: false, error: "Failed to fetch statistics" }, { status: 500 });
   }
 }

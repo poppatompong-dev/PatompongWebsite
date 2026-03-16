@@ -240,11 +240,16 @@ export default function CinematicGallery() {
     );
   }
 
-  // Split photos into 4 columns, capped
-  const col1 = photos.filter((_, i) => i % 4 === 0).slice(0, IMAGES_PER_COLUMN);
-  const col2 = photos.filter((_, i) => i % 4 === 1).slice(0, IMAGES_PER_COLUMN);
-  const col3 = photos.filter((_, i) => i % 4 === 2).slice(0, IMAGES_PER_COLUMN);
-  const col4 = photos.filter((_, i) => i % 4 === 3).slice(0, IMAGES_PER_COLUMN);
+  // Split photos into 4 columns in one pass (js-combine-iterations rule 7.6)
+  const cols = photos.reduce<[CinematicImage[], CinematicImage[], CinematicImage[], CinematicImage[]]>(
+    (acc, photo, i) => {
+      const col = i % 4;
+      if (acc[col].length < IMAGES_PER_COLUMN) acc[col].push(photo);
+      return acc;
+    },
+    [[], [], [], []]
+  );
+  const [col1, col2, col3, col4] = cols;
 
   return (
     <div className="bg-neutral-950 text-white py-20 px-3 sm:px-6 lg:px-8 relative overflow-hidden">

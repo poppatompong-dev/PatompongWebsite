@@ -85,7 +85,7 @@ export default function ServicesSection() {
             <motion.div
               key={service.title}
               variants={cardVariants}
-              className={`relative group flex flex-col rounded-none p-8 lg:p-10 border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
+              className={`relative group flex flex-col rounded-none p-8 lg:p-10 border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl min-h-[600px] ${
                 service.highlight
                   ? "bg-ink-800 border-ink-700 hover:border-gold-500/50"
                   : "bg-white border-cream-300 hover:border-gold-400/50"

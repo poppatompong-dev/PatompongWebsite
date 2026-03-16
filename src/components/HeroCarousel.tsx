@@ -16,9 +16,10 @@ export default function HeroCarousel({ photos }: Props) {
 
     useEffect(() => {
         if (!photos || photos.length === 0) return;
+        const total = photos.length;
         const timer = setInterval(() => {
             setDirection(1);
-            setCurrentIndex((prev) => (prev + 1) % photos.length);
+            setCurrentIndex(prev => (prev + 1) % total);
         }, 6000); // 6s per slide
         return () => clearInterval(timer);
     }, [photos]);
@@ -26,10 +27,12 @@ export default function HeroCarousel({ photos }: Props) {
     const paginate = (newDirection: number) => {
         if (!photos || photos.length === 0) return;
         setDirection(newDirection);
-        let newIndex = currentIndex + newDirection;
-        if (newIndex < 0) newIndex = photos.length - 1;
-        if (newIndex >= photos.length) newIndex = 0;
-        setCurrentIndex(newIndex);
+        setCurrentIndex(prev => {
+            const next = prev + newDirection;
+            if (next < 0) return photos.length - 1;
+            if (next >= photos.length) return 0;
+            return next;
+        });
     };
 
     if (!photos || photos.length === 0) return null;

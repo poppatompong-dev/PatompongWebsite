@@ -6,17 +6,17 @@ import FloatingAction from "@/components/FloatingAction";
 import SideDotNav from "@/components/SideDotNav";
 import CinematicGalleryWrapper from "@/components/CinematicGalleryWrapper";
 
-// Lazy-load below-fold heavy sections → reduces initial JS bundle & TBT
-const ServicesSection = dynamic(() => import("@/components/ServicesSection"), { ssr: true });
-const QuoteSection = dynamic(() => import("@/components/QuoteSection"), { ssr: true });
-const WorkProcessSection = dynamic(() => import("@/components/WorkProcessSection"), { ssr: true });
-const PortfolioSection = dynamic(() => import("@/components/PortfolioSection"), { ssr: true });
-const TimelineSection = dynamic(() => import("@/components/TimelineSection"), { ssr: true });
-const CCTVDetailSection = dynamic(() => import("@/components/CCTVDetailSection"), { ssr: true });
-const EducationSection = dynamic(() => import("@/components/EducationSection"), { ssr: true });
-const TestimonialSection = dynamic(() => import("@/components/TestimonialSection"), { ssr: true });
-const ContactSection = dynamic(() => import("@/components/ContactSection"), { ssr: true });
-const Footer = dynamic(() => import("@/components/Footer"), { ssr: true });
+// SSR-rendered below-fold sections (SEO-critical content)
+const ServicesSection = dynamic(() => import("@/components/ServicesSection"));
+const QuoteSection = dynamic(() => import("@/components/QuoteSection"));
+const WorkProcessSection = dynamic(() => import("@/components/WorkProcessSection"));
+const PortfolioSection = dynamic(() => import("@/components/PortfolioSection"));
+const TimelineSection = dynamic(() => import("@/components/TimelineSection"));
+const CCTVDetailSection = dynamic(() => import("@/components/CCTVDetailSection"));
+const EducationSection = dynamic(() => import("@/components/EducationSection"));
+const TestimonialSection = dynamic(() => import("@/components/TestimonialSection"));
+const ContactSection = dynamic(() => import("@/components/ContactSection"));
+const Footer = dynamic(() => import("@/components/Footer"));
 
 import { getSavedPhotos } from "@/actions/galleryDb";
 import type { GalleryImage, CategoryType } from "@/types/gallery";
