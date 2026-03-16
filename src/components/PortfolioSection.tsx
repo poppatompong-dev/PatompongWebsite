@@ -34,70 +34,70 @@ export default async function PortfolioSection() {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {projects.map(project => (
-                        <div key={project.id} className="group bg-ink-800 border border-ink-700 hover:border-gold-500/50 transition-all duration-300 overflow-hidden flex flex-col h-full">
-                            <div className="h-2 bg-gradient-to-r from-gold-600 via-gold-400 to-gold-600" />
-
-                            <div className="p-6 flex-1 flex flex-col">
-                                <p className="font-code text-[11px] text-gold-500 tracking-[0.18em] uppercase">
-                                    Project #{String(project.projectNumber).padStart(2, "0")}
-                                </p>
-                                <h3 className="text-xl font-bold text-cream-100 mb-3 mt-3 font-heading leading-snug">{project.projectName}</h3>
-
-                                <div className="space-y-2 text-sm text-ink-300 mb-5">
-                                    <div className="flex items-start gap-2">
-                                        <Building2 className="w-4 h-4 text-gold-400 mt-0.5 shrink-0" />
-                                        <span>{project.client.clientName}</span>
-                                    </div>
-                                    <div className="flex items-start gap-2">
-                                        <Layers3 className="w-4 h-4 text-gold-400 mt-0.5 shrink-0" />
-                                        <span>{project.category.name} / {project.subcategory}</span>
-                                    </div>
-                                    <div className="flex items-start gap-2">
-                                        <CalendarDays className="w-4 h-4 text-gold-400 mt-0.5 shrink-0" />
-                                        <span>{formatDate(project.startDate)} - {formatDate(project.completedDate)}</span>
-                                    </div>
-                                </div>
-
-                                <p className="text-sm text-ink-300 mb-6 flex-1 whitespace-pre-wrap leading-7">{project.description}</p>
-
-                                {parseTags(project.tags).length > 0 && (
-                                    <div className="flex flex-wrap gap-2 mb-6 mt-auto">
-                                        {parseTags(project.tags).slice(0, 3).map((tag: string) => (
-                                            <span key={tag} className="text-[10px] font-code px-2 py-0.5 border border-ink-600 text-gold-400 rounded-sm uppercase tracking-wider bg-ink-900/50">
-                                                {tag.trim()}
-                                            </span>
-                                        ))}
-                                    </div>
-                                )}
-
-                                <div className="flex flex-wrap items-center gap-4 mt-auto">
-                                    <span className="text-[10px] font-code px-2 py-1 border border-gold-500/20 text-gold-400 uppercase tracking-wider bg-gold-500/5">
-                                        {getStatusLabel(project.status)}
-                                    </span>
-                                    <Link
-                                        href={`/projects/${project.slug}`}
-                                        className="inline-flex items-center gap-2 text-gold-400 hover:text-gold-300 font-code text-xs uppercase tracking-widest font-bold group/link transition-colors"
-                                    >
-                                        View Details
-                                        <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
-                                    </Link>
-                                    {project.url && (
-                                        <a
-                                            href={project.url}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            className="inline-flex items-center gap-2 text-ink-300 hover:text-gold-300 font-code text-xs uppercase tracking-widest font-bold transition-colors"
-                                        >
-                                            Open Link
-                                            <ExternalLink className="w-3.5 h-3.5" />
-                                        </a>
-                                    )}
-                                </div>
-                            </div>
-                        </div>
-                    ))}
+                <div className="overflow-x-auto rounded-xl border border-ink-700 bg-ink-800/60 shadow-xl">
+                    <table className="w-full text-sm">
+                        <thead>
+                            <tr className="border-b border-ink-700 bg-ink-900/80">
+                                <th className="px-4 py-3 text-left font-code text-[10px] uppercase tracking-wider text-gold-400">#</th>
+                                <th className="px-4 py-3 text-left font-code text-[10px] uppercase tracking-wider text-gold-400">โครงการ</th>
+                                <th className="hidden px-4 py-3 text-left font-code text-[10px] uppercase tracking-wider text-gold-400 sm:table-cell">ประเภท</th>
+                                <th className="hidden px-4 py-3 text-left font-code text-[10px] uppercase tracking-wider text-gold-400 lg:table-cell">หน่วยงาน</th>
+                                <th className="px-4 py-3 text-left font-code text-[10px] uppercase tracking-wider text-gold-400">สถานะ</th>
+                                <th className="px-4 py-3 text-left font-code text-[10px] uppercase tracking-wider text-gold-400"></th>
+                            </tr>
+                        </thead>
+                        <tbody className="divide-y divide-ink-700/50">
+                            {projects.map(project => (
+                                <tr key={project.id} className="group transition-colors hover:bg-ink-700/30">
+                                    <td className="px-4 py-3 font-code text-[11px] text-gold-500">
+                                        #{String(project.projectNumber).padStart(2, "0")}
+                                    </td>
+                                    <td className="px-4 py-3">
+                                        <p className="font-semibold text-cream-100 group-hover:text-gold-400 transition-colors">
+                                            {project.projectName}
+                                        </p>
+                                        {project.description && (
+                                            <p className="mt-0.5 line-clamp-1 text-xs text-ink-300">{project.description}</p>
+                                        )}
+                                    </td>
+                                    <td className="hidden px-4 py-3 sm:table-cell">
+                                        <span className="rounded-md border border-gold-500/20 bg-gold-500/10 px-2 py-0.5 font-code text-[10px] uppercase tracking-wide text-gold-400">
+                                            {project.type}
+                                        </span>
+                                    </td>
+                                    <td className="hidden px-4 py-3 text-xs text-ink-300 lg:table-cell">
+                                        {project.client.clientName}
+                                    </td>
+                                    <td className="px-4 py-3">
+                                        <span className="rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2 py-0.5 text-[10px] font-semibold text-emerald-400">
+                                            {getStatusLabel(project.status)}
+                                        </span>
+                                    </td>
+                                    <td className="px-4 py-3">
+                                        <div className="flex items-center gap-2">
+                                            <Link
+                                                href={`/projects/${project.slug}`}
+                                                className="rounded-lg border border-ink-600 bg-ink-900/50 px-2.5 py-1.5 text-[11px] font-semibold text-cream-200 transition-colors hover:border-gold-500/40 hover:text-gold-400"
+                                            >
+                                                รายละเอียด
+                                            </Link>
+                                            {project.url && (
+                                                <a
+                                                    href={project.url}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                    className="rounded-lg border border-ink-600 bg-ink-900/50 p-1.5 text-ink-300 transition-colors hover:border-gold-500/40 hover:text-gold-400"
+                                                    title="เปิดระบบจริง"
+                                                >
+                                                    <ExternalLink className="h-3.5 w-3.5" />
+                                                </a>
+                                            )}
+                                        </div>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
 
                 <div className="mt-12 text-center">

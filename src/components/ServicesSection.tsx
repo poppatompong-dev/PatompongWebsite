@@ -21,7 +21,19 @@ const mainServices = [
     tagline: "Enterprise Software & Automation",
     description:
       "ออกแบบและพัฒนาซอฟต์แวร์ด้วยเทคโนโลยีสมัยใหม่ ผสาน AI และระบบอัตโนมัติ ช่วยลดงานซ้ำซ้อน เพิ่มความแม่นยำ และยกระดับประสิทธิภาพการทำงานขององค์กรอย่างเป็นระบบ",
-    features: ["Web & Mobile Application", "AI Automation & Vibe Coding", "Agentic Development", "ระบบจัดการข้อมูลและรายงาน", "เชื่อมต่อระบบเดิมขององค์กร"],
+    features: [
+      "Web & Mobile Application",
+      "AI Automation & Vibe Coding",
+      "Agentic Development",
+      "No-Code / Low-Code Development",
+      "Data Visualization",
+      "Workflow Design",
+      "Integration Design",
+      "UX/UI Design",
+      "AI-Augmented Digital Architect",
+      "ระบบจัดการข้อมูลและรายงาน",
+      "เชื่อมต่อระบบเดิมขององค์กร"
+    ],
     highlight: false,
   },
 ];
@@ -61,13 +73,13 @@ export default function ServicesSection() {
           </p>
         </motion.div>
 
-        {/* Main Service Cards — 01 and 02 full-width */}
+        {/* Main Service Cards — 01 and 02 full-width with equal height */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid md:grid-cols-2 gap-6 lg:gap-8 mb-6"
+          className="grid md:grid-cols-2 gap-6 lg:gap-8 mb-6 md:grid-rows-1"
         >
           {mainServices.map((service) => (
             <motion.div
@@ -99,14 +111,16 @@ export default function ServicesSection() {
                 {service.description}
               </p>
 
-              <ul className="space-y-2.5 mt-auto">
-                {service.features.map((feature) => (
-                  <li key={feature} className={`flex items-center gap-2 text-sm ${service.highlight ? "text-ink-300" : "text-ink-500"}`}>
-                    <div className="w-2 h-2 rounded-full bg-gold-400 shrink-0" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
+              <div className="flex-1 overflow-hidden">
+                <ul className="space-y-2.5 max-h-[280px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gold-400/30 scrollbar-track-transparent">
+                  {service.features.map((feature) => (
+                    <li key={feature} className={`flex items-center gap-2 text-sm ${service.highlight ? "text-ink-300" : "text-ink-500"}`}>
+                      <div className="w-2 h-2 rounded-full bg-gold-400 shrink-0" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
               <a
                 href="#contact"
