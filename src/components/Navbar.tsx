@@ -56,17 +56,9 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-3 sm:gap-4 group">
-            <div className="relative w-16 h-16 sm:w-20 sm:h-20 shrink-0">
-              <Image src="/logo-new.png" alt="Patompong Tech Consultant Logo" fill className={`object-contain group-hover:scale-110 transition-all duration-300 ${scrolled ? 'drop-shadow-sm' : 'drop-shadow-[0_0_12px_rgba(217,119,6,0.4)]'}`} sizes="(max-width: 640px) 64px, 80px" priority />
-            </div>
-            <div className="flex flex-col">
-              <span className={`text-base sm:text-lg font-heading font-bold tracking-tight leading-tight transition-colors ${scrolled ? "text-ink-800" : "text-cream-50"}`}>
-                Patompong
-              </span>
-              <span className="text-[9px] font-code text-gold-400 leading-tight tracking-[0.2em] uppercase">
-                Tech Consultant
-              </span>
+          <a href="#home" className="group">
+            <div className="relative w-32 h-10 sm:w-40 sm:h-12 lg:w-48 lg:h-14">
+              <Image src="/logo-new.png" alt="Patompong Tech Consultant Logo" fill className={`object-contain object-left group-hover:scale-105 transition-all duration-300 ${scrolled ? 'drop-shadow-sm' : 'drop-shadow-[0_0_12px_rgba(217,119,6,0.4)]'}`} sizes="(max-width: 640px) 128px, (max-width: 1024px) 160px, 192px" priority />
             </div>
           </a>
 
