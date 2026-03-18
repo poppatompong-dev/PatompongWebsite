@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="flex flex-col gap-1">
             <div className="flex items-center gap-3">
               <div className="relative w-12 h-12 shrink-0">
-                <Image src="/logo-transparent.png" alt="Patompong Tech Consultant Logo" fill className="object-contain drop-shadow-sm" sizes="48px" />
+                <Image src="/logo-new.png" alt="Patompong Tech Consultant Logo" fill className="object-contain drop-shadow-sm" sizes="48px" />
               </div>
               <div>
                 <span className="font-heading text-lg font-bold text-cream-100 tracking-tight">

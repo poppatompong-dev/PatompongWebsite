@@ -267,10 +267,10 @@ export default function CinematicGallery() {
           <div className="flex justify-center mb-5">
             <div className="relative w-28 h-28 sm:w-32 sm:h-32 drop-shadow-[0_0_20px_rgba(217,119,6,0.3)]">
               <Image
-                src="/logo-transparent.png"
+                src="/logo-new.png"
                 alt="Patompong Logo"
                 fill
-                className="object-contain brightness-[3] hue-rotate-0"
+                className="object-contain"
                 priority
               />
             </div>
@@ -330,7 +330,7 @@ export default function CinematicGallery() {
             <div className="w-full lg:w-1/3 flex flex-col justify-center text-left bg-neutral-900/80 p-6 md:p-8 rounded-2xl border border-white/5 backdrop-blur-md">
               <div className="inline-flex items-center gap-3 mb-5">
                 <div className="relative w-12 h-12 drop-shadow-[0_0_12px_rgba(217,119,6,0.3)]">
-                  <Image src="/logo-transparent.png" alt="Logo" fill className="object-contain brightness-[3]" />
+                  <Image src="/logo-new.png" alt="Logo" fill className="object-contain" />
                 </div>
                 <span className="text-gold-500 text-xs font-bold tracking-[0.2em] uppercase">รายละเอียดผลงาน</span>
               </div>
