@@ -19,7 +19,6 @@ import {
   Users,
   Zap,
 } from "lucide-react";
-import { Prisma } from "@prisma/client";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import ArchitectureFilter from "@/components/ArchitectureFilter";
 import CoverSlideshow from "@/components/CoverSlideshow";
@@ -160,7 +159,7 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Sea
   let categories: Awaited<ReturnType<typeof prisma.category.findMany>> = [];
 
   try {
-    const where: Prisma.ProjectWhereInput = {};
+    const where: Record<string, unknown> = {};
     if (clientId) where.clientId = clientId;
     if (categoryId) where.categoryId = categoryId;
     if (type) where.type = type;
