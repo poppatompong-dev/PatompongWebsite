@@ -25,7 +25,6 @@ import CoverSlideshow from "@/components/CoverSlideshow";
 import ProjectFilterBar from "@/components/ProjectFilterBar";
 import ProjectsListing from "@/components/ProjectsListing";
 import { loadShowcaseManifest } from "@/lib/portfolio-showcase";
-import { prisma } from "@/lib/prisma";
 import { formatDate, parseTags } from "@/types/portfolio";
 
 type SearchParams = Promise<{
@@ -152,13 +151,19 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Sea
   const manifest = await loadShowcaseManifest();
 
   // Try Prisma — if unavailable (Netlify serverless), fall back to manifest
-  let projects: Awaited<ReturnType<typeof prisma.project.findMany>> = [];
-  let stats: Awaited<ReturnType<typeof prisma.projectStatistics.findFirst>> = null;
-  let portfolioMetadata: Awaited<ReturnType<typeof prisma.portfolioMetadata.findFirst>> = null;
-  let clients: Awaited<ReturnType<typeof prisma.client.findMany>> = [];
-  let categories: Awaited<ReturnType<typeof prisma.category.findMany>> = [];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let projects: any[] = [];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let stats: any = null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let portfolioMetadata: any = null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let clients: any[] = [];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let categories: any[] = [];
 
   try {
+    const { prisma } = await import("@/lib/prisma");
     const where: Record<string, unknown> = {};
     if (clientId) where.clientId = clientId;
     if (categoryId) where.categoryId = categoryId;
