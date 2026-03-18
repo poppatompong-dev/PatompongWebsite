@@ -29,7 +29,7 @@ interface Project {
 
 interface ProjectsListingProps {
   projects: Project[];
-  showcaseBySlug: Map<string, ShowcaseProjectRecord>;
+  showcaseBySlug: Record<string, ShowcaseProjectRecord>;
   totalProjects: number;
 }
 
@@ -92,7 +92,7 @@ function ProjectGroup({
 }: {
   groupKey: string;
   projects: Project[];
-  showcaseBySlug: Map<string, ShowcaseProjectRecord>;
+  showcaseBySlug: Record<string, ShowcaseProjectRecord>;
   view: "grid" | "table";
   defaultOpen: boolean;
 }) {
@@ -125,7 +125,7 @@ function ProjectGroup({
                 <ProjectCard
                   key={project.id}
                   project={{ ...project, client: { clientName: project.clientName } }}
-                  showcase={showcaseBySlug.get(project.slug) || null}
+                  showcase={showcaseBySlug[project.slug] || null}
                   tags={project.tags}
                 />
               ))}

@@ -387,7 +387,7 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Sea
             clientName: anonymizeText(p.client.clientName),
             tags: parseTags(p.tags),
           }))}
-          showcaseBySlug={showcaseBySlug}
+          showcaseBySlug={Object.fromEntries(showcaseBySlug)}
           totalProjects={totalProjects}
         />
       </main>
