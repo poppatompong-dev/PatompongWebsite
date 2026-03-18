@@ -4,8 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, Building2, CalendarDays, ExternalLink, FolderKanban, Layers3, MonitorPlay, Tag } from "lucide-react";
 import SlideshowViewer from "@/components/SlideshowViewer";
-import { getShowcaseProjectBySlug, getShowcaseScreenshotEntries } from "@/lib/portfolio-showcase";
-import { prisma } from "@/lib/prisma";
+import { getShowcaseProjectBySlug, getShowcaseScreenshotEntries, loadShowcaseManifest } from "@/lib/portfolio-showcase";
 import { formatDate, getStatusLabel, parseKeywords, parseTags } from "@/types/portfolio";
 
 type Params = Promise<{ slug: string }>;
@@ -18,62 +17,111 @@ function statusClasses(status: string) {
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { slug } = await params;
-  const [project, showcase] = await Promise.all([
-    prisma.project.findUnique({ where: { slug } }),
-    getShowcaseProjectBySlug(slug),
-  ]);
 
-  if (!project) {
-    return {
-      title: "Project Not Found | Patompong Tech Consultant",
-    };
+  // Try Prisma, fallback to manifest
+  let projectName: string | null = null;
+  let description: string | null = null;
+  try {
+    const { prisma } = await import("@/lib/prisma");
+    const dbProject = await prisma.project.findUnique({ where: { slug } });
+    projectName = dbProject?.projectName ?? null;
+    description = dbProject?.description ?? null;
+  } catch { /* DB unavailable */ }
+
+  const showcase = await getShowcaseProjectBySlug(slug);
+  projectName = projectName || showcase?.projectName || null;
+  description = description || showcase?.preparedDescription || null;
+
+  if (!projectName) {
+    return { title: "Project Not Found | Patompong Tech Consultant" };
   }
 
   return {
-    title: `${project.projectName} | Patompong Tech Consultant`,
-    description: project.description || showcase?.preparedDescription || "รายละเอียดผลงานและระบบที่นำไปใช้งานจริง",
+    title: `${projectName} | Patompong Tech Consultant`,
+    description: description || "รายละเอียดผลงานและระบบที่นำไปใช้งานจริง",
   };
 }
 
 export default async function ProjectDetailPage({ params }: { params: Params }) {
   const { slug } = await params;
 
-  const [project, showcase] = await Promise.all([
-    prisma.project.findUnique({
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let project: any = null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let relatedProjects: any[] = [];
+
+  try {
+    const { prisma } = await import("@/lib/prisma");
+    project = await prisma.project.findUnique({
       where: { slug },
-      include: {
-        client: true,
-        category: true,
-      },
-    }),
-    getShowcaseProjectBySlug(slug),
-  ]);
+      include: { client: true, category: true },
+    });
+    if (project) {
+      relatedProjects = await prisma.project.findMany({
+        where: {
+          id: { not: project.id },
+          OR: [
+            { clientId: project.clientId },
+            { categoryId: project.categoryId },
+          ],
+        },
+        include: { client: true, category: true },
+        orderBy: { projectNumber: "asc" },
+        take: 3,
+      });
+    }
+  } catch { /* DB unavailable — use manifest fallback */ }
+
+  const showcase = await getShowcaseProjectBySlug(slug);
+
+  // Fallback: build project-like object from manifest
+  if (!project && showcase) {
+    const manifest = await loadShowcaseManifest();
+    const manifestRelated = (manifest?.projects || [])
+      .filter(p => p.slug !== slug && (p.clientId === showcase.clientId || p.category === showcase.category))
+      .slice(0, 3);
+
+    project = {
+      id: showcase.id,
+      projectId: showcase.projectId,
+      projectNumber: showcase.projectNumber,
+      projectName: showcase.projectName,
+      slug: showcase.slug,
+      clientId: showcase.clientId,
+      client: { clientId: showcase.clientId, clientName: showcase.clientName, slug: showcase.clientSlug || showcase.clientId },
+      type: showcase.type,
+      categoryId: showcase.categoryId || showcase.category,
+      category: { categoryId: showcase.categoryId || showcase.category, name: showcase.category, color: showcase.categoryColor },
+      subcategory: showcase.subcategory,
+      url: showcase.url ?? null,
+      description: showcase.description ?? showcase.preparedDescription ?? null,
+      tags: showcase.tags.join(","),
+      keywords: showcase.keywords?.join(",") ?? null,
+      status: showcase.status,
+      startDate: showcase.startDate ? new Date(showcase.startDate) : null,
+      completedDate: showcase.completedDate ? new Date(showcase.completedDate) : null,
+    };
+
+    relatedProjects = manifestRelated.map(p => ({
+      id: p.id,
+      projectNumber: p.projectNumber,
+      projectName: p.projectName,
+      slug: p.slug,
+      description: p.description ?? p.preparedDescription ?? null,
+      client: { clientName: p.clientName },
+      category: { name: p.category, color: p.categoryColor },
+    }));
+  }
 
   if (!project) {
     notFound();
   }
 
-  const relatedProjects = await prisma.project.findMany({
-    where: {
-      id: { not: project.id },
-      OR: [
-        { clientId: project.clientId },
-        { categoryId: project.categoryId },
-      ],
-    },
-    include: {
-      client: true,
-      category: true,
-    },
-    orderBy: { projectNumber: "asc" },
-    take: 3,
-  });
-
   const tags = parseTags(project.tags);
   const keywords = parseKeywords(project.keywords);
   const screenshotEntries = getShowcaseScreenshotEntries(showcase);
   const previewImage = showcase?.assets.cover || screenshotEntries[0]?.src || null;
-  const heroStyle = showcase?.theme?.gradient ? { background: showcase.theme.gradient } : { background: `linear-gradient(135deg, ${project.category.color || "#D97706"} 0%, #111827 100%)` };
+  const heroStyle = showcase?.theme?.gradient ? { background: showcase.theme.gradient } : { background: `linear-gradient(135deg, ${project.category?.color || "#D97706"} 0%, #111827 100%)` };
 
   return (
     <div className="min-h-screen bg-ink-900 text-cream-100">
