@@ -20,8 +20,9 @@ interface Project {
   status: string;
   startDate: Date | null;
   completedDate: Date | null;
-  tags: string | null;
+  tags: string[];
   keywords: string | null;
+  clientName: string;
   client: { clientName: string };
   category: { categoryId: string; name: string; color: string | null };
 }
@@ -30,8 +31,6 @@ interface ProjectsListingProps {
   projects: Project[];
   showcaseBySlug: Map<string, ShowcaseProjectRecord>;
   totalProjects: number;
-  anonymizeText: (text: string) => string;
-  parseTags: (tags: string | null) => string[];
 }
 
 const STATUS_LABEL: Record<string, { label: string; color: string }> = {
@@ -51,7 +50,7 @@ const GROUP_OPTIONS: { value: GroupBy; label: string }[] = [
   { value: "client", label: "หน่วยงาน" },
 ];
 
-function getGroupKey(project: Project, groupBy: GroupBy, anonymizeText: (t: string) => string): string {
+function getGroupKey(project: Project, groupBy: GroupBy): string {
   switch (groupBy) {
     case "category": return project.category?.name || "ไม่ระบุหมวดหมู่";
     case "year": {
@@ -60,7 +59,7 @@ function getGroupKey(project: Project, groupBy: GroupBy, anonymizeText: (t: stri
     }
     case "type": return project.type || "ไม่ระบุประเภท";
     case "status": return STATUS_LABEL[project.status]?.label || project.status;
-    case "client": return anonymizeText(project.client?.clientName || "");
+    case "client": return project.clientName || "";
     default: return "";
   }
 }
@@ -68,12 +67,11 @@ function getGroupKey(project: Project, groupBy: GroupBy, anonymizeText: (t: stri
 function groupProjects(
   projects: Project[],
   groupBy: GroupBy,
-  anonymizeText: (t: string) => string,
 ): { key: string; projects: Project[] }[] {
   if (groupBy === "none") return [{ key: "", projects }];
   const map = new Map<string, Project[]>();
   for (const p of projects) {
-    const key = getGroupKey(p, groupBy, anonymizeText);
+    const key = getGroupKey(p, groupBy);
     if (!map.has(key)) map.set(key, []);
     map.get(key)!.push(p);
   }
@@ -89,16 +87,12 @@ function ProjectGroup({
   groupKey,
   projects,
   showcaseBySlug,
-  anonymizeText,
-  parseTags,
   view,
   defaultOpen,
 }: {
   groupKey: string;
   projects: Project[];
   showcaseBySlug: Map<string, ShowcaseProjectRecord>;
-  anonymizeText: (t: string) => string;
-  parseTags: (t: string | null) => string[];
   view: "grid" | "table";
   defaultOpen: boolean;
 }) {
@@ -130,9 +124,9 @@ function ProjectGroup({
               {projects.map((project) => (
                 <ProjectCard
                   key={project.id}
-                  project={{ ...project, client: { clientName: anonymizeText(project.client.clientName) } }}
+                  project={{ ...project, client: { clientName: project.clientName } }}
                   showcase={showcaseBySlug.get(project.slug) || null}
-                  tags={parseTags(project.tags)}
+                  tags={project.tags}
                 />
               ))}
             </div>
@@ -173,7 +167,7 @@ function ProjectGroup({
                           </span>
                         </td>
                         <td className="hidden px-4 py-3 text-xs text-ink-500 lg:table-cell">
-                          {anonymizeText(project.client.clientName)}
+                          {project.clientName}
                         </td>
                         <td className="px-4 py-3">
                           <span className={`rounded-full border px-2 py-0.5 text-[10px] font-semibold ${statusInfo.color}`}>
@@ -218,13 +212,11 @@ export default function ProjectsListing({
   projects,
   showcaseBySlug,
   totalProjects,
-  anonymizeText,
-  parseTags,
 }: ProjectsListingProps) {
   const [view, setView] = useState<"grid" | "table">("grid");
   const [groupBy, setGroupBy] = useState<GroupBy>("none");
 
-  const groups = groupProjects(projects, groupBy, anonymizeText);
+  const groups = groupProjects(projects, groupBy);
 
   return (
     <section className="mt-10">
@@ -276,8 +268,6 @@ export default function ProjectsListing({
             groupKey={group.key}
             projects={group.projects}
             showcaseBySlug={showcaseBySlug}
-            anonymizeText={anonymizeText}
-            parseTags={parseTags}
             view={view}
             defaultOpen={idx === 0}
           />

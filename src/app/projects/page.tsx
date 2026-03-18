@@ -382,11 +382,13 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Sea
         />
 
         <ProjectsListing
-          projects={projects}
+          projects={projects.map((p) => ({
+            ...p,
+            clientName: anonymizeText(p.client.clientName),
+            tags: parseTags(p.tags),
+          }))}
           showcaseBySlug={showcaseBySlug}
           totalProjects={totalProjects}
-          anonymizeText={anonymizeText}
-          parseTags={parseTags}
         />
       </main>
     </div>

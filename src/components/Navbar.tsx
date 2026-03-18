@@ -58,7 +58,7 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#home" className="flex items-center gap-3 sm:gap-4 group">
             <div className="relative w-16 h-16 sm:w-20 sm:h-20 shrink-0">
-              <Image src="/logo-main.png" alt="Patompong Tech Consultant Logo" fill className={`object-contain group-hover:scale-110 transition-all duration-300 ${scrolled ? 'mix-blend-multiply drop-shadow-md' : 'mix-blend-screen brightness-[3] drop-shadow-[0_0_12px_rgba(217,119,6,0.4)]'}`} sizes="(max-width: 640px) 64px, 80px" priority />
+              <Image src="/logo-transparent.png" alt="Patompong Tech Consultant Logo" fill className={`object-contain group-hover:scale-110 transition-all duration-300 ${scrolled ? 'drop-shadow-sm' : 'drop-shadow-[0_0_12px_rgba(217,119,6,0.4)]'}`} sizes="(max-width: 640px) 64px, 80px" priority />
             </div>
             <div className="flex flex-col">
               <span className={`text-base sm:text-lg font-heading font-bold tracking-tight leading-tight transition-colors ${scrolled ? "text-ink-800" : "text-cream-50"}`}>
