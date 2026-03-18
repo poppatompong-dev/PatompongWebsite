@@ -36,11 +36,11 @@ const nextConfig = {
       "public/portfolio-showcase/covers/**",
       "public/portfolio-showcase/screenshots/**",
       "public/portfolio-showcase/slideshows/**",
-      "temp_photos/**/*"
+      "temp_photos/**/*",
+      "prisma/dev.db",
+      "node_modules/.prisma/**",
+      "node_modules/@prisma/engines/**",
     ],
-  },
-  outputFileTracingIncludes: {
-    "**/*": ["prisma/dev.db"],
   },
   allowedDevOrigins: ["127.0.0.1", "localhost"],
   reactCompiler: true,
