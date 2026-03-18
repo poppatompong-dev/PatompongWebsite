@@ -202,6 +202,8 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Sea
         <CoverSlideshow images={heroImages} interval={5000} />
         <div className="absolute inset-0 bg-ink-900/70" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(217,119,6,0.15),transparent_40%),radial-gradient(circle_at_bottom_left,rgba(6,182,212,0.08),transparent_35%)]" />
+        {/* Dot-grid watermark */}
+        <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, #D97706 1px, transparent 1px)", backgroundSize: "36px 36px" }} />
 
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
           <div className="flex flex-wrap items-center gap-3 font-code text-xs uppercase tracking-[0.2em] text-gold-400/80">
@@ -303,7 +305,9 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Sea
       {/* ═══════════════════════════════════════════════════════════════
           PART 3 — Operational Workflow
           ═══════════════════════════════════════════════════════════════ */}
-      <section className="bg-ink-900 py-10 text-cream-50 lg:py-14">
+      <section className="relative bg-ink-900 py-10 text-cream-50 lg:py-14 overflow-hidden">
+        {/* Dot-grid watermark */}
+        <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, #D97706 1px, transparent 1px)", backgroundSize: "36px 36px" }} />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <span className="font-code text-[11px] uppercase tracking-[0.15em] text-gold-400">Operational Workflow</span>

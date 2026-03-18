@@ -253,6 +253,14 @@ export default function CinematicGallery() {
 
   return (
     <div className="bg-neutral-950 text-white py-20 px-3 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Dot-grid watermark */}
+      <div
+        className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        style={{
+          backgroundImage: "radial-gradient(circle, #D97706 1px, transparent 1px)",
+          backgroundSize: "36px 36px",
+        }}
+      />
       <div className="max-w-[1400px] mx-auto">
         {/* Header with Logo */}
         <div className="text-center mb-12">

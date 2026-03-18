@@ -41,6 +41,14 @@ const reasons = [
 export default function CCTVDetailSection() {
   return (
     <section id="why-us" className="relative py-24 lg:py-32 bg-ink-900 overflow-hidden">
+      {/* Dot-grid watermark */}
+      <div
+        className="absolute inset-0 opacity-[0.035] pointer-events-none"
+        style={{
+          backgroundImage: "radial-gradient(circle, #D97706 1px, transparent 1px)",
+          backgroundSize: "32px 32px",
+        }}
+      />
       {/* Decorative side line */}
       <div className="absolute top-0 left-8 lg:left-16 w-px h-full bg-ink-700/60" />
 

@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -9,13 +11,18 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8 items-center">
           {/* Logo & Brand */}
           <div className="flex flex-col gap-1">
-            <div>
-              <span className="font-heading text-lg font-bold text-cream-100 tracking-tight">
-                Patompong
-              </span>
-              <span className="font-code text-[10px] text-gold-400 ml-2 tracking-[0.15em] uppercase">
-                Tech Consultant
-              </span>
+            <div className="flex items-center gap-3">
+              <div className="relative w-12 h-12 shrink-0">
+                <Image src="/logo-main.png" alt="Patompong Tech Consultant Logo" fill className="object-contain mix-blend-screen brightness-[3]" sizes="48px" />
+              </div>
+              <div>
+                <span className="font-heading text-lg font-bold text-cream-100 tracking-tight">
+                  Patompong
+                </span>
+                <span className="font-code text-[10px] text-gold-400 ml-2 tracking-[0.15em] uppercase">
+                  Tech Consultant
+                </span>
+              </div>
             </div>
             <p className="text-sm text-ink-400 mt-1">083-687-0393 | LINE: lazialepoppy</p>
           </div>

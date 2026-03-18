@@ -298,7 +298,7 @@ export default function QuotationManager() {
             <div className="px-8 pt-6 pb-5">
               <div className="flex items-start justify-between">
                 <div className="flex items-start gap-4">
-                  <img src="/logo-main.png" alt="Patompong Tech" className="w-16 h-16 object-contain" />
+                  <img src="/logo-main.png" alt="Patompong Tech" className="w-16 h-16 object-contain mix-blend-multiply" />
                   <div>
                     <h1 className="text-lg font-bold text-slate-800 leading-tight">Patompong Tech Consultant</h1>
                     <p className="text-[11px] text-slate-500 mt-0.5">นักวิชาการคอมพิวเตอร์ · ระบบ CCTV · Network · Software</p>
