@@ -129,10 +129,10 @@ function AutoScrollTable({ projects }: { projects: Project[] }) {
               onMouseEnter={() => setHoveredId(`${project.id}-${idx}`)}
               onMouseLeave={() => setHoveredId(null)}
               className={`flex items-center gap-3 px-4 transition-all duration-300 ease-out cursor-default ${isHovered
-                  ? "py-5 bg-gradient-to-r from-gold-50 via-amber-50/80 to-cream-50 border-l-4 border-l-gold-500 shadow-md scale-[1.01] z-10 relative"
-                  : hoveredId
-                    ? "py-3 bg-white/60 opacity-60"
-                    : "py-3 bg-white"
+                ? "py-5 bg-gradient-to-r from-gold-50 via-amber-50/80 to-cream-50 border-l-4 border-l-gold-500 shadow-md scale-[1.01] z-10 relative"
+                : hoveredId
+                  ? "py-3 bg-white/60 opacity-60"
+                  : "py-3 bg-white"
                 }`}
             >
               {/* # */}
@@ -156,8 +156,8 @@ function AutoScrollTable({ projects }: { projects: Project[] }) {
 
               {/* Type badge */}
               <span className={`hidden sm:inline-block shrink-0 rounded-md border font-code uppercase tracking-wide transition-all duration-300 ${isHovered
-                  ? "border-gold-400 bg-gold-100 px-2.5 py-1 text-[11px] text-gold-800 font-semibold"
-                  : "border-gold-200 bg-gold-50 px-2 py-0.5 text-[10px] text-gold-700"
+                ? "border-gold-400 bg-gold-100 px-2.5 py-1 text-[11px] text-gold-800 font-semibold"
+                : "border-gold-200 bg-gold-50 px-2 py-0.5 text-[10px] text-gold-700"
                 }`}>
                 {project.type}
               </span>
@@ -179,8 +179,8 @@ function AutoScrollTable({ projects }: { projects: Project[] }) {
                 <Link
                   href={`/projects/${project.slug}`}
                   className={`rounded-lg border font-semibold transition-all duration-200 ${isHovered
-                      ? "border-gold-400 bg-gold-500 text-white px-3 py-1.5 text-xs shadow-sm hover:bg-gold-600"
-                      : "border-cream-300 bg-white text-ink-500 px-2.5 py-1.5 text-[11px] hover:border-gold-400 hover:text-gold-600"
+                    ? "border-gold-400 bg-gold-500 text-white px-3 py-1.5 text-xs shadow-sm hover:bg-gold-600"
+                    : "border-cream-300 bg-white text-ink-500 px-2.5 py-1.5 text-[11px] hover:border-gold-400 hover:text-gold-600"
                     }`}
                 >
                   รายละเอียด
@@ -268,7 +268,7 @@ export default function ProjectsListing({
   showcaseBySlug,
   totalProjects,
 }: ProjectsListingProps) {
-  const [view, setView] = useState<"grid" | "table">("grid");
+  const [view, setView] = useState<"grid" | "table">("table");
   const [groupBy, setGroupBy] = useState<GroupBy>("none");
 
   const groups = groupProjects(projects, groupBy);
