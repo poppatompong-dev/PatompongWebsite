@@ -1,36 +1,27 @@
-import path from "node:path";
 import { PrismaClient } from "@prisma/client";
 
-const globalForPrisma = global as unknown as { prisma: PrismaClient };
+const globalForPrisma = global as unknown as { prisma: PrismaClient | null };
 
-// Resolve DATABASE_URL to an absolute path at runtime so it works both
-// locally and inside Netlify serverless functions (process.cwd() differs
-// from the build-time /opt/build/repo path).
-function resolveDatabaseUrl(): string | undefined {
-  const url = process.env.DATABASE_URL;
-  if (!url) return url;
-  // Only fix file: URLs that use a relative or build-time absolute path
-  const match = url.match(/^file:(.+)$/);
-  if (!match) return url;
-  const filePath = match[1];
-  // If already absolute and exists as-is, keep it; otherwise resolve from cwd
-  if (path.isAbsolute(filePath)) return url;
-  return `file:${path.resolve(process.cwd(), filePath)}`;
-}
-
-function createPrismaClient() {
-  const datasourceUrl = resolveDatabaseUrl();
+function createPrismaClient(): PrismaClient | null {
+  if (!process.env.DATABASE_URL) return null;
   try {
     return new PrismaClient({
       log: process.env.NODE_ENV === "development" ? ["warn", "error"] : ["error"],
-      ...(datasourceUrl ? { datasources: { db: { url: datasourceUrl } } } : {}),
     });
-  } catch (e) {
-    console.error("Failed to create PrismaClient:", e);
-    return new PrismaClient();
+  } catch {
+    return null;
   }
 }
 
-export const prisma = globalForPrisma.prisma || createPrismaClient();
+const _prisma = globalForPrisma.prisma !== undefined
+  ? globalForPrisma.prisma
+  : createPrismaClient();
 
-if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
+if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = _prisma;
+
+// Safe proxy: if no DB, every method returns a rejected promise (caught upstream)
+export const prisma = _prisma ?? new Proxy({} as PrismaClient, {
+  get(_target, prop) {
+    return () => Promise.reject(new Error(`No DATABASE_URL — DB unavailable (${String(prop)})`));
+  },
+});

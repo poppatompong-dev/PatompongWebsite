@@ -187,28 +187,30 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Sea
 
   // Use manifest as fallback when Prisma fails
   const manifestProjects = manifest?.projects || [];
-  const effectiveProjects = projects.length > 0 ? projects : manifestProjects.map(p => ({
+  const fallbackProjects = projects.length === 0 ? manifestProjects.map(p => ({
     id: p.id,
     projectId: p.projectId,
     projectNumber: p.projectNumber,
     projectName: p.projectName,
     slug: p.slug,
     clientId: p.clientId,
-    client: { clientId: p.clientId, clientName: p.clientName, slug: p.clientSlug || p.clientId },
+    client: { id: "", clientId: p.clientId, clientName: p.clientName, slug: p.clientSlug || p.clientId, projectCount: 0, createdAt: new Date(), updatedAt: new Date() },
     type: p.type,
     categoryId: p.categoryId || p.category,
-    category: { categoryId: p.categoryId || p.category, name: p.category, color: p.categoryColor },
+    category: { id: "", categoryId: p.categoryId || p.category, name: p.category, color: p.categoryColor, projectCount: 0, createdAt: new Date(), updatedAt: new Date() },
     subcategory: p.subcategory,
     url: p.url ?? null,
     description: p.description ?? null,
-    tags: p.tags.join(','),
-    keywords: p.keywords?.join(',') ?? null,
+    tags: p.tags.join(","),
+    keywords: p.keywords?.join(",") ?? null,
     status: p.status,
     startDate: p.startDate ? new Date(p.startDate) : null,
     completedDate: p.completedDate ? new Date(p.completedDate) : null,
     createdAt: new Date(),
     updatedAt: new Date(),
-  }));
+  })) : [];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const effectiveProjects: typeof projects = projects.length > 0 ? projects : (fallbackProjects as any);
 
   const byType = parseRecord(stats?.byType);
   const typeOptions = (Object.keys(byType).length > 0 ? Object.keys(byType) : Array.from(new Set(effectiveProjects.map((project) => project.type)))).map((value) => ({
