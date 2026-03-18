@@ -298,8 +298,14 @@ export default function QuotationManager() {
             <div className="px-8 pt-6 pb-5">
               <div className="flex items-start justify-between">
                 <div>
-                  <img src="/logo-new.png" alt="Patompong Tech" className="h-12 w-auto object-contain object-left mb-2" />
-                  <p className="text-[11px] text-slate-500 mt-2">นักวิชาการคอมพิวเตอร์ · ระบบ CCTV · Network · Software</p>
+                  <div className="flex items-center gap-3 mb-2">
+                    <img src="/logo-icon.png" alt="Patompong Tech" className="w-12 h-12 object-contain" />
+                    <div>
+                      <p className="text-base font-bold text-slate-800 leading-tight">Patompong</p>
+                      <p className="text-[10px] tracking-[0.15em] uppercase text-amber-600 font-semibold">Tech Consultant</p>
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-slate-500 mt-1">นักวิชาการคอมพิวเตอร์ · ระบบ CCTV · Network · Software</p>
                   <div className="flex gap-4 mt-1.5 text-[11px] text-slate-500">
                     <span>โทร. 083-687-0393</span>
                     <span>อีเมล poppatompong@gmail.com</span>

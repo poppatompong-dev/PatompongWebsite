@@ -11,8 +11,14 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8 items-center">
           {/* Logo & Brand */}
           <div className="flex flex-col gap-3">
-            <div className="relative w-40 h-12">
-              <Image src="/logo-new.png" alt="Patompong Tech Consultant Logo" fill className="object-contain object-left drop-shadow-sm" sizes="160px" />
+            <div className="flex items-center gap-3">
+              <div className="relative w-12 h-12 shrink-0">
+                <Image src="/logo-icon.png" alt="Patompong Tech Consultant Logo" fill className="object-contain drop-shadow-sm" sizes="48px" />
+              </div>
+              <div>
+                <span className="font-heading text-lg font-bold text-cream-100 tracking-tight">Patompong</span>
+                <span className="font-code text-[10px] text-gold-400 ml-2 tracking-[0.15em] uppercase">Tech Consultant</span>
+              </div>
             </div>
             <p className="text-sm text-ink-400">083-687-0393 | LINE: lazialepoppy</p>
           </div>
