@@ -191,28 +191,41 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Sea
 
   // Use manifest as fallback when Prisma fails
   const manifestProjects = manifest?.projects || [];
-  const fallbackProjects = projects.length === 0 ? manifestProjects.map(p => ({
-    id: p.id,
-    projectId: p.projectId,
-    projectNumber: p.projectNumber,
-    projectName: p.projectName,
-    slug: p.slug,
-    clientId: p.clientId,
-    client: { id: "", clientId: p.clientId, clientName: p.clientName, slug: p.clientSlug || p.clientId, projectCount: 0, createdAt: new Date(), updatedAt: new Date() },
-    type: p.type,
-    categoryId: p.categoryId || p.category,
-    category: { id: "", categoryId: p.categoryId || p.category, name: p.category, color: p.categoryColor, projectCount: 0, createdAt: new Date(), updatedAt: new Date() },
-    subcategory: p.subcategory,
-    url: p.url ?? null,
-    description: p.description ?? null,
-    tags: p.tags.join(","),
-    keywords: p.keywords?.join(",") ?? null,
-    status: p.status,
-    startDate: p.startDate ? new Date(p.startDate) : null,
-    completedDate: p.completedDate ? new Date(p.completedDate) : null,
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  })) : [];
+  const fallbackProjects = projects.length === 0 ? manifestProjects
+    .filter(p => {
+      if (clientId && p.clientId !== clientId) return false;
+      if (categoryId && (p.categoryId || p.category) !== categoryId) return false;
+      if (type && p.type !== type) return false;
+      if (status && p.status !== status) return false;
+      if (q) {
+        const qLower = q.toLowerCase();
+        const searchable = [p.projectName, p.description, p.subcategory, ...(p.tags || []), ...(p.keywords || [])].join(" ").toLowerCase();
+        if (!searchable.includes(qLower)) return false;
+      }
+      return true;
+    })
+    .map(p => ({
+      id: p.id,
+      projectId: p.projectId,
+      projectNumber: p.projectNumber,
+      projectName: p.projectName,
+      slug: p.slug,
+      clientId: p.clientId,
+      client: { id: "", clientId: p.clientId, clientName: p.clientName, slug: p.clientSlug || p.clientId, projectCount: 0, createdAt: new Date(), updatedAt: new Date() },
+      type: p.type,
+      categoryId: p.categoryId || p.category,
+      category: { id: "", categoryId: p.categoryId || p.category, name: p.category, color: p.categoryColor, projectCount: 0, createdAt: new Date(), updatedAt: new Date() },
+      subcategory: p.subcategory,
+      url: p.url ?? null,
+      description: p.description ?? null,
+      tags: p.tags.join(","),
+      keywords: p.keywords?.join(",") ?? null,
+      status: p.status,
+      startDate: p.startDate ? new Date(p.startDate) : null,
+      completedDate: p.completedDate ? new Date(p.completedDate) : null,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    })) : [];
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const effectiveProjects: typeof projects = projects.length > 0 ? projects : (fallbackProjects as any);
 
