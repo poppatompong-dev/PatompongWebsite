@@ -150,36 +150,40 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Sea
   const type = firstValue(resolvedSearchParams.type).trim();
   const status = firstValue(resolvedSearchParams.status).trim();
 
-  const where: Prisma.ProjectWhereInput = {};
-
-  if (clientId) where.clientId = clientId;
-  if (categoryId) where.categoryId = categoryId;
-  if (type) where.type = type;
-  if (status) where.status = status;
-  if (q) {
-    where.OR = [
-      { projectName: { contains: q } },
-      { description: { contains: q } },
-      { subcategory: { contains: q } },
-      { tags: { contains: q } },
-      { keywords: { contains: q } },
-    ];
-  }
-
   const manifest = await loadShowcaseManifest();
 
-  // Try Prisma first, fallback to manifest data if DB unavailable (Netlify)
-  const [projects, stats, portfolioMetadata, clients, categories] = await Promise.all([
-    prisma.project.findMany({
-      where,
-      include: { client: true, category: true },
-      orderBy: [{ projectNumber: "asc" }],
-    }).catch(() => []),
-    prisma.projectStatistics.findFirst().catch(() => null),
-    prisma.portfolioMetadata.findFirst().catch(() => null),
-    prisma.client.findMany({ orderBy: { clientName: "asc" } }).catch(() => []),
-    prisma.category.findMany({ orderBy: { name: "asc" } }).catch(() => []),
-  ]);
+  // Try Prisma — if unavailable (Netlify serverless), fall back to manifest
+  let projects: Awaited<ReturnType<typeof prisma.project.findMany>> = [];
+  let stats: Awaited<ReturnType<typeof prisma.projectStatistics.findFirst>> = null;
+  let portfolioMetadata: Awaited<ReturnType<typeof prisma.portfolioMetadata.findFirst>> = null;
+  let clients: Awaited<ReturnType<typeof prisma.client.findMany>> = [];
+  let categories: Awaited<ReturnType<typeof prisma.category.findMany>> = [];
+
+  try {
+    const where: Prisma.ProjectWhereInput = {};
+    if (clientId) where.clientId = clientId;
+    if (categoryId) where.categoryId = categoryId;
+    if (type) where.type = type;
+    if (status) where.status = status;
+    if (q) {
+      where.OR = [
+        { projectName: { contains: q } },
+        { description: { contains: q } },
+        { subcategory: { contains: q } },
+        { tags: { contains: q } },
+        { keywords: { contains: q } },
+      ];
+    }
+    [projects, stats, portfolioMetadata, clients, categories] = await Promise.all([
+      prisma.project.findMany({ where, include: { client: true, category: true }, orderBy: [{ projectNumber: "asc" }] }),
+      prisma.projectStatistics.findFirst(),
+      prisma.portfolioMetadata.findFirst(),
+      prisma.client.findMany({ orderBy: { clientName: "asc" } }),
+      prisma.category.findMany({ orderBy: { name: "asc" } }),
+    ]);
+  } catch {
+    // DB unavailable on Netlify — use manifest fallback below
+  }
 
   // Use manifest as fallback when Prisma fails
   const manifestProjects = manifest?.projects || [];
