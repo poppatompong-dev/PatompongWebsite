@@ -169,16 +169,13 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Sea
   const [projects, stats, portfolioMetadata, clients, categories, manifest] = await Promise.all([
     prisma.project.findMany({
       where,
-      include: {
-        client: true,
-        category: true,
-      },
+      include: { client: true, category: true },
       orderBy: [{ projectNumber: "asc" }],
-    }),
-    prisma.projectStatistics.findFirst(),
-    prisma.portfolioMetadata.findFirst(),
-    prisma.client.findMany({ orderBy: { clientName: "asc" } }),
-    prisma.category.findMany({ orderBy: { name: "asc" } }),
+    }).catch(() => []),
+    prisma.projectStatistics.findFirst().catch(() => null),
+    prisma.portfolioMetadata.findFirst().catch(() => null),
+    prisma.client.findMany({ orderBy: { clientName: "asc" } }).catch(() => []),
+    prisma.category.findMany({ orderBy: { name: "asc" } }).catch(() => []),
     loadShowcaseManifest(),
   ]);
 
