@@ -166,7 +166,10 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Sea
     ];
   }
 
-  const [projects, stats, portfolioMetadata, clients, categories, manifest] = await Promise.all([
+  const manifest = await loadShowcaseManifest();
+
+  // Try Prisma first, fallback to manifest data if DB unavailable (Netlify)
+  const [projects, stats, portfolioMetadata, clients, categories] = await Promise.all([
     prisma.project.findMany({
       where,
       include: { client: true, category: true },
@@ -176,17 +179,41 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Sea
     prisma.portfolioMetadata.findFirst().catch(() => null),
     prisma.client.findMany({ orderBy: { clientName: "asc" } }).catch(() => []),
     prisma.category.findMany({ orderBy: { name: "asc" } }).catch(() => []),
-    loadShowcaseManifest(),
   ]);
 
+  // Use manifest as fallback when Prisma fails
+  const manifestProjects = manifest?.projects || [];
+  const effectiveProjects = projects.length > 0 ? projects : manifestProjects.map(p => ({
+    id: p.id,
+    projectId: p.projectId,
+    projectNumber: p.projectNumber,
+    projectName: p.projectName,
+    slug: p.slug,
+    clientId: p.clientId,
+    client: { clientId: p.clientId, clientName: p.clientName, slug: p.clientSlug || p.clientId },
+    type: p.type,
+    categoryId: p.categoryId || p.category,
+    category: { categoryId: p.categoryId || p.category, name: p.category, color: p.categoryColor },
+    subcategory: p.subcategory,
+    url: p.url,
+    description: p.description,
+    tags: p.tags.join(','),
+    keywords: p.keywords.join(','),
+    status: p.status,
+    startDate: p.startDate ? new Date(p.startDate) : null,
+    completedDate: p.completedDate ? new Date(p.completedDate) : null,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  }));
+
   const byType = parseRecord(stats?.byType);
-  const typeOptions = (Object.keys(byType).length > 0 ? Object.keys(byType) : Array.from(new Set(projects.map((project) => project.type)))).map((value) => ({
+  const typeOptions = (Object.keys(byType).length > 0 ? Object.keys(byType) : Array.from(new Set(effectiveProjects.map((project) => project.type)))).map((value) => ({
     value,
     label: value,
   }));
-  const showcaseBySlug = new Map((manifest?.projects || []).map((project) => [project.slug, project]));
-  const heroImages = (manifest?.projects || []).map((p) => p.assets.cover).filter(Boolean).slice(0, 12) as string[];
-  const totalProjects = stats?.totalProjects || projects.length;
+  const showcaseBySlug = new Map(manifestProjects.map((project) => [project.slug, project]));
+  const heroImages = manifestProjects.map((p) => p.assets.cover).filter(Boolean).slice(0, 12) as string[];
+  const totalProjects = stats?.totalProjects || manifest?.totals?.projects || effectiveProjects.length;
 
   return (
     <div className="min-h-screen bg-cream-100 text-ink-700">
@@ -366,20 +393,20 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Sea
           ═══════════════════════════════════════════════════════════════ */}
       <main id="project-listing" className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <ProjectFilterBar
-          categories={categories.map((category) => ({ value: category.categoryId, label: category.name, color: category.color }))}
-          clients={clients.map((client) => ({ value: client.clientId, label: anonymizeText(client.clientName) }))}
+          categories={categories.length > 0 ? categories.map((category) => ({ value: category.categoryId, label: category.name, color: category.color })) : Array.from(new Set(manifestProjects.map(p => p.category))).map(cat => ({ value: cat, label: cat, color: manifestProjects.find(p => p.category === cat)?.categoryColor || '#3B82F6' }))}
+          clients={clients.length > 0 ? clients.map((client) => ({ value: client.clientId, label: anonymizeText(client.clientName) })) : Array.from(new Set(manifestProjects.map(p => p.clientId))).map(id => ({ value: id, label: anonymizeText(manifestProjects.find(p => p.clientId === id)?.clientName || id) }))}
           initialCategoryId={categoryId}
           initialClientId={clientId}
           initialQuery={q}
           initialStatus={status}
           initialType={type}
-          resultCount={projects.length}
+          resultCount={effectiveProjects.length}
           totalCount={totalProjects}
           types={typeOptions}
         />
 
         <ProjectsListing
-          projects={projects.map((p) => ({
+          projects={effectiveProjects.map((p) => ({
             ...p,
             clientName: anonymizeText(p.client.clientName),
             tags: parseTags(p.tags),
